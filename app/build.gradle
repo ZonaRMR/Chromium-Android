@@ -3,8 +3,8 @@ apply plugin: 'idea'
 apply from: "$rootDir/gradle/android-lint.gradle"
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
     defaultConfig {
         applicationId "org.chromium.chrome"
         minSdkVersion rootProject.ext.minSdkVersion
