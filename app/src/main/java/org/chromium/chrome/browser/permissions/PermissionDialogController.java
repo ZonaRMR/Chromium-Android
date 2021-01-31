@@ -62,7 +62,7 @@ public class PermissionDialogController
     // 1) Multiple open windows request permissions due to Android split-screen
     // 2) A tab navigates or is closed while the Android permission request is open, and the
     // subsequent page requests a permission
-    private List<PermissionDialogDelegate> mRequestQueue;
+    private final List<PermissionDialogDelegate> mRequestQueue;
 
     /** The current state, whether we have a prompt showing and so on. */
     private @State int mState;

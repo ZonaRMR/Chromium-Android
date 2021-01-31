@@ -18,7 +18,7 @@ public interface VideoFrameHandleReleaser extends org.chromium.mojo.bindings.Int
 
 
 
-    public interface Proxy extends VideoFrameHandleReleaser, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends VideoFrameHandleReleaser, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<VideoFrameHandleReleaser, VideoFrameHandleReleaser.Proxy> MANAGER = VideoFrameHandleReleaser_Internal.MANAGER;

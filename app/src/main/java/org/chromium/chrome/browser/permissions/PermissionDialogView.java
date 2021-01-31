@@ -27,8 +27,8 @@ import java.lang.reflect.Field;
 public class PermissionDialogView {
     private static final String TAG = "PermissionDialogView";
 
-    private AlertDialog mDialog;
-    private PermissionDialogDelegate mDialogDelegate;
+    private final AlertDialog mDialog;
+    private final PermissionDialogDelegate mDialogDelegate;
 
     /**
      * Constructor for the Dialog View. Creates the AlertDialog.
@@ -56,7 +56,7 @@ public class PermissionDialogView {
         ChromeActivity activity = mDialogDelegate.getTab().getActivity();
         LayoutInflater inflater = LayoutInflater.from(activity);
         View view = inflater.inflate(R.layout.permission_dialog, null);
-        TextView messageTextView = (TextView) view.findViewById(R.id.text);
+        TextView messageTextView = view.findViewById(R.id.text);
         String messageText = mDialogDelegate.getMessageText();
         assert !TextUtils.isEmpty(messageText);
         messageTextView.setText(messageText);

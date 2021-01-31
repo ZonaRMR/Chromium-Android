@@ -18,7 +18,8 @@ public final class RunOutput extends org.chromium.mojo.bindings.Union {
 
     public static final class Tag {
         public static final int QueryVersionResult = 0;
-    };
+    }
+
     private QueryVersionResult mQueryVersionResult;
 
     public void setQueryVersionResult(QueryVersionResult queryVersionResult) {

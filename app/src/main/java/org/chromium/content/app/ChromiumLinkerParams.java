@@ -93,7 +93,7 @@ public class ChromiumLinkerParams {
         return String.format(Locale.US,
                 "LinkerParams(baseLoadAddress:0x%x, waitForSharedRelro:%s, "
                         + "testRunnerClassName:%s",
-                mBaseLoadAddress, Boolean.toString(mWaitForSharedRelro),
+                mBaseLoadAddress, mWaitForSharedRelro,
                 mTestRunnerClassNameForTesting);
     }
 }

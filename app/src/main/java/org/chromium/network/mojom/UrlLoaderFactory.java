@@ -18,7 +18,7 @@ public interface UrlLoaderFactory extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends UrlLoaderFactory, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends UrlLoaderFactory, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<UrlLoaderFactory, UrlLoaderFactory.Proxy> MANAGER = UrlLoaderFactory_Internal.MANAGER;

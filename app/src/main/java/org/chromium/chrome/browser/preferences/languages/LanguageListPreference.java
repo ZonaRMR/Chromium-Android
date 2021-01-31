@@ -126,7 +126,7 @@ public class LanguageListPreference extends Preference {
     private View mView;
     private TextView mAddLanguageButton;
     private RecyclerView mRecyclerView;
-    private LanguageListAdapter mAdapter;
+    private final LanguageListAdapter mAdapter;
 
     private AddLanguageFragment.Launcher mLauncher;
 
@@ -143,7 +143,7 @@ public class LanguageListPreference extends Preference {
 
         mView = super.onCreateView(parent);
 
-        mAddLanguageButton = (TextView) mView.findViewById(R.id.add_language);
+        mAddLanguageButton = mView.findViewById(R.id.add_language);
         ApiCompatibilityUtils.setCompoundDrawablesRelativeWithIntrinsicBounds(mAddLanguageButton,
                 TintedDrawable.constructTintedDrawable(
                         getContext(), R.drawable.plus, R.color.pref_accent_color),
@@ -154,7 +154,7 @@ public class LanguageListPreference extends Preference {
                     LanguagesManager.LanguageSettingsActionType.CLICK_ON_ADD_LANGUAGE);
         });
 
-        mRecyclerView = (RecyclerView) mView.findViewById(R.id.language_list);
+        mRecyclerView = mView.findViewById(R.id.language_list);
         LinearLayoutManager layoutMangager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutMangager);
         mRecyclerView.addItemDecoration(

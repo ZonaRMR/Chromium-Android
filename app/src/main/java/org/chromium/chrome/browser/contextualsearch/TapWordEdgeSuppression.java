@@ -74,8 +74,6 @@ class TapWordEdgeSuppression extends ContextualSearchHeuristic {
         boolean isInStartEdge = (double) tapOffset / wordTapped.length() < MIN_WORD_START_RATIO;
         boolean isInEndEdge = (double) (wordTapped.length() - tapOffset) / wordTapped.length()
                 < MIN_WORD_END_RATIO;
-        if (wordTapped.length() >= MIN_WORD_LENGTH && (isInStartEdge || isInEndEdge)) return true;
-
-        return false;
+        return wordTapped.length() >= MIN_WORD_LENGTH && (isInStartEdge || isInEndEdge);
     }
 }

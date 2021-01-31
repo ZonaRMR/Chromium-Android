@@ -194,7 +194,7 @@ public class DownloadController {
         }
 
         View view = activity.getLayoutInflater().inflate(R.layout.update_permissions_dialog, null);
-        TextView dialogText = (TextView) view.findViewById(R.id.text);
+        TextView dialogText = view.findViewById(R.id.text);
         dialogText.setText(R.string.missing_storage_permission_download_education_text);
 
         final AndroidPermissionDelegate permissionDelegate = delegate;

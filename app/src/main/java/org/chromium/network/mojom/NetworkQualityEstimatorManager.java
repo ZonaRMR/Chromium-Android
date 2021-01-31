@@ -18,7 +18,7 @@ public interface NetworkQualityEstimatorManager extends org.chromium.mojo.bindin
 
 
 
-    public interface Proxy extends NetworkQualityEstimatorManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends NetworkQualityEstimatorManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<NetworkQualityEstimatorManager, NetworkQualityEstimatorManager.Proxy> MANAGER = NetworkQualityEstimatorManager_Internal.MANAGER;

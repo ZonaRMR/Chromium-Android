@@ -29,8 +29,8 @@ public final class SerialPortInfo extends org.chromium.mojo.bindings.Struct {
 
     private SerialPortInfo(int version) {
         super(STRUCT_SIZE, version);
-        this.hasVendorId = (boolean) false;
-        this.hasProductId = (boolean) false;
+        this.hasVendorId = false;
+        this.hasProductId = false;
     }
 
     public SerialPortInfo() {

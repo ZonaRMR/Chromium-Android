@@ -18,7 +18,7 @@ public interface FileUtilitiesHost extends org.chromium.mojo.bindings.Interface 
 
 
 
-    public interface Proxy extends FileUtilitiesHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FileUtilitiesHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FileUtilitiesHost, FileUtilitiesHost.Proxy> MANAGER = FileUtilitiesHost_Internal.MANAGER;

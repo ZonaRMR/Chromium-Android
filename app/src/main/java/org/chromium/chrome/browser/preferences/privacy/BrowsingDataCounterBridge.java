@@ -19,11 +19,11 @@ public class BrowsingDataCounterBridge {
          * @param result A string describing how much storage space will be reclaimed by clearing
          *      this data type.
          */
-        public void onCounterFinished(String result);
+        void onCounterFinished(String result);
     }
 
     private long mNativeBrowsingDataCounterBridge;
-    private BrowsingDataCounterCallback mCallback;
+    private final BrowsingDataCounterCallback mCallback;
 
     /**
      * Initializes BrowsingDataCounterBridge.

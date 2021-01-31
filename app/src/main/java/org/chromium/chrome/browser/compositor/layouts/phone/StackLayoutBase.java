@@ -127,7 +127,7 @@ public abstract class StackLayoutBase extends Layout implements Animatable {
 
     private int mStackAnimationCount;
 
-    private float mFlingSpeed; // pixel/ms
+    private final float mFlingSpeed; // pixel/ms
 
     private boolean mClicked;
 
@@ -192,7 +192,7 @@ public abstract class StackLayoutBase extends Layout implements Animatable {
     private final GestureEventFilter mGestureEventFilter;
     private final TabListSceneLayer mSceneLayer;
 
-    private StackLayoutGestureHandler mGestureHandler;
+    private final StackLayoutGestureHandler mGestureHandler;
 
     private ChromeAnimation<Animatable> mLayoutAnimations;
 

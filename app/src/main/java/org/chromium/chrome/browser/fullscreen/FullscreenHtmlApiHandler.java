@@ -211,9 +211,7 @@ public class FullscreenHtmlApiHandler {
         if (mWebContentsInFullscreen != null && mTabInFullscreen != null) {
             exitFullscreen(mWebContentsInFullscreen, mContentViewInFullscreen, mTabInFullscreen);
         } else {
-            if (!mDelegate.cancelPendingEnterFullscreen()) {
-                assert false : "No content view previously set to fullscreen.";
-            }
+            assert mDelegate.cancelPendingEnterFullscreen() : "No content view previously set to fullscreen.";
         }
         mWebContentsInFullscreen = null;
         mContentViewInFullscreen = null;
@@ -383,7 +381,7 @@ public class FullscreenHtmlApiHandler {
      */
     private int applyEnterFullscreenUIFlags(int systemUiVisibility) {
         boolean showNavigationBar =
-                mFullscreenOptions != null ? mFullscreenOptions.showNavigationBar() : false;
+                mFullscreenOptions != null && mFullscreenOptions.showNavigationBar();
         int flags = SYSTEM_UI_FLAG_FULLSCREEN;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             flags |= View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;

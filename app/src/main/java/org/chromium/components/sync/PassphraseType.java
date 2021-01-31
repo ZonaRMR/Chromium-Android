@@ -47,7 +47,7 @@ public enum PassphraseType implements Parcelable {
 
     private final int mNativeValue;
 
-    private PassphraseType(int nativeValue) {
+    PassphraseType(int nativeValue) {
         mNativeValue = nativeValue;
     }
 

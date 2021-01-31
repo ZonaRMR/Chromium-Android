@@ -82,11 +82,11 @@ public class CardUnmaskPrompt
     private ModalDialogManager mModalDialogManager;
     private Context mContext;
 
-    private String mCvcErrorMessage;
-    private String mExpirationMonthErrorMessage;
-    private String mExpirationYearErrorMessage;
-    private String mExpirationDateErrorMessage;
-    private String mCvcAndExpirationErrorMessage;
+    private final String mCvcErrorMessage;
+    private final String mExpirationMonthErrorMessage;
+    private final String mExpirationYearErrorMessage;
+    private final String mExpirationDateErrorMessage;
+    private final String mCvcAndExpirationErrorMessage;
 
     private boolean mDidFocusOnMonth;
     private boolean mDidFocusOnYear;
@@ -171,27 +171,27 @@ public class CardUnmaskPrompt
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View v = inflater.inflate(R.layout.autofill_card_unmask_prompt, null);
-        mInstructions = (TextView) v.findViewById(R.id.instructions);
+        mInstructions = v.findViewById(R.id.instructions);
         mInstructions.setText(instructions);
 
         mMainView = v;
-        mNoRetryErrorMessage = (TextView) v.findViewById(R.id.no_retry_error_message);
-        mCardUnmaskInput = (EditText) v.findViewById(R.id.card_unmask_input);
-        mMonthInput = (EditText) v.findViewById(R.id.expiration_month);
-        mYearInput = (EditText) v.findViewById(R.id.expiration_year);
+        mNoRetryErrorMessage = v.findViewById(R.id.no_retry_error_message);
+        mCardUnmaskInput = v.findViewById(R.id.card_unmask_input);
+        mMonthInput = v.findViewById(R.id.expiration_month);
+        mYearInput = v.findViewById(R.id.expiration_year);
         mExpirationContainer = v.findViewById(R.id.expiration_container);
-        mNewCardLink = (TextView) v.findViewById(R.id.new_card_link);
+        mNewCardLink = v.findViewById(R.id.new_card_link);
         mNewCardLink.setOnClickListener(this);
-        mErrorMessage = (TextView) v.findViewById(R.id.error_message);
-        mStoreLocallyCheckbox = (CheckBox) v.findViewById(R.id.store_locally_checkbox);
+        mErrorMessage = v.findViewById(R.id.error_message);
+        mStoreLocallyCheckbox = v.findViewById(R.id.store_locally_checkbox);
         mStoreLocallyCheckbox.setChecked(canStoreLocally && defaultToStoringLocally);
-        mStoreLocallyTooltipIcon = (ImageView) v.findViewById(R.id.store_locally_tooltip_icon);
+        mStoreLocallyTooltipIcon = v.findViewById(R.id.store_locally_tooltip_icon);
         mStoreLocallyTooltipIcon.setOnClickListener(this);
         if (!canStoreLocally) v.findViewById(R.id.store_locally_container).setVisibility(View.GONE);
-        mControlsContainer = (ViewGroup) v.findViewById(R.id.controls_container);
+        mControlsContainer = v.findViewById(R.id.controls_container);
         mVerificationOverlay = v.findViewById(R.id.verification_overlay);
-        mVerificationProgressBar = (ProgressBar) v.findViewById(R.id.verification_progress_bar);
-        mVerificationView = (TextView) v.findViewById(R.id.verification_message);
+        mVerificationProgressBar = v.findViewById(R.id.verification_progress_bar);
+        mVerificationView = v.findViewById(R.id.verification_message);
         mSuccessMessageDurationMilliseconds = successMessageDurationMilliseconds;
         ((ImageView) v.findViewById(R.id.cvc_hint_image)).setImageResource(drawableId);
 

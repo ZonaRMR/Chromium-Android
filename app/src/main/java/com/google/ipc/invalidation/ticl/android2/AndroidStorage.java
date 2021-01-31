@@ -90,7 +90,7 @@ public class AndroidStorage implements Storage {
     // We only support the CLIENT_TOKEN_KEY.
     if (!key.equals(InvalidationClientCore.CLIENT_TOKEN_KEY)) {
       Status status = Status.newInstance(Status.Code.PERMANENT_FAILURE, "Key unsupported: " + key);
-      done.accept(SimplePair.of(status, (byte[]) null));
+      done.accept(SimplePair.of(status, null));
       return;
     }
     // Read and return the data.
@@ -102,7 +102,7 @@ public class AndroidStorage implements Storage {
       if (fileSizeBytes > MAX_STATE_FILE_SIZE_BYTES) {
         Status status =
             Status.newInstance(Status.Code.PERMANENT_FAILURE, "File too big: " + fileSizeBytes);
-        result = SimplePair.of(status, (byte[]) null);
+        result = SimplePair.of(status, null);
       }
       // Cast to int must be safe due to the above size check.
       DataInputStream input = new DataInputStream(instream);
@@ -112,11 +112,11 @@ public class AndroidStorage implements Storage {
     } catch (FileNotFoundException exception) {
       Status status =
           Status.newInstance(Status.Code.PERMANENT_FAILURE, "File not found: " + exception);
-      result = SimplePair.of(status, (byte[]) null);
+      result = SimplePair.of(status, null);
     } catch (IOException exception) {
       Status status =
           Status.newInstance(Status.Code.TRANSIENT_FAILURE, "IO exception: " + exception);
-      result = SimplePair.of(status, (byte[]) null);
+      result = SimplePair.of(status, null);
     } finally {
       if (instream != null) {
         try {
@@ -125,7 +125,7 @@ public class AndroidStorage implements Storage {
           Status status =
               Status.newInstance(
                   Status.Code.TRANSIENT_FAILURE, "Failed to close file: " + exception);
-          result = SimplePair.of(status, (byte[]) null);
+          result = SimplePair.of(status, null);
         }
       }
     }

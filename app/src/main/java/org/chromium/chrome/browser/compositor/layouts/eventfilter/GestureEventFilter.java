@@ -23,8 +23,8 @@ public class GestureEventFilter extends EventFilter {
     private boolean mInLongPress;
     private boolean mSeenFirstScrollEvent;
     private int mButtons;
-    private LongPressRunnable mLongPressRunnable = new LongPressRunnable();
-    private Handler mLongPressHandler = new Handler();
+    private final LongPressRunnable mLongPressRunnable = new LongPressRunnable();
+    private final Handler mLongPressHandler = new Handler();
 
     /**
      * A runnable to send a delayed long press.

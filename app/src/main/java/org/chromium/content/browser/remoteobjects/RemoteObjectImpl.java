@@ -466,7 +466,7 @@ class RemoteObjectImpl implements RemoteObject {
         } else if (parameterType == short.class) {
             return (short) 0;
         } else if (parameterType == int.class) {
-            return (int) 0;
+            return 0;
         } else if (parameterType == long.class) {
             return (long) 0;
         } else if (parameterType == float.class) {

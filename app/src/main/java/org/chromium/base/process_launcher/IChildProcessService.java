@@ -6,7 +6,7 @@ package org.chromium.base.process_launcher;
 public interface IChildProcessService extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.base.process_launcher.IChildProcessService
+abstract class Stub extends android.os.Binder implements org.chromium.base.process_launcher.IChildProcessService
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.base.process_launcher.IChildProcessService";
 /** Construct the stub at attach it to the interface. */
@@ -86,7 +86,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.base.process_launcher.IChildProcessService
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -179,14 +179,14 @@ static final int TRANSACTION_onMemoryPressure = (android.os.IBinder.FIRST_CALL_T
 // and return true. Subsequent calls will only return true if the calling PID
 // is the same as the recorded one.
 
-public boolean bindToCaller() throws android.os.RemoteException;
+boolean bindToCaller() throws android.os.RemoteException;
 // Sets up the initial IPC channel.
 
-public void setupConnection(android.os.Bundle args, org.chromium.base.process_launcher.IParentProcess parentProcess, java.util.List<android.os.IBinder> clientInterfaces) throws android.os.RemoteException;
+void setupConnection(android.os.Bundle args, org.chromium.base.process_launcher.IParentProcess parentProcess, java.util.List<android.os.IBinder> clientInterfaces) throws android.os.RemoteException;
 // Forcefully kills the child process.
 
-public void forceKill() throws android.os.RemoteException;
+void forceKill() throws android.os.RemoteException;
 // Notifies about memory pressure. The argument is MemoryPressureLevel enum.
 
-public void onMemoryPressure(int pressure) throws android.os.RemoteException;
+void onMemoryPressure(int pressure) throws android.os.RemoteException;
 }

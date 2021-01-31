@@ -18,7 +18,7 @@ public interface DevToolsAgent extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends DevToolsAgent, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends DevToolsAgent, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<DevToolsAgent, DevToolsAgent.Proxy> MANAGER = DevToolsAgent_Internal.MANAGER;

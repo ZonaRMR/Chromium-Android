@@ -109,7 +109,7 @@ public class MediaPlayerBridge {
 
     private boolean hasTrack(int trackType) {
         try {
-            TrackInfo trackInfo[] = getLocalPlayer().getTrackInfo();
+            TrackInfo[] trackInfo = getLocalPlayer().getTrackInfo();
 
             // HLS media does not have the track info, so we treat them conservatively.
             if (trackInfo.length == 0) return true;
@@ -221,7 +221,7 @@ public class MediaPlayerBridge {
         final String data = url.substring(headerStop + 1);
 
         String headerContent = header.substring(5);
-        String headerInfo[] = headerContent.split(";");
+        String[] headerInfo = headerContent.split(";");
         if (headerInfo.length != 2) return false;
         if (!"base64".equals(headerInfo[1])) return false;
 

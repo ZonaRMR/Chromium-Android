@@ -29,8 +29,8 @@ public class ContactsPickerToolbar extends SelectableListToolbar<ContactDetails>
 
         showCloseButton();
 
-        TextView up = (TextView) mNumberRollView.findViewById(R.id.up);
-        TextView down = (TextView) mNumberRollView.findViewById(R.id.down);
+        TextView up = mNumberRollView.findViewById(R.id.up);
+        TextView down = mNumberRollView.findViewById(R.id.down);
         ApiCompatibilityUtils.setTextAppearance(up, R.style.TextAppearance_BlackHeadline);
         ApiCompatibilityUtils.setTextAppearance(down, R.style.TextAppearance_BlackHeadline);
     }
@@ -56,7 +56,7 @@ public class ContactsPickerToolbar extends SelectableListToolbar<ContactDetails>
     public void onSelectionStateChange(List<ContactDetails> selectedItems) {
         super.onSelectionStateChange(selectedItems);
 
-        Button done = (Button) findViewById(R.id.done);
+        Button done = findViewById(R.id.done);
         done.setEnabled(selectedItems.size() > 0);
     }
 }

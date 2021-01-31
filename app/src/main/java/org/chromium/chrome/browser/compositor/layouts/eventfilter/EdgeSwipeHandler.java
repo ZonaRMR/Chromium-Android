@@ -14,7 +14,7 @@ public interface EdgeSwipeHandler {
      * @param x         The horizontal coordinate the swipe started at in dp.
      * @param y         The vertical coordinate the swipe started at in dp.
      */
-    public void swipeStarted(@ScrollDirection int direction, float x, float y);
+    void swipeStarted(@ScrollDirection int direction, float x, float y);
 
     /**
      * Called each time the swipe gets a new event updating the swipe position.
@@ -25,13 +25,13 @@ public interface EdgeSwipeHandler {
      * @param tx The horizontal difference between the start and the current position in dp.
      * @param ty The vertical difference between the start and the current position in dp.
      */
-    public void swipeUpdated(float x, float y, float dx, float dy, float tx, float ty);
+    void swipeUpdated(float x, float y, float dx, float dy, float tx, float ty);
 
     /**
      * Called when the swipe ends; most likely on finger up event. It gives a chance to start
      * an ending animation to exit the mode gracefully.
      */
-    public void swipeFinished();
+    void swipeFinished();
 
     /**
      * Called when a fling happens while in a swipe.
@@ -42,7 +42,7 @@ public interface EdgeSwipeHandler {
      * @param vx The horizontal velocity of the fling.
      * @param vy The vertical velocity of the fling.
      */
-    public void swipeFlingOccurred(float x, float y, float tx, float ty, float vx, float vy);
+    void swipeFlingOccurred(float x, float y, float tx, float ty, float vx, float vy);
 
     /**
      * Gives the handler a chance to determine whether or not this type of swipe is currently
@@ -50,5 +50,5 @@ public interface EdgeSwipeHandler {
      * @param direction The direction of the swipe.
      * @return Whether or not the swipe is allowed.
      */
-    public boolean isSwipeEnabled(@ScrollDirection int direction);
+    boolean isSwipeEnabled(@ScrollDirection int direction);
 }

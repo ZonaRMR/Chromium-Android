@@ -18,7 +18,7 @@ public interface AppCacheBackend extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends AppCacheBackend, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AppCacheBackend, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AppCacheBackend, AppCacheBackend.Proxy> MANAGER = AppCacheBackend_Internal.MANAGER;

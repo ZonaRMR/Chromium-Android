@@ -18,7 +18,7 @@ import org.chromium.ui.modelutil.PropertyModel;
  * This class implements a VrAlertDialog which is similar to Android AlertDialog in VR.
  */
 public class VrAlertDialog extends AlertDialog {
-    private ModalDialogManager mModalDialogManager;
+    private final ModalDialogManager mModalDialogManager;
     private PropertyModel mModalDialogModel;
     private CharSequence mMessage;
     private DialogButton mButtonPositive;
@@ -31,9 +31,9 @@ public class VrAlertDialog extends AlertDialog {
     }
 
     private class DialogButton {
-        private int mId;
-        private String mText;
-        private DialogInterface.OnClickListener mListener;
+        private final int mId;
+        private final String mText;
+        private final DialogInterface.OnClickListener mListener;
         DialogButton(int id, String text, DialogInterface.OnClickListener listener) {
             mId = id;
             mText = text;

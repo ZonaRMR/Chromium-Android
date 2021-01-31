@@ -18,7 +18,7 @@ public interface VideoDecoderClient extends org.chromium.mojo.bindings.Interface
 
 
 
-    public interface Proxy extends VideoDecoderClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends VideoDecoderClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<VideoDecoderClient, VideoDecoderClient.Proxy> MANAGER = VideoDecoderClient_Internal.MANAGER;

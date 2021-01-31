@@ -155,7 +155,7 @@ public class TranslateCompactInfoBar extends InfoBar
                     return;
             }
         }
-    };
+    }
 
     @CalledByNative
     private static InfoBar create(int initialStep, String sourceLanguageCode,
@@ -200,7 +200,7 @@ public class TranslateCompactInfoBar extends InfoBar
             }
         });
 
-        mTabLayout = (TranslateTabLayout) content.findViewById(R.id.translate_infobar_tabs);
+        mTabLayout = content.findViewById(R.id.translate_infobar_tabs);
         if (mDefaultTextColor > 0) {
             mTabLayout.setTabTextColors(
                     ContextCompat.getColor(getContext(), R.color.default_text_color),

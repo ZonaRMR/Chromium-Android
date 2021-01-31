@@ -210,7 +210,7 @@ class TiclStateManager {
     Sha1DigestFunction digester = new Sha1DigestFunction();
     digester.update(state.getState().toByteArray());
     byte[] computedDigest = digester.getDigest();
-    if (!TypedUtil.<Bytes>equals(new Bytes(computedDigest), state.getDigest())) {
+    if (!TypedUtil.equals(new Bytes(computedDigest), state.getDigest())) {
       logger.warning("Android TICL state digest mismatch; computed %s for %s",
           computedDigest, state);
       return false;

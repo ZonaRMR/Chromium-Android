@@ -28,7 +28,7 @@ import org.chromium.chrome.browser.widget.FadingShadow;
 public class NewTabPageScrollView extends ScrollView {
     private static final String TAG = "NewTabPageScrollView";
 
-    private GestureDetector mGestureDetector;
+    private final GestureDetector mGestureDetector;
     private FadingShadow mFadingShadow;
 
     /**

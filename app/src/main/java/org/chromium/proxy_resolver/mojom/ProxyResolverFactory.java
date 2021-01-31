@@ -18,7 +18,7 @@ public interface ProxyResolverFactory extends org.chromium.mojo.bindings.Interfa
 
 
 
-    public interface Proxy extends ProxyResolverFactory, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ProxyResolverFactory, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ProxyResolverFactory, ProxyResolverFactory.Proxy> MANAGER = ProxyResolverFactory_Internal.MANAGER;

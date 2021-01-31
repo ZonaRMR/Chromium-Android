@@ -25,6 +25,7 @@ import android.os.Build;
 import android.util.Base64;
 import android.util.Log;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.IllegalFormatException;
 import java.util.Locale;
@@ -778,20 +779,14 @@ public final class Logger {
   public static void debugLogRawProto(String tag, byte[] rawProto, String name) {
     // Create a string representation of the raw data.
     String request;
-    try {
       // A lot is happening in this line.  We are encoding the raw data into Base64: we
       // skip wrapping because the default wrapping is at 76 chars which leads to too many
       // calls into Log.i.  Instead, we chunk up later in logLongString(...) where we
       // break at 2000 chars.  Also, the encoded bytes are then encoded into UTF-8 by the
       // String class which maintains the encoding since the entire charset of Base64
       // encoding fits without modification in utf-8.
-      request = new String(Base64.encode(rawProto, Base64.NO_WRAP), "UTF-8");
-    } catch (UnsupportedEncodingException e) {
-      // Ceaseless wonder!  We failed to do UTF-8 encoding.  Give up with a message
-      // that is easy to trace in the source code.
-      request = "<Exception: UTF-8 encoding failed in VelvetNetworkClient>";
-    }
-    // Indicate how to view this data.
+      request = new String(Base64.encode(rawProto, Base64.NO_WRAP), StandardCharsets.UTF_8);
+      // Indicate how to view this data.
     Logger.d(tag, "Use tools/mnc_assist/parse-request-response.sh\n<%s>", name);
     // Log.d truncates long lines.  This is a workaround to print long lines by chunking
     // into 2000 chars per line.  The line limit here is arbitrary but cannot be pushed past

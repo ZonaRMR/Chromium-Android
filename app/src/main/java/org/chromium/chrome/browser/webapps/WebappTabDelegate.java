@@ -35,8 +35,9 @@ import java.util.List;
  */
 public class WebappTabDelegate extends TabDelegate {
     private static final String TAG = "WebappTabDelegate";
-    private String mApkPackageName;
-    private @LaunchSourceType int mLaunchSourceType;
+    private final String mApkPackageName;
+    private @LaunchSourceType
+    final int mLaunchSourceType;
 
     public WebappTabDelegate(boolean incognito, WebappInfo webappInfo) {
         super(incognito);

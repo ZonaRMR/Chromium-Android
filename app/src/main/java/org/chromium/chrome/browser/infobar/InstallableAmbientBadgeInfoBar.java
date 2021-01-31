@@ -23,8 +23,8 @@ import org.chromium.chrome.browser.widget.accessibility.AccessibleTextView;
  * An ambient infobar to tell the user that the current site they are visiting is a PWA.
  */
 public class InstallableAmbientBadgeInfoBar extends InfoBar implements View.OnClickListener {
-    private String mMessageText;
-    private String mUrl;
+    private final String mMessageText;
+    private final String mUrl;
     private boolean mIsHiding;
 
     @CalledByNative

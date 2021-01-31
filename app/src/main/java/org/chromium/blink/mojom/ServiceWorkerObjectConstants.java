@@ -17,7 +17,7 @@ public final class ServiceWorkerObjectConstants {
 
 
     
-    public static final long INVALID_SERVICE_WORKER_VERSION_ID = (long) -1L;
+    public static final long INVALID_SERVICE_WORKER_VERSION_ID = -1L;
 
 
 

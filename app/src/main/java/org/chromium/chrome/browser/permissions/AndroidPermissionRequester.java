@@ -150,7 +150,7 @@ public class AndroidPermissionRequester {
 
                     View view = activity.getLayoutInflater().inflate(
                             R.layout.update_permissions_dialog, null);
-                    TextView dialogText = (TextView) view.findViewById(R.id.text);
+                    TextView dialogText = view.findViewById(R.id.text);
                     dialogText.setText(deniedStringId);
 
                     AlertDialog.Builder builder =

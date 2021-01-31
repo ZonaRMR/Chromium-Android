@@ -70,7 +70,7 @@ public class Log {
             unprefixedTagStart = sDeprecatedTagPrefix.length();
         }
 
-        return sTagPrefix + tag.substring(unprefixedTagStart, tag.length());
+        return sTagPrefix + tag.substring(unprefixedTagStart);
     }
 
     /**

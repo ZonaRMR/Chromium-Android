@@ -18,7 +18,7 @@ public interface SslPrivateKey extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends SslPrivateKey, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends SslPrivateKey, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<SslPrivateKey, SslPrivateKey.Proxy> MANAGER = SslPrivateKey_Internal.MANAGER;

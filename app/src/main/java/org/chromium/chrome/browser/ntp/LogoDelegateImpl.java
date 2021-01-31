@@ -37,9 +37,9 @@ public class LogoDelegateImpl implements LogoView.Delegate {
     private static final int ANIMATED_LOGO_CLICKED = 2;
 
     private final SuggestionsNavigationDelegate mNavigationDelegate;
-    private LogoView mLogoView;
+    private final LogoView mLogoView;
 
-    private LogoBridge mLogoBridge;
+    private final LogoBridge mLogoBridge;
     private String mOnLogoClickUrl;
     private String mAnimatedLogoUrl;
 

@@ -26,7 +26,7 @@ public class DownloadLocationPreference
      * Provides data for the list of available download directories options. Uses an asynchronous
      * operation to query the directory options.
      */
-    private DownloadLocationPreferenceAdapter mAdapter;
+    private final DownloadLocationPreferenceAdapter mAdapter;
 
     /**
      * The view contains the list of download directories.
@@ -65,7 +65,7 @@ public class DownloadLocationPreference
     protected View onCreateDialogView() {
         View view = LayoutInflater.from(getContext())
                             .inflate(R.layout.download_location_preference, null);
-        mListView = (ListView) (view.findViewById(R.id.location_preference_list_view));
+        mListView = view.findViewById(R.id.location_preference_list_view);
         mListView.setAdapter(mAdapter);
         return view;
     }

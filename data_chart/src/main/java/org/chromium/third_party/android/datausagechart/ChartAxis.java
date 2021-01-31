@@ -27,25 +27,25 @@ import android.text.SpannableStringBuilder;
 public interface ChartAxis {
 
     /** Set range of raw values this axis should cover. */
-    public boolean setBounds(long min, long max);
+    boolean setBounds(long min, long max);
     /** Set range of screen points this axis should cover. */
-    public boolean setSize(float size);
+    boolean setSize(float size);
 
     /** Convert raw value into screen point. */
-    public float convertToPoint(long value);
+    float convertToPoint(long value);
     /** Convert screen point into raw value. */
-    public long convertToValue(float point);
+    long convertToValue(float point);
 
     /**
      * Build label that describes given raw value. If the label is rounded for
      * display, return the rounded value.
      */
-    public long buildLabel(Resources res, SpannableStringBuilder builder, long value);
+    long buildLabel(Resources res, SpannableStringBuilder builder, long value);
 
     /**
      * Test if given raw value should cause the axis to grow or shrink;
      * returning positive value to grow and negative to shrink.
      */
-    public int shouldAdjustAxis(long value);
+    int shouldAdjustAxis(long value);
 
 }

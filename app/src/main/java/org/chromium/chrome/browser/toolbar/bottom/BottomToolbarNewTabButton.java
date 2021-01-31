@@ -59,7 +59,7 @@ class BottomToolbarNewTabButton extends ChromeImageButton
      */
     void destroy() {
         if (mIncognitoStateProvider != null) {
-            mIncognitoStateProvider.removeObserver((IncognitoStateObserver) this);
+            mIncognitoStateProvider.removeObserver(this);
             mIncognitoStateProvider = null;
         }
         if (mThemeColorProvider != null) {

@@ -121,7 +121,7 @@ public class TouchEventFilterView
      *
      * <p>Elements of this list must be recycled. Call {@link #cleanupCurrentGestureBuffer}.
      */
-    private List<MotionEvent> mCurrentGestureBuffer = new ArrayList<>();
+    private final List<MotionEvent> mCurrentGestureBuffer = new ArrayList<>();
 
     /** Times, in millisecond, of unexpected taps detected outside of the allowed area. */
     private final List<Long> mUnexpectedTapTimes = new ArrayList<>();
@@ -464,8 +464,8 @@ public class TouchEventFilterView
             return true;
         }
         int height = yBottom - yTop;
-        return isInTouchableArea(((float) event.getX()) / getWidth(),
-                (((float) event.getY() - yTop + mBrowserScrollOffsetY + mOffsetY) / height));
+        return isInTouchableArea(event.getX() / getWidth(),
+                ((event.getY() - yTop + mBrowserScrollOffsetY + mOffsetY) / height));
     }
 
     /** Returns the origin of the visual viewport in this view. */
@@ -619,14 +619,14 @@ public class TouchEventFilterView
     /** Gets the current height of the bottom bar. */
     private int getBottomBarHeight() {
         if (mFullscreenManager == null) return 0;
-        return (int) (mFullscreenManager.getBottomControlsHeight()
-                - mFullscreenManager.getBottomControlOffset());
+        return mFullscreenManager.getBottomControlsHeight()
+                - mFullscreenManager.getBottomControlOffset();
     }
 
     /** Gets the current height of the top bar. */
     private int getTopBarHeight() {
         if (mFullscreenManager == null) return 0;
-        return (int) mFullscreenManager.getContentOffset();
+        return mFullscreenManager.getContentOffset();
     }
 
     /**

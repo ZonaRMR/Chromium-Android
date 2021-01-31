@@ -81,7 +81,7 @@ public class ListMenuButton
     }
 
     /** A delegate used to populate the menu and to be notified of menu selection events. */
-    public static interface Delegate {
+    public interface Delegate {
         /**
          * Will be called every time the menu is about to be created to determine what content
          * should live in the menu.
@@ -207,7 +207,7 @@ public class ListMenuButton
         // Create the content view and set up its ListView.
         ViewGroup contentView = (ViewGroup) LayoutInflater.from(getContext())
                                         .inflate(R.layout.app_menu_layout, null);
-        ListView list = (ListView) contentView.findViewById(R.id.app_menu_list);
+        ListView list = contentView.findViewById(R.id.app_menu_list);
         list.setAdapter(adapter);
         list.setOnItemClickListener((parent, view, position, id) -> {
             if (mDelegate != null) mDelegate.onItemSelected(items[position]);

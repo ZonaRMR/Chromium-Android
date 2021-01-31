@@ -18,7 +18,7 @@ public interface WakeLockService extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends WakeLockService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends WakeLockService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<WakeLockService, WakeLockService.Proxy> MANAGER = WakeLockService_Internal.MANAGER;

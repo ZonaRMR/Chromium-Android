@@ -18,7 +18,7 @@ public interface FingerprintObserver extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends FingerprintObserver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FingerprintObserver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FingerprintObserver, FingerprintObserver.Proxy> MANAGER = FingerprintObserver_Internal.MANAGER;

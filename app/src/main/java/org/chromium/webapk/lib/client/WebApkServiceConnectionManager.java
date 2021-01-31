@@ -37,10 +37,10 @@ public class WebApkServiceConnectionManager {
     /** Managed connection to WebAPK service. */
     private static class Connection implements ServiceConnection {
         /** The connection manager who owns this connection. */
-        private WebApkServiceConnectionManager mConnectionManager;
+        private final WebApkServiceConnectionManager mConnectionManager;
 
         /** Callbacks to call once the connection is established. */
-        private ArrayList<ConnectionCallback> mCallbacks = new ArrayList<>();
+        private final ArrayList<ConnectionCallback> mCallbacks = new ArrayList<>();
 
         /** WebAPK IBinder interface. */
         private IBinder mBinder;
@@ -77,13 +77,13 @@ public class WebApkServiceConnectionManager {
     private static final String TAG = "cr_WebApkService";
 
     /** The category of the service to connect to. */
-    private String mCategory;
+    private final String mCategory;
 
     /** The action of the service to connect to. */
-    private String mAction;
+    private final String mAction;
 
     /** Mapping of WebAPK package to WebAPK service connection. */
-    private HashMap<String, Connection> mConnections = new HashMap<>();
+    private final HashMap<String, Connection> mConnections = new HashMap<>();
 
     /** Called when a WebAPK service connection is disconnected. */
     private void onServiceDisconnected(String webApkName) {

@@ -17,7 +17,7 @@ public final class DedicatedWorkerFactoryConstants {
 
 
     
-    public static final String NAVIGATION_DEDICATED_WORKER_SPEC = (String) "navigation:dedicated_worker";
+    public static final String NAVIGATION_DEDICATED_WORKER_SPEC = "navigation:dedicated_worker";
 
 
 

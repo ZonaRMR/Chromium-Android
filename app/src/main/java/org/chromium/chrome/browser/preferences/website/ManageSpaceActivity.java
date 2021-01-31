@@ -83,13 +83,13 @@ public class ManageSpaceActivity extends AppCompatActivity implements View.OnCli
         setTitle(String.format(r.getString(R.string.storage_management_activity_label),
                 r.getString(R.string.app_name)));
 
-        mSiteDataSizeText = (TextView) findViewById(R.id.site_data_storage_size_text);
+        mSiteDataSizeText = findViewById(R.id.site_data_storage_size_text);
         mSiteDataSizeText.setText(R.string.storage_management_computing_size);
         mUnimportantSiteDataSizeText =
-                (TextView) findViewById(R.id.unimportant_site_data_storage_size_text);
+                findViewById(R.id.unimportant_site_data_storage_size_text);
         mUnimportantSiteDataSizeText.setText(R.string.storage_management_computing_size);
-        mManageSiteDataButton = (Button) findViewById(R.id.manage_site_data_storage);
-        mClearUnimportantButton = (Button) findViewById(R.id.clear_unimportant_site_data_storage);
+        mManageSiteDataButton = findViewById(R.id.manage_site_data_storage);
+        mClearUnimportantButton = findViewById(R.id.clear_unimportant_site_data_storage);
 
         // We initially disable all of our buttons except for the 'Clear All Data' button, and wait
         // until the browser is finished initializing to enable them. We want to make sure the
@@ -102,7 +102,7 @@ public class ManageSpaceActivity extends AppCompatActivity implements View.OnCli
 
         // We should only be using this activity if we're >= KitKat.
         assert android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT;
-        mClearAllDataButton = (Button) findViewById(R.id.clear_all_data);
+        mClearAllDataButton = findViewById(R.id.clear_all_data);
         mClearAllDataButton.setOnClickListener(this);
         super.onCreate(savedInstanceState);
 

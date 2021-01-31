@@ -265,7 +265,7 @@ public class PaymentRequestImpl
     private int mShippingType;
     private SectionInformation mShippingAddressesSection;
     private ContactDetailsSection mContactSection;
-    private List<PaymentApp> mApps;
+    private final List<PaymentApp> mApps;
     private List<PaymentApp> mPendingApps;
     private List<PaymentInstrument> mPendingInstruments;
     private int mPaymentMethodsSectionAdditionalTextResourceId;
@@ -278,7 +278,7 @@ public class PaymentRequestImpl
     private boolean mHideServerAutofillInstruments;
     private ContactEditor mContactEditor;
     private boolean mHasRecordedAbortReason;
-    private Map<String, CurrencyFormatter> mCurrencyFormatterMap;
+    private final Map<String, CurrencyFormatter> mCurrencyFormatterMap;
     private TabModelSelector mObservedTabModelSelector;
     private TabModel mObservedTabModel;
 

@@ -18,7 +18,7 @@ public interface Geolocation extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends Geolocation, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends Geolocation, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<Geolocation, Geolocation.Proxy> MANAGER = Geolocation_Internal.MANAGER;

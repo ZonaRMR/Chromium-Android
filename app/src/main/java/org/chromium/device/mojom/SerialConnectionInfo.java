@@ -28,9 +28,9 @@ public final class SerialConnectionInfo extends org.chromium.mojo.bindings.Struc
     private SerialConnectionInfo(int version) {
         super(STRUCT_SIZE, version);
         this.bitrate = (int) 0L;
-        this.dataBits = (int) SerialDataBits.NONE;
-        this.parityBit = (int) SerialParityBit.NONE;
-        this.stopBits = (int) SerialStopBits.NONE;
+        this.dataBits = SerialDataBits.NONE;
+        this.parityBit = SerialParityBit.NONE;
+        this.stopBits = SerialStopBits.NONE;
     }
 
     public SerialConnectionInfo() {

@@ -65,7 +65,7 @@ public class FeedNewTabPage extends NewTabPage {
 
     private UiConfig mUiConfig;
     private HistoryNavigationLayout mRootView;
-    private ContextMenuManager mContextMenuManager;
+    private final ContextMenuManager mContextMenuManager;
 
     // Used when Feed is enabled.
     private @Nullable Stream mStream;

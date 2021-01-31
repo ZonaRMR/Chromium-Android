@@ -32,10 +32,10 @@ public final class ConnectionType {
 
     public static final int CONNECTION_BLUETOOTH = (int) (7L);
 
-    public static final int CONNECTION_LAST = (int) (ConnectionType.CONNECTION_BLUETOOTH);
+    public static final int CONNECTION_LAST = ConnectionType.CONNECTION_BLUETOOTH;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (7);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 7;
 
     private static final boolean IS_EXTENSIBLE = false;
 

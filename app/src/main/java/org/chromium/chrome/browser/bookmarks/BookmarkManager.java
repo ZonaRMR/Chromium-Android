@@ -52,23 +52,23 @@ public class BookmarkManager implements BookmarkDelegate, SearchDelegate,
 
     private static boolean sPreventLoadingForTesting;
 
-    private Activity mActivity;
-    private ViewGroup mMainView;
+    private final Activity mActivity;
+    private final ViewGroup mMainView;
     private BookmarkModel mBookmarkModel;
     private BookmarkUndoController mUndoController;
     private final ObserverList<BookmarkUIObserver> mUIObservers = new ObserverList<>();
     private BasicNativePage mNativePage;
-    private SelectableListLayout<BookmarkId> mSelectableListLayout;
-    private RecyclerView mRecyclerView;
-    private TextView mEmptyView;
-    private BookmarkItemsAdapter mAdapter;
-    private BookmarkActionBar mToolbar;
-    private SelectionDelegate<BookmarkId> mSelectionDelegate;
+    private final SelectableListLayout<BookmarkId> mSelectableListLayout;
+    private final RecyclerView mRecyclerView;
+    private final TextView mEmptyView;
+    private final BookmarkItemsAdapter mAdapter;
+    private final BookmarkActionBar mToolbar;
+    private final SelectionDelegate<BookmarkId> mSelectionDelegate;
     private final Stack<BookmarkUIState> mStateStack = new Stack<>();
     private LargeIconBridge mLargeIconBridge;
     private boolean mFaviconsNeedRefresh;
     private String mInitialUrl;
-    private boolean mIsDialogUi;
+    private final boolean mIsDialogUi;
     private boolean mIsDestroyed;
 
     private final BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {

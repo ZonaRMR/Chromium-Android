@@ -37,10 +37,10 @@ class FileEnumWorkerTask extends AsyncTask<List<PickerBitmap>> {
     private final WindowAndroid mWindowAndroid;
 
     // The callback to use to communicate the results.
-    private FilesEnumeratedCallback mCallback;
+    private final FilesEnumeratedCallback mCallback;
 
     // The filter to apply to the list.
-    private MimeTypeFilter mFilter;
+    private final MimeTypeFilter mFilter;
 
     // The camera directory undir DCIM.
     private static final String SAMPLE_DCIM_SOURCE_SUB_DIRECTORY = "Camera";

@@ -690,12 +690,9 @@ public class ShortcutHelper {
         int maxX = icon.getWidth() - 1;
         int maxY = icon.getHeight() - 1;
 
-        if ((Color.alpha(icon.getPixel(0, 0)) != 0) && (Color.alpha(icon.getPixel(maxX, maxY)) != 0)
+        return (Color.alpha(icon.getPixel(0, 0)) != 0) && (Color.alpha(icon.getPixel(maxX, maxY)) != 0)
                 && (Color.alpha(icon.getPixel(0, maxY)) != 0)
-                && (Color.alpha(icon.getPixel(maxX, 0)) != 0)) {
-            return true;
-        }
-        return false;
+                && (Color.alpha(icon.getPixel(maxX, 0)) != 0);
     }
 
     private static boolean shouldShowToastWhenAddingShortcut() {

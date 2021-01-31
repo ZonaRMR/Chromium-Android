@@ -352,7 +352,7 @@ public class CrashFileManager {
     public File getMinidumpSansLogcatForPid(int pid) {
         importCrashpadMinidumps();
         File[] foundFiles = listCrashFiles(
-            Pattern.compile("\\.dmp" + Integer.toString(pid) + "\\z"));
+            Pattern.compile("\\.dmp" + pid + "\\z"));
         return foundFiles.length > 0 ? foundFiles[0] : null;
     }
 

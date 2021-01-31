@@ -18,7 +18,7 @@ public interface CodeCacheHost extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends CodeCacheHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CodeCacheHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CodeCacheHost, CodeCacheHost.Proxy> MANAGER = CodeCacheHost_Internal.MANAGER;

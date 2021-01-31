@@ -31,8 +31,8 @@ public final class FileChooserParams extends org.chromium.mojo.bindings.Struct {
 
         public static final int SAVE = UPLOAD_FOLDER + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (3);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 3;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -68,9 +68,9 @@ public final class FileChooserParams extends org.chromium.mojo.bindings.Struct {
 
     private FileChooserParams(int version) {
         super(STRUCT_SIZE, version);
-        this.mode = (int) FileChooserParams.Mode.OPEN;
-        this.needLocalPath = (boolean) true;
-        this.useMediaCapture = (boolean) false;
+        this.mode = Mode.OPEN;
+        this.needLocalPath = true;
+        this.useMediaCapture = false;
     }
 
     public FileChooserParams() {

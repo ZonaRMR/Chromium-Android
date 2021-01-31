@@ -144,7 +144,7 @@ public abstract class DateDividedAdapter extends Adapter<RecyclerView.ViewHolder
 
     /** An item representing a date header. */
     class DateHeaderTimedItem extends TimedItem {
-        private long mTimestamp;
+        private final long mTimestamp;
 
         public DateHeaderTimedItem(long timestamp) {
             mTimestamp = DownloadUtils.getDateAtMidnight(timestamp).getTime();
@@ -187,7 +187,7 @@ public abstract class DateDividedAdapter extends Adapter<RecyclerView.ViewHolder
     }
 
     protected static class SubsectionHeaderViewHolder extends RecyclerView.ViewHolder {
-        private View mView;
+        private final View mView;
 
         public SubsectionHeaderViewHolder(View itemView) {
             super(itemView);
@@ -410,7 +410,7 @@ public abstract class DateDividedAdapter extends Adapter<RecyclerView.ViewHolder
 
     private int mSize;
 
-    private SortedSet<ItemGroup> mGroups = new TreeSet<>(new Comparator<ItemGroup>() {
+    private final SortedSet<ItemGroup> mGroups = new TreeSet<>(new Comparator<ItemGroup>() {
         @Override
         public int compare(ItemGroup lhs, ItemGroup rhs) {
             if (lhs == rhs) return 0;

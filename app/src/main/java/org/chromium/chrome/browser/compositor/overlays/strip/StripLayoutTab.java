@@ -149,7 +149,7 @@ public class StripLayoutTab implements VirtualView {
     // Preallocated
     private final RectF mClosePlacement = new RectF();
 
-    private ObserverList<Observer> mObservers = new ObserverList<>();
+    private final ObserverList<Observer> mObservers = new ObserverList<>();
 
     /**
      * Create a {@link StripLayoutTab} that represents the {@link Tab} with an id of
@@ -489,7 +489,7 @@ public class StripLayoutTab implements VirtualView {
      *         if the button can be clicked.
      */
     public boolean checkCloseHitTest(float x, float y) {
-        return mShowingCloseButton ? mCloseButton.checkClicked(x, y) : false;
+        return mShowingCloseButton && mCloseButton.checkClicked(x, y);
     }
 
     /**

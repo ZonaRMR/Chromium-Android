@@ -54,6 +54,7 @@ import android.widget.TextView;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Utility class to use new APIs that were added after ICS (API level 14).
@@ -107,11 +108,7 @@ public class ApiCompatibilityUtils {
      * UnsupportedEncodingException.
      */
     public static byte[] getBytesUtf8(String str) {
-        try {
-            return str.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            throw new IllegalStateException("UTF-8 encoding not available.", e);
-        }
+        return str.getBytes(StandardCharsets.UTF_8);
     }
 
     /**

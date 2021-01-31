@@ -159,7 +159,7 @@ public class DownloadDirectoryProvider {
     private AllDirectoriesTask mAllDirectoriesTask;
     private ArrayList<DirectoryOption> mDirectoryOptions;
     private String mExternalStorageDirectory;
-    private ArrayList < Callback < ArrayList<DirectoryOption>>> mCallbacks = new ArrayList<>();
+    private final ArrayList < Callback < ArrayList<DirectoryOption>>> mCallbacks = new ArrayList<>();
 
     // Should be bounded to UI thread.
     protected final Handler mHandler = new Handler(ThreadUtils.getUiThreadLooper());

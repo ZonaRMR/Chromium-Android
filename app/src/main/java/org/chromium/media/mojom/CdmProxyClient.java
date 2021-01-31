@@ -18,7 +18,7 @@ public interface CdmProxyClient extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends CdmProxyClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CdmProxyClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CdmProxyClient, CdmProxyClient.Proxy> MANAGER = CdmProxyClient_Internal.MANAGER;

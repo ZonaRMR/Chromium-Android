@@ -360,12 +360,9 @@ public class MediaCaptureNotificationService extends Service {
                 ContextUtils.getAppSharedPreferences();
         Set<String> notificationIds =
                 sharedPreferences.getStringSet(WEBRTC_NOTIFICATION_IDS, null);
-        if (notificationIds != null
+        return notificationIds != null
                 && !notificationIds.isEmpty()
-                && notificationIds.contains(String.valueOf(tabId))) {
-            return true;
-        }
-        return false;
+                && notificationIds.contains(String.valueOf(tabId));
     }
 
     /**

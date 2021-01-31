@@ -154,7 +154,7 @@ public class DocumentModeAssassin {
     private int mStage = STAGE_UNINITIALIZED;
 
     /** Whether or not startStage is allowed to progress along the migration pipeline. */
-    private boolean mIsPipelineActive;
+    private final boolean mIsPipelineActive;
 
     /** Migrates the user from document mode to tabbed mode if necessary. */
     @VisibleForTesting

@@ -39,7 +39,7 @@ public class VrCompositorSurfaceManager implements CompositorSurfaceManager {
     private int mHeight;
 
     // Client that we notify about surface change events.
-    private SurfaceManagerCallbackTarget mClient;
+    private final SurfaceManagerCallbackTarget mClient;
 
     public VrCompositorSurfaceManager(SurfaceManagerCallbackTarget client) {
         mClient = client;

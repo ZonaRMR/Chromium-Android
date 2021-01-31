@@ -260,7 +260,7 @@ class RegistrationManager extends InternalBase implements Marshallable<Registrat
    * received server summary (from {@link #informServerRegistrationSummary}).
    */
   boolean isStateInSyncWithServer() {
-    return TypedUtil.<RegistrationSummary>equals(lastKnownServerSummary, getRegistrationSummary());
+    return TypedUtil.equals(lastKnownServerSummary, getRegistrationSummary());
   }
 
   @Override

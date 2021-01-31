@@ -23,7 +23,7 @@ import org.chromium.components.bookmarks.BookmarkId;
 public class BookmarkItemRow extends BookmarkRow implements LargeIconCallback {
 
     private String mUrl;
-    private RoundedIconGenerator mIconGenerator;
+    private final RoundedIconGenerator mIconGenerator;
     private final int mMinIconSize;
     private final int mDisplayedIconSize;
 

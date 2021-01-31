@@ -112,7 +112,7 @@ public class WebappDataStorage {
      * @param <T> The type of the data being retrieved.
      */
     public interface FetchCallback<T> {
-        public void onDataRetrieved(T readObject);
+        void onDataRetrieved(T readObject);
     }
 
     /**

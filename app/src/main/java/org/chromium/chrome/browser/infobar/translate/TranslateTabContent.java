@@ -31,8 +31,8 @@ public class TranslateTabContent extends FrameLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mTextView = (TextView) findViewById(R.id.translate_infobar_tab_text);
-        mProgressBar = (ProgressBar) findViewById(R.id.translate_infobar_tab_progressbar);
+        mTextView = findViewById(R.id.translate_infobar_tab_text);
+        mProgressBar = findViewById(R.id.translate_infobar_tab_progressbar);
     }
 
     /**

@@ -31,7 +31,7 @@ class AnimatedProgressBar {
 
     private boolean mIsRunningProgressAnimation;
     private int mLastProgress;
-    private Queue<ValueAnimator> mPendingIncreaseAnimations = new ArrayDeque<>();
+    private final Queue<ValueAnimator> mPendingIncreaseAnimations = new ArrayDeque<>();
     private ValueAnimator mPulseAnimation;
 
     AnimatedProgressBar(MaterialProgressBar progressBar, int normalColor, int pulsedColor) {

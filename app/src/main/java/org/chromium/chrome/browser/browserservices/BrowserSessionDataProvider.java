@@ -38,13 +38,13 @@ public class BrowserSessionDataProvider {
     private final CustomTabsSessionToken mSession;
     private final boolean mIsTrustedIntent;
     private final Intent mKeepAliveServiceIntent;
-    private Bundle mAnimationBundle;
+    private final Bundle mAnimationBundle;
 
     /**
      * Constructs a {@link BrowserSessionDataProvider}.
      */
     public BrowserSessionDataProvider(Intent intent) {
-        if (intent == null) assert false;
+        assert intent != null;
         mSession = CustomTabsSessionToken.getSessionTokenFromIntent(intent);
         mIsTrustedIntent = IntentHandler.notSecureIsIntentChromeOrFirstParty(intent);
 

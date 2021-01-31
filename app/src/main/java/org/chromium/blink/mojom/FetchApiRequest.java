@@ -41,17 +41,17 @@ public final class FetchApiRequest extends org.chromium.mojo.bindings.Struct {
 
     private FetchApiRequest(int version) {
         super(STRUCT_SIZE, version);
-        this.mode = (int) org.chromium.network.mojom.FetchRequestMode.NO_CORS;
-        this.isMainResourceLoad = (boolean) false;
-        this.requestContextType = (int) RequestContextType.UNSPECIFIED;
-        this.frameType = (int) org.chromium.network.mojom.RequestContextFrameType.NONE;
-        this.credentialsMode = (int) org.chromium.network.mojom.FetchCredentialsMode.OMIT;
-        this.cacheMode = (int) FetchCacheMode.DEFAULT;
-        this.redirectMode = (int) org.chromium.network.mojom.FetchRedirectMode.FOLLOW;
-        this.priority = (int) org.chromium.network.mojom.RequestPriority.IDLE;
-        this.keepalive = (boolean) false;
-        this.isReload = (boolean) false;
-        this.isHistoryNavigation = (boolean) false;
+        this.mode = org.chromium.network.mojom.FetchRequestMode.NO_CORS;
+        this.isMainResourceLoad = false;
+        this.requestContextType = RequestContextType.UNSPECIFIED;
+        this.frameType = org.chromium.network.mojom.RequestContextFrameType.NONE;
+        this.credentialsMode = org.chromium.network.mojom.FetchCredentialsMode.OMIT;
+        this.cacheMode = FetchCacheMode.DEFAULT;
+        this.redirectMode = org.chromium.network.mojom.FetchRedirectMode.FOLLOW;
+        this.priority = org.chromium.network.mojom.RequestPriority.IDLE;
+        this.keepalive = false;
+        this.isReload = false;
+        this.isHistoryNavigation = false;
     }
 
     public FetchApiRequest() {

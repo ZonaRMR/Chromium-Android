@@ -18,7 +18,7 @@ public interface SocketObserver extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends SocketObserver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends SocketObserver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<SocketObserver, SocketObserver.Proxy> MANAGER = SocketObserver_Internal.MANAGER;

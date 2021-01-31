@@ -86,7 +86,7 @@ public class AutofillDropdownAdapter extends ArrayAdapter<DropdownItem> {
             TextView labelView = populateLabelView(item, layout);
             populateSublabelView(item, layout);
             ImageView iconView =
-                    populateIconView((ImageView) layout.findViewById(R.id.end_dropdown_icon), item);
+                    populateIconView(layout.findViewById(R.id.end_dropdown_icon), item);
             if (iconView != null) {
                 iconView.setLayoutParams(getSizeParamsForIconView(iconView, item));
             }
@@ -95,7 +95,7 @@ public class AutofillDropdownAdapter extends ArrayAdapter<DropdownItem> {
                 labelView.setSingleLine(false);
 
                 LinearLayout wrapper =
-                        (LinearLayout) layout.findViewById(R.id.dropdown_label_wrapper);
+                        layout.findViewById(R.id.dropdown_label_wrapper);
 
                 int paddingHeight = mContext.getResources().getDimensionPixelSize(
                         R.dimen.autofill_dropdown_refresh_vertical_padding);
@@ -136,7 +136,7 @@ public class AutofillDropdownAdapter extends ArrayAdapter<DropdownItem> {
         // so we have to adjust the height of this LinearLayout that wraps the TextViews
         // instead. If you need to modify this layout, don't forget to test it with TalkBack and
         // make sure it doesn't regress. http://crbug.com/429364
-        LinearLayout wrapper = (LinearLayout) layout.findViewById(R.id.dropdown_label_wrapper);
+        LinearLayout wrapper = layout.findViewById(R.id.dropdown_label_wrapper);
         if (item.isMultilineLabel()) height = LayoutParams.WRAP_CONTENT;
         wrapper.setOrientation(LinearLayout.VERTICAL);
         wrapper.setLayoutParams(new LinearLayout.LayoutParams(0, height, 1));
@@ -172,8 +172,8 @@ public class AutofillDropdownAdapter extends ArrayAdapter<DropdownItem> {
                     mContext.getResources().getDimension(item.getSublabelFontSizeResId()));
         }
 
-        ImageView iconViewStart = (ImageView) layout.findViewById(R.id.start_dropdown_icon);
-        ImageView iconViewEnd = (ImageView) layout.findViewById(R.id.end_dropdown_icon);
+        ImageView iconViewStart = layout.findViewById(R.id.start_dropdown_icon);
+        ImageView iconViewEnd = layout.findViewById(R.id.end_dropdown_icon);
         if (item.isIconAtStart()) {
             iconViewEnd.setVisibility(View.GONE);
         } else {
@@ -208,7 +208,7 @@ public class AutofillDropdownAdapter extends ArrayAdapter<DropdownItem> {
      * @return the View.
      */
     private TextView populateLabelView(DropdownItem item, View layout) {
-        TextView labelView = (TextView) layout.findViewById(R.id.dropdown_label);
+        TextView labelView = layout.findViewById(R.id.dropdown_label);
         labelView.setEnabled(item.isEnabled());
         labelView.setText(item.getLabel());
         return labelView;
@@ -222,7 +222,7 @@ public class AutofillDropdownAdapter extends ArrayAdapter<DropdownItem> {
      * @return the View if it has been set to be visible; null otherwise.
      */
     private TextView populateSublabelView(DropdownItem item, View layout) {
-        TextView sublabelView = (TextView) layout.findViewById(R.id.dropdown_sublabel);
+        TextView sublabelView = layout.findViewById(R.id.dropdown_sublabel);
         CharSequence sublabel = item.getSublabel();
         if (TextUtils.isEmpty(sublabel)) {
             sublabelView.setVisibility(View.GONE);

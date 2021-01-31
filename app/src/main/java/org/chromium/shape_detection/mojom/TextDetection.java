@@ -18,7 +18,7 @@ public interface TextDetection extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends TextDetection, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends TextDetection, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<TextDetection, TextDetection.Proxy> MANAGER = TextDetection_Internal.MANAGER;

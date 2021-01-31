@@ -24,7 +24,7 @@ public interface AndroidClock {
   /**
    * Implementation of {@code AndroidClock} that uses {@link System#currentTimeMillis()}.
    */
-  static class SystemClock implements AndroidClock {
+  class SystemClock implements AndroidClock {
     @Override
     public long nowMs() {
       return System.currentTimeMillis();

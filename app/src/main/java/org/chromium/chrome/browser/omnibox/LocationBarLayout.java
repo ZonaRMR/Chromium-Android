@@ -83,7 +83,7 @@ public class LocationBarLayout extends FrameLayout
     protected AutocompleteCoordinator mAutocompleteCoordinator;
 
     protected ToolbarDataProvider mToolbarDataProvider;
-    private ObserverList<UrlFocusChangeListener> mUrlFocusChangeListeners = new ObserverList<>();
+    private final ObserverList<UrlFocusChangeListener> mUrlFocusChangeListeners = new ObserverList<>();
 
     protected boolean mNativeInitialized;
 
@@ -190,7 +190,7 @@ public class LocationBarLayout extends FrameLayout
 
         mMicButton = findViewById(R.id.mic_button);
 
-        mUrlActionContainer = (LinearLayout) findViewById(R.id.url_action_container);
+        mUrlActionContainer = findViewById(R.id.url_action_container);
 
         mVoiceRecognitionHandler = new LocationBarVoiceRecognitionHandler(this);
     }

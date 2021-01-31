@@ -19,7 +19,7 @@ public interface SafeBrowsingApiHandler {
     /**
      * Observer to be notified when the SafeBrowsingApiHandler determines the verdict for a url.
      */
-    public interface Observer {
+    interface Observer {
         // Note: |checkDelta| is the time the remote call took in microseconds.
         void onUrlCheckDone(long callbackId, @SafeBrowsingResult int resultStatus, String metadata,
                 long checkDelta);
@@ -29,9 +29,9 @@ public interface SafeBrowsingApiHandler {
     @Retention(RetentionPolicy.SOURCE)
     @IntDef({STATUS_INTERNAL_ERROR, STATUS_SUCCESS, STATUS_TIMEOUT})
     @interface SafeBrowsingResult {}
-    static final int STATUS_INTERNAL_ERROR = -1;
-    static final int STATUS_SUCCESS = 0;
-    static final int STATUS_TIMEOUT = 1;
+    int STATUS_INTERNAL_ERROR = -1;
+    int STATUS_SUCCESS = 0;
+    int STATUS_TIMEOUT = 1;
 
     /**
      * Verifies that SafeBrowsingApiHandler can operate and initializes if feasible.
@@ -42,7 +42,7 @@ public interface SafeBrowsingApiHandler {
      *
      * @return whether Safe Browsing is supported for this installation.
      */
-    public boolean init(Observer result);
+    boolean init(Observer result);
 
     /**
      * Verifies that SafeBrowsingApiHandler can operate and initializes if feasible.
@@ -54,7 +54,7 @@ public interface SafeBrowsingApiHandler {
      *
      * @return whether Safe Browsing is supported for this installation.
      */
-    public boolean init(Observer result, boolean enableLocalBlacklists);
+    boolean init(Observer result, boolean enableLocalBlacklists);
 
     /**
      * Returns the Safety Net ID of the device. Checks to make sure that the feature to report
@@ -62,11 +62,11 @@ public interface SafeBrowsingApiHandler {
      *
      * @return the Safety Net ID of the device.
      */
-    public String getSafetyNetId();
+    String getSafetyNetId();
 
     /**
      * Start a URI-lookup to determine if it matches one of the specified threats.
      * This is called on every URL resource Chrome loads, on the same sequence as |init|.
      */
-    public void startUriLookup(long callbackId, String uri, int[] threatsOfInterest);
+    void startUriLookup(long callbackId, String uri, int[] threatsOfInterest);
 }

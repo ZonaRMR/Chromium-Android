@@ -130,8 +130,8 @@ public class DataReductionStatsPreference extends Preference {
      * Updates the preference screen to convey current statistics on data reduction.
      */
     public void updateReductionStatistics(long currentTimeMillis) {
-        long original[] = DataReductionProxySettings.getInstance().getOriginalNetworkStatsHistory();
-        long received[] = DataReductionProxySettings.getInstance().getReceivedNetworkStatsHistory();
+        long[] original = DataReductionProxySettings.getInstance().getOriginalNetworkStatsHistory();
+        long[] received = DataReductionProxySettings.getInstance().getReceivedNetworkStatsHistory();
 
         long dataSaverEnabledDayMillis =
                 (DataReductionProxySettings.getInstance().getDataReductionProxyFirstEnabledTime()
@@ -298,20 +298,20 @@ public class DataReductionStatsPreference extends Preference {
 
         initializeViewBounds(view);
 
-        mInitialDataSavingsTextView = (TextView) view.findViewById(R.id.initial_data_savings);
+        mInitialDataSavingsTextView = view.findViewById(R.id.initial_data_savings);
         mInitialDataSavingsTextView.setCompoundDrawablesWithIntrinsicBounds(null,
                 VectorDrawableCompat.create(getContext().getResources(),
                         R.drawable.data_reduction_big, getContext().getTheme()),
                 null, null);
 
         mDataReductionStatsContainer =
-                (LinearLayout) view.findViewById(R.id.data_reduction_stats_container);
-        mDataUsageTextView = (TextView) view.findViewById(R.id.data_reduction_usage);
-        mDataSavingsTextView = (TextView) view.findViewById(R.id.data_reduction_savings);
-        mStartDateTextView = (TextView) view.findViewById(R.id.data_reduction_start_date);
-        mEndDateTextView = (TextView) view.findViewById(R.id.data_reduction_end_date);
+                view.findViewById(R.id.data_reduction_stats_container);
+        mDataUsageTextView = view.findViewById(R.id.data_reduction_usage);
+        mDataSavingsTextView = view.findViewById(R.id.data_reduction_savings);
+        mStartDateTextView = view.findViewById(R.id.data_reduction_start_date);
+        mEndDateTextView = view.findViewById(R.id.data_reduction_end_date);
         mDataReductionBreakdownView =
-                (DataReductionSiteBreakdownView) view.findViewById(R.id.breakdown);
+                view.findViewById(R.id.breakdown);
         forceLayoutGravityOfGraphLabels();
         if (mOriginalNetworkStatsHistory == null) {
             // This will query data usage. Only set mSiteBreakdownItems if the statistics are not
@@ -321,7 +321,7 @@ public class DataReductionStatsPreference extends Preference {
             mDataReductionBreakdownView.setAndDisplayDataUseItems(mSiteBreakdownItems);
         }
 
-        mChartDataUsageView = (ChartDataUsageView) view.findViewById(R.id.chart);
+        mChartDataUsageView = view.findViewById(R.id.chart);
         mChartDataUsageView.bindNetworkStats(
                 mOriginalNetworkStatsHistory, mReceivedNetworkStatsHistory);
         mChartDataUsageView.setVisibleRange(mVisibleStartTimeMillis, mVisibleEndTimeMillis);
@@ -331,7 +331,7 @@ public class DataReductionStatsPreference extends Preference {
             Log.w(TAG, "Data Saver proxy unreachable when user viewed Data Saver stats");
         }
 
-        mResetStatisticsButton = (Button) view.findViewById(R.id.data_reduction_reset_statistics);
+        mResetStatisticsButton = view.findViewById(R.id.data_reduction_reset_statistics);
         if (mResetStatisticsButton != null) {
             setUpResetStatisticsButton();
         }
@@ -448,6 +448,6 @@ public class DataReductionStatsPreference extends Preference {
 
     private static String formatDate(Context context, long millisSinceEpoch) {
         final int flags = FORMAT_SHOW_DATE | FORMAT_ABBREV_MONTH | FORMAT_NO_YEAR;
-        return DateUtils.formatDateTime(context, millisSinceEpoch, flags).toString();
+        return DateUtils.formatDateTime(context, millisSinceEpoch, flags);
     }
 }

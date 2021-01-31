@@ -32,13 +32,13 @@ import com.google.ipc.invalidation.util.BaseLogger;
 public interface SystemResources {
 
   /** Interface specifying the logging functionality provided by {@link SystemResources}. */
-  public interface Logger extends BaseLogger, ResourceComponent {}
+  interface Logger extends BaseLogger, ResourceComponent {}
 
   /** Interface specifying the scheduling functionality provided by {@link SystemResources}. */
-  public interface Scheduler extends ResourceComponent {
+  interface Scheduler extends ResourceComponent {
 
     /** Symbolic constant representing no scheduling delay, for readability. */
-    static final int NO_DELAY = 0;
+    int NO_DELAY = 0;
 
     /**
      * Schedules {@code runnable} to be run on scheduler's thread after at least {@code delayMs}
@@ -57,9 +57,9 @@ public interface SystemResources {
   }
 
   /** Interface specifying the network functionality provided by {@link SystemResources}. */
-  public interface NetworkChannel extends ResourceComponent {
+  interface NetworkChannel extends ResourceComponent {
     /** Interface implemented by listeners for network events. */
-    public interface NetworkListener {
+    interface NetworkListener {
       /** Upcall made when a network message has been received from the data center. */
       // Implementation note: this is currently a serialized ServerToClientMessage protocol buffer.
       // Implementors MAY NOT rely on this fact.
@@ -104,7 +104,7 @@ public interface SystemResources {
    * Interface specifying the storage functionality provided by {@link SystemResources}. Basically,
    * the required functionality is a small subset of the method of a regular hash map.
    */
-  public interface Storage extends ResourceComponent {
+  interface Storage extends ResourceComponent {
 
     /**
      * Attempts to persist {@code value} for the given {@code key}. Invokes {@code done} when
@@ -159,7 +159,7 @@ public interface SystemResources {
    * Note: for the obvious reasons of infinite recursion, implementations should not attempt to
    * access themselves through the provided {@link SystemResources}.
    */
-  public interface ResourceComponent {
+  interface ResourceComponent {
 
     /** Supplies a {@link SystemResources} instance to the component. */
     void setSystemResources(SystemResources resources);

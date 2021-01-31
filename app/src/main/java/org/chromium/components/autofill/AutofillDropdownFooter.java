@@ -35,8 +35,8 @@ public class AutofillDropdownFooter extends LinearLayout {
      * View representing a single row in the footer.
      */
     private class FooterRow extends FrameLayout implements OnClickListener {
-        private DropdownItem mItem;
-        private Observer mObserver;
+        private final DropdownItem mItem;
+        private final Observer mObserver;
 
         /**
          * @param context Application context.
@@ -67,7 +67,7 @@ public class AutofillDropdownFooter extends LinearLayout {
         }
     }
 
-    private Context mContext;
+    private final Context mContext;
 
     /**
      * @param context Application context.

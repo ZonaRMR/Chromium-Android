@@ -102,7 +102,7 @@ public final class RequestProto {
 
       private final int value;
 
-      private RequestVersion(int value) {
+      RequestVersion(int value) {
         this.value = value;
       }
 

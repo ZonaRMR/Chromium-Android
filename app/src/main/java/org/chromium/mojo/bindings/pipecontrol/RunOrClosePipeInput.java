@@ -18,7 +18,8 @@ public final class RunOrClosePipeInput extends org.chromium.mojo.bindings.Union 
 
     public static final class Tag {
         public static final int PeerAssociatedEndpointClosedEvent = 0;
-    };
+    }
+
     private PeerAssociatedEndpointClosedEvent mPeerAssociatedEndpointClosedEvent;
 
     public void setPeerAssociatedEndpointClosedEvent(PeerAssociatedEndpointClosedEvent peerAssociatedEndpointClosedEvent) {

@@ -94,18 +94,10 @@ public class AsyncTabCreationParams implements AsyncTabParams {
         assert loadUrlParams != null;
 
         // These parameters are set in very, very specific and exclusive circumstances.
-        if (originalIntent != null) {
-            assert webContents == null && requestId == null && componentName == null;
-        }
-        if (webContents != null) {
-            assert originalIntent == null && requestId == null && componentName == null;
-        }
-        if (requestId != null) {
-            assert originalIntent == null && webContents == null && componentName == null;
-        }
-        if (componentName != null) {
-            assert originalIntent == null && webContents == null && requestId == null;
-        }
+        assert originalIntent == null || webContents == null && requestId == null && componentName == null;
+        assert webContents == null || originalIntent == null && requestId == null && componentName == null;
+        assert requestId == null || originalIntent == null && webContents == null && componentName == null;
+        assert componentName == null || originalIntent == null && webContents == null && requestId == null;
 
         mLoadUrlParams = loadUrlParams;
         mRequestId = requestId;

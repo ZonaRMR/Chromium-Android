@@ -102,8 +102,8 @@ public class StripLayoutHelper implements StripLayoutTab.StripLayoutTabDelegate 
     private TabModel mModel;
     private TabCreator mTabCreator;
     private StripStacker mStripStacker;
-    private CascadingStripStacker mCascadingStripStacker = new CascadingStripStacker();
-    private ScrollingStripStacker mScrollingStripStacker = new ScrollingStripStacker();
+    private final CascadingStripStacker mCascadingStripStacker = new CascadingStripStacker();
+    private final ScrollingStripStacker mScrollingStripStacker = new ScrollingStripStacker();
 
     // Internal State
     private StripLayoutTab[] mStripTabs = new StripLayoutTab[0];

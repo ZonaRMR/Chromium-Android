@@ -36,8 +36,8 @@ public final class SpeechRecognitionErrorCode {
 
     public static final int NO_MATCH = LANGUAGE_NOT_SUPPORTED + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (9);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 9;
 
     private static final boolean IS_EXTENSIBLE = false;
 

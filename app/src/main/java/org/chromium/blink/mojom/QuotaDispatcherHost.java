@@ -18,7 +18,7 @@ public interface QuotaDispatcherHost extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends QuotaDispatcherHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends QuotaDispatcherHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<QuotaDispatcherHost, QuotaDispatcherHost.Proxy> MANAGER = QuotaDispatcherHost_Internal.MANAGER;

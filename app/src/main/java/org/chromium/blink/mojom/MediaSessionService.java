@@ -18,7 +18,7 @@ public interface MediaSessionService extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends MediaSessionService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaSessionService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaSessionService, MediaSessionService.Proxy> MANAGER = MediaSessionService_Internal.MANAGER;

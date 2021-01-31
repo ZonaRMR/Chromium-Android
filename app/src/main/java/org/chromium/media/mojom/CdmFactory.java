@@ -18,7 +18,7 @@ public interface CdmFactory extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends CdmFactory, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CdmFactory, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CdmFactory, CdmFactory.Proxy> MANAGER = CdmFactory_Internal.MANAGER;

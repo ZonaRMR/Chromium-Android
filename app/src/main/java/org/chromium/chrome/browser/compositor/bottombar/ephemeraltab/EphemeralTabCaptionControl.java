@@ -119,6 +119,6 @@ public class EphemeralTabCaptionControl extends OverlayPanelTextViewInflater {
         super.onFinishInflate();
 
         View view = getView();
-        mCaption = (TextView) view.findViewById(R.id.ephemeral_tab_caption);
+        mCaption = view.findViewById(R.id.ephemeral_tab_caption);
     }
 }

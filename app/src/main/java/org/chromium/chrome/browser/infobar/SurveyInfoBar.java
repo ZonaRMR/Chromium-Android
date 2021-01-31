@@ -157,11 +157,7 @@ public class SurveyInfoBar extends InfoBar {
     protected void onStartedHiding() {
         super.onStartedHiding();
         if (mClosedByInteraction) return;
-        if (isFrontInfoBar()) {
-            mDelegate.onSurveyInfoBarClosed(false, true);
-        } else {
-            mDelegate.onSurveyInfoBarClosed(false, false);
-        }
+        mDelegate.onSurveyInfoBarClosed(false, isFrontInfoBar());
     }
 
     /**

@@ -15,9 +15,9 @@ import org.chromium.components.offlinepages.SavePageResult;
  * process succeeds.
  */
 public class SavePageAndShareCallback implements OfflinePageBridge.SavePageCallback {
-    private Activity mActivity;
-    private Callback<ShareParams> mShareCallback;
-    private OfflinePageBridge mBridge;
+    private final Activity mActivity;
+    private final Callback<ShareParams> mShareCallback;
+    private final OfflinePageBridge mBridge;
 
     public SavePageAndShareCallback(Activity activity, final Callback<ShareParams> shareCallback,
             OfflinePageBridge bridge) {

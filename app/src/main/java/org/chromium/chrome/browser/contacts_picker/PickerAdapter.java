@@ -58,7 +58,7 @@ public class PickerAdapter extends Adapter<RecyclerView.ViewHolder>
     }
 
     // The category view to use to show the contacts.
-    private PickerCategoryView mCategoryView;
+    private final PickerCategoryView mCategoryView;
 
     // The view at the top of the RecyclerView (disclaimer and select all functionality).
     private TopView mTopView;
@@ -67,7 +67,7 @@ public class PickerAdapter extends Adapter<RecyclerView.ViewHolder>
     private final String mFormattedOrigin;
 
     // The content resolver to query data from.
-    private ContentResolver mContentResolver;
+    private final ContentResolver mContentResolver;
 
     // The full list of all registered contacts on the device.
     private ArrayList<ContactDetails> mContactDetails;

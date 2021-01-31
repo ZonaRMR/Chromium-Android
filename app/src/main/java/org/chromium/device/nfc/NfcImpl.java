@@ -633,8 +633,7 @@ public class NfcImpl implements Nfc {
                     return false;
                 }
                 if (pattern_url.getPath().equals(ANY_PATH)) return true;
-                if (id_url.getPath().startsWith(pattern_url.getPath())) return true;
-                return false;
+                return id_url.getPath().startsWith(pattern_url.getPath());
 
             } catch (MalformedURLException e) {
                 return false;

@@ -75,7 +75,7 @@ public class BrowserActionsService extends Service {
 
     private static int sTitleResId;
 
-    private static Set<Integer> sPendingTabIds = new HashSet<Integer>();
+    private static final Set<Integer> sPendingTabIds = new HashSet<Integer>();
     private static int sPendingCreatedUrlNum;
 
     private BrowserActionsTabModelSelector mBrowserActionsSelector;

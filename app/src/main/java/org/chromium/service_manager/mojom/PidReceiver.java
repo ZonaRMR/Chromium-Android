@@ -18,7 +18,7 @@ public interface PidReceiver extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends PidReceiver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PidReceiver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PidReceiver, PidReceiver.Proxy> MANAGER = PidReceiver_Internal.MANAGER;

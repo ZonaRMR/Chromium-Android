@@ -53,11 +53,11 @@ public class DataReductionSiteBreakdownView extends LinearLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mTableLayout = (TableLayout) findViewById(R.id.data_reduction_proxy_breakdown_table);
-        mDetailsTitle = (TextView) findViewById(R.id.data_reduction_data_usage_breakdown_title);
-        mHostnameTitle = (TextView) findViewById(R.id.data_reduction_breakdown_site_title);
-        mDataUsedTitle = (TextView) findViewById(R.id.data_reduction_breakdown_used_title);
-        mDataSavedTitle = (TextView) findViewById(R.id.data_reduction_breakdown_saved_title);
+        mTableLayout = findViewById(R.id.data_reduction_proxy_breakdown_table);
+        mDetailsTitle = findViewById(R.id.data_reduction_data_usage_breakdown_title);
+        mHostnameTitle = findViewById(R.id.data_reduction_breakdown_site_title);
+        mDataUsedTitle = findViewById(R.id.data_reduction_breakdown_used_title);
+        mDataSavedTitle = findViewById(R.id.data_reduction_breakdown_saved_title);
 
         mHostnameTitle.setOnClickListener(new OnClickListener() {
             @Override
@@ -256,9 +256,9 @@ public class DataReductionSiteBreakdownView extends LinearLayout {
                 TableRow row = (TableRow) LayoutInflater.from(getContext())
                                        .inflate(R.layout.data_usage_breakdown_row, null);
 
-                TextView hostnameView = (TextView) row.findViewById(R.id.site_hostname);
-                TextView dataUsedView = (TextView) row.findViewById(R.id.site_data_used);
-                TextView dataSavedView = (TextView) row.findViewById(R.id.site_data_saved);
+                TextView hostnameView = row.findViewById(R.id.site_hostname);
+                TextView dataUsedView = row.findViewById(R.id.site_data_used);
+                TextView dataSavedView = row.findViewById(R.id.site_data_saved);
 
                 String hostName = mDataUseItems.get(i).getHostname();
                 if (OTHER_HOST_NAME.equals(hostName)) {
@@ -291,9 +291,9 @@ public class DataReductionSiteBreakdownView extends LinearLayout {
             TableRow row = (TableRow) LayoutInflater.from(getContext())
                                    .inflate(R.layout.data_usage_breakdown_row, null);
 
-            TextView hostnameView = (TextView) row.findViewById(R.id.site_hostname);
-            TextView dataUsedView = (TextView) row.findViewById(R.id.site_data_used);
-            TextView dataSavedView = (TextView) row.findViewById(R.id.site_data_saved);
+            TextView hostnameView = row.findViewById(R.id.site_hostname);
+            TextView dataUsedView = row.findViewById(R.id.site_data_used);
+            TextView dataSavedView = row.findViewById(R.id.site_data_saved);
 
             hostnameView.setText(getResources().getString(
                     R.string.data_reduction_breakdown_remaining_sites_label, numRemainingSites));

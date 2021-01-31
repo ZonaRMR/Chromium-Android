@@ -115,12 +115,8 @@ public class GSAState {
         List<ResolveInfo> resolveInfo = pm.queryIntentActivities(searchIntent, 0);
         if (resolveInfo.size() == 0) {
             mGsaAvailable = false;
-        } else if (!isPackageAboveVersion(SEARCH_INTENT_PACKAGE, GSA_VERSION_FOR_DOCUMENT)
-                || !isPackageAboveVersion(GMS_CORE_PACKAGE, GMS_CORE_VERSION)) {
-            mGsaAvailable = false;
-        } else {
-            mGsaAvailable = true;
-        }
+        } else mGsaAvailable = isPackageAboveVersion(SEARCH_INTENT_PACKAGE, GSA_VERSION_FOR_DOCUMENT)
+                && isPackageAboveVersion(GMS_CORE_PACKAGE, GMS_CORE_VERSION);
         return mGsaAvailable;
     }
 

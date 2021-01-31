@@ -84,7 +84,7 @@ public class WarmupManager {
             recordWebContentsStatus(WebContentsStatus.KILLED);
             destroySpareWebContentsInternal();
         }
-    };
+    }
 
     @SuppressLint("StaticFieldLeak")
     private static WarmupManager sWarmupManager;
@@ -147,14 +147,14 @@ public class WarmupManager {
             ViewGroup mainView =
                     (ViewGroup) LayoutInflater.from(context).inflate(R.layout.main, contentHolder);
             if (toolbarContainerId != ChromeActivity.NO_CONTROL_CONTAINER) {
-                ViewStub stub = (ViewStub) mainView.findViewById(R.id.control_container_stub);
+                ViewStub stub = mainView.findViewById(R.id.control_container_stub);
                 stub.setLayoutResource(toolbarContainerId);
                 stub.inflate();
             }
             // It cannot be assumed that the result of toolbarContainerStub.inflate() will be
             // the control container since it may be wrapped in another view.
             ControlContainer controlContainer =
-                    (ControlContainer) mainView.findViewById(R.id.control_container);
+                    mainView.findViewById(R.id.control_container);
 
             if (toolbarId != ChromeActivity.NO_TOOLBAR_LAYOUT && controlContainer != null) {
                 controlContainer.initWithToolbar(toolbarId);

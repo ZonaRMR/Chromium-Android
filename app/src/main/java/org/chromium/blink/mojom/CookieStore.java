@@ -18,7 +18,7 @@ public interface CookieStore extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends CookieStore, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CookieStore, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CookieStore, CookieStore.Proxy> MANAGER = CookieStore_Internal.MANAGER;

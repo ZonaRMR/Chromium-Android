@@ -172,7 +172,7 @@ public class ToolbarManager
     private final IncognitoStateProvider mIncognitoStateProvider;
     private final TabCountProvider mTabCountProvider;
     private final ThemeColorProvider mThemeColorProvider;
-    private TopToolbarCoordinator mToolbar;
+    private final TopToolbarCoordinator mToolbar;
     private final ToolbarControlContainer mControlContainer;
 
     private BottomToolbarCoordinator mBottomToolbarCoordinator;
@@ -737,7 +737,7 @@ public class ToolbarManager
      * @return  Whether the UrlBar currently has focus.
      */
     public boolean isUrlBarFocused() {
-        return mLocationBar == null ? false : mLocationBar.isUrlBarFocused();
+        return mLocationBar != null && mLocationBar.isUrlBarFocused();
     }
 
     /**

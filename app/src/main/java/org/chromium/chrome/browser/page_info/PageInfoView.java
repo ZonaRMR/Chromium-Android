@@ -214,17 +214,17 @@ public class PageInfoView extends FrameLayout implements OnClickListener, OnLong
 
         // Find the container and all it's important subviews.
         LayoutInflater.from(context).inflate(R.layout.page_info, this, true);
-        mUrlTitle = (ElidedUrlTextView) findViewById(R.id.page_info_url);
-        mConnectionSummary = (TextView) findViewById(R.id.page_info_connection_summary);
-        mConnectionMessage = (TextView) findViewById(R.id.page_info_connection_message);
-        mPreviewMessage = (TextView) findViewById(R.id.page_info_preview_message);
-        mPreviewStaleTimestamp = (TextView) findViewById(R.id.page_info_stale_preview_timestamp);
-        mPreviewLoadOriginal = (TextView) findViewById(R.id.page_info_preview_load_original);
-        mPermissionsList = (LinearLayout) findViewById(R.id.page_info_permissions_list);
-        mSeparator = (View) findViewById(R.id.page_info_separator);
-        mInstantAppButton = (Button) findViewById(R.id.page_info_instant_app_button);
-        mSiteSettingsButton = (Button) findViewById(R.id.page_info_site_settings_button);
-        mOpenOnlineButton = (Button) findViewById(R.id.page_info_open_online_button);
+        mUrlTitle = findViewById(R.id.page_info_url);
+        mConnectionSummary = findViewById(R.id.page_info_connection_summary);
+        mConnectionMessage = findViewById(R.id.page_info_connection_message);
+        mPreviewMessage = findViewById(R.id.page_info_preview_message);
+        mPreviewStaleTimestamp = findViewById(R.id.page_info_stale_preview_timestamp);
+        mPreviewLoadOriginal = findViewById(R.id.page_info_preview_load_original);
+        mPermissionsList = findViewById(R.id.page_info_permissions_list);
+        mSeparator = findViewById(R.id.page_info_separator);
+        mInstantAppButton = findViewById(R.id.page_info_instant_app_button);
+        mSiteSettingsButton = findViewById(R.id.page_info_site_settings_button);
+        mOpenOnlineButton = findViewById(R.id.page_info_open_online_button);
 
         mUrlTitle.setUrl(params.url, params.urlOriginLength);
         mUrlTitleLongClickCallback = params.urlTitleLongClickCallback;
@@ -329,11 +329,11 @@ public class PageInfoView extends FrameLayout implements OnClickListener, OnLong
                 LayoutInflater.from(getContext()).inflate(R.layout.page_info_permission_row, null);
 
         TextView permissionStatus =
-                (TextView) permissionRow.findViewById(R.id.page_info_permission_status);
+                permissionRow.findViewById(R.id.page_info_permission_status);
         permissionStatus.setText(params.status);
 
         ImageView permissionIcon =
-                (ImageView) permissionRow.findViewById(R.id.page_info_permission_icon);
+                permissionRow.findViewById(R.id.page_info_permission_icon);
         if (params.iconTintColorResource == 0) {
             permissionIcon.setImageDrawable(
                     TintedDrawable.constructTintedDrawable(getContext(), params.iconResource));
@@ -344,7 +344,7 @@ public class PageInfoView extends FrameLayout implements OnClickListener, OnLong
         }
 
         if (params.warningTextResource != 0) {
-            TextView permissionUnavailable = (TextView) permissionRow.findViewById(
+            TextView permissionUnavailable = permissionRow.findViewById(
                     R.id.page_info_permission_unavailable_message);
             permissionUnavailable.setVisibility(View.VISIBLE);
             permissionUnavailable.setText(params.warningTextResource);
@@ -352,7 +352,7 @@ public class PageInfoView extends FrameLayout implements OnClickListener, OnLong
 
         if (params.subtitleTextResource != 0) {
             TextView permissionSubtitle =
-                    (TextView) permissionRow.findViewById(R.id.page_info_permission_subtitle);
+                    permissionRow.findViewById(R.id.page_info_permission_subtitle);
             permissionSubtitle.setVisibility(View.VISIBLE);
             permissionSubtitle.setText(params.subtitleTextResource);
         }

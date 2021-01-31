@@ -26,10 +26,10 @@ public final class TlsClientSocketOptions extends org.chromium.mojo.bindings.Str
 
     private TlsClientSocketOptions(int version) {
         super(STRUCT_SIZE, version);
-        this.versionMin = (int) SslVersion.TLS1;
-        this.versionMax = (int) SslVersion.TLS13;
-        this.sendSslInfo = (boolean) false;
-        this.unsafelySkipCertVerification = (boolean) false;
+        this.versionMin = SslVersion.TLS1;
+        this.versionMax = SslVersion.TLS13;
+        this.sendSslInfo = false;
+        this.unsafelySkipCertVerification = false;
     }
 
     public TlsClientSocketOptions() {

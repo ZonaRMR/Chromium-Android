@@ -52,7 +52,7 @@ public class PartnerBrowserCustomizations {
     private static volatile boolean sIncognitoModeDisabled;
     private static volatile boolean sBookmarksEditingDisabled;
     private static boolean sIsInitialized;
-    private static List<Runnable> sInitializeAsyncCallbacks = new ArrayList<>();
+    private static final List<Runnable> sInitializeAsyncCallbacks = new ArrayList<>();
 
     /** Provider of partner customizations. */
     public interface Provider {

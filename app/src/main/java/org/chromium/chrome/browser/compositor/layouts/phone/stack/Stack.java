@@ -681,14 +681,12 @@ public abstract class Stack implements ChromeAnimation.Animatable {
     private boolean canUpdateAnimation(long time, @OverviewAnimationType int type, int sourceIndex,
             boolean finishImmediately) {
         if (mAnimationFactory != null) {
-            if ((mOverviewAnimationType == OverviewAnimationType.DISCARD
-                        || mOverviewAnimationType == OverviewAnimationType.UNDISCARD
-                        || mOverviewAnimationType == OverviewAnimationType.DISCARD_ALL)
+            return (mOverviewAnimationType == OverviewAnimationType.DISCARD
+                    || mOverviewAnimationType == OverviewAnimationType.UNDISCARD
+                    || mOverviewAnimationType == OverviewAnimationType.DISCARD_ALL)
                     && (type == OverviewAnimationType.DISCARD
-                               || type == OverviewAnimationType.UNDISCARD
-                               || type == OverviewAnimationType.DISCARD_ALL)) {
-                return true;
-            }
+                    || type == OverviewAnimationType.UNDISCARD
+                    || type == OverviewAnimationType.DISCARD_ALL);
         }
         return false;
     }
@@ -749,8 +747,8 @@ public abstract class Stack implements ChromeAnimation.Animatable {
         boolean hasViewAnimations = mViewAnimations != null;
         boolean hasTabAnimations = mTabAnimations != null;
         boolean hasAnimations = hasViewAnimations || hasTabAnimations;
-        boolean isViewFinished = hasViewAnimations ? !mViewAnimations.isRunning() : true;
-        boolean isTabFinished = hasTabAnimations ? mTabAnimations.finished() : true;
+        boolean isViewFinished = !hasViewAnimations || !mViewAnimations.isRunning();
+        boolean isTabFinished = !hasTabAnimations || mTabAnimations.finished();
 
         boolean shouldFinish = jumpToEnd && hasAnimations;
         shouldFinish |= hasAnimations && (!hasViewAnimations || isViewFinished)

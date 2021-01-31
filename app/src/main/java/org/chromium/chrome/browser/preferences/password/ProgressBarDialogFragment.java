@@ -36,7 +36,7 @@ public class ProgressBarDialogFragment extends DialogFragment {
         View dialog =
                 getActivity().getLayoutInflater().inflate(R.layout.passwords_progress_dialog, null);
         MaterialProgressBar bar =
-                (MaterialProgressBar) dialog.findViewById(R.id.passwords_progress_bar);
+                dialog.findViewById(R.id.passwords_progress_bar);
         bar.setIndeterminate(true);
         return new AlertDialog.Builder(getActivity(), R.style.SimpleDialog)
                 .setView(dialog)

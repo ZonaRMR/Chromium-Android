@@ -107,7 +107,7 @@ public final class CapabilityProto {
 
     private final int value;
 
-    private Capability(int value) {
+    Capability(int value) {
       this.value = value;
     }
 

@@ -451,9 +451,9 @@ public class SelectFileDialog
     }
 
     private class GetCameraIntentTask extends AsyncTask<Uri> {
-        private Boolean mDirectToCamera;
-        private WindowAndroid mWindow;
-        private WindowAndroid.IntentCallback mCallback;
+        private final Boolean mDirectToCamera;
+        private final WindowAndroid mWindow;
+        private final WindowAndroid.IntentCallback mCallback;
 
         public GetCameraIntentTask(Boolean directToCamera, WindowAndroid window,
                 WindowAndroid.IntentCallback callback) {

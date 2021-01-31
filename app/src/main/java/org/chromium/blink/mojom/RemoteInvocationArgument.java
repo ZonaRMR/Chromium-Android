@@ -22,7 +22,8 @@ public final class RemoteInvocationArgument extends org.chromium.mojo.bindings.U
         public static final int StringValue = 2;
         public static final int SingletonValue = 3;
         public static final int ArrayValue = 4;
-    };
+    }
+
     private double mNumberValue;
     private boolean mBooleanValue;
     private org.chromium.mojo_base.mojom.String16 mStringValue;

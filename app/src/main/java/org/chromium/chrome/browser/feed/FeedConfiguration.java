@@ -120,7 +120,7 @@ public final class FeedConfiguration {
      */
     @VisibleForTesting
     static long getLoggingImmediateContentThresholdMs() {
-        return (long) ChromeFeatureList.getFieldTrialParamByFeatureAsInt(
+        return ChromeFeatureList.getFieldTrialParamByFeatureAsInt(
                 ChromeFeatureList.INTEREST_FEED_CONTENT_SUGGESTIONS,
                 LOGGING_IMMEDIATE_CONTENT_THRESHOLD_MS,
                 LOGGING_IMMEDIATE_CONTENT_THRESHOLD_MS_DEFAULT);
@@ -143,7 +143,7 @@ public final class FeedConfiguration {
     /** @return Time until feed stops restoring the UI. */
     @VisibleForTesting
     static long getSessionLifetimeMs() {
-        return (long) ChromeFeatureList.getFieldTrialParamByFeatureAsInt(
+        return ChromeFeatureList.getFieldTrialParamByFeatureAsInt(
                 ChromeFeatureList.INTEREST_FEED_CONTENT_SUGGESTIONS, SESSION_LIFETIME_MS,
                 SESSION_LIFETIME_MS_DEFAULT);
     }

@@ -185,7 +185,7 @@ public final class TextProto {
        */
       com.google.search.now.ui.piet.TextProto.Location getLocation();
 
-      public com.google.search.now.ui.piet.TextProto.ParameterizedText.Parameter.ParameterTypesCase getParameterTypesCase();
+      com.google.search.now.ui.piet.TextProto.ParameterizedText.Parameter.ParameterTypesCase getParameterTypesCase();
     }
     /**
      * <pre>
@@ -214,7 +214,7 @@ public final class TextProto {
         LOCATION(2),
         PARAMETERTYPES_NOT_SET(0);
         private final int value;
-        private ParameterTypesCase(int value) {
+        ParameterTypesCase(int value) {
           this.value = value;
         }
         /**
@@ -236,9 +236,9 @@ public final class TextProto {
         public int getNumber() {
           return this.value;
         }
-      };
+      }
 
-      public ParameterTypesCase
+        public ParameterTypesCase
       getParameterTypesCase() {
         return ParameterTypesCase.forNumber(
             parameterTypesCase_);
@@ -383,7 +383,7 @@ public final class TextProto {
                           throws java.io.IOException {
         if (parameterTypesCase_ == 1) {
           output.writeInt64(
-              1, (long)((java.lang.Long) parameterTypes_));
+              1, (Long) parameterTypes_);
         }
         if (parameterTypesCase_ == 2) {
           output.writeMessage(2, (com.google.search.now.ui.piet.TextProto.Location) parameterTypes_);
@@ -399,7 +399,7 @@ public final class TextProto {
         if (parameterTypesCase_ == 1) {
           size += com.google.protobuf.CodedOutputStream
             .computeInt64Size(
-                1, (long)((java.lang.Long) parameterTypes_));
+                1, (Long) parameterTypes_);
         }
         if (parameterTypesCase_ == 2) {
           size += com.google.protobuf.CodedOutputStream
@@ -2904,9 +2904,9 @@ public final class TextProto {
      */
     com.google.search.now.ui.piet.BindingRefsProto.ActionsBindingRef getActionsBinding();
 
-    public com.google.search.now.ui.piet.TextProto.Chunk.ContentCase getContentCase();
+    com.google.search.now.ui.piet.TextProto.Chunk.ContentCase getContentCase();
 
-    public com.google.search.now.ui.piet.TextProto.Chunk.ActionsDataCase getActionsDataCase();
+    com.google.search.now.ui.piet.TextProto.Chunk.ActionsDataCase getActionsDataCase();
   }
   /**
    * <pre>
@@ -2932,7 +2932,7 @@ public final class TextProto {
       IMAGE_CHUNK(2),
       CONTENT_NOT_SET(0);
       private final int value;
-      private ContentCase(int value) {
+      ContentCase(int value) {
         this.value = value;
       }
       /**
@@ -2954,9 +2954,9 @@ public final class TextProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ContentCase
+      public ContentCase
     getContentCase() {
       return ContentCase.forNumber(
           contentCase_);
@@ -2975,7 +2975,7 @@ public final class TextProto {
       ACTIONS_BINDING(4),
       ACTIONSDATA_NOT_SET(0);
       private final int value;
-      private ActionsDataCase(int value) {
+      ActionsDataCase(int value) {
         this.value = value;
       }
       /**
@@ -2997,9 +2997,9 @@ public final class TextProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ActionsDataCase
+      public ActionsDataCase
     getActionsDataCase() {
       return ActionsDataCase.forNumber(
           actionsDataCase_);
@@ -4049,7 +4049,7 @@ public final class TextProto {
      */
     com.google.search.now.ui.piet.ImagesProto.Image getImage();
 
-    public com.google.search.now.ui.piet.TextProto.StyledImageChunk.ContentCase getContentCase();
+    com.google.search.now.ui.piet.TextProto.StyledImageChunk.ContentCase getContentCase();
   }
   /**
    * <pre>
@@ -4074,7 +4074,7 @@ public final class TextProto {
       IMAGE(3),
       CONTENT_NOT_SET(0);
       private final int value;
-      private ContentCase(int value) {
+      ContentCase(int value) {
         this.value = value;
       }
       /**
@@ -4096,9 +4096,9 @@ public final class TextProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ContentCase
+      public ContentCase
     getContentCase() {
       return ContentCase.forNumber(
           contentCase_);
@@ -4940,7 +4940,7 @@ public final class TextProto {
      */
     com.google.search.now.ui.piet.TextProto.ParameterizedText getParameterizedText();
 
-    public com.google.search.now.ui.piet.TextProto.StyledTextChunk.ContentCase getContentCase();
+    com.google.search.now.ui.piet.TextProto.StyledTextChunk.ContentCase getContentCase();
   }
   /**
    * <pre>
@@ -4965,7 +4965,7 @@ public final class TextProto {
       PARAMETERIZED_TEXT(3),
       CONTENT_NOT_SET(0);
       private final int value;
-      private ContentCase(int value) {
+      ContentCase(int value) {
         this.value = value;
       }
       /**
@@ -4987,9 +4987,9 @@ public final class TextProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ContentCase
+      public ContentCase
     getContentCase() {
       return ContentCase.forNumber(
           contentCase_);

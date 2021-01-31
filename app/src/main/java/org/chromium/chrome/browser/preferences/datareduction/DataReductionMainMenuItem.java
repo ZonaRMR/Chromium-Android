@@ -44,9 +44,9 @@ public class DataReductionMainMenuItem extends FrameLayout implements View.OnCli
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        TextView itemText = (TextView) findViewById(R.id.menu_item_text);
-        TextView itemSummary = (TextView) findViewById(R.id.menu_item_summary);
-        ImageView icon = (ImageView) findViewById(R.id.chart_icon);
+        TextView itemText = findViewById(R.id.menu_item_text);
+        TextView itemSummary = findViewById(R.id.menu_item_summary);
+        ImageView icon = findViewById(R.id.chart_icon);
         icon.setContentDescription(getContext().getString(
                 DataReductionBrandingResourceProvider.getDataSaverBrandedString(
                         R.string.data_reduction_title)));
@@ -69,7 +69,7 @@ public class DataReductionMainMenuItem extends FrameLayout implements View.OnCli
                     : firstEnabledInMillisSinceEpoch;
 
             final int flags = DateUtils.FORMAT_ABBREV_MONTH | DateUtils.FORMAT_NO_YEAR;
-            String date = DateUtils.formatDateTime(getContext(), mostRecentTime, flags).toString();
+            String date = DateUtils.formatDateTime(getContext(), mostRecentTime, flags);
 
             itemText.setText(
                     getContext().getString(R.string.data_reduction_saved_label, dataSaved));

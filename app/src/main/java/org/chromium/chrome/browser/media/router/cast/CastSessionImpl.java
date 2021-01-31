@@ -67,10 +67,10 @@ public class CastSessionImpl implements MediaNotificationListener, CastSession {
     private String mApplicationStatus;
     private ApplicationMetadata mApplicationMetadata;
     private boolean mStoppingApplication;
-    private MediaNotificationInfo.Builder mNotificationBuilder;
+    private final MediaNotificationInfo.Builder mNotificationBuilder;
     private RemoteMediaPlayer mMediaPlayer;
 
-    private Set<String> mNamespaces = new HashSet<String>();
+    private final Set<String> mNamespaces = new HashSet<String>();
 
     /**
      * Initializes a new {@link CastSessionImpl} instance.

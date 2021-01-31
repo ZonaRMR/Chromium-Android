@@ -66,27 +66,27 @@ public final class NetworkContextParams extends org.chromium.mojo.bindings.Struc
 
     private NetworkContextParams(int version) {
         super(STRUCT_SIZE, version);
-        this.enableBrotli = (boolean) true;
-        this.enableReferrers = (boolean) true;
-        this.validateReferrerPolicyOnInitialRequest = (boolean) true;
-        this.enableEncryptedCookies = (boolean) true;
-        this.restoreOldSessionCookies = (boolean) false;
-        this.persistSessionCookies = (boolean) false;
-        this.httpCacheEnabled = (boolean) true;
+        this.enableBrotli = true;
+        this.enableReferrers = true;
+        this.validateReferrerPolicyOnInitialRequest = true;
+        this.enableEncryptedCookies = true;
+        this.restoreOldSessionCookies = false;
+        this.persistSessionCookies = false;
+        this.httpCacheEnabled = true;
         this.httpCacheMaxSize = (int) 0L;
-        this.enableDataUrlSupport = (boolean) false;
-        this.enableFileUrlSupport = (boolean) false;
-        this.enableFtpUrlSupport = (boolean) false;
-        this.enforceChromeCtPolicy = (boolean) false;
-        this.http09OnNonDefaultPortsEnabled = (boolean) false;
-        this.pacQuickCheckEnabled = (boolean) true;
-        this.dangerouslyAllowPacAccessToSecureUrls = (boolean) false;
-        this.enableCertificateReporting = (boolean) false;
-        this.enableExpectCtReporting = (boolean) false;
-        this.enableDomainReliability = (boolean) false;
-        this.discardDomainReliablityUploads = (boolean) false;
-        this.skipReportingSendPermissionCheck = (boolean) false;
-        this.primaryNetworkContext = (boolean) false;
+        this.enableDataUrlSupport = false;
+        this.enableFileUrlSupport = false;
+        this.enableFtpUrlSupport = false;
+        this.enforceChromeCtPolicy = false;
+        this.http09OnNonDefaultPortsEnabled = false;
+        this.pacQuickCheckEnabled = true;
+        this.dangerouslyAllowPacAccessToSecureUrls = false;
+        this.enableCertificateReporting = false;
+        this.enableExpectCtReporting = false;
+        this.enableDomainReliability = false;
+        this.discardDomainReliablityUploads = false;
+        this.skipReportingSendPermissionCheck = false;
+        this.primaryNetworkContext = false;
     }
 
     public NetworkContextParams() {

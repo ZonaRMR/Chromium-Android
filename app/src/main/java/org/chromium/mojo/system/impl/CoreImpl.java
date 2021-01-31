@@ -106,7 +106,7 @@ public class CoreImpl implements Core {
         if (result.getMojoResult() != MojoResult.OK) {
             throw new MojoException(result.getMojoResult());
         }
-        return Pair.<MessagePipeHandle, MessagePipeHandle>create(
+        return Pair.create(
                 new MessagePipeHandleImpl(this, result.getValue().first),
                 new MessagePipeHandleImpl(this, result.getValue().second));
     }
@@ -128,7 +128,7 @@ public class CoreImpl implements Core {
         if (result.getMojoResult() != MojoResult.OK) {
             throw new MojoException(result.getMojoResult());
         }
-        return Pair.<ProducerHandle, ConsumerHandle>create(
+        return Pair.create(
                 new DataPipeProducerHandleImpl(this, result.getValue().first),
                 new DataPipeConsumerHandleImpl(this, result.getValue().second));
     }

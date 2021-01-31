@@ -195,16 +195,16 @@ public class CustomTabIntentDataProvider extends BrowserSessionDataProvider {
 
     private int mToolbarColor;
     private int mBottomBarColor;
-    private boolean mEnableUrlBarHiding;
+    private final boolean mEnableUrlBarHiding;
     private List<CustomButtonParams> mCustomButtonParams;
-    private Drawable mCloseButtonIcon;
-    private List<Pair<String, PendingIntent>> mMenuEntries = new ArrayList<>();
-    private boolean mShowShareItem;
-    private List<CustomButtonParams> mToolbarButtons = new ArrayList<>(1);
-    private List<CustomButtonParams> mBottombarButtons = new ArrayList<>(2);
-    private RemoteViews mRemoteViews;
-    private int[] mClickableViewIds;
-    private PendingIntent mRemoteViewsPendingIntent;
+    private final Drawable mCloseButtonIcon;
+    private final List<Pair<String, PendingIntent>> mMenuEntries = new ArrayList<>();
+    private final boolean mShowShareItem;
+    private final List<CustomButtonParams> mToolbarButtons = new ArrayList<>(1);
+    private final List<CustomButtonParams> mBottombarButtons = new ArrayList<>(2);
+    private final RemoteViews mRemoteViews;
+    private final int[] mClickableViewIds;
+    private final PendingIntent mRemoteViewsPendingIntent;
     // OnFinished listener for PendingIntents. Used for testing only.
     private PendingIntent.OnFinished mOnFinished;
 
@@ -234,7 +234,7 @@ public class CustomTabIntentDataProvider extends BrowserSessionDataProvider {
      */
     public CustomTabIntentDataProvider(Intent intent, Context context) {
         super(intent);
-        if (intent == null) assert false;
+        assert intent != null;
 
         mIntent = intent;
         mIsOpenedByChrome = IntentUtils.safeGetBooleanExtra(
@@ -680,8 +680,7 @@ public class CustomTabIntentDataProvider extends BrowserSessionDataProvider {
 
     private boolean checkCloseButtonSize(Context context, Bitmap bitmap) {
         int size = context.getResources().getDimensionPixelSize(R.dimen.toolbar_icon_height);
-        if (bitmap.getHeight() == size && bitmap.getWidth() == size) return true;
-        return false;
+        return bitmap.getHeight() == size && bitmap.getWidth() == size;
     }
 
     /**

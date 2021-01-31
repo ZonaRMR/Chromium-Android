@@ -169,7 +169,7 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
         return (getIntent().getFlags() & separateTaskFlags) != 0;
     }
 
-    private CustomTabActivityTabController.Observer mTabChangeObserver = () -> {
+    private final CustomTabActivityTabController.Observer mTabChangeObserver = () -> {
         resetPostMessageHandlersForCurrentSession();
         if (mTabController.getTab() == null) {
             finishAndClose(false);
@@ -281,7 +281,7 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
         // Properly attach tab's infobar to the view hierarchy, as the main tab might have been
         // initialized prior to inflation.
         if (mTabController.getTab() != null) {
-            ViewGroup bottomContainer = (ViewGroup) findViewById(R.id.bottom_container);
+            ViewGroup bottomContainer = findViewById(R.id.bottom_container);
             InfoBarContainer.get(mTabController.getTab()).setParentView(bottomContainer);
         }
 
@@ -315,8 +315,8 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
 
         LayoutManager layoutDriver = new LayoutManager(getCompositorViewHolder());
         initializeCompositorContent(layoutDriver, findViewById(R.id.url_bar),
-                (ViewGroup) findViewById(android.R.id.content),
-                (ToolbarControlContainer) findViewById(R.id.control_container));
+                findViewById(android.R.id.content),
+                findViewById(R.id.control_container));
         getToolbarManager().initializeWithNative(getTabModelSelector(),
                 getFullscreenManager().getBrowserVisibilityDelegate(), getFindToolbarManager(),
                 null, layoutDriver, null, null, null, new OnClickListener() {

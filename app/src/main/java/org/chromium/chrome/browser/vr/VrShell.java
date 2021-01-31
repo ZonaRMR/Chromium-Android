@@ -92,7 +92,7 @@ public class VrShell extends GvrLayout
 
     private long mNativeVrShell;
 
-    private View mPresentationView;
+    private final View mPresentationView;
 
     // The tab that holds the main WebContents.
     private Tab mTab;
@@ -100,14 +100,14 @@ public class VrShell extends GvrLayout
     private Boolean mCanGoBack;
     private Boolean mCanGoForward;
 
-    private VrWindowAndroid mContentVrWindowAndroid;
+    private final VrWindowAndroid mContentVrWindowAndroid;
 
-    private boolean mReprojectedRendering;
+    private final boolean mReprojectedRendering;
 
     private TabRedirectHandler mNonVrTabRedirectHandler;
-    private UiWidgetFactory mNonVrUiWidgetFactory;
+    private final UiWidgetFactory mNonVrUiWidgetFactory;
 
-    private TabModelSelector mTabModelSelector;
+    private final TabModelSelector mTabModelSelector;
     private float mLastContentWidth;
     private float mLastContentHeight;
     private float mLastContentDpr;
@@ -1126,7 +1126,7 @@ public class VrShell extends GvrLayout
     }
 
     private void launchNTP() {
-        NewTabButton button = (NewTabButton) mActivity.findViewById(R.id.new_tab_button);
+        NewTabButton button = mActivity.findViewById(R.id.new_tab_button);
         button.callOnClick();
     }
 

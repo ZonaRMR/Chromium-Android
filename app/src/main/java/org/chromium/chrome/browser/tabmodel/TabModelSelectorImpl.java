@@ -37,11 +37,11 @@ public class TabModelSelectorImpl extends TabModelSelectorBase implements TabMod
     // has not been destroyed.
     private boolean mActiveState;
 
-    private boolean mIsUndoSupported;
+    private final boolean mIsUndoSupported;
 
     // Whether the Activity that owns that TabModelSelector is tabbed or not.
     // Used by sync to determine how to handle restore on cold start.
-    private boolean mIsTabbedActivityForSync;
+    private final boolean mIsTabbedActivityForSync;
 
     private final TabModelOrderController mOrderController;
 

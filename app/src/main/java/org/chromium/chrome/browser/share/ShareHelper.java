@@ -64,10 +64,10 @@ public class ShareHelper {
     /** Interface that receives intents for testing (to fake out actually sending them). */
     public interface FakeIntentReceiver {
         /** Sets the intent to send back in the broadcast. */
-        public void setIntentToSendBack(Intent intent);
+        void setIntentToSendBack(Intent intent);
 
         /** Called when a custom chooser dialog is shown. */
-        public void onCustomChooserShown(AlertDialog dialog);
+        void onCustomChooserShown(AlertDialog dialog);
 
         /**
          * Simulates firing the given intent, without actually doing so.
@@ -75,7 +75,7 @@ public class ShareHelper {
          * @param context The context that will receive broadcasts from the simulated activity.
          * @param intent The intent to send to the system.
          */
-        public void fireIntent(Context context, Intent intent);
+        void fireIntent(Context context, Intent intent);
     }
 
     private static final String TAG = "share";
@@ -148,20 +148,20 @@ public class ShareHelper {
     /**
      * Callback interface for when a target is chosen.
      */
-    public static interface TargetChosenCallback {
+    public interface TargetChosenCallback {
         /**
          * Called when the user chooses a target in the share dialog.
          *
          * Note that if the user cancels the share dialog, this callback is never called.
          */
-        public void onTargetChosen(ComponentName chosenComponent);
+        void onTargetChosen(ComponentName chosenComponent);
 
         /**
          * Called when the user cancels the share dialog.
          *
          * Guaranteed that either this, or onTargetChosen (but not both) will be called, eventually.
          */
-        public void onCancel();
+        void onCancel();
     }
 
     /**
@@ -362,7 +362,7 @@ public class ShareHelper {
     }
 
     private static class ExternallyVisibleUriCallback implements Callback<String> {
-        private Callback<Uri> mComposedCallback;
+        private final Callback<Uri> mComposedCallback;
         ExternallyVisibleUriCallback(Callback<Uri> cb) {
             mComposedCallback = cb;
         }

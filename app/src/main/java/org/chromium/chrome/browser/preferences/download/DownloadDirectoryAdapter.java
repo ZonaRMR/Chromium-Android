@@ -50,13 +50,13 @@ public class DownloadDirectoryAdapter extends ArrayAdapter<Object> {
 
     protected int mSelectedPosition = SELECTED_ITEM_NOT_INITIALIZED;
 
-    private Context mContext;
-    private LayoutInflater mLayoutInflater;
+    private final Context mContext;
+    private final LayoutInflater mLayoutInflater;
     protected Delegate mDelegate;
 
-    private List<DirectoryOption> mCanonicalOptions = new ArrayList<>();
-    private List<DirectoryOption> mAdditionalOptions = new ArrayList<>();
-    private List<DirectoryOption> mErrorOptions = new ArrayList<>();
+    private final List<DirectoryOption> mCanonicalOptions = new ArrayList<>();
+    private final List<DirectoryOption> mAdditionalOptions = new ArrayList<>();
+    private final List<DirectoryOption> mErrorOptions = new ArrayList<>();
 
     public DownloadDirectoryAdapter(@NonNull Context context, Delegate delegate) {
         super(context, android.R.layout.simple_spinner_item);
@@ -102,7 +102,7 @@ public class DownloadDirectoryAdapter extends ArrayAdapter<Object> {
         DirectoryOption directoryOption = (DirectoryOption) getItem(position);
         if (directoryOption == null) return view;
 
-        TextView titleText = (TextView) view.findViewById(R.id.text);
+        TextView titleText = view.findViewById(R.id.text);
         titleText.setText(directoryOption.name);
 
         // ModalDialogView may do a measure pass on the view hierarchy to limit the layout inside
@@ -126,8 +126,8 @@ public class DownloadDirectoryAdapter extends ArrayAdapter<Object> {
         DirectoryOption directoryOption = (DirectoryOption) getItem(position);
         if (directoryOption == null) return view;
 
-        TextView titleText = (TextView) view.findViewById(R.id.title);
-        TextView summaryText = (TextView) view.findViewById(R.id.description);
+        TextView titleText = view.findViewById(R.id.title);
+        TextView summaryText = view.findViewById(R.id.description);
         boolean enabled = isEnabled(position);
 
         titleText.setText(directoryOption.name);

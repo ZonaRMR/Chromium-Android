@@ -17,9 +17,9 @@ import java.util.List;
  */
 @JNINamespace("explore_sites")
 public class ExploreSitesCategoryTile {
-    private String mNavigationUrl;
-    private String mIconUrl;
-    private String mCategoryName;
+    private final String mNavigationUrl;
+    private final String mIconUrl;
+    private final String mCategoryName;
     private Drawable mIconDrawable;
 
     public ExploreSitesCategoryTile() {

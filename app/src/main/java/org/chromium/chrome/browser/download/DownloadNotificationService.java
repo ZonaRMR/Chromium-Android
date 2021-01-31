@@ -94,9 +94,9 @@ public class DownloadNotificationService {
     @VisibleForTesting
     final List<ContentId> mDownloadsInProgress = new ArrayList<ContentId>();
 
-    private NotificationManager mNotificationManager;
+    private final NotificationManager mNotificationManager;
     private Bitmap mDownloadSuccessLargeIcon;
-    private DownloadSharedPreferenceHelper mDownloadSharedPreferenceHelper;
+    private final DownloadSharedPreferenceHelper mDownloadSharedPreferenceHelper;
     private DownloadForegroundServiceManager mDownloadForegroundServiceManager;
 
     private static class LazyHolder {
@@ -320,7 +320,7 @@ public class DownloadNotificationService {
         }
         // If download is already paused, do nothing.
         if (entry != null && !entry.isAutoResumable && !forceRebuild) return;
-        boolean canDownloadWhileMetered = entry == null ? false : entry.canDownloadWhileMetered;
+        boolean canDownloadWhileMetered = entry != null && entry.canDownloadWhileMetered;
         // If download is interrupted due to network disconnection, show download pending state.
         if (isAutoResumable || pendingState != PendingState.NOT_PENDING) {
             notifyDownloadPending(id, fileName, isOffTheRecord, canDownloadWhileMetered,

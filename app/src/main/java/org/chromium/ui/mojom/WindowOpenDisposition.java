@@ -38,8 +38,8 @@ public final class WindowOpenDisposition {
 
     public static final int SWITCH_TO_TAB = IGNORE_ACTION + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (10);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 10;
 
     private static final boolean IS_EXTENSIBLE = false;
 

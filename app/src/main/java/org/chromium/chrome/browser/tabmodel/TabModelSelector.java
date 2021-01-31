@@ -21,7 +21,7 @@ public interface TabModelSelector {
     /**
      * A delegate interface to push close all tabs requests.
      */
-    public interface CloseAllTabsDelegate {
+    interface CloseAllTabsDelegate {
         /**
          * Sends a request to close all tabs for a {@link TabModel}.
          * @param incognito Whether the tabs to be closed are incognito.

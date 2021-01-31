@@ -30,7 +30,7 @@ import java.util.List;
 
 public interface AndroidChannel {
 
-  public static final class AndroidEndpointId extends ProtoWrapper {
+  final class AndroidEndpointId extends ProtoWrapper {
     public static AndroidEndpointId create(String c2DmRegistrationId,
         String clientKey,
         String senderId,
@@ -182,7 +182,7 @@ public interface AndroidChannel {
     }
   }
 
-  public static final class AddressedAndroidMessage extends ProtoWrapper {
+  final class AddressedAndroidMessage extends ProtoWrapper {
     public static AddressedAndroidMessage create(String clientKey,
         Bytes message) {
       return new AddressedAndroidMessage(clientKey, message);
@@ -277,7 +277,7 @@ public interface AndroidChannel {
     }
   }
 
-  public static final class AddressedAndroidMessageBatch extends ProtoWrapper {
+  final class AddressedAndroidMessageBatch extends ProtoWrapper {
     public static AddressedAndroidMessageBatch create(Collection<com.google.ipc.invalidation.ticl.proto.AndroidChannel.AddressedAndroidMessage> addressedMessage) {
       return new AddressedAndroidMessageBatch(addressedMessage);
     }
@@ -343,12 +343,12 @@ public interface AndroidChannel {
       return msg;
     }
   }
-  public interface MajorVersion {
-    public static final int INITIAL = 0;
-    public static final int BATCH = 1;
-    public static final int DEFAULT = 0;
-    public static final int MIN_SUPPORTED = 0;
-    public static final int MAX_SUPPORTED = 1;
+  interface MajorVersion {
+    int INITIAL = 0;
+    int BATCH = 1;
+    int DEFAULT = 0;
+    int MIN_SUPPORTED = 0;
+    int MAX_SUPPORTED = 1;
   }
 
 }

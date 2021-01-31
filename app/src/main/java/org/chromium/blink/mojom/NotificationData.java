@@ -21,7 +21,7 @@ public final class NotificationData extends org.chromium.mojo.bindings.Struct {
     private static final org.chromium.mojo.bindings.DataHeader DEFAULT_STRUCT_INFO = VERSION_ARRAY[0];
 
     
-    public static final long MAXIMUM_DEVELOPER_DATA_SIZE = (long) 1048576L;
+    public static final long MAXIMUM_DEVELOPER_DATA_SIZE = 1048576L;
 
     public org.chromium.mojo_base.mojom.String16 title;
     public int direction;
@@ -41,11 +41,11 @@ public final class NotificationData extends org.chromium.mojo.bindings.Struct {
 
     private NotificationData(int version) {
         super(STRUCT_SIZE, version);
-        this.direction = (int) NotificationDirection.LEFT_TO_RIGHT;
-        this.timestamp = (double) 0;
-        this.renotify = (boolean) false;
-        this.silent = (boolean) false;
-        this.requireInteraction = (boolean) false;
+        this.direction = NotificationDirection.LEFT_TO_RIGHT;
+        this.timestamp = 0;
+        this.renotify = false;
+        this.silent = false;
+        this.requireInteraction = false;
     }
 
     public NotificationData() {

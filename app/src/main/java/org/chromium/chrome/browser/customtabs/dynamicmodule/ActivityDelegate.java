@@ -30,7 +30,7 @@ public class ActivityDelegate implements StartStopWithNativeObserver,
 
     private boolean mModuleOnStartPending;
     private boolean mModuleOnResumePending;
-    private ChromeActivity mActivity;
+    private final ChromeActivity mActivity;
 
     private Bundle getSavedInstanceState() {
         return mActivity.getSavedInstanceState();

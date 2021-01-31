@@ -39,7 +39,7 @@ public class AddToHomescreenDialog implements View.OnClickListener {
      * The delegate for which this dialog is displayed. Used by the dialog to indicate when the user
      * accedes to adding to home screen, and when the dialog is dismissed.
      */
-    public static interface Delegate {
+    public interface Delegate {
         /**
          * Called when the user accepts adding the item to the home screen with the provided title.
          */
@@ -72,8 +72,8 @@ public class AddToHomescreenDialog implements View.OnClickListener {
     private RatingBar mAppRatingBar;
     private ImageView mPlayLogoView;
 
-    private Activity mActivity;
-    private Delegate mDelegate;
+    private final Activity mActivity;
+    private final Delegate mDelegate;
 
     private boolean mHasIcon;
 
@@ -109,14 +109,14 @@ public class AddToHomescreenDialog implements View.OnClickListener {
         // if the title needs to be edited. On click of "Add", shortcut is created. Default
         // title is the title of the page.
         mProgressBarView = view.findViewById(R.id.spinny);
-        mIconView = (ImageView) view.findViewById(R.id.icon);
-        mShortcutTitleInput = (EditText) view.findViewById(R.id.text);
-        mAppLayout = (LinearLayout) view.findViewById(R.id.app_info);
+        mIconView = view.findViewById(R.id.icon);
+        mShortcutTitleInput = view.findViewById(R.id.text);
+        mAppLayout = view.findViewById(R.id.app_info);
 
-        mAppNameView = (TextView) mAppLayout.findViewById(R.id.name);
-        mAppOriginView = (TextView) mAppLayout.findViewById(R.id.origin);
-        mAppRatingBar = (RatingBar) mAppLayout.findViewById(R.id.control_rating);
-        mPlayLogoView = (ImageView) view.findViewById(R.id.play_logo);
+        mAppNameView = mAppLayout.findViewById(R.id.name);
+        mAppOriginView = mAppLayout.findViewById(R.id.origin);
+        mAppRatingBar = mAppLayout.findViewById(R.id.control_rating);
+        mPlayLogoView = view.findViewById(R.id.play_logo);
 
         // The dialog's text field is disabled till the "user title" is fetched,
         mShortcutTitleInput.setVisibility(View.INVISIBLE);

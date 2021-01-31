@@ -100,7 +100,7 @@ public class NoTouchActivity extends SingleTabActivity {
     @Override
     public void finishNativeInitialization() {
         initializeCompositorContent(new LayoutManager(getCompositorViewHolder()), null /* urlBar */,
-                (ViewGroup) findViewById(android.R.id.content), null /* controlContainer */);
+                findViewById(android.R.id.content), null /* controlContainer */);
 
         getFullscreenManager().setTab(getActivityTab());
         super.finishNativeInitialization();

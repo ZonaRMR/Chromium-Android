@@ -86,7 +86,7 @@ public  final class ScriptStatusMatchProto extends
 
     private final int value;
 
-    private Comparator(int value) {
+    Comparator(int value) {
       this.value = value;
     }
 

@@ -78,10 +78,10 @@ public class SearchEngineAdapter extends BaseAdapter
     }
 
     /** The current context. */
-    private Context mContext;
+    private final Context mContext;
 
     /** The layout inflater to use for the custom views. */
-    private LayoutInflater mLayoutInflater;
+    private final LayoutInflater mLayoutInflater;
 
     /** The list of prepopluated and default search engines. */
     private List<TemplateUrl> mPrepopulatedSearchEngines = new ArrayList<>();
@@ -365,7 +365,7 @@ public class SearchEngineAdapter extends BaseAdapter
         // TODO(finnur): There's a tinting bug in the AppCompat lib (see http://crbug.com/474695),
         // which causes the first radiobox to always appear selected, even if it is not. It is being
         // addressed, but in the meantime we should use the native RadioButton instead.
-        RadioButton radioButton = (RadioButton) view.findViewById(R.id.radiobutton);
+        RadioButton radioButton = view.findViewById(R.id.radiobutton);
         // On Lollipop this removes the redundant animation ring on selection but on older versions
         // it would cause the radio button to disappear.
         // TODO(finnur): Remove the encompassing if statement once we go back to using the AppCompat
@@ -376,13 +376,13 @@ public class SearchEngineAdapter extends BaseAdapter
         }
         radioButton.setChecked(selected);
 
-        TextView description = (TextView) view.findViewById(R.id.name);
+        TextView description = view.findViewById(R.id.name);
         Resources resources = mContext.getResources();
 
         TemplateUrl templateUrl = (TemplateUrl) getItem(position);
         description.setText(templateUrl.getShortName());
 
-        TextView url = (TextView) view.findViewById(R.id.url);
+        TextView url = view.findViewById(R.id.url);
         url.setText(templateUrl.getKeyword());
         if (TextUtils.isEmpty(templateUrl.getKeyword())) {
             url.setVisibility(View.GONE);
@@ -407,7 +407,7 @@ public class SearchEngineAdapter extends BaseAdapter
             }
         });
 
-        TextView link = (TextView) view.findViewById(R.id.location_permission);
+        TextView link = view.findViewById(R.id.location_permission);
         link.setVisibility(View.GONE);
         if (TemplateUrlService.getInstance().getSearchEngineUrlFromTemplateUrl(
                 templateUrl.getKeyword()) == null) {

@@ -31,7 +31,7 @@ public class Smearer {
   private final Random random;
 
   /** The percentage [0, 1.0] for smearing the delay. */
-  private double smearFraction;
+  private final double smearFraction;
 
   /**
    * Creates a smearer with the given random number generator.

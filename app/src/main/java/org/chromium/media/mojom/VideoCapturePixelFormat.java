@@ -74,8 +74,8 @@ public final class VideoCapturePixelFormat {
 
     public static final int P016LE = XBGR + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (28);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 28;
 
     private static final boolean IS_EXTENSIBLE = false;
 

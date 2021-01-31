@@ -66,7 +66,7 @@ public class AndroidSyncSettings {
     /**
      * Provides notifications when Android sync settings have changed.
      */
-    public interface AndroidSyncSettingsObserver { public void androidSyncSettingsChanged(); }
+    public interface AndroidSyncSettingsObserver { void androidSyncSettingsChanged(); }
 
     /**
       Singleton instance getter. Will initialize the singleton if it hasn't been initialized before.

@@ -87,7 +87,7 @@ public class CustomTabToolbar
      * read-only in custom tabs.
      */
     public static class InterceptTouchLayout extends FrameLayout {
-        private GestureDetector mGestureDetector;
+        private final GestureDetector mGestureDetector;
 
         public InterceptTouchLayout(Context context, AttributeSet attrs) {
             super(context, attrs);
@@ -148,7 +148,7 @@ public class CustomTabToolbar
 
     protected ToolbarDataProvider mToolbarDataProvider;
 
-    private Runnable mTitleAnimationStarter = new Runnable() {
+    private final Runnable mTitleAnimationStarter = new Runnable() {
         @Override
         public void run() {
             mAnimDelegate.startTitleAnimation(getContext());
@@ -166,7 +166,7 @@ public class CustomTabToolbar
     protected void onFinishInflate() {
         super.onFinishInflate();
         setBackground(new ColorDrawable(ColorUtils.getDefaultThemeColor(getResources(), false)));
-        mUrlBar = (TextView) findViewById(R.id.url_bar);
+        mUrlBar = findViewById(R.id.url_bar);
         mUrlBar.setHint("");
         mUrlBar.setEnabled(false);
         mLiteStatusView = findViewById(R.id.url_bar_lite_status);

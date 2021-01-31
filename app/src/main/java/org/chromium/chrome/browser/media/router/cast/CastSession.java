@@ -24,7 +24,7 @@ public interface CastSession {
     /**
      * The return type for {@link handleVolumeMessage}.
      */
-    static class HandleVolumeMessageResult {
+    class HandleVolumeMessageResult {
         public final boolean mSucceeded;
         public final boolean mShouldWaitForVolumeChange;
 

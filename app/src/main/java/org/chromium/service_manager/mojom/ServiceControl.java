@@ -18,7 +18,7 @@ public interface ServiceControl extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ServiceControl, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ServiceControl, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ServiceControl, ServiceControl.Proxy> MANAGER = ServiceControl_Internal.MANAGER;

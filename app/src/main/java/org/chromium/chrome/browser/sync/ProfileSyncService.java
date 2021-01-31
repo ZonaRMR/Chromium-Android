@@ -34,7 +34,7 @@ public class ProfileSyncService {
      */
     public interface SyncStateChangedListener {
         // Invoked when the status has changed.
-        public void syncStateChanged();
+        void syncStateChanged();
     }
 
     /**
@@ -60,7 +60,7 @@ public class ProfileSyncService {
      */
     interface MasterSyncEnabledProvider {
         // Returns whether master sync is enabled.
-        public boolean isMasterSyncEnabled();
+        boolean isMasterSyncEnabled();
     }
 
     private static final String TAG = "ProfileSyncService";

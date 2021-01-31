@@ -353,9 +353,9 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public void onFinishInflate() {
         try (TraceEvent te = TraceEvent.scoped("ToolbarPhone.onFinishInflate")) {
             super.onFinishInflate();
-            mLocationBar = (LocationBarPhone) findViewById(R.id.location_bar);
+            mLocationBar = findViewById(R.id.location_bar);
 
-            mToolbarButtonsContainer = (ViewGroup) findViewById(R.id.toolbar_buttons);
+            mToolbarButtonsContainer = findViewById(R.id.toolbar_buttons);
 
             mHomeButton = findViewById(R.id.home_button);
             if (FeatureUtilities.isBottomToolbarEnabled()) {
@@ -366,7 +366,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                 }
             }
 
-            mUrlBar = (TextView) findViewById(R.id.url_bar);
+            mUrlBar = findViewById(R.id.url_bar);
 
             mUrlActionContainer = findViewById(R.id.url_action_container);
 
@@ -1483,7 +1483,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        mToolbarShadow = (ImageView) getRootView().findViewById(R.id.toolbar_shadow);
+        mToolbarShadow = getRootView().findViewById(R.id.toolbar_shadow);
 
         // This is a workaround for http://crbug.com/574928. Since Jelly Bean is the lowest version
         // we support now and the next deprecation target, we decided to simply workaround.
@@ -1498,7 +1498,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         // If capturing a texture of the toolbar, ensure the alpha is set prior to draw(...) being
         // called.  The alpha is being used prior to getting to draw(...), so updating the value
         // after this point was having no affect.
-        if (mTextureCaptureMode) assert getAlpha() == 1f;
+        assert !mTextureCaptureMode || getAlpha() == 1f;
 
         // mClipRect can change in the draw call, so cache this value to ensure the canvas is
         // restored correctly.

@@ -6,7 +6,7 @@ SEPIA(2),
 THEME_COUNT(3),
 ;
 private final int mValue;
-private Theme(int value) {
+Theme(int value) {
   mValue = value;
 }
 int asNativeEnum() {

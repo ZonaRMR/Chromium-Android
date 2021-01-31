@@ -33,7 +33,7 @@ public class ChromeFileProvider extends FileProvider {
     private static final String BLOCKED_FILE_PREFIX = "BlockedFile_";
 
     // All these static objects must be accesseed in a synchronized block:
-    private static Object sLock = new Object();
+    private static final Object sLock = new Object();
     private static boolean sIsFileReady;
     private static Uri sCurrentBlockingUri;
     private static Uri sFileUri;
@@ -48,7 +48,7 @@ public class ChromeFileProvider extends FileProvider {
      */
     public static Uri generateUriAndBlockAccess(final Context context) {
         String authority = getAuthority(context);
-        String fileName = BLOCKED_FILE_PREFIX + String.valueOf(System.nanoTime());
+        String fileName = BLOCKED_FILE_PREFIX + System.nanoTime();
         Uri blockingUri = new Uri.Builder()
                                   .scheme(UrlConstants.CONTENT_SCHEME)
                                   .authority(authority)

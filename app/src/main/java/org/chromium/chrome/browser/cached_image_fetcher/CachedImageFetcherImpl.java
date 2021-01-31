@@ -32,7 +32,7 @@ public class CachedImageFetcherImpl implements CachedImageFetcher {
     }
 
     // The native bridge.
-    private CachedImageFetcherBridge mCachedImageFetcherBridge;
+    private final CachedImageFetcherBridge mCachedImageFetcherBridge;
 
     /**
      * Creates a CachedImageFetcher for the current user.

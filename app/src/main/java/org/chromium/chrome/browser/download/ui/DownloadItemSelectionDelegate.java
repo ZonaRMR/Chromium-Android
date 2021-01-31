@@ -24,7 +24,7 @@ public class DownloadItemSelectionDelegate extends SelectionDelegate<DownloadHis
          * Called when the set of selected subsection headers has changed.
          * @param selectedHeaders The set of currently selected headers.
          */
-        public void onSubsectionHeaderSelectionStateChanged(Set<SubsectionHeader> selectedHeaders);
+        void onSubsectionHeaderSelectionStateChanged(Set<SubsectionHeader> selectedHeaders);
     }
 
     private final Set<SubsectionHeader> mSelectedHeaders = new HashSet<>();

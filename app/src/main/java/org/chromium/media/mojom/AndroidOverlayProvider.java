@@ -18,7 +18,7 @@ public interface AndroidOverlayProvider extends org.chromium.mojo.bindings.Inter
 
 
 
-    public interface Proxy extends AndroidOverlayProvider, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AndroidOverlayProvider, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AndroidOverlayProvider, AndroidOverlayProvider.Proxy> MANAGER = AndroidOverlayProvider_Internal.MANAGER;

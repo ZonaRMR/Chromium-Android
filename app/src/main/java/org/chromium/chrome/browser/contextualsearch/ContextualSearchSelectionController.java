@@ -550,8 +550,7 @@ public class ContextualSearchSelectionController {
     boolean isValidSelection(String selection, SelectionPopupController controller) {
         if (selection.length() > MAX_SELECTION_LENGTH) return false;
         if (!doesContainAWord(selection)) return false;
-        if (controller != null && controller.isFocusedNodeEditable()) return false;
-        return true;
+        return controller == null || !controller.isFocusedNodeEditable();
     }
 
     /**

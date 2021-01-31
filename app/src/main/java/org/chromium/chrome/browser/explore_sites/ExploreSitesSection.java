@@ -44,10 +44,10 @@ public class ExploreSitesSection {
     private static final int MAX_TIMES_ROTATED = 6;
 
     @TileStyle
-    private int mStyle;
-    private Profile mProfile;
-    private NativePageNavigationDelegate mNavigationDelegate;
-    private TileGridLayout mExploreSection;
+    private final int mStyle;
+    private final Profile mProfile;
+    private final NativePageNavigationDelegate mNavigationDelegate;
+    private final TileGridLayout mExploreSection;
 
     public ExploreSitesSection(View view, Profile profile,
             NativePageNavigationDelegate navigationDelegate, @TileStyle int style) {

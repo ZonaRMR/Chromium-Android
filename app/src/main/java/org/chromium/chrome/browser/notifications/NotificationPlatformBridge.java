@@ -80,7 +80,7 @@ public class NotificationPlatformBridge {
 
     private long mLastNotificationClickMs;
 
-    private TrustedWebActivityClient mTwaClient;
+    private final TrustedWebActivityClient mTwaClient;
 
     /**
      * Creates a new instance of the NotificationPlatformBridge.

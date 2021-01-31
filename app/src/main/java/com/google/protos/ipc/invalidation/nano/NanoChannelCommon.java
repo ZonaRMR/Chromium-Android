@@ -7,7 +7,7 @@ package com.google.protos.ipc.invalidation.nano;
 @SuppressWarnings("hiding")
 public interface NanoChannelCommon {
 
-  public static final class ChannelMessageEncoding extends
+  final class ChannelMessageEncoding extends
       com.google.protobuf.nano.ExtendableMessageNano<ChannelMessageEncoding> {
 
     // enum MessageEncoding
@@ -70,7 +70,7 @@ public interface NanoChannelCommon {
     }
   }
 
-  public static final class NetworkEndpointId extends
+  final class NetworkEndpointId extends
       com.google.protobuf.nano.ExtendableMessageNano<NetworkEndpointId> {
 
     // enum NetworkAddress

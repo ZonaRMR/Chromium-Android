@@ -48,18 +48,18 @@ public class SnackbarView {
     private final ImageView mProfileImageView;
     private final int mAnimationDuration;
     private final boolean mIsTablet;
-    private ViewGroup mOriginalParent;
+    private final ViewGroup mOriginalParent;
     protected ViewGroup mParent;
     protected Snackbar mSnackbar;
     private boolean mAnimateOverWebContent;
-    private View mRootContentView;
+    private final View mRootContentView;
 
     // Variables used to calculate the virtual keyboard's height.
-    private Rect mCurrentVisibleRect = new Rect();
-    private Rect mPreviousVisibleRect = new Rect();
-    private int[] mTempLocation = new int[2];
+    private final Rect mCurrentVisibleRect = new Rect();
+    private final Rect mPreviousVisibleRect = new Rect();
+    private final int[] mTempLocation = new int[2];
 
-    private OnLayoutChangeListener mLayoutListener = new OnLayoutChangeListener() {
+    private final OnLayoutChangeListener mLayoutListener = new OnLayoutChangeListener() {
         @Override
         public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft,
                 int oldTop, int oldRight, int oldBottom) {
@@ -96,10 +96,10 @@ public class SnackbarView {
         mAnimationDuration =
                 mContainerView.getResources().getInteger(android.R.integer.config_mediumAnimTime);
         mMessageView =
-                (TemplatePreservingTextView) mContainerView.findViewById(R.id.snackbar_message);
-        mActionButtonView = (TextView) mContainerView.findViewById(R.id.snackbar_button);
+                mContainerView.findViewById(R.id.snackbar_message);
+        mActionButtonView = mContainerView.findViewById(R.id.snackbar_button);
         mActionButtonView.setOnClickListener(listener);
-        mProfileImageView = (ImageView) mContainerView.findViewById(R.id.snackbar_profile_image);
+        mProfileImageView = mContainerView.findViewById(R.id.snackbar_profile_image);
 
         updateInternal(snackbar, false);
     }

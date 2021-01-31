@@ -30,9 +30,7 @@ public abstract class TabModelSelectorBase implements TabModelSelector {
         // Only normal and incognito supported for now.
         assert mTabModels.isEmpty();
         assert models.length > 0;
-        if (startIncognito) {
-            assert models.length > INCOGNITO_TAB_MODEL_INDEX;
-        }
+        assert !startIncognito || models.length > INCOGNITO_TAB_MODEL_INDEX;
 
         List<TabModel> tabModels = new ArrayList<TabModel>();
         for (int i = 0; i < models.length; i++) {

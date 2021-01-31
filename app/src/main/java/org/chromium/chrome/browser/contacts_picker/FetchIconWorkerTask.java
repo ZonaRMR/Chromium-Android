@@ -34,13 +34,13 @@ class FetchIconWorkerTask extends AsyncTask<Bitmap> {
     }
 
     // The ID of the contact to look up.
-    private String mContactId;
+    private final String mContactId;
 
     // The content resolver to use for looking up
-    private ContentResolver mContentResolver;
+    private final ContentResolver mContentResolver;
 
     // The callback to use to communicate the results.
-    private IconRetrievedCallback mCallback;
+    private final IconRetrievedCallback mCallback;
 
     /**
      * A FetchIconWorkerTask constructor.

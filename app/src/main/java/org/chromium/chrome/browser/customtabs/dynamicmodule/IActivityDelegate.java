@@ -7,7 +7,7 @@ package org.chromium.chrome.browser.customtabs.dynamicmodule;
 public interface IActivityDelegate extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityDelegate
+abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityDelegate
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityDelegate";
 /** Construct the stub at attach it to the interface. */
@@ -212,7 +212,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityDelegate
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -548,45 +548,45 @@ static final int TRANSACTION_onMessageChannelReady = (android.os.IBinder.FIRST_C
 static final int TRANSACTION_onPostMessage = (android.os.IBinder.FIRST_CALL_TRANSACTION + 14);
 static final int TRANSACTION_onPageMetricEvent = (android.os.IBinder.FIRST_CALL_TRANSACTION + 15);
 }
-public void onCreate(android.os.Bundle savedInstanceState) throws android.os.RemoteException;
-public void onPostCreate(android.os.Bundle savedInstanceState) throws android.os.RemoteException;
-public void onStart() throws android.os.RemoteException;
-public void onStop() throws android.os.RemoteException;
-public void onWindowFocusChanged(boolean hasFocus) throws android.os.RemoteException;
-public void onSaveInstanceState(android.os.Bundle outState) throws android.os.RemoteException;
-public void onRestoreInstanceState(android.os.Bundle savedInstanceState) throws android.os.RemoteException;
-public void onResume() throws android.os.RemoteException;
-public void onPause() throws android.os.RemoteException;
-public void onDestroy() throws android.os.RemoteException;
-public boolean onBackPressed() throws android.os.RemoteException;
+void onCreate(android.os.Bundle savedInstanceState) throws android.os.RemoteException;
+void onPostCreate(android.os.Bundle savedInstanceState) throws android.os.RemoteException;
+void onStart() throws android.os.RemoteException;
+void onStop() throws android.os.RemoteException;
+void onWindowFocusChanged(boolean hasFocus) throws android.os.RemoteException;
+void onSaveInstanceState(android.os.Bundle outState) throws android.os.RemoteException;
+void onRestoreInstanceState(android.os.Bundle savedInstanceState) throws android.os.RemoteException;
+void onResume() throws android.os.RemoteException;
+void onPause() throws android.os.RemoteException;
+void onDestroy() throws android.os.RemoteException;
+boolean onBackPressed() throws android.os.RemoteException;
 /**
    * Offers an opportunity to handle the back press event. If it is not handled,
    * the Runnable must be run.
    *
    * Introduced in API version 2.
    */
-public void onBackPressedAsync(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper notHandledRunnable) throws android.os.RemoteException;
+void onBackPressedAsync(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper notHandledRunnable) throws android.os.RemoteException;
 /**
    * Notify module about navigation events.
    * {@see android.support.customtabs.CustomTabsCallback#onNavigationEvent}
    *
    * Introduced in API version 4.
    */
-public void onNavigationEvent(int navigationEvent, android.os.Bundle extras) throws android.os.RemoteException;
+void onNavigationEvent(int navigationEvent, android.os.Bundle extras) throws android.os.RemoteException;
 /**
    * Notifies the module that a postMessage channel has been created and is
    * ready for sending and receiving messages.
    *
    * Experimental API.
    */
-public void onMessageChannelReady() throws android.os.RemoteException;
+void onMessageChannelReady() throws android.os.RemoteException;
 /**
    * Notifies the module about messages posted to it by the web page.
    * @param message The message sent. No guarantees are made about the format.
    *
    * Experimental API.
    */
-public void onPostMessage(java.lang.String message) throws android.os.RemoteException;
+void onPostMessage(java.lang.String message) throws android.os.RemoteException;
 /**
    * Notifies the module of page load metrics, for example time until first
    * contentful paint.
@@ -598,5 +598,5 @@ public void onPostMessage(java.lang.String message) throws android.os.RemoteExce
    *
    * Experimental API.
    */
-public void onPageMetricEvent(java.lang.String metricName, long navigationStart, long offset, long navigationId) throws android.os.RemoteException;
+void onPageMetricEvent(java.lang.String metricName, long navigationStart, long offset, long navigationId) throws android.os.RemoteException;
 }

@@ -48,8 +48,8 @@ public class AddressEditor
     private EditorFieldModel mPhoneField;
     @Nullable
     private EditorFieldModel mEmailField;
-    private PhoneNumberUtil.CountryAwareFormatTextWatcher mPhoneFormatter;
-    private CountryAwarePhoneNumberValidator mPhoneValidator;
+    private final PhoneNumberUtil.CountryAwareFormatTextWatcher mPhoneFormatter;
+    private final CountryAwarePhoneNumberValidator mPhoneValidator;
     @Nullable
     private List<AddressUiComponent> mAddressUiComponents;
     private boolean mAdminAreasLoaded;
@@ -58,8 +58,8 @@ public class AddressEditor
     private AutofillProfile mProfile;
     private EditorModel mEditor;
     private ProgressDialog mProgressDialog;
-    private boolean mEmailFieldIncluded;
-    private boolean mSaveToDisk;
+    private final boolean mEmailFieldIncluded;
+    private final boolean mSaveToDisk;
 
     /**
      * Builds an address editor.

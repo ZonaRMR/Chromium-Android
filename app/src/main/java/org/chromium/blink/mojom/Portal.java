@@ -18,7 +18,7 @@ public interface Portal extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends Portal, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends Portal, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<Portal, Portal.Proxy> MANAGER = Portal_Internal.MANAGER;

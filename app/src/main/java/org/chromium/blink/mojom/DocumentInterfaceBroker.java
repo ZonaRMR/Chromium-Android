@@ -18,7 +18,7 @@ public interface DocumentInterfaceBroker extends org.chromium.mojo.bindings.Inte
 
 
 
-    public interface Proxy extends DocumentInterfaceBroker, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends DocumentInterfaceBroker, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<DocumentInterfaceBroker, DocumentInterfaceBroker.Proxy> MANAGER = DocumentInterfaceBroker_Internal.MANAGER;

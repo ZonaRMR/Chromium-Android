@@ -29,7 +29,7 @@ public class SiteSettingsPreference extends ChromeBasePreference {
         super.onBindView(view);
 
         int padding = getContext().getResources().getDimensionPixelSize(R.dimen.pref_icon_padding);
-        ImageView icon = (ImageView) view.findViewById(android.R.id.icon);
+        ImageView icon = view.findViewById(android.R.id.icon);
         ViewCompat.setPaddingRelative(
                 icon, padding, icon.getPaddingTop(), 0, icon.getPaddingBottom());
     }

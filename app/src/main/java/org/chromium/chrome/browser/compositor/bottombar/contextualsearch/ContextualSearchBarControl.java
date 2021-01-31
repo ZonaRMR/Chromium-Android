@@ -58,7 +58,7 @@ public class ContextualSearchBarControl {
     /**
      * The {@link ContextualSearchImageControl} for the panel.
      */
-    private ContextualSearchImageControl mImageControl;
+    private final ContextualSearchImageControl mImageControl;
 
     /**
      * The opacity of the Bar's Search Context.

@@ -86,9 +86,9 @@ public class CaptivePortalHelper {
             for (Object obj : (Object[]) getAllNetworksMethod.invoke(connectivityManager)) {
                 // Try both true and false for |hasConnectivity|, as above.
                 reportNetworkConnectivityMethod.invoke(
-                        connectivityManager, new Object[] {networkClass.cast(obj), true});
+                        connectivityManager, networkClass.cast(obj), true);
                 reportNetworkConnectivityMethod.invoke(
-                        connectivityManager, new Object[] {networkClass.cast(obj), false});
+                        connectivityManager, networkClass.cast(obj), false);
             }
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException
                 | ClassNotFoundException e) {

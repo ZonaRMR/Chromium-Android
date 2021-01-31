@@ -34,7 +34,7 @@ public class BookmarkModel extends BookmarkBridge {
         void onDeleteBookmarks(String[] titles, boolean isUndoable);
     }
 
-    private ObserverList<BookmarkDeleteObserver> mDeleteObservers = new ObserverList<>();
+    private final ObserverList<BookmarkDeleteObserver> mDeleteObservers = new ObserverList<>();
 
     /**
      * Initialize bookmark model for last used non-incognito profile.

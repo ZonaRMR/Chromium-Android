@@ -269,10 +269,10 @@ public class SelectableListToolbar<E>
 
         LayoutInflater.from(getContext()).inflate(R.layout.search_toolbar, this);
 
-        mSearchView = (LinearLayout) findViewById(R.id.search_view);
-        mSearchText = (EditText) mSearchView.findViewById(R.id.search_text);
+        mSearchView = findViewById(R.id.search_view);
+        mSearchText = mSearchView.findViewById(R.id.search_text);
 
-        mSearchEditText = (EditText) findViewById(R.id.search_text);
+        mSearchEditText = findViewById(R.id.search_text);
         mSearchEditText.setHint(hintStringResId);
         mSearchEditText.setOnEditorActionListener(this);
         mSearchEditText.addTextChangedListener(new TextWatcher() {
@@ -304,7 +304,7 @@ public class SelectableListToolbar<E>
         super.onFinishInflate();
 
         LayoutInflater.from(getContext()).inflate(R.layout.number_roll_view, this);
-        mNumberRollView = (NumberRollView) findViewById(R.id.selection_mode_number);
+        mNumberRollView = findViewById(R.id.selection_mode_number);
         mNumberRollView.setString(R.plurals.selected_items);
         mNumberRollView.setStringForZero(R.string.select_items);
     }
@@ -318,7 +318,7 @@ public class SelectableListToolbar<E>
         // If onSelectionStateChange() gets called before onFinishInflate(), mNumberRollView
         // will be uninitialized. See crbug.com/637948.
         if (mNumberRollView == null) {
-            mNumberRollView = (NumberRollView) findViewById(R.id.selection_mode_number);
+            mNumberRollView = findViewById(R.id.selection_mode_number);
         }
 
         if (mIsSelectionEnabled) {

@@ -118,7 +118,7 @@ public final class MediaMetadata {
     private String mAlbum;
 
     @NonNull
-    private List<MediaImage> mArtwork = new ArrayList<MediaImage>();
+    private final List<MediaImage> mArtwork = new ArrayList<MediaImage>();
 
     /**
      * Returns the title associated with the media session.

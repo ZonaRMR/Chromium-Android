@@ -13,7 +13,7 @@ import java.util.Set;
  * Class that tracks which sites are currently suspended.
  */
 public class SuspensionTracker {
-    private Set<String> mSuspendedWebsites;
+    private final Set<String> mSuspendedWebsites;
 
     public SuspensionTracker() {
         mSuspendedWebsites = new HashSet<String>();

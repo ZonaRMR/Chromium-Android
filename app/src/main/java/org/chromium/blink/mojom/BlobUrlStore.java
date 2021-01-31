@@ -18,7 +18,7 @@ public interface BlobUrlStore extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends BlobUrlStore, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BlobUrlStore, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BlobUrlStore, BlobUrlStore.Proxy> MANAGER = BlobUrlStore_Internal.MANAGER;

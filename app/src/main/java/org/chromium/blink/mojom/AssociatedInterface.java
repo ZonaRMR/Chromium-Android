@@ -18,7 +18,7 @@ public interface AssociatedInterface extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends AssociatedInterface, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AssociatedInterface, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AssociatedInterface, AssociatedInterface.Proxy> MANAGER = AssociatedInterface_Internal.MANAGER;

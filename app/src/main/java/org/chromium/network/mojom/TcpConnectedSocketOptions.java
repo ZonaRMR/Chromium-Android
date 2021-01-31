@@ -27,7 +27,7 @@ public final class TcpConnectedSocketOptions extends org.chromium.mojo.bindings.
         super(STRUCT_SIZE, version);
         this.sendBufferSize = (int) 0L;
         this.receiveBufferSize = (int) 0L;
-        this.noDelay = (boolean) true;
+        this.noDelay = true;
     }
 
     public TcpConnectedSocketOptions() {

@@ -32,8 +32,8 @@ class FilterView {
     public FilterView(Context context) {
         mView = (ViewGroup) LayoutInflater.from(context).inflate(R.layout.download_home_tabs, null);
 
-        mTabsView = (TabLayout) mView.findViewById(R.id.tabs);
-        mContentContainerView = (ViewGroup) mView.findViewById(R.id.content_container);
+        mTabsView = mView.findViewById(R.id.tabs);
+        mContentContainerView = mView.findViewById(R.id.content_container);
 
         mTabsView.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

@@ -55,7 +55,7 @@ public class TextScalePreference extends SeekBarPreference {
     protected void onBindView(View view) {
         super.onBindView(view);
         if (mPreview == null) {
-            mPreview = (TextView) view.findViewById(R.id.preview);
+            mPreview = view.findViewById(R.id.preview);
             updatePreview();
         }
     }

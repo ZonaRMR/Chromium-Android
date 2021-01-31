@@ -30,7 +30,7 @@ import java.util.List;
 
 public interface AndroidService {
 
-  public static final class ClientDowncall extends ProtoWrapper {
+  final class ClientDowncall extends ProtoWrapper {
     public static final class StartDowncall extends ProtoWrapper {
       public static StartDowncall create() {
         return new StartDowncall();
@@ -491,7 +491,7 @@ public interface AndroidService {
     }
   }
 
-  public static final class InternalDowncall extends ProtoWrapper {
+  final class InternalDowncall extends ProtoWrapper {
     public static final class ServerMessage extends ProtoWrapper {
       public static ServerMessage create(Bytes data) {
         return new ServerMessage(data);
@@ -865,7 +865,7 @@ public interface AndroidService {
     }
   }
 
-  public static final class ListenerUpcall extends ProtoWrapper {
+  final class ListenerUpcall extends ProtoWrapper {
     public static final class ReadyUpcall extends ProtoWrapper {
       public static ReadyUpcall create() {
         return new ReadyUpcall();
@@ -1605,7 +1605,7 @@ public interface AndroidService {
     }
   }
 
-  public static final class AndroidSchedulerEvent extends ProtoWrapper {
+  final class AndroidSchedulerEvent extends ProtoWrapper {
     public static AndroidSchedulerEvent create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.Version version,
         String eventName,
         long ticlId) {
@@ -1688,7 +1688,7 @@ public interface AndroidService {
     }
   }
 
-  public static final class ScheduledTask extends ProtoWrapper {
+  final class ScheduledTask extends ProtoWrapper {
     public static ScheduledTask create(String eventName,
         long executeTimeMs) {
       return new ScheduledTask(eventName, executeTimeMs);
@@ -1759,7 +1759,7 @@ public interface AndroidService {
     }
   }
 
-  public static final class AndroidNetworkSendRequest extends ProtoWrapper {
+  final class AndroidNetworkSendRequest extends ProtoWrapper {
     public static AndroidNetworkSendRequest create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.Version version,
         Bytes message) {
       return new AndroidNetworkSendRequest(version, message);
@@ -1830,7 +1830,7 @@ public interface AndroidService {
     }
   }
 
-  public static final class AndroidTiclState extends ProtoWrapper {
+  final class AndroidTiclState extends ProtoWrapper {
     public static final class Metadata extends ProtoWrapper {
       public static Metadata create(int clientType,
           Bytes clientName,
@@ -2025,7 +2025,7 @@ public interface AndroidService {
     }
   }
 
-  public static final class AndroidTiclStateWithDigest extends ProtoWrapper {
+  final class AndroidTiclStateWithDigest extends ProtoWrapper {
     public static AndroidTiclStateWithDigest create(com.google.ipc.invalidation.ticl.proto.AndroidService.AndroidTiclState state,
         Bytes digest) {
       return new AndroidTiclStateWithDigest(state, digest);

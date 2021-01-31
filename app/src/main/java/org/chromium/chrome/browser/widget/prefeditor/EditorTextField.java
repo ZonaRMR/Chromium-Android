@@ -33,17 +33,17 @@ import org.chromium.chrome.browser.widget.TintedDrawable;
 /** Handles validation and display of one field from the {@link EditorFieldModel}. */
 @VisibleForTesting
 public class EditorTextField extends FrameLayout implements EditorFieldView, View.OnClickListener {
-    private EditorFieldModel mEditorFieldModel;
-    private OnEditorActionListener mEditorActionListener;
-    private CompatibilityTextInputLayout mInputLayout;
-    private AutoCompleteTextView mInput;
-    private View mIconsLayer;
+    private final EditorFieldModel mEditorFieldModel;
+    private final OnEditorActionListener mEditorActionListener;
+    private final CompatibilityTextInputLayout mInputLayout;
+    private final AutoCompleteTextView mInput;
+    private final View mIconsLayer;
     private ImageView mActionIcon;
     private ImageView mValueIcon;
     private int mValueIconId;
     private boolean mHasFocusedAtLeastOnce;
     @Nullable
-    private EditorObserverForTest mObserverForTest;
+    private final EditorObserverForTest mObserverForTest;
 
     public EditorTextField(Context context, final EditorFieldModel fieldModel,
             OnEditorActionListener actionListener, @Nullable InputFilter filter,
@@ -55,14 +55,14 @@ public class EditorTextField extends FrameLayout implements EditorFieldView, Vie
         mObserverForTest = observer;
 
         LayoutInflater.from(context).inflate(R.layout.payments_request_editor_textview, this, true);
-        mInputLayout = (CompatibilityTextInputLayout) findViewById(R.id.text_input_layout);
+        mInputLayout = findViewById(R.id.text_input_layout);
 
         // Build up the label.  Required fields are indicated by appending a '*'.
         CharSequence label = fieldModel.getLabel();
         if (fieldModel.isRequired()) label = label + EditorDialog.REQUIRED_FIELD_INDICATOR;
         mInputLayout.setHint(label);
 
-        mInput = (AutoCompleteTextView) mInputLayout.findViewById(R.id.text_view);
+        mInput = mInputLayout.findViewById(R.id.text_view);
         mInput.setText(fieldModel.getValue());
         mInput.setContentDescription(label);
         mInput.setOnEditorActionListener(mEditorActionListener);
@@ -92,7 +92,7 @@ public class EditorTextField extends FrameLayout implements EditorFieldView, Vie
         });
 
         if (fieldModel.getActionIconAction() != null) {
-            mActionIcon = (ImageView) mIconsLayer.findViewById(R.id.action_icon);
+            mActionIcon = mIconsLayer.findViewById(R.id.action_icon);
             mActionIcon.setImageDrawable(TintedDrawable.constructTintedDrawable(context,
                     fieldModel.getActionIconResourceId(), R.color.default_icon_color_blue));
             mActionIcon.setContentDescription(context.getResources().getString(
@@ -102,7 +102,7 @@ public class EditorTextField extends FrameLayout implements EditorFieldView, Vie
         }
 
         if (fieldModel.getValueIconGenerator() != null) {
-            mValueIcon = (ImageView) mIconsLayer.findViewById(R.id.value_icon);
+            mValueIcon = mIconsLayer.findViewById(R.id.value_icon);
             mValueIcon.setVisibility(VISIBLE);
         }
 

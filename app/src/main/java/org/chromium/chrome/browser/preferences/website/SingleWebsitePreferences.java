@@ -159,7 +159,7 @@ public class SingleWebsitePreferences extends PreferenceFragment
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         getActivity().setTitle(R.string.prefs_site_settings);
-        ListView listView = (ListView) getView().findViewById(android.R.id.list);
+        ListView listView = getView().findViewById(android.R.id.list);
         listView.setDivider(null);
 
         Object extraSite = getArguments().getSerializable(EXTRA_SITE);
@@ -539,10 +539,8 @@ public class SingleWebsitePreferences extends PreferenceFragment
         for (int i = 0; i < PermissionInfo.Type.NUM_ENTRIES; i++) {
             if (PermissionInfo.getContentSettingsType(i)
                     == SiteSettingsCategory.contentSettingsType(type)) {
-                return mSite.getPermission(i) == null
-                        ? false
-                        : SiteSettingsCategory.createFromType(type).showPermissionBlockedMessage(
-                                  getActivity());
+                return mSite.getPermission(i) != null && SiteSettingsCategory.createFromType(type).showPermissionBlockedMessage(
+                        getActivity());
             }
         }
         return false;

@@ -28,21 +28,21 @@ public class ChromeCastSessionManager {
      */
     public interface CastSessionManagerListener {
         // Called right before a session launch is started.
-        public void onSessionStarting(
+        void onSessionStarting(
                 ChromeCastSessionManager.CastSessionLaunchRequest originalRequest);
 
         // Called after a successful session launch.
-        public void onSessionStarted(CastSession session);
+        void onSessionStarted(CastSession session);
 
         // Called after a failed session launch.
-        public void onSessionStartFailed();
+        void onSessionStartFailed();
 
         // Called when a session is shutting down (as a result of user action, or when a new
         // session is being launched).
-        public void onSessionStopAction();
+        void onSessionStopAction();
 
         // Called after a session has shut down.
-        public void onSessionEnded();
+        void onSessionEnded();
     }
 
     /**
@@ -52,10 +52,10 @@ public class ChromeCastSessionManager {
         // Starts the request.
         // Success or failure will be reported to the ChromeCastSessionManager via the
         // onSessionStarted() and onSessionStartFailed() calls.
-        public void start(Cast.Listener listener);
+        void start(Cast.Listener listener);
 
         // Gets the session observer that should be notified of the session launch.
-        public CastSessionManagerListener getSessionListener();
+        CastSessionManagerListener getSessionListener();
     }
 
     private class CastListener extends Cast.Listener {

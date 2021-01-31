@@ -28,8 +28,8 @@ public final class PaymentHandlerStatus {
 
     public static final int FETCH_PAYMENT_APP_INFO_FAILED = FETCH_INSTRUMENT_ICON_FAILED + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (5);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 5;
 
     private static final boolean IS_EXTENSIBLE = false;
 

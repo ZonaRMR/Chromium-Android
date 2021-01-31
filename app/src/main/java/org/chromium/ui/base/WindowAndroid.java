@@ -57,7 +57,7 @@ public class WindowAndroid implements AndroidPermissionDelegate {
     @TargetApi(Build.VERSION_CODES.KITKAT)
     private class TouchExplorationMonitor {
         // Listener that tells us when touch exploration is enabled or disabled.
-        private AccessibilityManager.TouchExplorationStateChangeListener mTouchExplorationListener;
+        private final AccessibilityManager.TouchExplorationStateChangeListener mTouchExplorationListener;
 
         TouchExplorationMonitor() {
             mTouchExplorationListener =
@@ -91,7 +91,7 @@ public class WindowAndroid implements AndroidPermissionDelegate {
 
     protected SparseArray<IntentCallback> mOutstandingIntents;
     // We use a weak reference here to prevent this from leaking in WebView.
-    private WeakReference<Context> mContextRef;
+    private final WeakReference<Context> mContextRef;
 
     // Ideally, this would be a SparseArray<String>, but there's no easy way to store a
     // SparseArray<String> in a bundle during saveInstanceState(). So we use a HashMap and suppress
@@ -99,7 +99,7 @@ public class WindowAndroid implements AndroidPermissionDelegate {
     protected HashMap<Integer, String> mIntentErrors;
 
     // We track all animations over content and provide a drawing placeholder for them.
-    private HashSet<Animator> mAnimationsOverContent = new HashSet<>();
+    private final HashSet<Animator> mAnimationsOverContent = new HashSet<>();
     private View mAnimationPlaceholderView;
 
     // System accessibility service.
@@ -143,7 +143,7 @@ public class WindowAndroid implements AndroidPermissionDelegate {
         void onActivityResumed();
     }
 
-    private ObserverList<ActivityStateObserver> mActivityStateObservers = new ObserverList<>();
+    private final ObserverList<ActivityStateObserver> mActivityStateObservers = new ObserverList<>();
 
     /**
      * Gets the view for readback.

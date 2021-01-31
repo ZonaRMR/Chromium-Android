@@ -301,7 +301,7 @@ public class PropertyModel extends PropertyObservable<PropertyKey> {
     public boolean get(ReadableBooleanPropertyKey key) {
         validateKey(key);
         BooleanContainer container = (BooleanContainer) mData.get(key);
-        return container == null ? false : container.value;
+        return container != null && container.value;
     }
 
     /**

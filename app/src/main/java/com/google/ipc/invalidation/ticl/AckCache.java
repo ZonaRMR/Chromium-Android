@@ -56,7 +56,7 @@ class AckCache {
    * <em>restarted, known version</em> invalidation for that object that has
    * been acked by the client.
    */
-  private Map<ObjectIdP, Long> highestAckedVersionMap = new HashMap<ObjectIdP, Long>();
+  private final Map<ObjectIdP, Long> highestAckedVersionMap = new HashMap<ObjectIdP, Long>();
 
   /** Records the fact that the client has acknowledged the given invalidation. */
   void recordAck(InvalidationP inv) {

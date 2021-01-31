@@ -33,10 +33,10 @@ public final class CanonicalCookie extends org.chromium.mojo.bindings.Struct {
 
     private CanonicalCookie(int version) {
         super(STRUCT_SIZE, version);
-        this.secure = (boolean) false;
-        this.httponly = (boolean) false;
-        this.siteRestrictions = (int) CookieSameSite.NO_RESTRICTION;
-        this.priority = (int) CookiePriority.MEDIUM;
+        this.secure = false;
+        this.httponly = false;
+        this.siteRestrictions = CookieSameSite.NO_RESTRICTION;
+        this.priority = CookiePriority.MEDIUM;
     }
 
     public CanonicalCookie() {

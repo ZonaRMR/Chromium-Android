@@ -29,9 +29,9 @@ public class DialogOverlayImpl implements AndroidOverlay, DialogOverlayCore.Host
     private static final String TAG = "DialogOverlayImpl";
 
     private AndroidOverlayClient mClient;
-    private Handler mOverlayHandler;
+    private final Handler mOverlayHandler;
     // Runnable that we'll run when the overlay notifies us that it's been released.
-    private Runnable mReleasedRunnable;
+    private final Runnable mReleasedRunnable;
 
     // Runnable that will release |mDialogCore| when posted to mOverlayHandler.  We keep this
     // separately from mDialogCore itself so that we can call it after we've discarded the latter.

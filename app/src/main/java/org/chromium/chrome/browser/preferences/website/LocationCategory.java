@@ -38,12 +38,8 @@ public class LocationCategory extends SiteSettingsCategory {
         // blocks Location by policy (because then turning it on in the system isn't going to
         // turn on location in Chrome).
         PrefServiceBridge prefs = PrefServiceBridge.getInstance();
-        if (!LocationSettings.getInstance().isChromeLocationSettingEnabled()
-                && !prefs.isAllowLocationUserModifiable()) {
-            return false;
-        }
-
-        return true;
+        return LocationSettings.getInstance().isChromeLocationSettingEnabled()
+                || prefs.isAllowLocationUserModifiable();
     }
 
     @Override

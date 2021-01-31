@@ -30,8 +30,8 @@ public final class HashAlgorithm {
 
     public static final int HASH_ALGO_SHA512 = (int) (6L);
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (6);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 6;
 
     private static final boolean IS_EXTENSIBLE = false;
 

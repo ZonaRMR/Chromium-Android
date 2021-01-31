@@ -34,12 +34,12 @@ class UsbMidiDeviceFactoryAndroid {
     /**
      * The UsbManager of this system.
      */
-    private UsbManager mUsbManager;
+    private final UsbManager mUsbManager;
 
     /**
      * A BroadcastReceiver for USB device events.
      */
-    private BroadcastReceiver mReceiver;
+    private final BroadcastReceiver mReceiver;
 
     /**
      * Accessible USB-MIDI devices got so far.
@@ -49,7 +49,7 @@ class UsbMidiDeviceFactoryAndroid {
     /**
      * Devices whose access permission requested but not resolved so far.
      */
-    private Set<UsbDevice> mRequestedDevices;
+    private final Set<UsbDevice> mRequestedDevices;
 
     /**
      * True when the enumeration is in progress.
@@ -199,7 +199,7 @@ class UsbMidiDeviceFactoryAndroid {
      * @param intent
      */
     private void onUsbDevicePermissionRequestDone(Context context, Intent intent) {
-        UsbDevice device = (UsbDevice) intent.getParcelableExtra(UsbManager.EXTRA_DEVICE);
+        UsbDevice device = intent.getParcelableExtra(UsbManager.EXTRA_DEVICE);
         UsbMidiDeviceAndroid midiDevice = null;
         if (mRequestedDevices.contains(device)) {
             mRequestedDevices.remove(device);

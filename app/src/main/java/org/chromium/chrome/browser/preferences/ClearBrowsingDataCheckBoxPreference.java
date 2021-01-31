@@ -55,7 +55,7 @@ public class ClearBrowsingDataCheckBoxPreference extends ChromeBaseCheckBoxPrefe
         mView = super.onCreateView(parent);
         setupLayout(mView);
 
-        final TextView textView = (TextView) mView.findViewById(android.R.id.summary);
+        final TextView textView = mView.findViewById(android.R.id.summary);
 
         // Create custom onTouch listener to be able to respond to click events inside the summary.
         textView.setOnTouchListener((View v, MotionEvent event) -> {
@@ -97,7 +97,7 @@ public class ClearBrowsingDataCheckBoxPreference extends ChromeBaseCheckBoxPrefe
     private void setupLayout(View view) {
         // Adjust icon padding.
         int padding = getContext().getResources().getDimensionPixelSize(R.dimen.pref_icon_padding);
-        ImageView icon = (ImageView) view.findViewById(android.R.id.icon);
+        ImageView icon = view.findViewById(android.R.id.icon);
         ViewCompat.setPaddingRelative(
                 icon, padding, icon.getPaddingTop(), 0, icon.getPaddingBottom());
     }

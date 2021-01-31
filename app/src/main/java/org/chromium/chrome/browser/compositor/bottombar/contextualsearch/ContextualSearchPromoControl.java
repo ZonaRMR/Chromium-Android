@@ -85,7 +85,7 @@ public class ContextualSearchPromoControl extends OverlayPanelInflater {
     /**
      * The interface used to talk to the Panel.
      */
-    private ContextualSearchPromoHost mHost;
+    private final ContextualSearchPromoHost mHost;
 
     /**
      * The delegate that is used to communicate with the Panel.
@@ -347,17 +347,17 @@ public class ContextualSearchPromoControl extends OverlayPanelInflater {
         View view = getView();
 
         // "Allow" button.
-        Button allowButton = (Button) view.findViewById(R.id.contextual_search_allow_button);
+        Button allowButton = view.findViewById(R.id.contextual_search_allow_button);
         allowButton.setOnClickListener(
                 v -> ContextualSearchPromoControl.this.handlePromoChoice(true));
 
         // "No thanks" button.
-        Button noThanksButton = (Button) view.findViewById(R.id.contextual_search_no_thanks_button);
+        Button noThanksButton = view.findViewById(R.id.contextual_search_no_thanks_button);
         noThanksButton.setOnClickListener(
                 v -> ContextualSearchPromoControl.this.handlePromoChoice(false));
 
         // Fill in text with link to Settings.
-        TextView promoText = (TextView) view.findViewById(R.id.contextual_search_promo_text);
+        TextView promoText = view.findViewById(R.id.contextual_search_promo_text);
 
         NoUnderlineClickableSpan settingsLink = new NoUnderlineClickableSpan(
                 (View ignored) -> ContextualSearchPromoControl.this.handleClickSettingsLink());

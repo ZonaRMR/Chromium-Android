@@ -18,7 +18,7 @@ public interface MediaControllerManager extends org.chromium.mojo.bindings.Inter
 
 
 
-    public interface Proxy extends MediaControllerManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaControllerManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaControllerManager, MediaControllerManager.Proxy> MANAGER = MediaControllerManager_Internal.MANAGER;

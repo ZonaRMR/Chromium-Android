@@ -17,7 +17,7 @@ public final class ConstantsConstants {
 
 
     
-    public static final String SERVICE_NAME = (String) "media_session";
+    public static final String SERVICE_NAME = "media_session";
 
 
 

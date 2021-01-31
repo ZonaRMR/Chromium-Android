@@ -18,7 +18,7 @@ public interface DataPipeGetter extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends DataPipeGetter, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends DataPipeGetter, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<DataPipeGetter, DataPipeGetter.Proxy> MANAGER = DataPipeGetter_Internal.MANAGER;

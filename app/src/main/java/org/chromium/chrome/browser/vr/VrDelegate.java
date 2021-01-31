@@ -132,11 +132,8 @@ public abstract class VrDelegate {
                 && vr_mode.getPhysicalWidth() != metrics.heightPixels) {
             return true;
         }
-        if (vr_mode.getPhysicalHeight() != metrics.widthPixels
-                && vr_mode.getPhysicalHeight() != metrics.heightPixels) {
-            return true;
-        }
-        return false;
+        return vr_mode.getPhysicalHeight() != metrics.widthPixels
+                && vr_mode.getPhysicalHeight() != metrics.heightPixels;
     }
 
     public abstract void onSaveInstanceState(Bundle outState);
@@ -189,8 +186,7 @@ public abstract class VrDelegate {
     }
 
     /* package */ boolean activitySupportsVrBrowsing(Activity activity) {
-        if (activity instanceof ChromeTabbedActivity) return true;
-        return false;
+        return activity instanceof ChromeTabbedActivity;
     }
 
     /* package */ boolean relaunchOnMainDisplayIfNecessary(Activity activity, Intent intent) {
@@ -237,7 +233,6 @@ public abstract class VrDelegate {
         if (!model.startsWith(SAMSUNG_GALAXY_PREFIX)) return false;
         CharSequence modelNumber = model.subSequence(3, 7);
         // Only S8(+) and Note 8 models change resolution in VR.
-        if (!SAMSUNG_GALAXY_8_MODELS.contains(modelNumber)) return false;
-        return true;
+        return SAMSUNG_GALAXY_8_MODELS.contains(modelNumber);
     }
 }

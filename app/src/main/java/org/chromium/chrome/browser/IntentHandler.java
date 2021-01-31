@@ -306,7 +306,7 @@ public class IntentHandler {
     /**
      * A delegate interface for users of IntentHandler.
      */
-    public static interface IntentHandlerDelegate {
+    public interface IntentHandlerDelegate {
         /**
          * Processes a URL VIEW Intent.
          */
@@ -934,11 +934,7 @@ public class IntentHandler {
         }
 
         // Always drop insecure urls.
-        if (url != null && isJavascriptSchemeOrInvalidUrl(url)) {
-            return false;
-        }
-
-        return true;
+        return url == null || !isJavascriptSchemeOrInvalidUrl(url);
     }
 
     /**
@@ -999,11 +995,8 @@ public class IntentHandler {
         if (isChromeToken(token)) {
             return true;
         }
-        if (ExternalAuthUtils.getInstance().isGoogleSigned(
-                    ApiCompatibilityUtils.getCreatorPackage(token))) {
-            return true;
-        }
-        return false;
+        return ExternalAuthUtils.getInstance().isGoogleSigned(
+                ApiCompatibilityUtils.getCreatorPackage(token));
     }
 
     @VisibleForTesting

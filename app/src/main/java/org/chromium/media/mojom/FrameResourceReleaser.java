@@ -18,7 +18,7 @@ public interface FrameResourceReleaser extends org.chromium.mojo.bindings.Interf
 
 
 
-    public interface Proxy extends FrameResourceReleaser, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FrameResourceReleaser, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FrameResourceReleaser, FrameResourceReleaser.Proxy> MANAGER = FrameResourceReleaser_Internal.MANAGER;

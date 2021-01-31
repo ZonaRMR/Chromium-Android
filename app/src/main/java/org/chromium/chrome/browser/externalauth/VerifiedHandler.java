@@ -49,7 +49,7 @@ public class VerifiedHandler extends Handler {
     public boolean sendMessageAtTime(Message msg, long uptimeMillis) {
         Messenger client = msg.replyTo;
         if (!mClientTrustMap.containsKey(client)) mClientTrustMap.put(client, checkCallerIsValid());
-        return (!mClientTrustMap.get(client)) ? false : super.sendMessageAtTime(msg, uptimeMillis);
+        return (mClientTrustMap.get(client)) && super.sendMessageAtTime(msg, uptimeMillis);
     }
 
     /**

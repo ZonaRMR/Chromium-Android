@@ -44,15 +44,15 @@ public class ExploreSitesCategoryCardView extends LinearLayout {
     private ContextMenuManager mContextMenuManager;
     private NativePageNavigationDelegate mNavigationDelegate;
     private Profile mProfile;
-    private List<PropertyModelChangeProcessor<PropertyModel, ExploreSitesTileView, PropertyKey>>
+    private final List<PropertyModelChangeProcessor<PropertyModel, ExploreSitesTileView, PropertyKey>>
             mModelChangeProcessors;
     private ExploreSitesCategory mCategory;
     private int mCategoryCardIndex;
 
     private class CategoryCardInteractionDelegate
             implements ContextMenuManager.Delegate, OnClickListener, OnCreateContextMenuListener {
-        private String mSiteUrl;
-        private int mTileIndex;
+        private final String mSiteUrl;
+        private final int mTileIndex;
 
         public CategoryCardInteractionDelegate(String siteUrl, int tileIndex) {
             mSiteUrl = siteUrl;
@@ -99,14 +99,11 @@ public class ExploreSitesCategoryCardView extends LinearLayout {
 
         @Override
         public boolean isItemSupported(@ContextMenuManager.ContextMenuItemId int menuItemId) {
-            if (menuItemId == ContextMenuManager.ContextMenuItemId.LEARN_MORE) {
-                return false;
-            }
-            return true;
+            return menuItemId != ContextMenuManager.ContextMenuItemId.LEARN_MORE;
         }
 
         @Override
-        public void onContextMenuCreated(){};
+        public void onContextMenuCreated(){}
     }
 
     // We use the MVC paradigm for the site tiles inside the category card.  We don't use the MVC

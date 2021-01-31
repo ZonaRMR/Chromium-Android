@@ -70,7 +70,7 @@ public class BrowsingModeBottomToolbarCoordinator {
         BrowsingModeBottomToolbarModel model = new BrowsingModeBottomToolbarModel();
 
         final ScrollingBottomViewResourceFrameLayout toolbarRoot =
-                (ScrollingBottomViewResourceFrameLayout) root.findViewById(
+                root.findViewById(
                         R.id.bottom_toolbar_control_container);
 
         final int shadowHeight =

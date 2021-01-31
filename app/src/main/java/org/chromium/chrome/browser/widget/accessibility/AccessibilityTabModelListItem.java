@@ -96,36 +96,36 @@ public class AccessibilityTabModelListItem extends FrameLayout implements OnClic
          * Called when a user clicks on this list item.
          * @param tabId The ID of the tab that this list item represents.
          */
-        public void tabSelected(int tabId);
+        void tabSelected(int tabId);
 
         /**
          * Called when a user clicks on the close button of this list item.
          * @param tabId The ID of the tab that this list item represents.
          */
-        public void tabClosed(int tabId);
+        void tabClosed(int tabId);
 
         /**
          * Called when the data corresponding to this list item has changed.
          * @param tabId The ID of the tab that this list item represents.
          */
-        public void tabChanged(int tabId);
+        void tabChanged(int tabId);
 
         /**
          * @return Whether or not the tab is scheduled to be closed.
          */
-        public boolean hasPendingClosure(int tabId);
+        boolean hasPendingClosure(int tabId);
 
         /**
          * Schedule a tab to be closed in the future.
          * @param tabId The ID of the tab to close.
          */
-        public void schedulePendingClosure(int tabId);
+        void schedulePendingClosure(int tabId);
 
         /**
          * Cancel a tab's closure.
          * @param tabId The ID of the tab that should no longer be closed.
          */
-        public void cancelPendingClosure(int tabId);
+        void cancelPendingClosure(int tabId);
     }
 
     private final Runnable mCloseRunnable = new Runnable() {
@@ -236,8 +236,8 @@ public class AccessibilityTabModelListItem extends FrameLayout implements OnClic
         mCloseButton = mTabContents.findViewById(R.id.close_btn_modern);
         mFaviconView.setBackgroundResource(R.drawable.list_item_icon_modern_bg);
 
-        mUndoContents = (LinearLayout) findViewById(R.id.undo_contents);
-        mUndoButton = (Button) findViewById(R.id.undo_button);
+        mUndoContents = findViewById(R.id.undo_contents);
+        mUndoButton = findViewById(R.id.undo_button);
 
         setClickable(true);
         setFocusable(true);

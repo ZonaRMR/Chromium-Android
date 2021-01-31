@@ -18,7 +18,7 @@ public interface StorageAreaGetAllCallback extends org.chromium.mojo.bindings.In
 
 
 
-    public interface Proxy extends StorageAreaGetAllCallback, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends StorageAreaGetAllCallback, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<StorageAreaGetAllCallback, StorageAreaGetAllCallback.Proxy> MANAGER = StorageAreaGetAllCallback_Internal.MANAGER;

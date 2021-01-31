@@ -122,7 +122,7 @@ public class VrShellDelegate
     private static VrLifecycleObserver sVrLifecycleObserver;
     private static VrDaydreamApi sVrDaydreamApi;
     private static VrCoreVersionChecker sVrCoreVersionChecker;
-    private static Set<Activity> sVrModeEnabledActivitys = new HashSet<>();
+    private static final Set<Activity> sVrModeEnabledActivitys = new HashSet<>();
     private static boolean sRegisteredDaydreamHook;
     private static boolean sRegisteredVrAssetsComponent;
     private static @VrSupportLevel Integer sVrSupportLevel;
@@ -164,7 +164,7 @@ public class VrShellDelegate
     private boolean mRequestedWebVr;
     private boolean mListeningForWebVrActivate;
     private boolean mMaybeActivateAfterHeadsetInsertion;
-    private Handler mClearMaybeActivateHandler = new Handler();
+    private final Handler mClearMaybeActivateHandler = new Handler();
     private boolean mActivateFromHeadsetInsertion;
     private boolean mStartedFromVrIntent;
 
@@ -1281,8 +1281,7 @@ public class VrShellDelegate
 
         // If VR browsing is not enabled and this is not a WebXR request, then return false.
         boolean presenting = mRequestedWebVr || mActivateFromHeadsetInsertion;
-        if (!isVrBrowsingEnabled() && !presenting) return false;
-        return true;
+        return isVrBrowsingEnabled() || presenting;
     }
 
     @CalledByNative

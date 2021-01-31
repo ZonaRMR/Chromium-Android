@@ -18,7 +18,7 @@ public interface AudioContextManager extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends AudioContextManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AudioContextManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AudioContextManager, AudioContextManager.Proxy> MANAGER = AudioContextManager_Internal.MANAGER;

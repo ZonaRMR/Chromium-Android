@@ -43,14 +43,14 @@ public class ThumbnailProviderImpl implements ThumbnailProvider, ThumbnailStorag
      * An in-memory LRU cache used to cache bitmaps, mostly improve performance for scrolling, when
      * the view is recycled and needs a new thumbnail.
      */
-    private BitmapCache mBitmapCache;
+    private final BitmapCache mBitmapCache;
 
     /**
      * Tracks a set of Content Ids where thumbnail generation or retrieval failed.  This should
      * prevent making subsequent (potentially expensive) thumbnail generation requests when there
      * would be no point.
      */
-    private LruCache<String /* Content Id */, Object /* Placeholder */> mNoBitmapCache =
+    private final LruCache<String /* Content Id */, Object /* Placeholder */> mNoBitmapCache =
             new LruCache<>(100);
 
     /** Queue of files to retrieve thumbnails for. */
@@ -59,7 +59,7 @@ public class ThumbnailProviderImpl implements ThumbnailProvider, ThumbnailStorag
     /** Request that is currently having its thumbnail retrieved. */
     private ThumbnailRequest mCurrentRequest;
 
-    private ThumbnailDiskStorage mStorage;
+    private final ThumbnailDiskStorage mStorage;
 
     /**
      * Constructor to build the thumbnail provider with default thumbnail cache size.
@@ -125,7 +125,7 @@ public class ThumbnailProviderImpl implements ThumbnailProvider, ThumbnailStorag
     @Override
     public void cancelRetrieval(ThumbnailRequest request) {
         ThreadUtils.assertOnUiThread();
-        if (mRequestQueue.contains(request)) mRequestQueue.remove(request);
+        mRequestQueue.remove(request);
     }
 
     /**

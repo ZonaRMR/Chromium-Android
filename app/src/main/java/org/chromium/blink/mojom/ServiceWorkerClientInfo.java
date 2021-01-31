@@ -30,9 +30,9 @@ public final class ServiceWorkerClientInfo extends org.chromium.mojo.bindings.St
 
     private ServiceWorkerClientInfo(int version) {
         super(STRUCT_SIZE, version);
-        this.frameType = (int) org.chromium.network.mojom.RequestContextFrameType.NONE;
-        this.pageHidden = (boolean) true;
-        this.isFocused = (boolean) false;
+        this.frameType = org.chromium.network.mojom.RequestContextFrameType.NONE;
+        this.pageHidden = true;
+        this.isFocused = false;
     }
 
     public ServiceWorkerClientInfo() {

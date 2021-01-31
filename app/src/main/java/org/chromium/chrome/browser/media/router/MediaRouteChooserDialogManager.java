@@ -94,7 +94,7 @@ public class MediaRouteChooserDialogManager extends BaseMediaRouteDialogManager 
             public void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
 
-                ListView listView = (ListView) findViewById(R.id.mr_chooser_list);
+                ListView listView = findViewById(R.id.mr_chooser_list);
                 if (listView != null) {
                     listView.setOnItemClickListener(Fragment.this::onItemClick);
                 }

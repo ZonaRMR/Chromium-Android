@@ -87,7 +87,7 @@ public class AutofillServerCardEditor extends AutofillCreditCardEditor {
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         if (parent == mBillingAddress && position != mInitialBillingAddressPos) {
-            ((Button) getView().findViewById(R.id.button_primary)).setEnabled(true);
+            getView().findViewById(R.id.button_primary).setEnabled(true);
         }
     }
 

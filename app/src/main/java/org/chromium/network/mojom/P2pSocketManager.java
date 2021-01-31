@@ -18,7 +18,7 @@ public interface P2pSocketManager extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends P2pSocketManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends P2pSocketManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<P2pSocketManager, P2pSocketManager.Proxy> MANAGER = P2pSocketManager_Internal.MANAGER;

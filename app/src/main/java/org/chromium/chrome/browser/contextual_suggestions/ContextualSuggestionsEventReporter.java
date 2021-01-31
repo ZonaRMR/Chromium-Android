@@ -17,8 +17,8 @@ import org.chromium.ui.mojom.WindowOpenDisposition;
 
 /** Reports events related to contextual suggestions. */
 class ContextualSuggestionsEventReporter implements SuggestionsEventReporter {
-    private TabModelSelector mTabModelSelector;
-    private ContextualSuggestionsSource mSuggestionSource;
+    private final TabModelSelector mTabModelSelector;
+    private final ContextualSuggestionsSource mSuggestionSource;
 
     /**
      * Constructs a new {@link ContextualSuggestionsEventReporter}.

@@ -30,12 +30,12 @@ public final class UdpSocketOptions extends org.chromium.mojo.bindings.Struct {
 
     private UdpSocketOptions(int version) {
         super(STRUCT_SIZE, version);
-        this.allowAddressReuse = (boolean) false;
-        this.allowBroadcast = (boolean) false;
-        this.allowAddressSharingForMulticast = (boolean) false;
+        this.allowAddressReuse = false;
+        this.allowBroadcast = false;
+        this.allowAddressSharingForMulticast = false;
         this.multicastInterface = (int) 0L;
         this.multicastTimeToLive = (int) 1L;
-        this.multicastLoopbackMode = (boolean) true;
+        this.multicastLoopbackMode = true;
         this.sendBufferSize = (int) 0L;
         this.receiveBufferSize = (int) 0L;
     }

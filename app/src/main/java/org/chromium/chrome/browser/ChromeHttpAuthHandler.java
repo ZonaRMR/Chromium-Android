@@ -113,8 +113,8 @@ public class ChromeHttpAuthHandler {
      * onAutofillDataAvailable callback can be used by the observer to fill out necessary
      * login information.
      */
-    public static interface AutofillObserver {
-        public void onAutofillDataAvailable(String username, String password);
+    public interface AutofillObserver {
+        void onAutofillDataAvailable(String username, String password);
     }
 
     /**

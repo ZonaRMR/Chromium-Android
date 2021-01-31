@@ -18,7 +18,7 @@ public interface InstalledAppProvider extends org.chromium.mojo.bindings.Interfa
 
 
 
-    public interface Proxy extends InstalledAppProvider, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends InstalledAppProvider, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<InstalledAppProvider, InstalledAppProvider.Proxy> MANAGER = InstalledAppProvider_Internal.MANAGER;

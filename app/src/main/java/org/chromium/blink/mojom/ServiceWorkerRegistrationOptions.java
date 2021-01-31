@@ -25,8 +25,8 @@ public final class ServiceWorkerRegistrationOptions extends org.chromium.mojo.bi
 
     private ServiceWorkerRegistrationOptions(int version) {
         super(STRUCT_SIZE, version);
-        this.type = (int) ScriptType.CLASSIC;
-        this.updateViaCache = (int) ServiceWorkerUpdateViaCache.IMPORTS;
+        this.type = ScriptType.CLASSIC;
+        this.updateViaCache = ServiceWorkerUpdateViaCache.IMPORTS;
     }
 
     public ServiceWorkerRegistrationOptions() {

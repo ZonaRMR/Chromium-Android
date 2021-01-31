@@ -54,7 +54,7 @@ public class SuggestionView extends ViewGroup implements OnClickListener {
     private int mSuggestionLayoutType;
     private SuggestionViewDelegate mSuggestionDelegate;
 
-    private int mRefineViewOffsetPx;
+    private final int mRefineViewOffsetPx;
 
     private final SuggestionContentsContainer mContentsView;
 

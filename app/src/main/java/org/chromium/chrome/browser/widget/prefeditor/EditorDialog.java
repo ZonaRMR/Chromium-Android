@@ -100,7 +100,7 @@ public class EditorDialog
 
     private Animator mDialogInOutAnimator;
     @Nullable
-    private Runnable mDeleteRunnable;
+    private final Runnable mDeleteRunnable;
     private boolean mIsDismissed;
     /**
      * Builds the editor dialog.
@@ -186,7 +186,7 @@ public class EditorDialog
      * programmatically.  This is likely due to how we compile the support libraries.
      */
     private void prepareToolbar() {
-        EditorDialogToolbar toolbar = (EditorDialogToolbar) mLayout.findViewById(R.id.action_bar);
+        EditorDialogToolbar toolbar = mLayout.findViewById(R.id.action_bar);
         toolbar.setBackgroundColor(ApiCompatibilityUtils.getColor(
                 toolbar.getResources(), R.color.modern_primary_color));
         toolbar.setTitleTextAppearance(toolbar.getContext(), R.style.TextAppearance_BlackHeadline);
@@ -220,7 +220,7 @@ public class EditorDialog
 
         // The top shadow is handled by the toolbar, so hide the one used in the field editor.
         FadingEdgeScrollView scrollView =
-                (FadingEdgeScrollView) mLayout.findViewById(R.id.scroll_view);
+                mLayout.findViewById(R.id.scroll_view);
         scrollView.setEdgeVisibility(
                 FadingEdgeScrollView.EdgeType.NONE, FadingEdgeScrollView.EdgeType.FADING);
 
@@ -335,11 +335,11 @@ public class EditorDialog
     }
 
     private void prepareButtons() {
-        mDoneButton = (Button) mLayout.findViewById(R.id.button_primary);
+        mDoneButton = mLayout.findViewById(R.id.button_primary);
         mDoneButton.setId(R.id.editor_dialog_done_button);
         mDoneButton.setOnClickListener(this);
 
-        Button cancelButton = (Button) mLayout.findViewById(R.id.button_secondary);
+        Button cancelButton = mLayout.findViewById(R.id.button_secondary);
         cancelButton.setId(R.id.payments_edit_cancel_button);
         cancelButton.setOnClickListener(this);
     }
@@ -355,7 +355,7 @@ public class EditorDialog
 
         // Ensure the layout is empty.
         removeTextChangedListenersAndInputFilters();
-        mDataView = (ViewGroup) mLayout.findViewById(R.id.contents);
+        mDataView = mLayout.findViewById(R.id.contents);
         mDataView.removeAllViews();
         mFieldViews.clear();
         mEditableTextFields.clear();

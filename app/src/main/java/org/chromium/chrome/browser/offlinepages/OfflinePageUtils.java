@@ -84,7 +84,7 @@ public class OfflinePageUtils {
      * be garbage collected without worrying about this map.  The RecentTabTracker is held here so
      * that it can be destroyed when the ChromeActivity gets a new TabModelSelector.
      */
-    private static Map<ChromeActivity, RecentTabTracker> sTabModelObservers = new HashMap<>();
+    private static final Map<ChromeActivity, RecentTabTracker> sTabModelObservers = new HashMap<>();
 
     /**
      * Interface for implementation of offline page utilities, that can be implemented for testing.
@@ -717,7 +717,7 @@ public class OfflinePageUtils {
          */
         private static final TabRestoreTracker sTabRestoreTracker = new TabRestoreTracker();
 
-        private TabModelSelector mTabModelSelector;
+        private final TabModelSelector mTabModelSelector;
 
         public RecentTabTracker(TabModelSelector selector) {
             super(selector);

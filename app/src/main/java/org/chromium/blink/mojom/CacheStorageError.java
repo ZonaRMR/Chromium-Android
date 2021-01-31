@@ -34,8 +34,8 @@ public final class CacheStorageError {
 
     public static final int ERROR_DUPLICATE_OPERATION = (int) (8L);
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (8);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 8;
 
     private static final boolean IS_EXTENSIBLE = false;
 

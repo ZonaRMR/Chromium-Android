@@ -17,17 +17,17 @@ public final class AppcacheInfoConstants {
 
 
     
-    public static final long APP_CACHE_NO_CACHE_ID = (long) 0L;
+    public static final long APP_CACHE_NO_CACHE_ID = 0L;
 
 
 
     
-    public static final long APP_CACHE_NO_RESPONSE_ID = (long) 0L;
+    public static final long APP_CACHE_NO_RESPONSE_ID = 0L;
 
 
 
     
-    public static final long APP_CACHE_UNKNOWN_CACHE_ID = (long) -1L;
+    public static final long APP_CACHE_UNKNOWN_CACHE_ID = -1L;
 
 
 

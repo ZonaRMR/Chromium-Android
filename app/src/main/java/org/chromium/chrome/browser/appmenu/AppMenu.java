@@ -67,12 +67,12 @@ public class AppMenu implements OnItemClickListener, OnKeyListener {
     private PopupWindow mPopup;
     private ListView mListView;
     private AppMenuAdapter mAdapter;
-    private AppMenuHandler mHandler;
+    private final AppMenuHandler mHandler;
     private View mFooterView;
     private int mCurrentScreenRotation = -1;
     private boolean mIsByPermanentButton;
     private AnimatorSet mMenuItemEnterAnimator;
-    private AnimatorListener mAnimationHistogramRecorder = AnimationFrameTimeHistogram
+    private final AnimatorListener mAnimationHistogramRecorder = AnimationFrameTimeHistogram
             .getAnimatorRecorder("WrenchMenu.OpeningAnimationFrameTimes");
 
     /**
@@ -180,7 +180,7 @@ public class AppMenu implements OnItemClickListener, OnKeyListener {
 
         mPopup.setOnDismissListener(() -> {
             if (anchorView instanceof ImageButton) {
-                ((ImageButton) anchorView).setSelected(false);
+                anchorView.setSelected(false);
             }
 
             if (mMenuItemEnterAnimator != null) mMenuItemEnterAnimator.cancel();
@@ -248,7 +248,7 @@ public class AppMenu implements OnItemClickListener, OnKeyListener {
 
         ViewGroup contentView =
                 (ViewGroup) LayoutInflater.from(context).inflate(R.layout.app_menu_layout, null);
-        mListView = (ListView) contentView.findViewById(R.id.app_menu_list);
+        mListView = contentView.findViewById(R.id.app_menu_list);
 
         int footerHeight =
                 inflateFooter(footerResourceId, contentView, menuWidth, highlightedItemId);
@@ -547,7 +547,7 @@ public class AppMenu implements OnItemClickListener, OnKeyListener {
             return 0;
         }
 
-        ViewStub footerStub = (ViewStub) contentView.findViewById(R.id.app_menu_footer_stub);
+        ViewStub footerStub = contentView.findViewById(R.id.app_menu_footer_stub);
         footerStub.setLayoutResource(footerResourceId);
         mFooterView = footerStub.inflate();
 

@@ -22,7 +22,7 @@ import org.chromium.chrome.browser.widget.RadioButtonLayout;
 /** A dialog that forces the user to choose a default search engine. */
 public class DefaultSearchEnginePromoDialog extends PromoDialog {
     /** Notified about events happening to the dialog. */
-    public static interface DefaultSearchEnginePromoDialogObserver {
+    public interface DefaultSearchEnginePromoDialogObserver {
         void onDialogShown(DefaultSearchEnginePromoDialog shownDialog);
     }
     private static DefaultSearchEnginePromoDialogObserver sObserver;
@@ -75,7 +75,7 @@ public class DefaultSearchEnginePromoDialog extends PromoDialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Button okButton = (Button) findViewById(R.id.button_primary);
+        Button okButton = findViewById(R.id.button_primary);
         okButton.setEnabled(false);
 
         RadioButtonLayout radioButtons = new RadioButtonLayout(getContext());

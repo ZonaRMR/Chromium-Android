@@ -40,13 +40,13 @@ public class ToolbarSceneLayer extends SceneOverlayLayer implements SceneOverlay
     private DrawingInfo mProgressBarDrawingInfo;
 
     /** An Android Context. */
-    private Context mContext;
+    private final Context mContext;
 
     /** A LayoutProvider for accessing the current layout. */
-    private LayoutProvider mLayoutProvider;
+    private final LayoutProvider mLayoutProvider;
 
     /** A LayoutRenderHost for accessing drawing information about the toolbar. */
-    private LayoutRenderHost mRenderHost;
+    private final LayoutRenderHost mRenderHost;
 
     /**
      * @param context An Android context to use.
@@ -97,7 +97,7 @@ public class ToolbarSceneLayer extends SceneOverlayLayer implements SceneOverlay
         Tab currentTab = fullscreenManager.getTab();
         if (currentTab != null) {
             boolean isNtp =
-                    currentTab != null ? currentTab.getNativePage() instanceof NewTabPage : false;
+                    currentTab != null && currentTab.getNativePage() instanceof NewTabPage;
             if (isNtp) {
                 isLocationBarShownInNtp =
                         ((NewTabPage) currentTab.getNativePage()).isLocationBarShownInNTP();

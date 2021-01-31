@@ -27,7 +27,7 @@ public final class UrlLoaderFactoryBundle extends org.chromium.mojo.bindings.Str
 
     private UrlLoaderFactoryBundle(int version) {
         super(STRUCT_SIZE, version);
-        this.bypassRedirectChecks = (boolean) false;
+        this.bypassRedirectChecks = false;
     }
 
     public UrlLoaderFactoryBundle() {

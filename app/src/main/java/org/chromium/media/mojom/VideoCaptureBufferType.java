@@ -22,8 +22,8 @@ public final class VideoCaptureBufferType {
 
     public static final int MAILBOX_HOLDER = SHARED_MEMORY_VIA_RAW_FILE_DESCRIPTOR + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (2);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 2;
 
     private static final boolean IS_EXTENSIBLE = false;
 

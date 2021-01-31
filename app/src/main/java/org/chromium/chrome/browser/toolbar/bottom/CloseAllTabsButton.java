@@ -47,7 +47,7 @@ class CloseAllTabsButton extends ChromeImageButton
             mThemeColorProvider = null;
         }
         if (mIncognitoStateProvider != null) {
-            mIncognitoStateProvider.removeObserver((IncognitoStateObserver) this);
+            mIncognitoStateProvider.removeObserver(this);
             mIncognitoStateProvider = null;
         }
         if (mTabCountProvider != null) {

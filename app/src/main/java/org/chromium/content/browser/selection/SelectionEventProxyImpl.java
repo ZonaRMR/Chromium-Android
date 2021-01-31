@@ -95,7 +95,7 @@ public class SelectionEventProxyImpl implements SmartSelectionMetricsLogger.Sele
             int start, int end, @NonNull Object classification) {
         try {
             return sSelectionModifiedClassificationMethod.invoke(
-                    null, start, end, (TextClassification) classification);
+                    null, start, end, classification);
         } catch (ReflectiveOperationException e) {
             // Avoid crashes due to logging.
             if (DEBUG) Log.d(TAG, "Reflection failure", e);
@@ -108,7 +108,7 @@ public class SelectionEventProxyImpl implements SmartSelectionMetricsLogger.Sele
     public Object createSelectionModifiedSelection(int start, int end, @NonNull Object selection) {
         try {
             return sSelectionModifiedSelectionMethod.invoke(
-                    null, start, end, (TextSelection) selection);
+                    null, start, end, selection);
         } catch (ReflectiveOperationException e) {
             // Avoid crashes due to logging.
             if (DEBUG) Log.d(TAG, "Reflection failure", e);
@@ -134,7 +134,7 @@ public class SelectionEventProxyImpl implements SmartSelectionMetricsLogger.Sele
             int start, int end, int actionType, @NonNull Object classification) {
         try {
             return sSelectionActionClassificationMethod.invoke(
-                    null, start, end, actionType, (TextClassification) classification);
+                    null, start, end, actionType, classification);
         } catch (ReflectiveOperationException e) {
             // Avoid crashes due to logging.
             if (DEBUG) Log.d(TAG, "Reflection failure", e);

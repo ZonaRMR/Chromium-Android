@@ -42,7 +42,7 @@ public class HomepageEditor extends Fragment implements TextWatcher {
         View scrollView = v.findViewById(R.id.scroll_view);
         scrollView.getViewTreeObserver().addOnScrollChangedListener(
                 PreferenceUtils.getShowShadowOnScrollListener(v, v.findViewById(R.id.shadow)));
-        mHomepageUrlEdit = (EditText) v.findViewById(R.id.homepage_url_edit);
+        mHomepageUrlEdit = v.findViewById(R.id.homepage_url_edit);
         mHomepageUrlEdit.setText(HomepageManager.getHomepageUri());
         mHomepageUrlEdit.addTextChangedListener(this);
         mHomepageUrlEdit.requestFocus();
@@ -66,7 +66,7 @@ public class HomepageEditor extends Fragment implements TextWatcher {
     }
 
     private void initializeSaveCancelResetButtons(View v) {
-        mResetButton = (Button) v.findViewById(R.id.homepage_reset);
+        mResetButton = v.findViewById(R.id.homepage_reset);
         mResetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +78,7 @@ public class HomepageEditor extends Fragment implements TextWatcher {
             mResetButton.setEnabled(false);
         }
 
-        mSaveButton = (Button) v.findViewById(R.id.homepage_save);
+        mSaveButton = v.findViewById(R.id.homepage_save);
         mSaveButton.setEnabled(false);
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +90,7 @@ public class HomepageEditor extends Fragment implements TextWatcher {
             }
         });
 
-        Button button = (Button) v.findViewById(R.id.homepage_cancel);
+        Button button = v.findViewById(R.id.homepage_cancel);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

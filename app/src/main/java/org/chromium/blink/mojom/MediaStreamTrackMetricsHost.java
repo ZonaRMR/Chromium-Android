@@ -18,7 +18,7 @@ public interface MediaStreamTrackMetricsHost extends org.chromium.mojo.bindings.
 
 
 
-    public interface Proxy extends MediaStreamTrackMetricsHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaStreamTrackMetricsHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaStreamTrackMetricsHost, MediaStreamTrackMetricsHost.Proxy> MANAGER = MediaStreamTrackMetricsHost_Internal.MANAGER;

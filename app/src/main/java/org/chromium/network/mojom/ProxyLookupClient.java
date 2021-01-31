@@ -18,7 +18,7 @@ public interface ProxyLookupClient extends org.chromium.mojo.bindings.Interface 
 
 
 
-    public interface Proxy extends ProxyLookupClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ProxyLookupClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ProxyLookupClient, ProxyLookupClient.Proxy> MANAGER = ProxyLookupClient_Internal.MANAGER;

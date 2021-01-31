@@ -84,12 +84,12 @@ public class MediaController extends FrameLayout {
     }
 
     private Delegate mDelegate;
-    private Context mContext;
+    private final Context mContext;
     private ViewGroup mProgressGroup;
     private SeekBar mProgressBar;
     private TextView mEndTime, mCurrentTime;
     private boolean mDragging;
-    private boolean mUseFastForward;
+    private final boolean mUseFastForward;
     private boolean mListenersSet;
     private boolean mShowNext, mShowPrev;
     private View.OnClickListener mNextListener, mPrevListener;
@@ -127,46 +127,46 @@ public class MediaController extends FrameLayout {
     }
 
     private void initControllerView() {
-        mPauseButton = (ImageButton) findViewById(R.id.pause);
+        mPauseButton = findViewById(R.id.pause);
         if (mPauseButton != null) {
             mPauseButton.requestFocus();
             mPauseButton.setOnClickListener(mPauseListener);
         }
 
-        mFfwdButton = (ImageButton) findViewById(R.id.ffwd);
+        mFfwdButton = findViewById(R.id.ffwd);
         if (mFfwdButton != null) {
             mFfwdButton.setOnClickListener(mFfwdListener);
             mFfwdButton.setVisibility(mUseFastForward ? View.VISIBLE : View.GONE);
         }
 
-        mRewButton = (ImageButton) findViewById(R.id.rew);
+        mRewButton = findViewById(R.id.rew);
         if (mRewButton != null) {
             mRewButton.setOnClickListener(mRewListener);
             mRewButton.setVisibility(mUseFastForward ? View.VISIBLE : View.GONE);
         }
 
         // By default these are hidden. They will be enabled when setPrevNextListeners() is called
-        mNextButton = (ImageButton) findViewById(R.id.next);
+        mNextButton = findViewById(R.id.next);
         if (mNextButton != null && !mListenersSet) {
             mNextButton.setVisibility(View.GONE);
         }
-        mPrevButton = (ImageButton) findViewById(R.id.prev);
+        mPrevButton = findViewById(R.id.prev);
         if (mPrevButton != null && !mListenersSet) {
             mPrevButton.setVisibility(View.GONE);
         }
 
-        mProgressGroup = (ViewGroup) findViewById(R.id.mediacontroller_progress_container);
+        mProgressGroup = findViewById(R.id.mediacontroller_progress_container);
 
         if (mProgressGroup != null) {
-            mProgressBar = (SeekBar) mProgressGroup.findViewById(R.id.mediacontroller_progress_bar);
+            mProgressBar = mProgressGroup.findViewById(R.id.mediacontroller_progress_bar);
             if (mProgressBar != null) {
                 mProgressBar.setOnSeekBarChangeListener(mSeekListener);
                 mProgressBar.setMax(1000);
             }
         }
 
-        mEndTime = (TextView) findViewById(R.id.time);
-        mCurrentTime = (TextView) findViewById(R.id.time_current);
+        mEndTime = findViewById(R.id.time);
+        mCurrentTime = findViewById(R.id.time_current);
         mFormatBuilder = new StringBuilder();
         mFormatter = new Formatter(mFormatBuilder, Locale.getDefault());
 
@@ -249,7 +249,7 @@ public class MediaController extends FrameLayout {
         return position;
     }
 
-    private View.OnClickListener mPauseListener = new View.OnClickListener() {
+    private final View.OnClickListener mPauseListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             doPauseResume();
@@ -288,7 +288,7 @@ public class MediaController extends FrameLayout {
     // The second scenario involves the user operating the scroll ball, in this
     // case there WON'T BE onStartTrackingTouch/onStopTrackingTouch notifications,
     // we will simply apply the updated position without suspending regular updates.
-    private SeekBar.OnSeekBarChangeListener mSeekListener = new SeekBar.OnSeekBarChangeListener() {
+    private final SeekBar.OnSeekBarChangeListener mSeekListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onStartTrackingTouch(SeekBar bar) {
             mDragging = true;
@@ -336,7 +336,7 @@ public class MediaController extends FrameLayout {
         info.setClassName(MediaController.class.getName());
     }
 
-    private View.OnClickListener mRewListener = new View.OnClickListener() {
+    private final View.OnClickListener mRewListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             if (mDelegate == null) return;
@@ -348,7 +348,7 @@ public class MediaController extends FrameLayout {
         }
     };
 
-    private View.OnClickListener mFfwdListener = new View.OnClickListener() {
+    private final View.OnClickListener mFfwdListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             if (mDelegate == null) return;

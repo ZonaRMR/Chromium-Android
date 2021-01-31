@@ -49,7 +49,7 @@ public class OverlayPanelContent {
     private final WebContentsDelegateAndroid mWebContentsDelegate;
 
     /** The activity that this content is contained in. */
-    private ChromeActivity mActivity;
+    private final ChromeActivity mActivity;
 
     /** Observer used for tracking loading and navigation. */
     private WebContentsObserver mWebContentsObserver;
@@ -83,10 +83,10 @@ public class OverlayPanelContent {
     private boolean mIsContentViewShowing;
 
     /** The observer used by this object to inform implementers of different events. */
-    private OverlayContentDelegate mContentDelegate;
+    private final OverlayContentDelegate mContentDelegate;
 
     /** Used to observe progress bar events. */
-    private OverlayContentProgressObserver mProgressObserver;
+    private final OverlayContentProgressObserver mProgressObserver;
 
     /** If a URL is set to delayed load (load on user interaction), it will be stored here. */
     private String mPendingUrl;
@@ -96,7 +96,7 @@ public class OverlayPanelContent {
     private InterceptNavigationDelegate mInterceptNavigationDelegate;
 
     /** Set to {@code True} if opened for an incognito tab. */
-    private boolean mIsIncognito;
+    private final boolean mIsIncognito;
 
     /** The desired size of the {@link ContentView} associated with this panel content. */
     private int mContentViewWidth;

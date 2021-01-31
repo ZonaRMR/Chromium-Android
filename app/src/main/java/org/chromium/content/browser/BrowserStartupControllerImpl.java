@@ -104,7 +104,7 @@ public class BrowserStartupControllerImpl implements BrowserStartupController {
     // of enqueued callbacks have been executed.
     private boolean mStartupSuccess;
 
-    private int mLibraryProcessType;
+    private final int mLibraryProcessType;
 
     // Browser start up type. If the type is |BROWSER_START_TYPE_SERVICE_MANAGER_ONLY|, start up
     // will be paused after ServiceManager is launched. Additional request to launch the full

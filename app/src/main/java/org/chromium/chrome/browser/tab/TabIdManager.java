@@ -40,7 +40,7 @@ public class TabIdManager {
     private final Context mContext;
     private final AtomicInteger mIdCounter = new AtomicInteger();
 
-    private SharedPreferences mPreferences;
+    private final SharedPreferences mPreferences;
 
     /** Returns the Singleton instance of the TabIdManager. */
     public static TabIdManager getInstance() {

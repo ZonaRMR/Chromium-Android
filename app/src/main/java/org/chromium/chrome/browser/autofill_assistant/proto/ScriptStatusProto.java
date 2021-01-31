@@ -148,7 +148,7 @@ public enum ScriptStatusProto
 
   private final int value;
 
-  private ScriptStatusProto(int value) {
+  ScriptStatusProto(int value) {
     this.value = value;
   }
 

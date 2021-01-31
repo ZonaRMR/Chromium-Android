@@ -18,7 +18,7 @@ public interface CdmService extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends CdmService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CdmService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CdmService, CdmService.Proxy> MANAGER = CdmService_Internal.MANAGER;

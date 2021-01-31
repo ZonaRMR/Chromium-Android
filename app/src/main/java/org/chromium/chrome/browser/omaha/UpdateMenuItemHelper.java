@@ -113,7 +113,7 @@ public class UpdateMenuItemHelper {
 
     private static UpdateMenuItemHelper sInstance;
 
-    private static Object sGetInstanceLock = new Object();
+    private static final Object sGetInstanceLock = new Object();
 
     private final ObserverList<Runnable> mObservers = new ObserverList<>();
 

@@ -41,8 +41,9 @@ class AccessorySheetTabModel extends ListModel<AccessorySheetTabModel.AccessoryS
             int FOOTER_COMMAND = 3;
         }
 
-        private Object mDataPiece;
-        private @Type int mType;
+        private final Object mDataPiece;
+        private @Type
+        final int mType;
 
         AccessorySheetDataPiece(Object dataPiece, @Type int type) {
             mDataPiece = dataPiece;

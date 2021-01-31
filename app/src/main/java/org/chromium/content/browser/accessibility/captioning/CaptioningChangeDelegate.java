@@ -106,7 +106,7 @@ public class CaptioningChangeDelegate {
     /**
      * Describes a character edge attribute for closed captioning
      */
-    public static enum ClosedCaptionEdgeAttribute {
+    public enum ClosedCaptionEdgeAttribute {
         NONE (""),
         OUTLINE ("%2$s %2$s 0 %1$s, -%2$s -%2$s 0 %1$s, %2$s -%2$s 0 %1$s, -%2$s %2$s 0 %1$s"),
         DROP_SHADOW ("%1$s %2$s %2$s 0.1em"),
@@ -118,7 +118,7 @@ public class CaptioningChangeDelegate {
         private static String sEdgeColor;
         private final String mTextShadow;
 
-        private ClosedCaptionEdgeAttribute(String textShadow) {
+        ClosedCaptionEdgeAttribute(String textShadow) {
             mTextShadow = textShadow;
         }
 
@@ -192,7 +192,7 @@ public class CaptioningChangeDelegate {
     /**
      * Describes a font available for Closed Captioning
      */
-    public static enum ClosedCaptionFont {
+    public enum ClosedCaptionFont {
         // The list of fonts are obtained from apps/Settings/res/values/arrays.xml
         // in Android settings app.
         // Fonts in Lollipop and above
@@ -222,7 +222,7 @@ public class CaptioningChangeDelegate {
         @VisibleForTesting
         /* package */ final EnumSet<Flags> mFlags;
 
-        private ClosedCaptionFont(String fontFamily, EnumSet<Flags> flags) {
+        ClosedCaptionFont(String fontFamily, EnumSet<Flags> flags) {
             mFontFamily = fontFamily;
             mFlags = flags;
         }

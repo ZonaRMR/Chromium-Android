@@ -18,7 +18,7 @@ public interface BackgroundFetchService extends org.chromium.mojo.bindings.Inter
 
 
 
-    public interface Proxy extends BackgroundFetchService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BackgroundFetchService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BackgroundFetchService, BackgroundFetchService.Proxy> MANAGER = BackgroundFetchService_Internal.MANAGER;

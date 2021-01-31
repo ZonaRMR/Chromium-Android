@@ -30,7 +30,7 @@ public class ToolbarView extends FrameLayout {
 
         mCloseButton = findViewById(R.id.close_button);
         mMenuButton = findViewById(R.id.more);
-        mTitle = (TextView) findViewById(R.id.title);
+        mTitle = findViewById(R.id.title);
         mShadow = findViewById(R.id.shadow);
     }
 

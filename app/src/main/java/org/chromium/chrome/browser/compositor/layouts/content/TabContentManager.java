@@ -38,7 +38,7 @@ public class TabContentManager {
     private final ArrayList<ThumbnailChangeListener> mListeners =
             new ArrayList<ThumbnailChangeListener>();
 
-    private boolean mSnapshotsEnabled;
+    private final boolean mSnapshotsEnabled;
 
     /**
      * The Java interface for listening to thumbnail changes.
@@ -47,7 +47,7 @@ public class TabContentManager {
         /**
          * @param id The tab id.
          */
-        public void onThumbnailChange(int id);
+        void onThumbnailChange(int id);
     }
 
     /**

@@ -24,7 +24,7 @@ public abstract class WebsitePreferenceBridge {
      */
     public interface StorageInfoClearedCallback {
         @CalledByNative("StorageInfoClearedCallback")
-        public void onStorageInfoCleared();
+        void onStorageInfoCleared();
     }
 
     /**

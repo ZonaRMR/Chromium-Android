@@ -104,13 +104,13 @@ public class ImeAdapterImpl implements ImeAdapter, WindowEventObserver, UserData
     private ShowKeyboardResultReceiver mShowKeyboardResultReceiver;
 
     private final WebContentsImpl mWebContents;
-    private ViewAndroidDelegate mViewDelegate;
+    private final ViewAndroidDelegate mViewDelegate;
 
     // This holds the information necessary for constructing CursorAnchorInfo, and notifies to
     // InputMethodManager on appropriate timing, depending on how IME requested the information
     // via InputConnection. The update request is per InputConnection, hence for each time it is
     // re-created, the monitoring status will be reset.
-    private CursorAnchorInfoController mCursorAnchorInfoController;
+    private final CursorAnchorInfoController mCursorAnchorInfoController;
 
     private final List<ImeEventObserver> mEventObservers = new ArrayList<>();
 
@@ -1000,7 +1000,7 @@ public class ImeAdapterImpl implements ImeAdapter, WindowEventObserver, UserData
         if (!(text instanceof SpannableString)) return;
 
         SpannableString spannableString = ((SpannableString) text);
-        CharacterStyle spans[] = spannableString.getSpans(0, text.length(), CharacterStyle.class);
+        CharacterStyle[] spans = spannableString.getSpans(0, text.length(), CharacterStyle.class);
         for (CharacterStyle span : spans) {
             final int spanFlags = spannableString.getSpanFlags(span);
             if (span instanceof BackgroundColorSpan) {

@@ -99,7 +99,7 @@ public abstract class CustomTabsService extends Service {
 
     private final Map<IBinder, DeathRecipient> mDeathRecipientMap = new ArrayMap<>();
 
-    private ICustomTabsService.Stub mBinder = new ICustomTabsService.Stub() {
+    private final ICustomTabsService.Stub mBinder = new ICustomTabsService.Stub() {
 
         @Override
         public boolean warmup(long flags) {

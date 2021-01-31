@@ -30,7 +30,7 @@ import java.util.List;
 
 public interface JavaClient {
 
-  public static final class BatcherState extends ProtoWrapper {
+  final class BatcherState extends ProtoWrapper {
     public static BatcherState create(Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.ObjectIdP> registration,
         Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.ObjectIdP> unregistration,
         Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.InvalidationP> acknowledgement,
@@ -191,7 +191,7 @@ public interface JavaClient {
     }
   }
 
-  public static final class ProtocolHandlerState extends ProtoWrapper {
+  final class ProtocolHandlerState extends ProtoWrapper {
     public static ProtocolHandlerState create(Integer messageId,
         Long lastKnownServerTimeMs,
         Long nextMessageSendTimeMs,
@@ -328,7 +328,7 @@ public interface JavaClient {
     }
   }
 
-  public static final class RegistrationManagerStateP extends ProtoWrapper {
+  final class RegistrationManagerStateP extends ProtoWrapper {
     public static RegistrationManagerStateP create(Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.ObjectIdP> registrations,
         com.google.ipc.invalidation.ticl.proto.ClientProtocol.RegistrationSummary lastKnownServerSummary,
         Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.RegistrationP> pendingOperations) {
@@ -428,7 +428,7 @@ public interface JavaClient {
     }
   }
 
-  public static final class RecurringTaskState extends ProtoWrapper {
+  final class RecurringTaskState extends ProtoWrapper {
     public static RecurringTaskState create(Integer initialDelayMs,
         Integer timeoutDelayMs,
         Boolean scheduled,
@@ -565,7 +565,7 @@ public interface JavaClient {
     }
   }
 
-  public static final class StatisticsState extends ProtoWrapper {
+  final class StatisticsState extends ProtoWrapper {
     public static StatisticsState create(Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.PropertyRecord> counter) {
       return new StatisticsState(counter);
     }
@@ -632,7 +632,7 @@ public interface JavaClient {
     }
   }
 
-  public static final class InvalidationClientState extends ProtoWrapper {
+  final class InvalidationClientState extends ProtoWrapper {
     public static final class Builder {
       public com.google.ipc.invalidation.ticl.proto.Client.RunStateP runState;
       public Bytes clientToken;

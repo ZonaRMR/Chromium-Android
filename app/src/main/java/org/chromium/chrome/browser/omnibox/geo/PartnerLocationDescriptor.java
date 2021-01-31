@@ -67,7 +67,7 @@ public final class PartnerLocationDescriptor {
 
     private final int value;
 
-    private LocationRole(int value) {
+    LocationRole(int value) {
       this.value = value;
     }
 
@@ -133,7 +133,7 @@ public final class PartnerLocationDescriptor {
 
     private final int value;
 
-    private LocationProducer(int value) {
+    LocationProducer(int value) {
       this.value = value;
     }
 
@@ -548,7 +548,7 @@ public final class PartnerLocationDescriptor {
      */
     long getTimestampMs();
 
-    public org.chromium.chrome.browser.omnibox.geo.PartnerLocationDescriptor.VisibleNetwork.TypeCase getTypeCase();
+    org.chromium.chrome.browser.omnibox.geo.PartnerLocationDescriptor.VisibleNetwork.TypeCase getTypeCase();
   }
   /**
    * Protobuf type {@code org.chromium.chrome.browser.omnibox.geo.VisibleNetwork}
@@ -1146,7 +1146,7 @@ public final class PartnerLocationDescriptor {
 
         private final int value;
 
-        private Type(int value) {
+        Type(int value) {
           this.value = value;
         }
 
@@ -1945,7 +1945,7 @@ public final class PartnerLocationDescriptor {
       CELL(2),
       TYPE_NOT_SET(0);
       private final int value;
-      private TypeCase(int value) {
+      TypeCase(int value) {
         this.value = value;
       }
       /**
@@ -1967,9 +1967,9 @@ public final class PartnerLocationDescriptor {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public TypeCase
+      public TypeCase
     getTypeCase() {
       return TypeCase.forNumber(
           typeCase_);

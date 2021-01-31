@@ -50,8 +50,8 @@ public final class WebSandboxFlags {
 
     public static final int DOWNLOADS = (int) (32768L);
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (32768);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 32768;
 
     private static final boolean IS_EXTENSIBLE = true;
 

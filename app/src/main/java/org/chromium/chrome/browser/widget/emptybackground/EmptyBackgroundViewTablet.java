@@ -75,7 +75,7 @@ public class EmptyBackgroundViewTablet extends FrameLayout {
     public void setTabModelSelector(TabModelSelector tabModelSelector) {
         mTabModelSelector = tabModelSelector;
 
-        mIncognitoToggleButton = (IncognitoToggleButtonTablet) findViewById(
+        mIncognitoToggleButton = findViewById(
                 R.id.empty_incognito_toggle_button);
 
         mIncognitoToggleButton.setTabModelSelector(mTabModelSelector);
@@ -94,7 +94,7 @@ public class EmptyBackgroundViewTablet extends FrameLayout {
      * @param menuHandler The menu handler to be used for showing the pop up menu.
      */
     public void setMenuOnTouchListener(final AppMenuHandler menuHandler) {
-        final ImageButton menuBtn = (ImageButton) findViewById(R.id.empty_menu_button);
+        final ImageButton menuBtn = findViewById(R.id.empty_menu_button);
         final AppMenuButtonHelper menuPopupButtonHelper = new AppMenuButtonHelper(menuHandler);
         menuBtn.setOnTouchListener(menuPopupButtonHelper);
         menuPopupButtonHelper.setOnAppMenuShownListener(new Runnable() {

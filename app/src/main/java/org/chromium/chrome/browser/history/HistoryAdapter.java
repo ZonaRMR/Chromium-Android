@@ -283,7 +283,7 @@ public class HistoryAdapter extends DateDividedAdapter implements BrowsingHistor
                 (ViewGroup) View.inflate(mHistoryManager.getSelectableListLayout().getContext(),
                         R.layout.history_clear_browsing_data_header, null);
 
-        mClearBrowsingDataButton = (Button) clearBrowsingDataButtonContainer.findViewById(
+        mClearBrowsingDataButton = clearBrowsingDataButtonContainer.findViewById(
                 R.id.clear_browsing_data_button);
         mClearBrowsingDataButton.setOnClickListener(new OnClickListener() {
             @Override

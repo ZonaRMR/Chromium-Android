@@ -27,7 +27,7 @@ public class TextMessagePreference extends ChromeBasePreference {
     protected void onBindView(View view) {
         super.onBindView(view);
 
-        TextView titleView = (TextView) view.findViewById(android.R.id.title);
+        TextView titleView = view.findViewById(android.R.id.title);
         if (!TextUtils.isEmpty(getTitle())) {
             titleView.setVisibility(View.VISIBLE);
             titleView.setSingleLine(false);
@@ -37,7 +37,7 @@ public class TextMessagePreference extends ChromeBasePreference {
             titleView.setVisibility(View.GONE);
         }
 
-        TextView summaryView = (TextView) view.findViewById(android.R.id.summary);
+        TextView summaryView = view.findViewById(android.R.id.summary);
         // No need to manually toggle visibility for summary - it is done in super.onBindView.
         summaryView.setMovementMethod(LinkMovementMethod.getInstance());
     }

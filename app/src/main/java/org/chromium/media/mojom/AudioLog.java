@@ -18,7 +18,7 @@ public interface AudioLog extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends AudioLog, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AudioLog, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AudioLog, AudioLog.Proxy> MANAGER = AudioLog_Internal.MANAGER;

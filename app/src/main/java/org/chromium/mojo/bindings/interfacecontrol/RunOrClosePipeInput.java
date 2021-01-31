@@ -18,7 +18,8 @@ public final class RunOrClosePipeInput extends org.chromium.mojo.bindings.Union 
 
     public static final class Tag {
         public static final int RequireVersion = 0;
-    };
+    }
+
     private RequireVersion mRequireVersion;
 
     public void setRequireVersion(RequireVersion requireVersion) {

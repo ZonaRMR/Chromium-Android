@@ -42,7 +42,7 @@ public class GestureListenerManagerImpl
     private final WebContentsImpl mWebContents;
     private final ObserverList<GestureStateListener> mListeners;
     private final RewindableIterator<GestureStateListener> mIterator;
-    private ViewAndroidDelegate mViewDelegate;
+    private final ViewAndroidDelegate mViewDelegate;
     private InternalAccessDelegate mScrollDelegate;
 
     private long mNativeGestureListenerManager;
@@ -271,11 +271,7 @@ public class GestureListenerManagerImpl
     @SuppressWarnings("unused")
     @CalledByNative
     private boolean filterTapOrPressEvent(int type, int x, int y) {
-        if (type == GestureEventType.LONG_PRESS && offerLongPressToEmbedder()) {
-            return true;
-        }
-
-        return false;
+        return type == GestureEventType.LONG_PRESS && offerLongPressToEmbedder();
     }
 
     @SuppressWarnings("unused")

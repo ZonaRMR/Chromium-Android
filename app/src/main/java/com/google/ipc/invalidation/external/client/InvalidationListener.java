@@ -45,7 +45,7 @@ import com.google.ipc.invalidation.external.client.types.ObjectId;
  */
 public interface InvalidationListener {
   /** Possible registration states for an object. */
-  public enum RegistrationState {
+  enum RegistrationState {
     REGISTERED,
     UNREGISTERED
   }

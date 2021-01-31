@@ -269,7 +269,7 @@ class VisibleNetworks {
         @Nullable
         private final Integer mTrackingAreaCode;
         @Nullable
-        private Long mTimestampMs;
+        private final Long mTimestampMs;
 
         private VisibleCell(Builder builder) {
             mRadioType = builder.mRadioType;

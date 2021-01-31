@@ -145,7 +145,7 @@ public final class FeedQueryProto {
 
       private final int value;
 
-      private RequestReason(int value) {
+      RequestReason(int value) {
         this.value = value;
       }
 

@@ -149,7 +149,7 @@ public class AppWebMessagePort implements MessagePort {
     private boolean mStarted;
     private boolean mWatching;
 
-    private Core mMojoCore;
+    private final Core mMojoCore;
     private Connector mConnector;
 
     private AppWebMessagePort(MessagePipeHandle messagePipeHandle) {

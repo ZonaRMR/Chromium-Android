@@ -791,14 +791,14 @@ public class ChromeBrowserProvider extends ContentProvider {
         public boolean equalContents(BookmarkNode node) {
             return node != null
                     && mId == node.mId
-                    && !(mName == null ^ node.mName == null)
+                    && (mName == null) == (node.mName == null)
                     && (mName == null || mName.equals(node.mName))
-                    && !(mUrl == null ^ node.mUrl == null)
+                    && (mUrl == null) == (node.mUrl == null)
                     && (mUrl == null || mUrl.equals(node.mUrl))
                     && mType == node.mType
                     && byteArrayEqual(mFavicon, node.mFavicon)
                     && byteArrayEqual(mThumbnail, node.mThumbnail)
-                    && !(mParent == null ^ node.mParent == null)
+                    && (mParent == null) == (node.mParent == null)
                     && children().size() == node.children().size();
         }
 

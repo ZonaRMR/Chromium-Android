@@ -24,8 +24,8 @@ public final class ChooseFileSystemEntryType {
 
     public static final int OPEN_DIRECTORY = SAVE_FILE + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (3);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 3;
 
     private static final boolean IS_EXTENSIBLE = false;
 

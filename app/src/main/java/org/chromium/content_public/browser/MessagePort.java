@@ -17,7 +17,7 @@ public interface MessagePort {
     /**
      * The message callback for receiving messages.
      */
-    public interface MessageCallback {
+    interface MessageCallback {
         /**
          * Sent when the associated {@link MessagePort} gets a postMessage.
          * @param message   The message that was received.
@@ -30,7 +30,7 @@ public interface MessagePort {
      * Called to create an entangled pair of ports.
      * @return An array of a pair of{@link MessagePort} instances.
      */
-    public static MessagePort[] createPair() {
+    static MessagePort[] createPair() {
         return AppWebMessagePort.createPair();
     }
 

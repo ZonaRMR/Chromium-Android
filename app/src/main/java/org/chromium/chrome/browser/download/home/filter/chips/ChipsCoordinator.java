@@ -81,11 +81,10 @@ public class ChipsCoordinator implements ChipsProvider.Observer {
         private final int mSidePaddingPx;
 
         public SpaceItemDecoration(Context context) {
-            mInterPaddingPx = (int) context.getResources().getDimensionPixelSize(
+            mInterPaddingPx = context.getResources().getDimensionPixelSize(
                     R.dimen.chip_list_inter_chip_padding);
-            mSidePaddingPx = (int) context.getResources().getDimensionPixelSize(
+            mSidePaddingPx = context.getResources().getDimensionPixelSize(
                     R.dimen.chip_list_side_padding);
-            ;
         }
 
         @Override

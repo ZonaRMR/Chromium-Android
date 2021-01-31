@@ -7,7 +7,7 @@ package org.chromium.chrome.browser.customtabs.dynamicmodule;
 public interface IModuleEntryPoint extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleEntryPoint
+abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleEntryPoint
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleEntryPoint";
 /** Construct the stub at attach it to the interface. */
@@ -99,7 +99,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleEntryPoint
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -229,21 +229,21 @@ static final int TRANSACTION_onDestroy = (android.os.IBinder.FIRST_CALL_TRANSACT
 static final int TRANSACTION_onBundleReceived = (android.os.IBinder.FIRST_CALL_TRANSACTION + 5);
 }
 /** Called by Chrome to perform module initialization. */
-public void init(org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleHost moduleHost) throws android.os.RemoteException;
-public int getModuleVersion() throws android.os.RemoteException;
-public int getMinimumHostVersion() throws android.os.RemoteException;
+void init(org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleHost moduleHost) throws android.os.RemoteException;
+int getModuleVersion() throws android.os.RemoteException;
+int getMinimumHostVersion() throws android.os.RemoteException;
 /**
    * Called when an enhanced activity is started.
    *
    * @throws IllegalStateException if the hosted application is not created.
    */
-public org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityDelegate createActivityDelegate(org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityHost activityHost) throws android.os.RemoteException;
+org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityDelegate createActivityDelegate(org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityHost activityHost) throws android.os.RemoteException;
 /** Called by Chrome when the module is destroyed. */
-public void onDestroy() throws android.os.RemoteException;
+void onDestroy() throws android.os.RemoteException;
 /**
    * Called by Chrome when a bundle for the module is received.
    *
    * Introduced in API version 6.
    */
-public void onBundleReceived(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper args) throws android.os.RemoteException;
+void onBundleReceived(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper args) throws android.os.RemoteException;
 }

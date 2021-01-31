@@ -69,13 +69,13 @@ class TabularContextMenuListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.tabular_context_menu_row, null);
 
             viewHolder = new ViewHolderItem();
-            viewHolder.mIcon = (ImageView) convertView.findViewById(R.id.context_menu_icon);
-            viewHolder.mText = (TextView) convertView.findViewById(R.id.context_menu_text);
+            viewHolder.mIcon = convertView.findViewById(R.id.context_menu_icon);
+            viewHolder.mText = convertView.findViewById(R.id.context_menu_text);
             if (viewHolder.mText == null) {
                 throw new IllegalStateException("Context text not found in new view inflation");
             }
             viewHolder.mRightPadding =
-                    (Space) convertView.findViewById(R.id.context_menu_right_padding);
+                    convertView.findViewById(R.id.context_menu_right_padding);
 
             convertView.setTag(viewHolder);
         } else {

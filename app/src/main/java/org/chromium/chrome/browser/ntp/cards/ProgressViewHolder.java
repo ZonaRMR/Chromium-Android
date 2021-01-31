@@ -22,7 +22,7 @@ public class ProgressViewHolder extends NewTabPageViewHolder {
     public ProgressViewHolder(final SuggestionsRecyclerView recyclerView) {
         super(LayoutInflater.from(recyclerView.getContext())
                         .inflate(R.layout.new_tab_page_progress_indicator, recyclerView, false));
-        mProgressIndicator = (ProgressIndicatorView) itemView.findViewById(R.id.snippets_progress);
+        mProgressIndicator = itemView.findViewById(R.id.snippets_progress);
 
         if (SuggestionsConfig.scrollToLoad()) {
             ViewGroup.MarginLayoutParams params =

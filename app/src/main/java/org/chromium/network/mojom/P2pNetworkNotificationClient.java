@@ -18,7 +18,7 @@ public interface P2pNetworkNotificationClient extends org.chromium.mojo.bindings
 
 
 
-    public interface Proxy extends P2pNetworkNotificationClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends P2pNetworkNotificationClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<P2pNetworkNotificationClient, P2pNetworkNotificationClient.Proxy> MANAGER = P2pNetworkNotificationClient_Internal.MANAGER;

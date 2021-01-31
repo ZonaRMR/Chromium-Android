@@ -63,7 +63,7 @@ public interface WebContents extends Parcelable {
      * @return a default implementation of {@link InternalsHolder} that holds a reference to
      * {@link WebContentsInternals} object owned by {@link WebContents} instance.
      */
-    public static InternalsHolder createDefaultInternalsHolder() {
+    static InternalsHolder createDefaultInternalsHolder() {
         return new InternalsHolder() {
             private WebContentsInternals mInternals;
 

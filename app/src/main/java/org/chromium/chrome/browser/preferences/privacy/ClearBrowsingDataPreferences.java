@@ -64,7 +64,7 @@ public abstract class ClearBrowsingDataPreferences extends PreferenceFragment
         private final ClearBrowsingDataPreferences mParent;
         private final @DialogOption int mOption;
         private final ClearBrowsingDataCheckBoxPreference mCheckbox;
-        private BrowsingDataCounterBridge mCounter;
+        private final BrowsingDataCounterBridge mCounter;
         private boolean mShouldAnnounceCounterResult;
 
         public Item(Context context, ClearBrowsingDataPreferences parent, @DialogOption int option,
@@ -133,8 +133,8 @@ public abstract class ClearBrowsingDataPreferences extends PreferenceFragment
      * An option to be shown in the time period spiner.
      */
     protected static class TimePeriodSpinnerOption {
-        private int mTimePeriod;
-        private String mTitle;
+        private final int mTimePeriod;
+        private final String mTitle;
 
         /**
          * Constructs this time period spinner option.
@@ -516,7 +516,7 @@ public abstract class ClearBrowsingDataPreferences extends PreferenceFragment
      * Disable the "Clear" button if none of the options are selected. Otherwise, enable it.
      */
     private void updateButtonState() {
-        Button clearButton = (Button) getView().findViewById(R.id.clear_button);
+        Button clearButton = getView().findViewById(R.id.clear_button);
         boolean isEnabled = !getSelectedOptions().isEmpty();
         clearButton.setEnabled(isEnabled);
     }
@@ -599,7 +599,7 @@ public abstract class ClearBrowsingDataPreferences extends PreferenceFragment
         // Replace default preferences view with custom XML that contains a footer.
         View view = inflater.inflate(R.layout.clear_browsing_data_tab_content, container, false);
 
-        Button clearButton = (Button) view.findViewById(R.id.clear_button);
+        Button clearButton = view.findViewById(R.id.clear_button);
         clearButton.setOnClickListener((View v) -> onClearButtonClicked());
 
         return view;
@@ -613,7 +613,7 @@ public abstract class ClearBrowsingDataPreferences extends PreferenceFragment
 
         // Remove the dividers between checkboxes, and make sure the individual widgets can be
         // focused.
-        ListView view = (ListView) getView().findViewById(android.R.id.list);
+        ListView view = getView().findViewById(android.R.id.list);
         view.setDivider(null);
         view.setItemsCanFocus(true);
     }

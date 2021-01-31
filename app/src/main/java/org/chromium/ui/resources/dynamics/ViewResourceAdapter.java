@@ -27,7 +27,7 @@ public class ViewResourceAdapter implements DynamicResource, OnLayoutChangeListe
     private final Rect mDirtyRect = new Rect();
 
     private Bitmap mBitmap;
-    private Rect mBitmapSize = new Rect();
+    private final Rect mBitmapSize = new Rect();
 
     /**
      * Builds a {@link ViewResourceAdapter} instance around {@code view}.

@@ -84,7 +84,7 @@ public class CustomTabTopBarDelegate {
      */
     private ViewGroup getTopBarView() {
         if (mTopBarView == null) {
-            ViewStub topBarStub = ((ViewStub) mActivity.findViewById(R.id.topbar_stub));
+            ViewStub topBarStub = mActivity.findViewById(R.id.topbar_stub);
             mTopBarView = (ViewGroup) topBarStub.inflate();
         }
         return mTopBarView;

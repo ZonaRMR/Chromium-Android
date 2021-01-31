@@ -24,7 +24,7 @@ public final class RemoteInvocationResult extends org.chromium.mojo.bindings.Str
 
     private RemoteInvocationResult(int version) {
         super(STRUCT_SIZE, version);
-        this.error = (int) RemoteInvocationError.OK;
+        this.error = RemoteInvocationError.OK;
     }
 
     public RemoteInvocationResult() {

@@ -18,7 +18,7 @@ import org.chromium.components.url_formatter.UrlFormatter;
  */
 public class InstantAppsInfoBar extends ConfirmInfoBar {
 
-    private InstantAppsBannerData mData;
+    private final InstantAppsBannerData mData;
 
     protected InstantAppsInfoBar(InstantAppsBannerData data) {
         super(0, data.getIcon(), data.getAppName(), null, data.getPrimaryActionLabel(), null);

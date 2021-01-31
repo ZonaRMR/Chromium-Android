@@ -51,4 +51,4 @@ public class ExternalBeginFrameSourceAndroid {
 
     private native void nativeOnVSync(long nativeExternalBeginFrameSourceAndroid,
             long vsyncTimeMicros, long vsyncPeriodMicros);
-};
+}

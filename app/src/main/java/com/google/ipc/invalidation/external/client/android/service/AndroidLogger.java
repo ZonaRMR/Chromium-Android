@@ -57,7 +57,7 @@ public class AndroidLogger implements Logger {
    * Maps from a Java {@link Level} to the android {@link Log} priority value used to log
    * messages at that level.
    */
-  private static Map<Level, Integer> levelToPriority = new HashMap<Level, Integer>();
+  private static final Map<Level, Integer> levelToPriority = new HashMap<Level, Integer>();
 
   static {
     // Define the mappings for Java log levels to the associated Android log priorities

@@ -120,7 +120,7 @@ public class AutofillPaymentInstrument extends PaymentInstrument
         if (BasicCardUtils.isBasicCardNetworkSpecified(data)) {
             Set<String> targetCardNetworks = BasicCardUtils.convertBasicCardToNetworks(data);
             assert targetCardNetworks.size() > 0;
-            if (!targetCardNetworks.contains(cardIssuerNetwork)) return false;
+            return targetCardNetworks.contains(cardIssuerNetwork);
         }
         return true;
     }
@@ -356,7 +356,7 @@ public class AutofillPaymentInstrument extends PaymentInstrument
             }
 
             if (PersonalDataManager.getInstance().getBasicCardIssuerNetwork(
-                        mCard.getNumber().toString(), true)
+                    mCard.getNumber(), true)
                     == null) {
                 mHasValidNumberAndName = false;
                 editMessageResId = R.string.payments_card_number_invalid_validation_message;

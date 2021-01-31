@@ -47,7 +47,7 @@ public class TaskTraits {
     int mPriority = TaskPriority.USER_VISIBLE;
     boolean mMayBlock;
     byte mExtensionId = INVALID_EXTENSION_ID;
-    byte mExtensionData[];
+    byte[] mExtensionData;
 
     protected void setExtensionId(byte extensionId) {
         mExtensionId = extensionId;

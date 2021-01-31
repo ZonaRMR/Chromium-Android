@@ -45,7 +45,7 @@ class BrowsingModeBottomToolbarMediator
     private static final float DUET_IPH_BUBBLE_ALPHA_FRACTION = 0.9f;
 
     /** The model for the browsing mode bottom toolbar that holds all of its state. */
-    private BrowsingModeBottomToolbarModel mModel;
+    private final BrowsingModeBottomToolbarModel mModel;
 
     /** The previous height of the bottom toolbar. */
     private int mBrowsingModeBottomToolbarHeightBeforeHide;
@@ -242,7 +242,7 @@ class BrowsingModeBottomToolbarMediator
             mFullscreenManager.setBottomControlsHeight(mBrowsingModeBottomToolbarHeightBeforeHide);
             tryShowingAndroidView();
             mModel.set(BrowsingModeBottomToolbarModel.Y_OFFSET,
-                    (int) mFullscreenManager.getBottomControlOffset());
+                    mFullscreenManager.getBottomControlOffset());
             mModel.set(BrowsingModeBottomToolbarModel.COMPOSITED_VIEW_VISIBLE, true);
         }
     }

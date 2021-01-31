@@ -15,5 +15,5 @@ public interface MediaStatusObserver {
      * were added, adding a ChromeMediaStatus interface and using here instead might
      * make more sense.
      */
-    public void onMediaStatusUpdate(MediaStatusBridge status);
+    void onMediaStatusUpdate(MediaStatusBridge status);
 }

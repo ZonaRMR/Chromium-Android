@@ -5,4 +5,4 @@
 package org.chromium.components.sync.notifier;
 
 /** Interface for classes that create an Invalidation client's name. */
-public interface InvalidationClientNameGenerator { public byte[] generateInvalidatorClientName(); }
+public interface InvalidationClientNameGenerator { byte[] generateInvalidatorClientName(); }

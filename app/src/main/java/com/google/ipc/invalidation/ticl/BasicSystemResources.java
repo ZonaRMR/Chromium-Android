@@ -34,7 +34,7 @@ public class BasicSystemResources implements SystemResources {
   private final Storage storage;
 
   /** The state of the resources. */
-  private RunState runState = new RunState();
+  private final RunState runState = new RunState();
 
   /** Information about the client operating system/platform, e.g., Windows, ChromeOS. */
   private final String platform;

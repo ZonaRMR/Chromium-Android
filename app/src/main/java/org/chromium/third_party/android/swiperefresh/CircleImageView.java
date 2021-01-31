@@ -48,11 +48,12 @@ public class CircleImageView extends ImageView {
     private static final int SHADOW_ELEVATION = 4;
 
     private Animation.AnimationListener mListener;
-    private int mShadowRadius;
+    private final int mShadowRadius;
     private int mOuterRadius;
-    private @ColorInt int mOuterColor;
-    private float mDensity;
-    private int mViewDimension;
+    private @ColorInt
+    final int mOuterColor;
+    private final float mDensity;
+    private final int mViewDimension;
 
     public CircleImageView(Context context, int color, final float radius) {
         this(context, color, radius, 0.f, 0);
@@ -159,11 +160,11 @@ public class CircleImageView extends ImageView {
     }
 
     private class OvalShadow extends OvalShape {
-        private RadialGradient mRadialGradient;
-        private int mShadowRadius;
-        private Paint mShadowPaint;
+        private final RadialGradient mRadialGradient;
+        private final int mShadowRadius;
+        private final Paint mShadowPaint;
         private Paint mOuterPaint;
-        private int mCircleDiameter;
+        private final int mCircleDiameter;
 
         public OvalShadow(int shadowRadius, int circleDiameter) {
             super();

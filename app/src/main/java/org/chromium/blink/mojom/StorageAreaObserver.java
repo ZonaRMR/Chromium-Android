@@ -18,7 +18,7 @@ public interface StorageAreaObserver extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends StorageAreaObserver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends StorageAreaObserver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<StorageAreaObserver, StorageAreaObserver.Proxy> MANAGER = StorageAreaObserver_Internal.MANAGER;

@@ -25,7 +25,7 @@ public final class HttpAuthStaticParams extends org.chromium.mojo.bindings.Struc
 
     private HttpAuthStaticParams(int version) {
         super(STRUCT_SIZE, version);
-        this.allowGssapiLibraryLoad = (boolean) true;
+        this.allowGssapiLibraryLoad = true;
     }
 
     public HttpAuthStaticParams() {

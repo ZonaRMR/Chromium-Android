@@ -18,7 +18,7 @@ public interface BlobUrlToken extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends BlobUrlToken, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BlobUrlToken, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BlobUrlToken, BlobUrlToken.Proxy> MANAGER = BlobUrlToken_Internal.MANAGER;

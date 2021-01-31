@@ -29,7 +29,7 @@ public class ContactDetailsSection extends SectionInformation {
     private final Context mContext;
     private final ContactEditor mContactEditor;
 
-    private List<AutofillProfile> mProfiles;
+    private final List<AutofillProfile> mProfiles;
 
     /**
      * Builds a Contact section from a list of AutofillProfile.

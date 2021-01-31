@@ -39,7 +39,7 @@ public class InvalidationController implements ApplicationStatus.ApplicationStat
      * delayed till the timer is resumed.
      */
     private static class Timer {
-        private Handler mHandler;
+        private final Handler mHandler;
 
         /**
          * Runnable which is added to the handler's message queue.
@@ -139,7 +139,7 @@ public class InvalidationController implements ApplicationStatus.ApplicationStat
     /**
      * Used to schedule tasks to enable and disable session sync invalidations.
      */
-    private Timer mEnableSessionInvalidationsTimer;
+    private final Timer mEnableSessionInvalidationsTimer;
 
     /**
      *  Whether session sync invalidations are enabled.

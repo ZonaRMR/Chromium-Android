@@ -24,7 +24,7 @@ public class OfflineContentAggregatorBridge implements OfflineContentProvider {
     private final Handler mHandler = new Handler();
 
     private long mNativeOfflineContentAggregatorBridge;
-    private ObserverList<OfflineContentProvider.Observer> mObservers;
+    private final ObserverList<OfflineContentProvider.Observer> mObservers;
 
     /**
      * A private constructor meant to be called by the C++ OfflineContentAggregatorBridge.

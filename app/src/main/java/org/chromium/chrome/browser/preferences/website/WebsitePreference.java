@@ -46,7 +46,7 @@ class WebsitePreference extends Preference implements FaviconImageCallback {
     private static final float FAVICON_TEXT_SIZE_FRACTION = 0.625f;
     private static final int FAVICON_BACKGROUND_COLOR = 0xff969696;
 
-    private int mFaviconSizePx;
+    private final int mFaviconSizePx;
 
     WebsitePreference(Context context, Website site, SiteSettingsCategory category) {
         super(context);
@@ -139,7 +139,7 @@ class WebsitePreference extends Preference implements FaviconImageCallback {
     protected void onBindView(View view) {
         super.onBindView(view);
 
-        TextView usageText = (TextView) view.findViewById(R.id.usage_text);
+        TextView usageText = view.findViewById(R.id.usage_text);
         usageText.setVisibility(View.GONE);
         if (mCategory.showSites(SiteSettingsCategory.Type.USE_STORAGE)) {
             long totalUsage = mSite.getTotalUsage();

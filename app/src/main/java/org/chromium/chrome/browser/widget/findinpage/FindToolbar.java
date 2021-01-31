@@ -102,7 +102,7 @@ public class FindToolbar extends LinearLayout
     @FindLocationBarState
     private int mDesiredState = FindLocationBarState.HIDDEN;
 
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private Runnable mAccessibleAnnouncementRunnable;
     private boolean mAccessibilityDidActivateResult;
 
@@ -231,7 +231,7 @@ public class FindToolbar extends LinearLayout
         setOrientation(HORIZONTAL);
         setGravity(Gravity.CENTER_VERTICAL);
 
-        mFindQuery = (FindQuery) findViewById(R.id.find_query);
+        mFindQuery = findViewById(R.id.find_query);
         mFindQuery.setFindToolbar(this);
         mFindQuery.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_FILTER);
         mFindQuery.setSelectAllOnFocus(true);
@@ -308,7 +308,7 @@ public class FindToolbar extends LinearLayout
             }
         });
 
-        mFindStatus = (TextView) findViewById(R.id.find_status);
+        mFindStatus = findViewById(R.id.find_status);
 
         mFindPrevButton = findViewById(R.id.find_prev_button);
         mFindPrevButton.setOnClickListener(new OnClickListener() {

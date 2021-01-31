@@ -72,5 +72,5 @@ public interface ScriptActionRequestProtoOrBuilder extends
    */
   org.chromium.chrome.browser.autofill_assistant.proto.NextScriptActionsRequestProto getNextRequest();
 
-  public org.chromium.chrome.browser.autofill_assistant.proto.ScriptActionRequestProto.RequestCase getRequestCase();
+  org.chromium.chrome.browser.autofill_assistant.proto.ScriptActionRequestProto.RequestCase getRequestCase();
 }

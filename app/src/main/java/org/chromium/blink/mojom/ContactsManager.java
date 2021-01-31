@@ -18,7 +18,7 @@ public interface ContactsManager extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ContactsManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ContactsManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ContactsManager, ContactsManager.Proxy> MANAGER = ContactsManager_Internal.MANAGER;

@@ -18,7 +18,7 @@ import org.chromium.content.browser.input.ImeAdapterImpl;
 public interface ImeAdapter {
     /** Composition key code sent when user either hit a key or hit a selection. */
     @VisibleForTesting
-    static final int COMPOSITION_KEY_CODE = 229;
+    int COMPOSITION_KEY_CODE = 229;
 
     /**
      * @param webContents {@link WebContents} object.

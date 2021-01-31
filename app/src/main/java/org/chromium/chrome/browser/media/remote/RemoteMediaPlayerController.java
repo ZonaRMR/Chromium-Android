@@ -51,7 +51,7 @@ public class RemoteMediaPlayerController implements MediaRouteController.UiListe
     // The Activity that was in the foreground when the video was cast.
     private WeakReference<Activity> mChromeVideoActivity;
 
-    private List<MediaRouteController> mMediaRouteControllers;
+    private final List<MediaRouteController> mMediaRouteControllers;
 
     // points to mDefaultRouteSelector, mYouTubeRouteSelector or null
     private MediaRouteController mCurrentRouteController;

@@ -98,7 +98,7 @@ public class IncognitoDisclosureActivity extends AppCompatActivity {
                 }
             };
 
-    private AsyncTask<Void> mOpenCustomTabAfterCleanUpTask = new AsyncTask<Void>() {
+    private final AsyncTask<Void> mOpenCustomTabAfterCleanUpTask = new AsyncTask<Void>() {
         @Override
         protected void onPreExecute() {
             IncognitoUtils.closeAllIncognitoTabs();

@@ -15,14 +15,14 @@ public interface TabModel extends TabList {
     /**
      * @return The profile associated with the current model.
      */
-    public Profile getProfile();
+    Profile getProfile();
 
     /**
      * Unregisters and destroys the specified tab, and then switches to the previous tab.
      * @param tab The non-null tab to close
      * @return true if the tab was found
      */
-    public boolean closeTab(Tab tab);
+    boolean closeTab(Tab tab);
 
     /**
      * Unregisters and destroys the specified tab, and then switches to the previous tab.
@@ -40,19 +40,19 @@ public interface TabModel extends TabList {
      *                {@link #getComprehensiveModel()}.
      * @return true if the tab was found
      */
-    public boolean closeTab(Tab tab, boolean animate, boolean uponExit, boolean canUndo);
+    boolean closeTab(Tab tab, boolean animate, boolean uponExit, boolean canUndo);
 
     /**
      * Returns which tab would be selected if the specified tab {@code id} were closed.
      * @param id The ID of tab which would be closed.
      * @return The id of the next tab that would be visible.
      */
-    public Tab getNextTabIfClosed(int id);
+    Tab getNextTabIfClosed(int id);
 
     /**
      * Close all the tabs on this model.
      */
-    public void closeAllTabs();
+    void closeAllTabs();
 
     /**
      * Close all tabs on this model. If allowDelegation is true, the model has the option
@@ -62,50 +62,50 @@ public interface TabModel extends TabList {
      * @param uponExit true iff the tabs are being closed upon application exit (after user presses
      *                 the system back button)
      */
-    public void closeAllTabs(boolean allowDelegation, boolean uponExit);
+    void closeAllTabs(boolean allowDelegation, boolean uponExit);
 
     /**
      * @return Whether or not this model supports pending closures.
      */
-    public boolean supportsPendingClosures();
+    boolean supportsPendingClosures();
 
     /**
      * Commits all pending closures, closing all tabs that had a chance to be undone.
      */
-    public void commitAllTabClosures();
+    void commitAllTabClosures();
 
     /**
      * Commits a pending closure specified by {@code tabId}.
      * @param tabId The id of the {@link Tab} to commit the pending closure.
      */
-    public void commitTabClosure(int tabId);
+    void commitTabClosure(int tabId);
 
     /**
      * Cancels a pending {@link Tab} closure, bringing the tab back into this model.  Note that this
      * will select the rewound {@link Tab}.
      * @param tabId The id of the {@link Tab} to undo.
      */
-    public void cancelTabClosure(int tabId);
+    void cancelTabClosure(int tabId);
 
     /**
      * Opens the most recently closed tab, bringing the tab back into its original tab model or
      * this model if the original model no longer exists.
      */
-    public void openMostRecentlyClosedTab();
+    void openMostRecentlyClosedTab();
 
     /**
      * @return The complete {@link TabList} this {@link TabModel} represents.  Note that this may
      *         be different than this actual {@link TabModel} if it supports pending closures
      *         {@link #supportsPendingClosures()}, as this will include all pending closure tabs.
      */
-    public TabList getComprehensiveModel();
+    TabList getComprehensiveModel();
 
     /**
      * Selects a tab by its index.
      * @param i    The index of the tab to select.
      * @param type The type of selection.
      */
-    public void setIndex(int i, final @TabSelectionType int type);
+    void setIndex(int i, final @TabSelectionType int type);
 
     /**
      * @return Whether this tab model is currently selected in the correspond
@@ -118,7 +118,7 @@ public interface TabModel extends TabList {
      * @param id       The id of the tab to move.
      * @param newIndex The new place to put the tab.
      */
-    public void moveTab(int id, int newIndex);
+    void moveTab(int id, int newIndex);
 
     /**
      * To be called when this model should be destroyed.  The model should no longer be used after
@@ -127,7 +127,7 @@ public interface TabModel extends TabList {
      * <p>
      * As a result of this call, all {@link Tab}s owned by this model should be destroyed.
      */
-    public void destroy();
+    void destroy();
 
     /**
      * Adds a newly created tab to this model.

@@ -317,7 +317,7 @@ final class AndroidListenerState
         && (this.requestCodeSeqNum == that.requestCodeSeqNum)
         && (this.desiredRegistrations.size() == that.desiredRegistrations.size())
         && (this.desiredRegistrations.containsAll(that.desiredRegistrations))
-        && TypedUtil.<Bytes>equals(this.clientId, that.clientId)
+        && TypedUtil.equals(this.clientId, that.clientId)
         && equals(this.delayGenerators, that.delayGenerators)
         && equals(this.registrationRetries, that.registrationRetries);
   }
@@ -330,7 +330,7 @@ final class AndroidListenerState
     }
     for (Entry<ObjectId, TiclExponentialBackoffDelayGenerator> xEntry : x.entrySet()) {
       TiclExponentialBackoffDelayGenerator yGenerator = y.get(xEntry.getKey());
-      if ((yGenerator == null) || !TypedUtil.<ExponentialBackoffState>equals(
+      if ((yGenerator == null) || !TypedUtil.equals(
           xEntry.getValue().marshal(), yGenerator.marshal())) {
         return false;
       }

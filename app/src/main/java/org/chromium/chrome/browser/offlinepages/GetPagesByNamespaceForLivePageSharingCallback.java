@@ -19,10 +19,10 @@ import java.util.List;
  */
 public class GetPagesByNamespaceForLivePageSharingCallback
         implements Callback<List<OfflinePageItem>> {
-    private Activity mActivity;
-    private Tab mTab;
-    private Callback<ShareParams> mShareCallback;
-    private OfflinePageBridge mBridge;
+    private final Activity mActivity;
+    private final Tab mTab;
+    private final Callback<ShareParams> mShareCallback;
+    private final OfflinePageBridge mBridge;
 
     public GetPagesByNamespaceForLivePageSharingCallback(Activity activity, Tab tab,
             final Callback<ShareParams> shareCallback, OfflinePageBridge bridge) {

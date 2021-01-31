@@ -18,7 +18,7 @@ public interface Fingerprint extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends Fingerprint, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends Fingerprint, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<Fingerprint, Fingerprint.Proxy> MANAGER = Fingerprint_Internal.MANAGER;

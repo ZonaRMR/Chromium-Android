@@ -206,8 +206,8 @@ public class ConnectivityDetector implements NetworkChangeNotifier.ConnectionTyp
     private static String sProbeMethod = PROBE_METHOD;
     private static int sConnectivityCheckInitialDelayMs = CONNECTIVITY_CHECK_INITIAL_DELAY_MS;
 
-    private Observer mObserver;
-    private Delegate mDelegate;
+    private final Observer mObserver;
+    private final Delegate mDelegate;
 
     private @ConnectionType int mConnectionType = ConnectionType.CONNECTION_UNKNOWN;
     private @ConnectionState int mConnectionState = ConnectionState.NONE;
@@ -221,7 +221,7 @@ public class ConnectivityDetector implements NetworkChangeNotifier.ConnectionTyp
     // The starting time, in milliseconds since boot, when we start to do http probes to validate
     // the connectivity. This is used in UMA reporting.
     private long mConnectivityCheckStartTimeMs;
-    private Handler mHandler;
+    private final Handler mHandler;
     private Runnable mRunnable;
 
     public ConnectivityDetector(Observer observer) {

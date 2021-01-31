@@ -6,7 +6,7 @@ MONOSPACE(2),
 FONT_FAMILY_COUNT(3),
 ;
 private final int mFontFamily;
-private FontFamily(int value) {
+FontFamily(int value) {
   mFontFamily = value;
 }
 int asNativeEnum() {

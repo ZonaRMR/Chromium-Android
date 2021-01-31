@@ -119,7 +119,7 @@ class DateOrderedListView {
             int screenWidthDp = resources.getConfiguration().screenWidthDp;
             padding = (int) (((screenWidthDp - UiConfig.WIDE_DISPLAY_STYLE_MIN_WIDTH_DP) / 2.f)
                     * resources.getDisplayMetrics().density);
-            padding = (int) Math.max(
+            padding = Math.max(
                     resources.getDimensionPixelSize(
                             R.dimen.download_manager_recycler_view_min_padding_wide_screen),
                     padding);

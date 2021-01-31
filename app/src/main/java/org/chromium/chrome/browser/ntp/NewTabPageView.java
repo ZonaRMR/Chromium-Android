@@ -38,9 +38,9 @@ import org.chromium.chrome.browser.widget.displaystyle.UiConfig;
 public class NewTabPageView extends HistoryNavigationLayout {
     private static final String TAG = "NewTabPageView";
 
-    private NewTabPageRecyclerView mRecyclerView;
+    private final NewTabPageRecyclerView mRecyclerView;
 
-    private NewTabPageLayout mNewTabPageLayout;
+    private final NewTabPageLayout mNewTabPageLayout;
 
     private NewTabPageManager mManager;
     private Tab mTab;

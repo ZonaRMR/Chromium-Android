@@ -18,7 +18,7 @@ public interface MediaDevicesDispatcherHost extends org.chromium.mojo.bindings.I
 
 
 
-    public interface Proxy extends MediaDevicesDispatcherHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaDevicesDispatcherHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaDevicesDispatcherHost, MediaDevicesDispatcherHost.Proxy> MANAGER = MediaDevicesDispatcherHost_Internal.MANAGER;

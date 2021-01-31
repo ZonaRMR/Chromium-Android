@@ -33,7 +33,7 @@ public class ButtonPreference extends Preference {
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        Button button = (Button) view.findViewById(R.id.button_preference);
+        Button button = view.findViewById(R.id.button_preference);
         button.setText(this.getTitle());
         button.setOnClickListener(new View.OnClickListener() {
             @Override

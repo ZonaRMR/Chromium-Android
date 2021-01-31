@@ -79,7 +79,7 @@ public final class FeedKnownContentApi implements KnownContentApi {
   @Override
   public void getKnownContent(Consumer<List<ContentMetadata>> knownContentConsumer) {
     sessionManager.getStreamFeaturesFromHead(
-        (Function<StreamPayload, /*@Nullable*/ ContentMetadata>)
+            /*@Nullable*/
             streamPayload -> {
               if (!streamPayload.getStreamFeature().hasContent()) {
                 return null;

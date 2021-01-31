@@ -46,7 +46,7 @@ public class WebApkIdentityServiceClient {
     private static WebApkIdentityServiceClient sInstance;
 
     /** Manages connections between the browser application and WebAPK Identity services. */
-    private WebApkServiceConnectionManager mConnectionManager;
+    private final WebApkServiceConnectionManager mConnectionManager;
 
     public static WebApkIdentityServiceClient getInstance() {
         if (sInstance == null) {

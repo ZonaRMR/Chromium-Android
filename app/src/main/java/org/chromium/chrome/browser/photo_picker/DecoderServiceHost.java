@@ -52,7 +52,7 @@ public class DecoderServiceHost extends IDecoderServiceCallback.Stub {
     static ServiceReadyCallback sReadyCallbackForTesting;
 
     IDecoderService mIRemoteService;
-    private ServiceConnection mConnection = new ServiceConnection() {
+    private final ServiceConnection mConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName className, IBinder service) {
             mIRemoteService = IDecoderService.Stub.asInterface(service);
@@ -116,7 +116,7 @@ public class DecoderServiceHost extends IDecoderServiceCallback.Stub {
     }
 
     // Map of file paths to decoder parameters in order of request.
-    private LinkedHashMap<String, DecoderServiceParams> mRequests = new LinkedHashMap<>();
+    private final LinkedHashMap<String, DecoderServiceParams> mRequests = new LinkedHashMap<>();
     LinkedHashMap<String, DecoderServiceParams> getRequests() {
         return mRequests;
     }

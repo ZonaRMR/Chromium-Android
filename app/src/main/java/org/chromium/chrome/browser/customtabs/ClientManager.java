@@ -101,7 +101,7 @@ class ClientManager {
     }
 
     /** To be called when a client gets disconnected. */
-    public interface DisconnectCallback { public void run(CustomTabsSessionToken session); }
+    public interface DisconnectCallback { void run(CustomTabsSessionToken session); }
 
     private static class KeepAliveServiceConnection implements ServiceConnection {
         private final Context mContext;
@@ -550,7 +550,7 @@ class ClientManager {
      */
     public synchronized boolean shouldHideDomainForSession(CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params != null ? params.mShouldHideDomain : false;
+        return params != null && params.mShouldHideDomain;
     }
 
     /**
@@ -567,7 +567,7 @@ class ClientManager {
     public synchronized boolean shouldSendBottomBarScrollStateForSession(
             CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params != null ? params.mShouldSendBottomBarScrollState : false;
+        return params != null && params.mShouldSendBottomBarScrollState;
     }
 
     /**
@@ -584,7 +584,7 @@ class ClientManager {
      */
     public synchronized boolean shouldSendNavigationInfoForSession(CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params != null ? params.mShouldSendNavigationInfo : false;
+        return params != null && params.mShouldSendNavigationInfo;
     }
 
     /**
@@ -602,7 +602,7 @@ class ClientManager {
      */
     public synchronized boolean getIgnoreFragmentsForSession(CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params == null ? false : params.mIgnoreFragments;
+        return params != null && params.mIgnoreFragments;
     }
 
     /** Sets whether the fragment should be ignored for speculation matching. */
@@ -618,7 +618,7 @@ class ClientManager {
     public synchronized boolean shouldSpeculateLoadOnCellularForSession(
             CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params != null ? params.mShouldSpeculateLoadOnCellular : false;
+        return params != null && params.mShouldSpeculateLoadOnCellular;
     }
 
     /**
@@ -647,7 +647,7 @@ class ClientManager {
      */
     public synchronized boolean usesDefaultSessionParameters(CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params != null ? params.isDefault() : true;
+        return params == null || params.isDefault();
     }
 
     /**
@@ -679,7 +679,7 @@ class ClientManager {
      */
     public synchronized boolean getCanUseHiddenTab(CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params == null ? false : params.mCanUseHiddenTab;
+        return params != null && params.mCanUseHiddenTab;
     }
 
     public synchronized void setAllowParallelRequestForSession(
@@ -690,7 +690,7 @@ class ClientManager {
 
     public synchronized boolean getAllowParallelRequestForSession(CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params != null ? params.mAllowParallelRequest : false;
+        return params != null && params.mAllowParallelRequest;
     }
 
     public synchronized void setAllowResourcePrefetchForSession(
@@ -701,7 +701,7 @@ class ClientManager {
 
     public synchronized boolean getAllowResourcePrefetchForSession(CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params != null ? params.mAllowResourcePrefetch : false;
+        return params != null && params.mAllowResourcePrefetch;
     }
 
     public synchronized void setShouldGetPageLoadMetricsForSession(
@@ -712,7 +712,7 @@ class ClientManager {
 
     public synchronized boolean shouldGetPageLoadMetrics(CustomTabsSessionToken session) {
         SessionParams params = mSessionParams.get(session);
-        return params != null ? params.mShouldGetPageLoadMetrics : false;
+        return params != null && params.mShouldGetPageLoadMetrics;
     }
 
     /**

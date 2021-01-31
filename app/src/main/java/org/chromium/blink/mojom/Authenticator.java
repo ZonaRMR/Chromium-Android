@@ -18,7 +18,7 @@ public interface Authenticator extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends Authenticator, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends Authenticator, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<Authenticator, Authenticator.Proxy> MANAGER = Authenticator_Internal.MANAGER;

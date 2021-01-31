@@ -7,7 +7,7 @@ package com.google.protos.ipc.invalidation;
 @SuppressWarnings("hiding")
 public interface Types {
 
-  public static final class ClientType extends
+  final class ClientType extends
       com.google.protobuf.nano.ExtendableMessageNano<ClientType> {
 
     // enum Type
@@ -121,7 +121,7 @@ public interface Types {
     }
   }
 
-  public static final class ObjectSource extends
+  final class ObjectSource extends
       com.google.protobuf.nano.ExtendableMessageNano<ObjectSource> {
 
     // enum Type
@@ -233,7 +233,7 @@ public interface Types {
     }
   }
 
-  public static final class Constants extends
+  final class Constants extends
       com.google.protobuf.nano.ExtendableMessageNano<Constants> {
 
     // enum ObjectVersion

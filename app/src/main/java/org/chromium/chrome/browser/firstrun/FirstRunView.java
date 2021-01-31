@@ -38,8 +38,8 @@ public class FirstRunView extends FrameLayout {
         // TODO(peconn): Use different layout files for the landscape and horizontal parts
 
         mMainLayout = findViewById(R.id.fre_main_layout);
-        mImageAndContent = (LinearLayout) findViewById(R.id.fre_image_and_content);
-        mContentWrapper = (LinearLayout) findViewById(R.id.fre_content_wrapper);
+        mImageAndContent = findViewById(R.id.fre_image_and_content);
+        mContentWrapper = findViewById(R.id.fre_content_wrapper);
 
 
     }

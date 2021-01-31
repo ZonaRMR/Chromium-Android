@@ -24,7 +24,7 @@ class ThreadHoppingHost implements DialogOverlayCore.Host {
     private static final int CLEANUP_TIMEOUT_SECONDS = 2;
 
     // Handler for the host we're proxying to.  Typically Browser::UI.
-    private Handler mHandler;
+    private final Handler mHandler;
 
     // Host impl that we're proxying to.
     private final DialogOverlayCore.Host mHost;

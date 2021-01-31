@@ -71,11 +71,12 @@ public class SiteSettingsCategory {
     }
 
     // The id of this category.
-    private @Type int mCategory;
+    private @Type
+    final int mCategory;
 
     // The id of a permission in Android M that governs this category. Can be blank if Android has
     // no equivalent permission for the category.
-    private String mAndroidPermission;
+    private final String mAndroidPermission;
 
     /**
      * Construct a SiteSettingsCategory.

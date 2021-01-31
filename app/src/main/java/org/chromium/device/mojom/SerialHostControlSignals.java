@@ -26,8 +26,8 @@ public final class SerialHostControlSignals extends org.chromium.mojo.bindings.S
 
     private SerialHostControlSignals(int version) {
         super(STRUCT_SIZE, version);
-        this.hasDtr = (boolean) false;
-        this.hasRts = (boolean) false;
+        this.hasDtr = false;
+        this.hasRts = false;
     }
 
     public SerialHostControlSignals() {

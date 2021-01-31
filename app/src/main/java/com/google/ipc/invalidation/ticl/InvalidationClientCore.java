@@ -232,7 +232,7 @@ public abstract class InvalidationClientCore extends InternalBase
       } else {
         // If we do not support offline delivery, we avoid writing the state on each message, and
         // we avoid checking the last-sent time (we check only the client token).
-        if (TypedUtil.<Bytes>equals(
+        if (TypedUtil.equals(
             state.getClientToken(), lastWrittenState.get().getClientToken())) {
           return false;
         }
@@ -1145,8 +1145,8 @@ public abstract class InvalidationClientCore extends InternalBase
 
     if (newToken != null) {
       // Note: headerToken cannot be null, so a null nonce or clientToken will always be non-equal.
-      boolean headerTokenMatchesNonce = TypedUtil.<Bytes>equals(headerToken, nonce);
-      boolean headerTokenMatchesExistingToken = TypedUtil.<Bytes>equals(headerToken, clientToken);
+      boolean headerTokenMatchesNonce = TypedUtil.equals(headerToken, nonce);
+      boolean headerTokenMatchesExistingToken = TypedUtil.equals(headerToken, clientToken);
       boolean shouldAcceptToken = headerTokenMatchesNonce || headerTokenMatchesExistingToken;
       if (!shouldAcceptToken) {
         logger.info("Ignoring new token; %s does not match nonce = %s or existing token = %s",
@@ -1335,7 +1335,7 @@ public abstract class InvalidationClientCore extends InternalBase
   private boolean validateToken(ParsedMessage parsedMessage) {
     if (clientToken != null) {
       // Client token case.
-      if (!TypedUtil.<Bytes>equals(clientToken, parsedMessage.header.token)) {
+      if (!TypedUtil.equals(clientToken, parsedMessage.header.token)) {
         logger.info("Incoming message has bad token: server = %s, client = %s",
             parsedMessage.header.token, clientToken);
         statistics.recordError(ClientErrorType.TOKEN_MISMATCH);
@@ -1344,7 +1344,7 @@ public abstract class InvalidationClientCore extends InternalBase
       return true;
     } else if (nonce != null) {
       // Nonce case.
-      if (!TypedUtil.<Bytes>equals(nonce, parsedMessage.header.token)) {
+      if (!TypedUtil.equals(nonce, parsedMessage.header.token)) {
         statistics.recordError(ClientErrorType.NONCE_MISMATCH);
         logger.info("Rejecting server message with mismatched nonce: Client = %s, Server = %s",
             nonce, parsedMessage.header.token);

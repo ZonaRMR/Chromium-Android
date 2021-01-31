@@ -72,7 +72,7 @@ public class StripLayoutHelperManager implements SceneOverlay {
 
     private TabStripSceneLayer mTabStripTreeProvider;
 
-    private TabStripEventHandler mTabStripEventHandler;
+    private final TabStripEventHandler mTabStripEventHandler;
 
     private class TabStripEventHandler implements GestureHandler {
         @Override

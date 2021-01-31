@@ -18,7 +18,7 @@ public interface ScreenOrientationListener extends org.chromium.mojo.bindings.In
 
 
 
-    public interface Proxy extends ScreenOrientationListener, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ScreenOrientationListener, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ScreenOrientationListener, ScreenOrientationListener.Proxy> MANAGER = ScreenOrientationListener_Internal.MANAGER;

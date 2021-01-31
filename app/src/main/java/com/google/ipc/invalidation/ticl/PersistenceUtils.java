@@ -55,7 +55,7 @@ public class PersistenceUtils {
     // Check the mac in the envelope against the recomputed mac from the state.
     PersistentTiclState ticlState = stateBlob.getTiclState();
     Bytes mac = generateMac(ticlState, digestFn);
-    if (!TypedUtil.<Bytes>equals(mac, stateBlob.getAuthenticationCode())) {
+    if (!TypedUtil.equals(mac, stateBlob.getAuthenticationCode())) {
       logger.warning("Ticl state failed MAC check: computed %s vs %s", mac,
           stateBlob.getAuthenticationCode());
       return null;

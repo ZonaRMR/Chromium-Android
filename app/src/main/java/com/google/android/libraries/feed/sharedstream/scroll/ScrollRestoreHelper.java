@@ -29,9 +29,9 @@ public class ScrollRestoreHelper {
   private static final int ABANDON_RESTORE_BELOW_FOLD_THRESHOLD_DEFAULT = 10;
 
   /** Private constructor to prevent instantiation. */
-  private ScrollRestoreHelper() {};
+  private ScrollRestoreHelper() {}
 
-  /**
+    /**
    * Returns a {@link ScrollState} for scroll position restore, or {@literal null} if the scroll
    * position can't or shouldn't be restored.
    *

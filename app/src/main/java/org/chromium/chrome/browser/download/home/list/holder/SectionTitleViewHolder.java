@@ -56,9 +56,9 @@ public class SectionTitleViewHolder extends ListItemViewHolder implements ListMe
     private SectionTitleViewHolder(View view) {
         super(view);
         mDivider = view.findViewById(R.id.divider);
-        mDate = (TextView) view.findViewById(R.id.date);
-        mTitle = (TextView) view.findViewById(R.id.title);
-        mMore = (ListMenuButton) view.findViewById(R.id.more);
+        mDate = view.findViewById(R.id.date);
+        mTitle = view.findViewById(R.id.title);
+        mMore = view.findViewById(R.id.more);
         mTopSpace = view.findViewById(R.id.top_space);
         mBottomSpace = view.findViewById(R.id.bottom_space);
         if (mMore != null) mMore.setDelegate(this);

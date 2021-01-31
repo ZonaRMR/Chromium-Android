@@ -621,14 +621,14 @@ public class DefaultMediaRouteController extends AbstractMediaRouteController {
         // Extract item metadata, if available.
         if (statusBundle.containsKey(MediaControlIntent.EXTRA_ITEM_METADATA)) {
             Bundle metadataBundle =
-                    (Bundle) statusBundle.getParcelable(MediaControlIntent.EXTRA_ITEM_METADATA);
+                    statusBundle.getParcelable(MediaControlIntent.EXTRA_ITEM_METADATA);
             updateTitle(metadataBundle.getString(MediaItemMetadata.KEY_TITLE, mPreferredTitle));
         }
 
         // Extract the item status, if available.
         if (statusBundle.containsKey(MediaControlIntent.EXTRA_ITEM_STATUS)) {
             Bundle itemStatusBundle =
-                    (Bundle) statusBundle.getParcelable(MediaControlIntent.EXTRA_ITEM_STATUS);
+                    statusBundle.getParcelable(MediaControlIntent.EXTRA_ITEM_STATUS);
             MediaItemStatus itemStatus = MediaItemStatus.fromBundle(itemStatusBundle);
 
             logBundle("Received item status: ", itemStatusBundle);
@@ -778,7 +778,7 @@ public class DefaultMediaRouteController extends AbstractMediaRouteController {
         // checkIfPlayableRemotely will have rejected null URLs.
         assert url != null;
 
-        RecordCastAction.castDomainAndRegistry(listener.getFrameUrl().toString());
+        RecordCastAction.castDomainAndRegistry(listener.getFrameUrl());
 
         mLocalVideoUri = Uri.parse(url);
         mStartPositionMillis = listener.getStartPositionMillis();

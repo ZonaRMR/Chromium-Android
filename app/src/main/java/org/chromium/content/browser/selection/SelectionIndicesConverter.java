@@ -216,7 +216,7 @@ public class SelectionIndicesConverter {
         if (endOffset > globalEndOffset) {
             updateGlobalSelection(mGlobalSelectionText
                             + selectionText.substring(
-                                      globalEndOffset - startOffset, selectionText.length()),
+                                      globalEndOffset - startOffset),
                     mGlobalStartOffset);
         }
     }

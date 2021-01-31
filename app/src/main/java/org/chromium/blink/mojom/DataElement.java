@@ -21,7 +21,8 @@ public final class DataElement extends org.chromium.mojo.bindings.Union {
         public static final int File = 1;
         public static final int FileFilesystem = 2;
         public static final int Blob = 3;
-    };
+    }
+
     private DataElementBytes mBytes;
     private DataElementFile mFile;
     private DataElementFilesystemUrl mFileFilesystem;

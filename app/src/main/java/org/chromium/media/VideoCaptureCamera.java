@@ -57,7 +57,7 @@ public class VideoCaptureCamera
         COLOR_TEMPERATURES_MAP.append(
                 6000, android.hardware.Camera.Parameters.WHITE_BALANCE_CLOUDY_DAYLIGHT);
         COLOR_TEMPERATURES_MAP.append(7000, android.hardware.Camera.Parameters.WHITE_BALANCE_SHADE);
-    };
+    }
 
     // Some devices don't support YV12 format correctly, even with JELLY_BEAN or
     // newer OS. To work around the issues on those devices, we have to request
@@ -93,7 +93,7 @@ public class VideoCaptureCamera
 
     private android.hardware.Camera mCamera;
     // Lock to mutually exclude execution of OnPreviewFrame() and {start/stop}Capture().
-    private ReentrantLock mPreviewBufferLock = new ReentrantLock();
+    private final ReentrantLock mPreviewBufferLock = new ReentrantLock();
     // True when native code has started capture.
     private boolean mIsRunning;
 
@@ -176,7 +176,7 @@ public class VideoCaptureCamera
                 mPhotoTakenCallbackId = 0;
             }
         }
-    };
+    }
 
     static int getNumberOfCameras() {
         return android.hardware.Camera.getNumberOfCameras();

@@ -62,7 +62,7 @@ public class HintedDropDownAdapterWithPlusIcon<T> extends HintedDropDownAdapter<
         if (position == getCount() - 1) {
             // Add a "+" icon and a blue tint to the last element.
             if (mTextView == null) {
-                mTextView = (TextView) convertView.findViewById(mTextViewResourceId);
+                mTextView = convertView.findViewById(mTextViewResourceId);
             }
 
             // Create the "+" icon, put it left of the text and add appropriate padding.

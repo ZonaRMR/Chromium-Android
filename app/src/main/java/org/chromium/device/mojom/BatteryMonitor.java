@@ -18,7 +18,7 @@ public interface BatteryMonitor extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends BatteryMonitor, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BatteryMonitor, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BatteryMonitor, BatteryMonitor.Proxy> MANAGER = BatteryMonitor_Internal.MANAGER;

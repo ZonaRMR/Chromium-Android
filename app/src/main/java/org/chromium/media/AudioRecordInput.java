@@ -37,7 +37,7 @@ class AudioRecordInput {
     private final int mChannels;
     private final int mBitsPerSample;
     private final boolean mUsePlatformAEC;
-    private ByteBuffer mBuffer;
+    private final ByteBuffer mBuffer;
     private AudioRecord mAudioRecord;
     private AudioRecordThread mAudioRecordThread;
     private AcousticEchoCanceler mAEC;

@@ -62,9 +62,9 @@ public class InfoBarContainer extends SwipableOverlayView implements UserData {
      * A listener for the InfoBar animations.
      */
     public interface InfoBarAnimationListener {
-        public static final int ANIMATION_TYPE_SHOW = 0;
-        public static final int ANIMATION_TYPE_SWAP = 1;
-        public static final int ANIMATION_TYPE_HIDE = 2;
+        int ANIMATION_TYPE_SHOW = 0;
+        int ANIMATION_TYPE_SWAP = 1;
+        int ANIMATION_TYPE_HIDE = 2;
 
         /**
          * Notifies the subscriber when an animation is completed.
@@ -145,7 +145,7 @@ public class InfoBarContainer extends SwipableOverlayView implements UserData {
 
             mTab = tab;
             updateLayoutParams(tab.getActivity());
-            setParentView((ViewGroup) tab.getActivity().findViewById(R.id.bottom_container));
+            setParentView(tab.getActivity().findViewById(R.id.bottom_container));
         }
     };
 
@@ -552,12 +552,8 @@ public class InfoBarContainer extends SwipableOverlayView implements UserData {
         boolean areControlsCompletelyShown = manager.getBottomControlOffset() > 0;
         boolean areControlsCompletelyHidden = manager.areBrowserControlsOffScreen();
 
-        if ((!mIsScrollingDownward && areControlsCompletelyShown)
-                || (mIsScrollingDownward && !areControlsCompletelyHidden)) {
-            return false;
-        }
-
-        return true;
+        return (mIsScrollingDownward || !areControlsCompletelyShown)
+                && (!mIsScrollingDownward || areControlsCompletelyHidden);
     }
 
     @Override

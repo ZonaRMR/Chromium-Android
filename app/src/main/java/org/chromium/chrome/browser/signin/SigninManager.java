@@ -184,7 +184,7 @@ public class SigninManager implements AccountTrackerService.OnSystemAccountsSeed
     private final ObserverList<SignInStateObserver> mSignInStateObservers = new ObserverList<>();
     private final ObserverList<SignInAllowedObserver> mSignInAllowedObservers =
             new ObserverList<>();
-    private List<Runnable> mCallbacksWaitingForPendingOperation = new ArrayList<>();
+    private final List<Runnable> mCallbacksWaitingForPendingOperation = new ArrayList<>();
     private boolean mSigninAllowedByPolicy;
 
     /**

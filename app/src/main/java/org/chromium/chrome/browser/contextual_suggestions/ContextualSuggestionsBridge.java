@@ -24,8 +24,8 @@ public class ContextualSuggestionsBridge {
 
     /** Result of fetching contextual suggestions. */
     public static class ContextualSuggestionsResult {
-        private String mPeekText;
-        private List<ContextualSuggestionsCluster> mClusters = new ArrayList<>();
+        private final String mPeekText;
+        private final List<ContextualSuggestionsCluster> mClusters = new ArrayList<>();
         private PeekConditions mPeekConditions = new PeekConditions();
 
         ContextualSuggestionsResult(String peekText) {

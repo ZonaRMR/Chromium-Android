@@ -51,7 +51,7 @@ public class ExpandedControllerActivity
     /**
      * Handle actions from on-screen media controls.
      */
-    private MediaController.Delegate mControllerDelegate = new MediaController.Delegate() {
+    private final MediaController.Delegate mControllerDelegate = new MediaController.Delegate() {
         @Override
         public void play() {
             if (mMediaRouteController == null) return;
@@ -146,13 +146,13 @@ public class ExpandedControllerActivity
         setContentView(R.layout.expanded_cast_controller);
         mHandler = new Handler();
 
-        ViewGroup rootView = (ViewGroup) findViewById(android.R.id.content);
+        ViewGroup rootView = findViewById(android.R.id.content);
         rootView.setBackgroundColor(Color.BLACK);
 
         mMediaRouteController.addUiListener(this);
 
         // Create and initialize the media control UI.
-        mMediaController = (MediaController) findViewById(R.id.cast_media_controller);
+        mMediaController = findViewById(R.id.cast_media_controller);
         mMediaController.setDelegate(mControllerDelegate);
 
         View button = getLayoutInflater().inflate(R.layout.cast_controller_media_route_button,
@@ -188,7 +188,7 @@ public class ExpandedControllerActivity
 
         mMediaRouteController.prepareMediaRoute();
 
-        ImageView iv = (ImageView) findViewById(R.id.cast_background_image);
+        ImageView iv = findViewById(R.id.cast_background_image);
         if (iv == null) return;
         Bitmap posterBitmap = mMediaRouteController.getPoster();
         if (posterBitmap != null) iv.setImageBitmap(posterBitmap);
@@ -262,7 +262,7 @@ public class ExpandedControllerActivity
         if (deviceName != null) {
             castText = getResources().getString(R.string.cast_casting_video, deviceName);
         }
-        TextView castTextView = (TextView) findViewById(R.id.cast_screen_title);
+        TextView castTextView = findViewById(R.id.cast_screen_title);
         castTextView.setText(castText);
 
         mMediaController.refresh();

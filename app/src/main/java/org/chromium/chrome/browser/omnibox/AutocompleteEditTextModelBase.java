@@ -20,7 +20,7 @@ public interface AutocompleteEditTextModelBase {
     /**
      * An embedder should implement this.
      */
-    public interface Delegate {
+    interface Delegate {
         /** @see TextView#getText() */
         Editable getText();
         /** @see TextView#getEditableText() */

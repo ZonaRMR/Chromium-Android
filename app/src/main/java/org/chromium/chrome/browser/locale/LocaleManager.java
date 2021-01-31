@@ -87,7 +87,7 @@ public class LocaleManager {
     private WeakReference<SnackbarManager> mSnackbarManager = new WeakReference<>(null);
     private LocaleTemplateUrlLoader mLocaleTemplateUrlLoader;
 
-    private SnackbarController mSnackbarController = new SnackbarController() {
+    private final SnackbarController mSnackbarController = new SnackbarController() {
         @Override
         public void onDismissNoAction(Object actionData) { }
 

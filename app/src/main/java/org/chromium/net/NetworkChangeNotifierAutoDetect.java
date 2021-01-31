@@ -736,7 +736,7 @@ public class NetworkChangeNotifierAutoDetect extends BroadcastReceiver {
     // mNetworkCallback and mNetworkRequest are only non-null in Android L and above.
     // mNetworkCallback will be null if ConnectivityManager.registerNetworkCallback() ever fails.
     private MyNetworkCallback mNetworkCallback;
-    private NetworkRequest mNetworkRequest;
+    private final NetworkRequest mNetworkRequest;
     private boolean mRegistered;
     private NetworkState mNetworkState;
     // When a BroadcastReceiver is registered for a sticky broadcast that has been sent out at
@@ -760,22 +760,22 @@ public class NetworkChangeNotifierAutoDetect extends BroadcastReceiver {
     /**
      * Observer interface by which observer is notified of network changes.
      */
-    public static interface Observer {
+    public interface Observer {
         /**
          * Called when default network changes.
          */
-        public void onConnectionTypeChanged(@ConnectionType int newConnectionType);
+        void onConnectionTypeChanged(@ConnectionType int newConnectionType);
         /**
          * Called when connection subtype of default network changes.
          */
-        public void onConnectionSubtypeChanged(int newConnectionSubtype);
+        void onConnectionSubtypeChanged(int newConnectionSubtype);
         /**
          * Called when device connects to network with NetID netId. For
          * example device associates with a WiFi access point.
          * connectionType is the type of the network; a member of
          * ConnectionType. Only called on Android L and above.
          */
-        public void onNetworkConnect(long netId, int connectionType);
+        void onNetworkConnect(long netId, int connectionType);
         /**
          * Called when device determines the connection to the network with
          * NetID netId is no longer preferred, for example when a device
@@ -784,12 +784,12 @@ public class NetworkChangeNotifierAutoDetect extends BroadcastReceiver {
          * the network in 30s allowing network communications on that network
          * to wrap up. Only called on Android L and above.
          */
-        public void onNetworkSoonToDisconnect(long netId);
+        void onNetworkSoonToDisconnect(long netId);
         /**
          * Called when device disconnects from network with NetID netId.
          * Only called on Android L and above.
          */
-        public void onNetworkDisconnect(long netId);
+        void onNetworkDisconnect(long netId);
         /**
          * Called to cause a purge of cached lists of active networks, of any
          * networks not in the accompanying list of active networks. This is
@@ -797,7 +797,7 @@ public class NetworkChangeNotifierAutoDetect extends BroadcastReceiver {
          * been missed, and acts to keep cached lists of active networks
          * accurate. Only called on Android L and above.
          */
-        public void purgeActiveNetworkList(long[] activeNetIds);
+        void purgeActiveNetworkList(long[] activeNetIds);
     }
 
     /**
@@ -1019,8 +1019,8 @@ public class NetworkChangeNotifierAutoDetect extends BroadcastReceiver {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             return new long[0];
         }
-        final Network networks[] = getAllNetworksFiltered(mConnectivityManagerDelegate, null);
-        final long networksAndTypes[] = new long[networks.length * 2];
+        final Network[] networks = getAllNetworksFiltered(mConnectivityManagerDelegate, null);
+        final long[] networksAndTypes = new long[networks.length * 2];
         int index = 0;
         for (Network network : networks) {
             networksAndTypes[index++] = networkToNetId(network);

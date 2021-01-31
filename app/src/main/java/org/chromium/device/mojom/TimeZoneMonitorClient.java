@@ -18,7 +18,7 @@ public interface TimeZoneMonitorClient extends org.chromium.mojo.bindings.Interf
 
 
 
-    public interface Proxy extends TimeZoneMonitorClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends TimeZoneMonitorClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<TimeZoneMonitorClient, TimeZoneMonitorClient.Proxy> MANAGER = TimeZoneMonitorClient_Internal.MANAGER;

@@ -18,7 +18,7 @@ public interface UdpSocket extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends UdpSocket, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends UdpSocket, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<UdpSocket, UdpSocket.Proxy> MANAGER = UdpSocket_Internal.MANAGER;

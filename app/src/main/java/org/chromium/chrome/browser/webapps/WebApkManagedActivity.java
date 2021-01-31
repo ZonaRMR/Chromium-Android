@@ -28,7 +28,7 @@ public abstract class WebApkManagedActivity extends WebApkActivity {
 
     @Override
     protected String getActivityId() {
-        return WebApkConstants.WEBAPK_ID_PREFIX + String.valueOf(mActivityIndex);
+        return WebApkConstants.WEBAPK_ID_PREFIX + mActivityIndex;
     }
 
     /**

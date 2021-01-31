@@ -899,7 +899,7 @@ public class CompositorViewHolder extends FrameLayout
      * @return {@code true} if browser controls shrink Blink view's size.
      */
     public boolean controlsResizeView() {
-        return mFullscreenManager != null ? mFullscreenManager.controlsResizeView() : false;
+        return mFullscreenManager != null && mFullscreenManager.controlsResizeView();
     }
 
     @Override

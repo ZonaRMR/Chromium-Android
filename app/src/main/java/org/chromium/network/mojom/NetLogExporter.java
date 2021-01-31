@@ -18,12 +18,12 @@ public interface NetLogExporter extends org.chromium.mojo.bindings.Interface {
 
 
     
-    public static final long UNLIMITED_FILE_SIZE = (long) -1L;
+    long UNLIMITED_FILE_SIZE = -1L;
 
 
 
 
-    public interface Proxy extends NetLogExporter, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends NetLogExporter, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<NetLogExporter, NetLogExporter.Proxy> MANAGER = NetLogExporter_Internal.MANAGER;

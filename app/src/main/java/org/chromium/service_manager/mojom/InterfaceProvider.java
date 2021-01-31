@@ -18,7 +18,7 @@ public interface InterfaceProvider extends org.chromium.mojo.bindings.Interface 
 
 
 
-    public interface Proxy extends InterfaceProvider, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends InterfaceProvider, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<InterfaceProvider, InterfaceProvider.Proxy> MANAGER = InterfaceProvider_Internal.MANAGER;

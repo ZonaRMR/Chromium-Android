@@ -16,7 +16,7 @@ import android.view.View;
 public class FullscreenMediaRouteButton extends MediaRouteButton {
 
     // Are we in the time window when the button should become visible if there're routes?
-    private boolean mVisibilityRequested;
+    private final boolean mVisibilityRequested;
 
     /**
      * The constructor invoked when inflating the button.

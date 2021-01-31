@@ -18,7 +18,7 @@ public interface ProxyErrorClient extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ProxyErrorClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ProxyErrorClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ProxyErrorClient, ProxyErrorClient.Proxy> MANAGER = ProxyErrorClient_Internal.MANAGER;

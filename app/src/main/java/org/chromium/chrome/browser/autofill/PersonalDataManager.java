@@ -358,8 +358,8 @@ public class PersonalDataManager {
         private final int mCardType;
         private String mGUID;
         private String mOrigin;
-        private boolean mIsLocal;
-        private boolean mIsCached;
+        private final boolean mIsLocal;
+        private final boolean mIsCached;
         private String mName;
         private String mNumber;
         private String mObfuscatedNumber;
@@ -368,7 +368,7 @@ public class PersonalDataManager {
         private String mBasicCardIssuerNetwork;
         private int mIssuerIconDrawableId;
         private String mBillingAddressId;
-        private String mServerId;
+        private final String mServerId;
 
         @CalledByNative("CreditCard")
         public static CreditCard create(String guid, String origin, boolean isLocal,

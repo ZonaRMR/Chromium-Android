@@ -114,10 +114,7 @@ public class InvalidationGcmUpstreamSender extends GcmUpstreamSenderService {
         for (String key : data.keySet()) {
             size += key.length() + data.getString(key).length();
         }
-        if (size > GCM_PAYLOAD_LIMIT) {
-            return false;
-        }
-        return true;
+        return size <= GCM_PAYLOAD_LIMIT;
     }
 
     /*

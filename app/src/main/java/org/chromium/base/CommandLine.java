@@ -244,8 +244,8 @@ public abstract class CommandLine {
     private CommandLine() {}
 
     private static class JavaCommandLine extends CommandLine {
-        private HashMap<String, String> mSwitches = new HashMap<String, String>();
-        private ArrayList<String> mArgs = new ArrayList<String>();
+        private final HashMap<String, String> mSwitches = new HashMap<String, String>();
+        private final ArrayList<String> mArgs = new ArrayList<String>();
 
         // The arguments begin at index 1, since index 0 contains the executable name.
         private int mArgsBegin = 1;

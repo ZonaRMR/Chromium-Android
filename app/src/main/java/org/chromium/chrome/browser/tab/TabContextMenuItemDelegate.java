@@ -43,7 +43,7 @@ import java.util.Locale;
 public class TabContextMenuItemDelegate implements ContextMenuItemDelegate {
     private final Tab mTab;
     private boolean mLoadOriginalImageRequestedForPageLoad;
-    private EmptyTabObserver mDataReductionProxyContextMenuTabObserver;
+    private final EmptyTabObserver mDataReductionProxyContextMenuTabObserver;
 
     /**
      * Builds a {@link TabContextMenuItemDelegate} instance.
@@ -303,13 +303,10 @@ public class TabContextMenuItemDelegate implements ContextMenuItemDelegate {
      * @return true if url is enabled for spdy proxy.
     */
     private boolean isSpdyProxyEnabledForUrl(String url) {
-        if (DataReductionProxySettings.getInstance().isDataReductionProxyEnabled()
+        return DataReductionProxySettings.getInstance().isDataReductionProxyEnabled()
                 && url != null && !url.toLowerCase(Locale.US).startsWith(
-                        UrlConstants.HTTPS_URL_PREFIX)
-                && !isIncognito()) {
-            return true;
-        }
-        return false;
+                UrlConstants.HTTPS_URL_PREFIX)
+                && !isIncognito();
     }
 
 }

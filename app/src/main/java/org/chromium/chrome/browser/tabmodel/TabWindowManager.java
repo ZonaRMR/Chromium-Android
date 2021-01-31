@@ -54,9 +54,9 @@ public class TabWindowManager implements ActivityStateListener {
 
     private TabModelSelectorFactory mSelectorFactory = new DefaultTabModelSelectorFactory();
 
-    private List<TabModelSelector> mSelectors = new ArrayList<>();
+    private final List<TabModelSelector> mSelectors = new ArrayList<>();
 
-    private Map<Activity, TabModelSelector> mAssignments = new HashMap<>();
+    private final Map<Activity, TabModelSelector> mAssignments = new HashMap<>();
 
     /**
      * @return The singleton instance of {@link TabWindowManager}.

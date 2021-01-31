@@ -14,11 +14,11 @@ public interface ArDelegate {
     /**
      * Needs to be called once native libraries are available.
      **/
-    public void init();
+    void init();
 
     /**
      * Needs to be called in Activity's onResumeWithNative() method in order
      * to notify AR that the activity was resumed.
      **/
-    public void registerOnResumeActivity(Activity activity);
+    void registerOnResumeActivity(Activity activity);
 }

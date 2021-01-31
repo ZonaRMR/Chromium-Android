@@ -18,7 +18,7 @@ public interface File extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends File, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends File, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<File, File.Proxy> MANAGER = File_Internal.MANAGER;

@@ -321,9 +321,7 @@ public class DownloadUtils {
         if (tab.isShowingInterstitialPage()) return false;
 
         // Don't allow re-downloading the currently displayed offline page.
-        if (OfflinePageUtils.isOfflinePage(tab)) return false;
-
-        return true;
+        return !OfflinePageUtils.isOfflinePage(tab);
     }
 
     /**
@@ -601,7 +599,7 @@ public class DownloadUtils {
         File file = new File(filePath);
         uri = getUriForItem(file);
 
-        return uri != null ? uri.toString() : new String();
+        return uri != null ? uri.toString() : "";
     }
 
     /**
@@ -1194,7 +1192,7 @@ public class DownloadUtils {
         }
         if (primaryDir == null || path == null) return false;
         String primaryPath = primaryDir.getAbsolutePath();
-        return primaryPath == null ? false : path.contains(primaryPath);
+        return primaryPath != null && path.contains(primaryPath);
     }
 
     private static native String nativeGetFailStateMessage(@FailState int failState);

@@ -18,7 +18,7 @@ public interface MdnsResponder extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends MdnsResponder, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MdnsResponder, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MdnsResponder, MdnsResponder.Proxy> MANAGER = MdnsResponder_Internal.MANAGER;

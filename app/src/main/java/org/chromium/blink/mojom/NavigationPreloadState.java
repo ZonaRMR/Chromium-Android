@@ -24,8 +24,8 @@ public final class NavigationPreloadState extends org.chromium.mojo.bindings.Str
 
     private NavigationPreloadState(int version) {
         super(STRUCT_SIZE, version);
-        this.enabled = (boolean) false;
-        this.header = (String) "true";
+        this.enabled = false;
+        this.header = "true";
     }
 
     public NavigationPreloadState() {

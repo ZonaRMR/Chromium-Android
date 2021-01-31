@@ -29,7 +29,7 @@ public final class PaymentDetails extends org.chromium.mojo.bindings.Struct {
 
     private PaymentDetails(int version) {
         super(STRUCT_SIZE, version);
-        this.error = (String) "";
+        this.error = "";
     }
 
     public PaymentDetails() {

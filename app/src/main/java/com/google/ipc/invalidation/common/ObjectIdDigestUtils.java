@@ -35,7 +35,7 @@ public class ObjectIdDigestUtils {
   public static class Sha1DigestFunction
       implements DigestFunction {
     /** Digest implementation. */
-    private MessageDigest sha1;
+    private final MessageDigest sha1;
 
     /**
      * Whether the {@link #reset()} method needs to be called. This is set to true

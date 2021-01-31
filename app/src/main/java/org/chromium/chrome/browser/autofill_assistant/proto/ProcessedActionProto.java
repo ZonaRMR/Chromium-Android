@@ -23,7 +23,7 @@ public  final class ProcessedActionProto extends
     PAYMENT_DETAILS(15),
     RESULTDATA_NOT_SET(0);
     private final int value;
-    private ResultDataCase(int value) {
+    ResultDataCase(int value) {
       this.value = value;
     }
     /**
@@ -46,7 +46,7 @@ public  final class ProcessedActionProto extends
     public int getNumber() {
       return this.value;
     }
-  };
+  }
 
   public ResultDataCase
   getResultDataCase() {

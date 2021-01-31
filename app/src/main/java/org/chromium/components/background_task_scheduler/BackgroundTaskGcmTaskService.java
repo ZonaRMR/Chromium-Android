@@ -27,7 +27,7 @@ public class BackgroundTaskGcmTaskService extends GcmTaskService {
         // Wakelock is only held for 3 minutes by default for GcmTaskService.
         private static final long MAX_TIMEOUT_SECONDS = 179;
         private final CountDownLatch mLatch;
-        private long mWaiterTimeoutSeconds;
+        private final long mWaiterTimeoutSeconds;
         private boolean mIsRescheduleNeeded;
         private boolean mHasTaskTimedOut;
 

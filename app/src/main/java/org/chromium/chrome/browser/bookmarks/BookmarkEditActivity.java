@@ -39,7 +39,7 @@ public class BookmarkEditActivity extends SynchronousInitializationActivity {
 
     private MenuItem mDeleteButton;
 
-    private BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
+    private final BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
         @Override
         public void bookmarkModelChanged() {
             if (mModel.doesBookmarkExist(mBookmarkId)) {
@@ -67,9 +67,9 @@ public class BookmarkEditActivity extends SynchronousInitializationActivity {
         }
 
         setContentView(R.layout.bookmark_edit);
-        mTitleEditText = (EmptyAlertEditText) findViewById(R.id.title_text);
-        mFolderTextView = (TextView) findViewById(R.id.folder_text);
-        mUrlEditText = (EmptyAlertEditText) findViewById(R.id.url_text);
+        mTitleEditText = findViewById(R.id.title_text);
+        mFolderTextView = findViewById(R.id.folder_text);
+        mUrlEditText = findViewById(R.id.url_text);
 
         mFolderTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +79,7 @@ public class BookmarkEditActivity extends SynchronousInitializationActivity {
             }
         });
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

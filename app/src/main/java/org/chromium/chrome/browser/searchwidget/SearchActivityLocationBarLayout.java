@@ -24,7 +24,7 @@ import org.chromium.chrome.browser.toolbar.top.ToolbarPhone;
 /** Implementation of the {@link LocationBarLayout} that is displayed for widget searches. */
 public class SearchActivityLocationBarLayout extends LocationBarLayout {
     /** Delegates calls out to the containing Activity. */
-    public static interface Delegate {
+    public interface Delegate {
         /** Load a URL in the associated tab. */
         void loadUrl(String url);
 

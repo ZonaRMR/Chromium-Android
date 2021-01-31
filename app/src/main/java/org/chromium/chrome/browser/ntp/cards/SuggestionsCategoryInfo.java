@@ -113,10 +113,8 @@ public class SuggestionsCategoryInfo {
         if (menuItemId == ContextMenuManager.ContextMenuItemId.REMOVE) return null;
 
         if (mCategory == KnownCategories.DOWNLOADS) {
-            if (menuItemId == ContextMenuManager.ContextMenuItemId.OPEN_IN_INCOGNITO_TAB
-                    || menuItemId == ContextMenuManager.ContextMenuItemId.SAVE_FOR_OFFLINE) {
-                return false;
-            }
+            return menuItemId != ContextMenuItemId.OPEN_IN_INCOGNITO_TAB
+                    && menuItemId != ContextMenuItemId.SAVE_FOR_OFFLINE;
         }
         return true;
     }

@@ -233,7 +233,7 @@ public abstract class BaseMediaRouteProvider
             mManager.onRouteClosed(routeId, "Launch error");
         }
         mRoutes.clear();
-    };
+    }
 
     // Migrated to CafBaseMediaRouteProvider. See https://crbug.com/711860.
     @Override

@@ -204,9 +204,7 @@ public class BrowserActionsTabModelSelector
     @Override
     public Tab openNewTab(
             LoadUrlParams loadUrlParams, @TabLaunchType int type, Tab parent, boolean incognito) {
-        if (!isTabStateInitialized()) {
-            assert type == TabLaunchType.FROM_RESTORE;
-        }
+        assert isTabStateInitialized() || type == TabLaunchType.FROM_RESTORE;
         return mTabCreatorManager.getTabCreator(incognito).createNewTab(
                 loadUrlParams, type, parent);
     }

@@ -60,7 +60,7 @@ public interface SearchJniBridge {
     /**
      * Observer on data changes.
      */
-    public static interface DataChangeObserver {
+    interface DataChangeObserver {
         /**
          * Called when data has been changed.
          */

@@ -26,5 +26,5 @@ public interface MinidumpUploader {
      * Provides an interface for the callback that will be called if all uploads are finished before
      * they are canceled.
      */
-    public interface UploadsFinishedCallback { public void uploadsFinished(boolean reschedule); }
+    interface UploadsFinishedCallback { void uploadsFinished(boolean reschedule); }
 }

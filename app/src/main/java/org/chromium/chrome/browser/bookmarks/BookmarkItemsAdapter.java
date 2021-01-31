@@ -56,12 +56,12 @@ class BookmarkItemsAdapter
     private final List<BookmarkId> mTopLevelFolders = new ArrayList<>();
 
     private BookmarkDelegate mDelegate;
-    private Context mContext;
+    private final Context mContext;
     private BookmarkPromoHeader mPromoHeaderManager;
     private String mSearchText;
     private BookmarkId mCurrentFolder;
 
-    private BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
+    private final BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
         @Override
         public void bookmarkNodeChanged(BookmarkItem node) {
             assert mDelegate != null;
@@ -339,7 +339,7 @@ class BookmarkItemsAdapter
      * @param query The query text to search for.
      */
     void search(String query) {
-        mSearchText = query.toString().trim();
+        mSearchText = query.trim();
         List<BookmarkId> results =
                 mDelegate.getModel().searchBookmarks(mSearchText, MAXIMUM_NUMBER_OF_SEARCH_RESULTS);
         setBookmarks(null, results);

@@ -142,7 +142,7 @@ public class SearchActivity extends AsyncInitializationActivity
         setContentView(mContentView);
 
         // Build the search box.
-        mSearchBox = (SearchActivityLocationBarLayout) mContentView.findViewById(
+        mSearchBox = mContentView.findViewById(
                 R.id.search_location_bar);
         mSearchBox.setDelegate(this);
         mSearchBox.setToolbarDataProvider(mSearchBoxDataProvider);

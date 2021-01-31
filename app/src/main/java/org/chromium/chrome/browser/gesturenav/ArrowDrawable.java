@@ -39,12 +39,13 @@ class ArrowDrawable extends Drawable {
     private final float mStrokeInset;
 
     private float mArrowScale;
-    private float mCenterRadius;
-    private float mWidth;
-    private float mHeight;
+    private final float mCenterRadius;
+    private final float mWidth;
+    private final float mHeight;
     private int mAlpha;
     private @ColorInt int mBackgroundColor;
-    private @ColorInt int mForegroundColor;
+    private @ColorInt
+    final int mForegroundColor;
     private boolean mIsForward;
 
     public ArrowDrawable(Resources resources) {
@@ -149,8 +150,8 @@ class ArrowDrawable extends Drawable {
 
         // Adjust the position of the triangle so that it is positioned at the end of the line.
         float inset = (int) mStrokeInset / 2f * mArrowScale;
-        float x = (float) (mCenterRadius + bounds.exactCenterX());
-        float y = (float) bounds.exactCenterY();
+        float x = mCenterRadius + bounds.exactCenterX();
+        float y = bounds.exactCenterY();
         mArrow.offset(x - inset, y);
         mArrow.close();
         mArrowFill.setColor(mForegroundColor);

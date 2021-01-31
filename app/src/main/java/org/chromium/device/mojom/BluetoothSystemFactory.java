@@ -18,7 +18,7 @@ public interface BluetoothSystemFactory extends org.chromium.mojo.bindings.Inter
 
 
 
-    public interface Proxy extends BluetoothSystemFactory, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BluetoothSystemFactory, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BluetoothSystemFactory, BluetoothSystemFactory.Proxy> MANAGER = BluetoothSystemFactory_Internal.MANAGER;

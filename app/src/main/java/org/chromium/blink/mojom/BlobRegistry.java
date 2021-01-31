@@ -18,7 +18,7 @@ public interface BlobRegistry extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends BlobRegistry, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BlobRegistry, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BlobRegistry, BlobRegistry.Proxy> MANAGER = BlobRegistry_Internal.MANAGER;

@@ -471,8 +471,7 @@ public class CustomTabsConnection {
         String scheme = uri.normalizeScheme().getScheme();
         boolean allowedScheme = scheme == null || scheme.equals(UrlConstants.HTTP_SCHEME)
                 || scheme.equals(UrlConstants.HTTPS_SCHEME);
-        if (!allowedScheme) return false;
-        return true;
+        return allowedScheme;
     }
 
     /**
@@ -1234,7 +1233,7 @@ public class CustomTabsConnection {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 // line format: 2:cpu:/bg_non_interactive
-                String fields[] = line.trim().split(":");
+                String[] fields = line.trim().split(":");
                 if (fields.length == 3 && fields[1].equals(controllerName)) return fields[2];
             }
         } catch (IOException e) {
@@ -1278,7 +1277,7 @@ public class CustomTabsConnection {
                 }
             } while (false);
         }
-        return useWorkaround ? !isBackgroundProcess(Binder.getCallingPid()) : false;
+        return useWorkaround && !isBackgroundProcess(Binder.getCallingPid());
     }
 
     @VisibleForTesting

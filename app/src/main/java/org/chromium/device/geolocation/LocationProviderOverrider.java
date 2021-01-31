@@ -13,4 +13,4 @@ final public class LocationProviderOverrider {
     }
 
     private LocationProviderOverrider() {}
-};
+}

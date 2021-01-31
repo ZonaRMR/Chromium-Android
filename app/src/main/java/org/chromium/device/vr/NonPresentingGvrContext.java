@@ -23,8 +23,8 @@ import org.chromium.base.annotations.JNINamespace;
  */
 @JNINamespace("device")
 public class NonPresentingGvrContext {
-    private GvrApi mGvrApi;
-    private DisplaySynchronizer mDisplaySynchronizer;
+    private final GvrApi mGvrApi;
+    private final DisplaySynchronizer mDisplaySynchronizer;
     private boolean mResumed;
 
     private long mNativeGvrDevice;

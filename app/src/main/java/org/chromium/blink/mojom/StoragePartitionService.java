@@ -18,7 +18,7 @@ public interface StoragePartitionService extends org.chromium.mojo.bindings.Inte
 
 
 
-    public interface Proxy extends StoragePartitionService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends StoragePartitionService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<StoragePartitionService, StoragePartitionService.Proxy> MANAGER = StoragePartitionService_Internal.MANAGER;

@@ -18,7 +18,7 @@ public class NavigationEntry {
     private final String mReferrerUrl;
     private final String mTitle;
     private Bitmap mFavicon;
-    private int mTransition;
+    private final int mTransition;
 
     /**
      * Default constructor.

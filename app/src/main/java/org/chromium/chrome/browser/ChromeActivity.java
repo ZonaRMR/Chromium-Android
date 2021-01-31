@@ -204,8 +204,8 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         /**
          * @return AppMenuHandler for the given activity and menu resource id.
          */
-        public AppMenuHandler get(Activity activity, AppMenuPropertiesDelegate delegate,
-                int menuResourceId);
+        AppMenuHandler get(Activity activity, AppMenuPropertiesDelegate delegate,
+                           int menuResourceId);
     }
 
     /**
@@ -306,7 +306,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
 
     // A set of views obscuring all tabs. When this set is nonempty,
     // all tab content will be hidden from the accessibility tree.
-    private Set<View> mViewsObscuringAllTabs = new HashSet<>();
+    private final Set<View> mViewsObscuringAllTabs = new HashSet<>();
 
     // See enableHardwareAcceleration()
     private boolean mSetWindowHWA;
@@ -320,7 +320,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     private ActivityTabStartupMetricsTracker mActivityTabStartupMetricsTracker;
 
     /** A means of providing the foreground tab of the activity to different features. */
-    private ActivityTabProvider mActivityTabProvider = new ActivityTabProvider();
+    private final ActivityTabProvider mActivityTabProvider = new ActivityTabProvider();
 
     /** A means of providing the theme color to different features. */
     private final TabThemeColorProvider mTabThemeColorProvider = new TabThemeColorProvider();
@@ -477,7 +477,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             initializeToolbar();
             if (!isFinishing() && getFullscreenManager() != null) {
                 getFullscreenManager().initialize(
-                        (ControlContainer) findViewById(R.id.control_container),
+                        findViewById(R.id.control_container),
                         getTabModelSelector(), getControlContainerHeightResource());
             }
 
@@ -556,7 +556,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                 TraceEvent.end("setContentView(R.layout.main)");
                 if (getControlContainerLayoutId() != NO_CONTROL_CONTAINER) {
                     ViewStub toolbarContainerStub =
-                            ((ViewStub) findViewById(R.id.control_container_stub));
+                            findViewById(R.id.control_container_stub);
 
                     toolbarContainerStub.setLayoutResource(getControlContainerLayoutId());
                     TraceEvent.begin("toolbarContainerStub.inflate");
@@ -567,7 +567,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                 // It cannot be assumed that the result of toolbarContainerStub.inflate() will
                 // be the control container since it may be wrapped in another view.
                 ControlContainer controlContainer =
-                        (ControlContainer) findViewById(R.id.control_container);
+                        findViewById(R.id.control_container);
 
                 if (controlContainer == null) {
                     // omnibox_results_container_stub anchors off of control_container, and will
@@ -595,7 +595,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                 true);
 
         ViewGroup rootView = (ViewGroup) getWindow().getDecorView().getRootView();
-        mCompositorViewHolder = (CompositorViewHolder) findViewById(R.id.compositor_view_holder);
+        mCompositorViewHolder = findViewById(R.id.compositor_view_holder);
         // If the UI was inflated on a background thread, then the CompositorView may not have been
         // fully initialized yet as that may require the creation of a handler which is not allowed
         // outside the UI thread. This call should fully initialize the CompositorView if it hasn't
@@ -1578,11 +1578,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         }
 
         // Do not show the menu if we are in find in page view.
-        if (mFindToolbarManager != null && mFindToolbarManager.isShowing() && !isTablet()) {
-            return false;
-        }
-
-        return true;
+        return mFindToolbarManager == null || !mFindToolbarManager.isShowing() || isTablet();
     }
 
     /**
@@ -2391,11 +2387,8 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             return true;
         }
         // SM-N9005 on JSS15J accounts for 44% of crashes in libPowerStretch.so on stable channel.
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.JELLY_BEAN_MR2
-                && Build.MODEL.equals("SM-N9005")) {
-            return true;
-        }
-        return false;
+        return Build.VERSION.SDK_INT == Build.VERSION_CODES.JELLY_BEAN_MR2
+                && Build.MODEL.equals("SM-N9005");
     }
 
     private void enableHardwareAcceleration() {
@@ -2498,9 +2491,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     @Override
     public boolean onActivityResultWithNative(int requestCode, int resultCode, Intent intent) {
         if (super.onActivityResultWithNative(requestCode, resultCode, intent)) return true;
-        if (VrModuleProvider.getDelegate().onActivityResultWithNative(requestCode, resultCode))
-            return true;
-        return false;
+        return VrModuleProvider.getDelegate().onActivityResultWithNative(requestCode, resultCode);
     }
 
     /**
@@ -2533,7 +2524,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     }
 
     private void clearToolbarResourceCache() {
-        ControlContainer controlContainer = (ControlContainer) findViewById(R.id.control_container);
+        ControlContainer controlContainer = findViewById(R.id.control_container);
         if (controlContainer != null) {
             controlContainer.getToolbarResourceAdapter().dropCachedBitmap();
         }

@@ -17,7 +17,7 @@ import org.chromium.base.annotations.JNINamespace;
  */
 @JNINamespace("media_router")
 public class MediaStatusBridge {
-    private MediaStatus mStatus;
+    private final MediaStatus mStatus;
 
     public MediaStatusBridge(MediaStatus status) {
         mStatus = status;

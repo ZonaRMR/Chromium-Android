@@ -18,7 +18,7 @@ public interface FileChooser extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends FileChooser, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FileChooser, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FileChooser, FileChooser.Proxy> MANAGER = FileChooser_Internal.MANAGER;

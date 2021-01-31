@@ -18,7 +18,7 @@ public interface InputDeviceManager extends org.chromium.mojo.bindings.Interface
 
 
 
-    public interface Proxy extends InputDeviceManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends InputDeviceManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<InputDeviceManager, InputDeviceManager.Proxy> MANAGER = InputDeviceManager_Internal.MANAGER;

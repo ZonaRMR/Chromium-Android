@@ -28,9 +28,9 @@ import java.util.List;
 public class ExperimentalExploreSitesSection {
     private static final int MAX_TILES = 3;
 
-    private Profile mProfile;
-    private NativePageNavigationDelegate mNavigationDelegate;
-    private View mExploreSection;
+    private final Profile mProfile;
+    private final NativePageNavigationDelegate mNavigationDelegate;
+    private final View mExploreSection;
     private LinearLayout mCategorySection;
 
     public ExperimentalExploreSitesSection(

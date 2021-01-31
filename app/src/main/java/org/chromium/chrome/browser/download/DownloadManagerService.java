@@ -164,7 +164,7 @@ public class DownloadManagerService
     private DownloadInfoBarController mInfoBarController;
     private DownloadInfoBarController mIncognitoInfoBarController;
     private long mNativeDownloadManagerService;
-    private DownloadManagerDelegate mDownloadManagerDelegate;
+    private final DownloadManagerDelegate mDownloadManagerDelegate;
     private NetworkChangeNotifierAutoDetect mNetworkChangeNotifier;
     // Flag to track if we need to post a task to update download notifications.
     private boolean mIsUIUpdateScheduled;
@@ -178,7 +178,7 @@ public class DownloadManagerService
      * Interface to intercept download request to Android DownloadManager. This is implemented by
      * tests so that we don't need to actually enqueue a download into the Android DownloadManager.
      */
-    static interface DownloadManagerRequestInterceptor {
+    interface DownloadManagerRequestInterceptor {
         void interceptDownloadRequest(DownloadItem item, boolean notifyComplete);
     }
 
@@ -854,8 +854,7 @@ public class DownloadManagerService
         Intent intent = getLaunchIntentFromDownloadId(
                 context, download.getDownloadInfo().getFilePath(),
                 download.getSystemDownloadId(), isSupportedMimeType, null, null);
-        return (intent == null)
-                ? false : ExternalNavigationDelegateImpl.resolveIntent(intent, true);
+        return (intent != null) && ExternalNavigationDelegateImpl.resolveIntent(intent, true);
     }
 
     /** See {@link #openDownloadedContent(Context, String, boolean, boolean, String, long)}. */

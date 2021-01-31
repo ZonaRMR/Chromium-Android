@@ -27,8 +27,8 @@ public final class ServiceWorkerObjectInfo extends org.chromium.mojo.bindings.St
 
     private ServiceWorkerObjectInfo(int version) {
         super(STRUCT_SIZE, version);
-        this.versionId = (long) ServiceWorkerObjectConstants.INVALID_SERVICE_WORKER_VERSION_ID;
-        this.state = (int) ServiceWorkerState.UNKNOWN;
+        this.versionId = ServiceWorkerObjectConstants.INVALID_SERVICE_WORKER_VERSION_ID;
+        this.state = ServiceWorkerState.UNKNOWN;
     }
 
     public ServiceWorkerObjectInfo() {

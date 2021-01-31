@@ -22,10 +22,10 @@ public final class BlurTileMode {
 
     public static final int CLAMP_TO_BLACK = REPEAT + 1;
 
-    public static final int BLUR_TILE_MODE_LAST = (int) (BlurTileMode.CLAMP_TO_BLACK);
+    public static final int BLUR_TILE_MODE_LAST = BlurTileMode.CLAMP_TO_BLACK;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (2);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 2;
 
     private static final boolean IS_EXTENSIBLE = false;
 

@@ -21,7 +21,7 @@ public final class DataElementBytes extends org.chromium.mojo.bindings.Struct {
     private static final org.chromium.mojo.bindings.DataHeader DEFAULT_STRUCT_INFO = VERSION_ARRAY[0];
 
     
-    public static final long MAXIMUM_EMBEDDED_DATA_SIZE = (long) 256000L;
+    public static final long MAXIMUM_EMBEDDED_DATA_SIZE = 256000L;
 
     public long length;
     public byte[] embeddedData;

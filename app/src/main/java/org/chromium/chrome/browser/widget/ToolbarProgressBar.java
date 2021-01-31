@@ -83,7 +83,7 @@ public class ToolbarProgressBar extends ClipDrawableProgressBar {
     private float mTargetProgress;
 
     /** The logic used to animate the progress bar during smooth animation. */
-    private AnimationLogic mAnimationLogic;
+    private final AnimationLogic mAnimationLogic;
 
     /** Whether or not the animation has been initialized. */
     private boolean mAnimationInitialized;
@@ -101,7 +101,7 @@ public class ToolbarProgressBar extends ClipDrawableProgressBar {
     private int mThemeColor;
 
     /** Whether or not to use the status bar color as the background of the toolbar. */
-    private boolean mUseStatusBarColorAsBackground;
+    private final boolean mUseStatusBarColorAsBackground;
 
     /** The animator responsible for updating progress once it has been throttled. */
     private TimeAnimator mProgressThrottle;

@@ -128,7 +128,7 @@ public class ActivityTabProvider {
     private LayoutManager mLayoutManager;
 
     /** The observer watching scene changes in the {@link LayoutManager}. */
-    private SceneChangeObserver mSceneChangeObserver;
+    private final SceneChangeObserver mSceneChangeObserver;
 
     /** A handle to the {@link TabModelSelector}. */
     private TabModelSelector mTabModelSelector;

@@ -18,7 +18,7 @@ public interface ChunkedDataPipeGetter extends org.chromium.mojo.bindings.Interf
 
 
 
-    public interface Proxy extends ChunkedDataPipeGetter, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ChunkedDataPipeGetter, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ChunkedDataPipeGetter, ChunkedDataPipeGetter.Proxy> MANAGER = ChunkedDataPipeGetter_Internal.MANAGER;

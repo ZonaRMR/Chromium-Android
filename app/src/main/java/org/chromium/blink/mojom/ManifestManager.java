@@ -18,7 +18,7 @@ public interface ManifestManager extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ManifestManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ManifestManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ManifestManager, ManifestManager.Proxy> MANAGER = ManifestManager_Internal.MANAGER;

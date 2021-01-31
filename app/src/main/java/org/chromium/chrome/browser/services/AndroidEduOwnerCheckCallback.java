@@ -11,5 +11,5 @@ public interface AndroidEduOwnerCheckCallback {
     /**
      * Indicates whether this is an Android EDU device or not.
      */
-    public void onSchoolCheckDone(boolean isAndroidEduDevice);
+    void onSchoolCheckDone(boolean isAndroidEduDevice);
 }

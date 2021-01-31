@@ -21,7 +21,8 @@ public final class Values extends org.chromium.mojo.bindings.Union {
         public static final int LongValues = 1;
         public static final int StringValues = 2;
         public static final int EntityValues = 3;
-    };
+    }
+
     private boolean[] mBoolValues;
     private long[] mLongValues;
     private String[] mStringValues;

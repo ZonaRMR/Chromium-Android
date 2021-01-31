@@ -117,7 +117,7 @@ abstract class BookmarkRow extends SelectableItemView<BookmarkId>
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mMoreIcon = (ListMenuButton) findViewById(R.id.more);
+        mMoreIcon = findViewById(R.id.more);
         mMoreIcon.setDelegate(this);
     }
 

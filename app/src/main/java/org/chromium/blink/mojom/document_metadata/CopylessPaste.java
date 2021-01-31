@@ -18,7 +18,7 @@ public interface CopylessPaste extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends CopylessPaste, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CopylessPaste, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CopylessPaste, CopylessPaste.Proxy> MANAGER = CopylessPaste_Internal.MANAGER;

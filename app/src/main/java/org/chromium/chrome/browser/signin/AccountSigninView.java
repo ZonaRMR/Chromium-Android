@@ -171,7 +171,7 @@ public class AccountSigninView extends FrameLayout {
     private TextView mSigninPersonalizeServiceDescription;
     private TextView mSigninSettingsControl;
     private ConfirmSyncDataStateMachine mConfirmSyncDataStateMachine;
-    private ConsentTextTracker mConsentTextTracker;
+    private final ConsentTextTracker mConsentTextTracker;
 
     public AccountSigninView(Context context, AttributeSet attrs) {
         super(context, attrs);

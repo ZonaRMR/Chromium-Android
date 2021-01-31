@@ -366,14 +366,9 @@ public class GeolocationHeader {
         // Work around a bug in OnePlus2 devices running Lollipop, where the NETWORK_PROVIDER
         // incorrectly requires FINE_LOCATION permission (it should only require COARSE_LOCATION
         // permission). http://crbug.com/580733
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M
-                && ApiCompatibilityUtils.checkPermission(ContextUtils.getApplicationContext(),
-                        Manifest.permission.ACCESS_FINE_LOCATION, pid, uid)
-                        != PackageManager.PERMISSION_GRANTED) {
-            return false;
-        }
-
-        return true;
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                || ApiCompatibilityUtils.checkPermission(ContextUtils.getApplicationContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION, pid, uid) == PackageManager.PERMISSION_GRANTED;
     }
 
     /**

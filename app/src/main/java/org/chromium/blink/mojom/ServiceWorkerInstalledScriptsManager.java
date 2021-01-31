@@ -18,7 +18,7 @@ public interface ServiceWorkerInstalledScriptsManager extends org.chromium.mojo.
 
 
 
-    public interface Proxy extends ServiceWorkerInstalledScriptsManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ServiceWorkerInstalledScriptsManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ServiceWorkerInstalledScriptsManager, ServiceWorkerInstalledScriptsManager.Proxy> MANAGER = ServiceWorkerInstalledScriptsManager_Internal.MANAGER;

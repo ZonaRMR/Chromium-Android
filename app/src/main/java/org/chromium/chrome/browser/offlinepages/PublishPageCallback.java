@@ -15,9 +15,9 @@ import org.chromium.chrome.browser.share.ShareParams;
  * processing for sharing.
  */
 public class PublishPageCallback implements Callback<String> {
-    private Callback<ShareParams> mShareCallback;
+    private final Callback<ShareParams> mShareCallback;
     OfflinePageItem mPage;
-    private Activity mActivity;
+    private final Activity mActivity;
     private static final String TAG = "PublishPageCallback";
 
     /** Create a callback for use when page publishing is completed. */

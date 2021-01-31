@@ -50,7 +50,7 @@ public class Footer extends OptionalLeaf {
             NoUnderlineClickableSpan link =
                     new NoUnderlineClickableSpan((view) -> navigationDelegate.navigateToHelpPage());
 
-            TextView textView = (TextView) itemView.findViewById(R.id.text);
+            TextView textView = itemView.findViewById(R.id.text);
             textView.setText(SpanApplier.applySpans(
                     root.getResources().getString(R.string.ntp_learn_more_about_suggested_content),
                     new SpanApplier.SpanInfo("<link>", "</link>", link)));

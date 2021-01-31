@@ -18,7 +18,7 @@ public interface ContextualSearchJsApiService extends org.chromium.mojo.bindings
 
 
 
-    public interface Proxy extends ContextualSearchJsApiService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ContextualSearchJsApiService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ContextualSearchJsApiService, ContextualSearchJsApiService.Proxy> MANAGER = ContextualSearchJsApiService_Internal.MANAGER;

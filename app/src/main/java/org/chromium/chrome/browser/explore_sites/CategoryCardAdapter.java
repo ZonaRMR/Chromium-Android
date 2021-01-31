@@ -49,8 +49,8 @@ class CategoryCardAdapter extends ForwardingListObservable<Void>
     private final NativePageNavigationDelegate mNavDelegate;
     private final Profile mProfile;
 
-    private LinearLayoutManager mLayoutManager;
-    private PropertyModel mCategoryModel;
+    private final LinearLayoutManager mLayoutManager;
+    private final PropertyModel mCategoryModel;
 
     public CategoryCardAdapter(PropertyModel model, LinearLayoutManager layoutManager,
             RoundedIconGenerator iconGenerator, ContextMenuManager contextMenuManager,

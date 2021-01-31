@@ -168,7 +168,7 @@ public class BottomSheet extends FrameLayout
     private ViewGroup mSheetContainer;
 
     /** For detecting scroll and fling events on the bottom sheet. */
-    private BottomSheetSwipeDetector mGestureDetector;
+    private final BottomSheetSwipeDetector mGestureDetector;
 
     /** The animator used to move the sheet to a fixed state when released by the user. */
     private ValueAnimator mSettleAnimator;
@@ -502,7 +502,7 @@ public class BottomSheet extends FrameLayout
         mFullscreenManager = activity.getFullscreenManager();
 
         mToolbarHolder =
-                (TouchRestrictingFrameLayout) findViewById(R.id.bottom_sheet_toolbar_container);
+                findViewById(R.id.bottom_sheet_toolbar_container);
         mDefaultToolbarView = mToolbarHolder.findViewById(R.id.bottom_sheet_toolbar);
         mToolbarHeight =
                 activity.getResources().getDimensionPixelSize(R.dimen.bottom_sheet_peek_height);
@@ -513,7 +513,7 @@ public class BottomSheet extends FrameLayout
         getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT;
 
         mBottomSheetContentContainer =
-                (TouchRestrictingFrameLayout) findViewById(R.id.bottom_sheet_content);
+                findViewById(R.id.bottom_sheet_content);
         mBottomSheetContentContainer.setBottomSheet(this);
         mBottomSheetContentContainer.setBackgroundColor(
                 ApiCompatibilityUtils.getColor(getResources(), R.color.modern_primary_color));
@@ -723,7 +723,7 @@ public class BottomSheet extends FrameLayout
      * @return Whether flinging down hard enough will close the sheet.
      */
     private boolean swipeToDismissEnabled() {
-        return mSheetContent != null ? mSheetContent.swipeToDismissEnabled() : true;
+        return mSheetContent == null || mSheetContent.swipeToDismissEnabled();
     }
 
     /**

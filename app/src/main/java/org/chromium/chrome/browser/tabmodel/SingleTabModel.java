@@ -21,8 +21,8 @@ public class SingleTabModel implements TabModel {
     private final ObserverList<TabModelObserver> mObservers = new ObserverList<>();
 
     private Tab mTab;
-    private boolean mIsIncognito;
-    private boolean mBlockNewWindows;
+    private final boolean mIsIncognito;
+    private final boolean mBlockNewWindows;
 
     SingleTabModel(Activity activity, boolean incognito, boolean blockNewWindows) {
         mActivity = activity;

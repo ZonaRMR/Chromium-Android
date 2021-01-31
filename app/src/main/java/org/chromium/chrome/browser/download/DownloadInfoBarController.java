@@ -368,12 +368,8 @@ public class DownloadInfoBarController implements OfflineContentProvider.Observe
                 || offlineItem.isSuggested || offlineItem.isDangerous) {
             return false;
         }
-        if (LegacyHelpers.isLegacyDownload(offlineItem.id)
-                && TextUtils.isEmpty(offlineItem.filePath)) {
-            return false;
-        }
-
-        return true;
+        return !LegacyHelpers.isLegacyDownload(offlineItem.id)
+                || !TextUtils.isEmpty(offlineItem.filePath);
     }
 
     private void computeNextStepForUpdate(OfflineItem updatedItem) {
@@ -775,7 +771,7 @@ public class DownloadInfoBarController implements OfflineContentProvider.Observe
         mCurrentInfoBar = null;
     }
 
-    private InfoBarContainer.InfoBarContainerObserver mInfoBarContainerObserver =
+    private final InfoBarContainer.InfoBarContainerObserver mInfoBarContainerObserver =
             new InfoBarContainer.InfoBarContainerObserver() {
                 @Override
                 public void onAddInfoBar(

@@ -719,7 +719,7 @@ public final class FeedActionProto {
      */
     com.google.search.now.ui.action.FeedActionProto.DismissData getDismissData();
 
-    public com.google.search.now.ui.action.FeedActionProto.FeedActionMetadata.DataCase getDataCase();
+    com.google.search.now.ui.action.FeedActionProto.FeedActionMetadata.DataCase getDataCase();
   }
   /**
    * <pre>
@@ -876,7 +876,7 @@ public final class FeedActionProto {
 
       private final int value;
 
-      private Type(int value) {
+      Type(int value) {
         this.value = value;
       }
 
@@ -893,7 +893,7 @@ public final class FeedActionProto {
       DISMISS_DATA(4),
       DATA_NOT_SET(0);
       private final int value;
-      private DataCase(int value) {
+      DataCase(int value) {
         this.value = value;
       }
       /**
@@ -916,9 +916,9 @@ public final class FeedActionProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public DataCase
+      public DataCase
     getDataCase() {
       return DataCase.forNumber(
           dataCase_);

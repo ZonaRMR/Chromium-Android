@@ -9,7 +9,7 @@ package org.chromium.ui;
  */
 public interface DropdownItem {
     // A stand in for a resource ID which indicates no icon should be shown.
-    public static final int NO_ICON = 0;
+    int NO_ICON = 0;
 
     /**
      * Returns the label that should be shown in the dropdown.

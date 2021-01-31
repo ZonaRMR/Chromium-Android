@@ -30,7 +30,7 @@ import java.util.List;
 
 public interface ClientProtocol {
 
-  public static final class Version extends ProtoWrapper {
+  final class Version extends ProtoWrapper {
     public static Version create(int majorVersion,
         int minorVersion) {
       return new Version(majorVersion, minorVersion);
@@ -103,7 +103,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ProtocolVersion extends ProtoWrapper {
+  final class ProtocolVersion extends ProtoWrapper {
     public static ProtocolVersion create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.Version version) {
       return new ProtocolVersion(version);
     }
@@ -162,7 +162,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ClientVersion extends ProtoWrapper {
+  final class ClientVersion extends ProtoWrapper {
     public static ClientVersion create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.Version version,
         String platform,
         String language,
@@ -257,11 +257,11 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class StatusP extends ProtoWrapper {
+  final class StatusP extends ProtoWrapper {
     public interface Code {
-      public static final int SUCCESS = 1;
-      public static final int TRANSIENT_FAILURE = 2;
-      public static final int PERMANENT_FAILURE = 3;
+      int SUCCESS = 1;
+      int TRANSIENT_FAILURE = 2;
+      int PERMANENT_FAILURE = 3;
     }
 
     public static StatusP create(int code,
@@ -347,7 +347,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ObjectIdP extends ProtoWrapper {
+  final class ObjectIdP extends ProtoWrapper {
     public static ObjectIdP create(int source,
         Bytes name) {
       return new ObjectIdP(source, name);
@@ -419,7 +419,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ApplicationClientIdP extends ProtoWrapper {
+  final class ApplicationClientIdP extends ProtoWrapper {
     public static ApplicationClientIdP create(Integer clientType,
         Bytes clientName) {
       return new ApplicationClientIdP(clientType, clientName);
@@ -504,7 +504,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class InvalidationP extends ProtoWrapper {
+  final class InvalidationP extends ProtoWrapper {
     public static final class Builder {
       public com.google.ipc.invalidation.ticl.proto.ClientProtocol.ObjectIdP objectId;
       public boolean isKnownVersion;
@@ -663,10 +663,10 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class RegistrationP extends ProtoWrapper {
+  final class RegistrationP extends ProtoWrapper {
     public interface OpType {
-      public static final int REGISTER = 1;
-      public static final int UNREGISTER = 2;
+      int REGISTER = 1;
+      int UNREGISTER = 2;
     }
 
     public static RegistrationP create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.ObjectIdP objectId,
@@ -739,7 +739,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class RegistrationSummary extends ProtoWrapper {
+  final class RegistrationSummary extends ProtoWrapper {
     public static RegistrationSummary create(int numRegistrations,
         Bytes registrationDigest) {
       return new RegistrationSummary(numRegistrations, registrationDigest);
@@ -812,7 +812,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ClientHeader extends ProtoWrapper {
+  final class ClientHeader extends ProtoWrapper {
     public static ClientHeader create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.ProtocolVersion protocolVersion,
         Bytes clientToken,
         com.google.ipc.invalidation.ticl.proto.ClientProtocol.RegistrationSummary registrationSummary,
@@ -981,7 +981,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ClientToServerMessage extends ProtoWrapper {
+  final class ClientToServerMessage extends ProtoWrapper {
     public static ClientToServerMessage create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.ClientHeader header,
         com.google.ipc.invalidation.ticl.proto.ClientProtocol.InitializeMessage initializeMessage,
         com.google.ipc.invalidation.ticl.proto.ClientProtocol.RegistrationMessage registrationMessage,
@@ -1127,10 +1127,10 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class InitializeMessage extends ProtoWrapper {
+  final class InitializeMessage extends ProtoWrapper {
     public interface DigestSerializationType {
-      public static final int BYTE_BASED = 1;
-      public static final int NUMBER_BASED = 2;
+      int BYTE_BASED = 1;
+      int NUMBER_BASED = 2;
     }
 
     public static InitializeMessage create(int clientType,
@@ -1228,7 +1228,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class RegistrationMessage extends ProtoWrapper {
+  final class RegistrationMessage extends ProtoWrapper {
     public static RegistrationMessage create(Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.RegistrationP> registration) {
       return new RegistrationMessage(registration);
     }
@@ -1293,7 +1293,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class RegistrationSyncMessage extends ProtoWrapper {
+  final class RegistrationSyncMessage extends ProtoWrapper {
     public static RegistrationSyncMessage create(Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.RegistrationSubtree> subtree) {
       return new RegistrationSyncMessage(subtree);
     }
@@ -1358,7 +1358,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class RegistrationSubtree extends ProtoWrapper {
+  final class RegistrationSubtree extends ProtoWrapper {
     public static RegistrationSubtree create(Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.ObjectIdP> registeredObject) {
       return new RegistrationSubtree(registeredObject);
     }
@@ -1425,7 +1425,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class InfoMessage extends ProtoWrapper {
+  final class InfoMessage extends ProtoWrapper {
     public static InfoMessage create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.ClientVersion clientVersion,
         Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.PropertyRecord> configParameter,
         Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.PropertyRecord> performanceCounter,
@@ -1565,7 +1565,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class PropertyRecord extends ProtoWrapper {
+  final class PropertyRecord extends ProtoWrapper {
     public static PropertyRecord create(String name,
         Integer value) {
       return new PropertyRecord(name, value);
@@ -1660,7 +1660,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ServerHeader extends ProtoWrapper {
+  final class ServerHeader extends ProtoWrapper {
     public static final class Builder {
       public com.google.ipc.invalidation.ticl.proto.ClientProtocol.ProtocolVersion protocolVersion;
       public Bytes clientToken;
@@ -1813,7 +1813,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ServerToClientMessage extends ProtoWrapper {
+  final class ServerToClientMessage extends ProtoWrapper {
     public static final class Builder {
       public com.google.ipc.invalidation.ticl.proto.ClientProtocol.ServerHeader header;
       public com.google.ipc.invalidation.ticl.proto.ClientProtocol.TokenControlMessage tokenControlMessage;
@@ -2042,7 +2042,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class TokenControlMessage extends ProtoWrapper {
+  final class TokenControlMessage extends ProtoWrapper {
     public static TokenControlMessage create(Bytes newToken) {
       return new TokenControlMessage(newToken);
     }
@@ -2116,7 +2116,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class RegistrationStatus extends ProtoWrapper {
+  final class RegistrationStatus extends ProtoWrapper {
     public static RegistrationStatus create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.RegistrationP registration,
         com.google.ipc.invalidation.ticl.proto.ClientProtocol.StatusP status) {
       return new RegistrationStatus(registration, status);
@@ -2187,7 +2187,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class RegistrationStatusMessage extends ProtoWrapper {
+  final class RegistrationStatusMessage extends ProtoWrapper {
     public static RegistrationStatusMessage create(Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.RegistrationStatus> registrationStatus) {
       return new RegistrationStatusMessage(registrationStatus);
     }
@@ -2252,7 +2252,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class RegistrationSyncRequestMessage extends ProtoWrapper {
+  final class RegistrationSyncRequestMessage extends ProtoWrapper {
     public static RegistrationSyncRequestMessage create() {
       return new RegistrationSyncRequestMessage();
     }
@@ -2306,7 +2306,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class InvalidationMessage extends ProtoWrapper {
+  final class InvalidationMessage extends ProtoWrapper {
     public static InvalidationMessage create(Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.InvalidationP> invalidation) {
       return new InvalidationMessage(invalidation);
     }
@@ -2371,9 +2371,9 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class InfoRequestMessage extends ProtoWrapper {
+  final class InfoRequestMessage extends ProtoWrapper {
     public interface InfoType {
-      public static final int GET_PERFORMANCE_COUNTERS = 1;
+      int GET_PERFORMANCE_COUNTERS = 1;
     }
 
     public static InfoRequestMessage create(Collection<Integer> infoType) {
@@ -2440,7 +2440,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class RateLimitP extends ProtoWrapper {
+  final class RateLimitP extends ProtoWrapper {
     public static RateLimitP create(int windowMs,
         int count) {
       return new RateLimitP(windowMs, count);
@@ -2512,7 +2512,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ProtocolHandlerConfigP extends ProtoWrapper {
+  final class ProtocolHandlerConfigP extends ProtoWrapper {
     public static final class Builder {
       public Integer batchingDelayMs;
       public Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.RateLimitP> rateLimit;
@@ -2626,7 +2626,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ClientConfigP extends ProtoWrapper {
+  final class ClientConfigP extends ProtoWrapper {
     public static final class Builder {
       public com.google.ipc.invalidation.ticl.proto.ClientProtocol.Version version;
       public Integer networkTimeoutDelayMs;
@@ -2993,7 +2993,7 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ConfigChangeMessage extends ProtoWrapper {
+  final class ConfigChangeMessage extends ProtoWrapper {
     public static ConfigChangeMessage create(Long nextMessageDelayMs) {
       return new ConfigChangeMessage(nextMessageDelayMs);
     }
@@ -3068,10 +3068,10 @@ public interface ClientProtocol {
     }
   }
 
-  public static final class ErrorMessage extends ProtoWrapper {
+  final class ErrorMessage extends ProtoWrapper {
     public interface Code {
-      public static final int AUTH_FAILURE = 1;
-      public static final int UNKNOWN_FAILURE = 10000;
+      int AUTH_FAILURE = 1;
+      int UNKNOWN_FAILURE = 10000;
     }
 
     public static ErrorMessage create(int code,

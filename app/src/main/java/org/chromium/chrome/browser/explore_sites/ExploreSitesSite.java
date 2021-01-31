@@ -27,7 +27,7 @@ public class ExploreSitesSite {
     static final PropertyModel.WritableBooleanPropertyKey BLACKLISTED_KEY =
             new PropertyModel.WritableBooleanPropertyKey();
 
-    private PropertyModel mModel;
+    private final PropertyModel mModel;
 
     public ExploreSitesSite(int id, String title, String url, boolean isBlacklisted) {
         mModel = new PropertyModel

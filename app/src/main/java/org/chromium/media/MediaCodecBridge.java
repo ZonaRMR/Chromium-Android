@@ -60,7 +60,7 @@ class MediaCodecBridge {
 
     private boolean mFlushed;
     private long mLastPresentationTimeUs;
-    private BitrateAdjuster mBitrateAdjuster;
+    private final BitrateAdjuster mBitrateAdjuster;
 
     // To support both the synchronous and asynchronous version of MediaCodec
     // (since we need to work on <M devices), we implement async support as a
@@ -70,7 +70,7 @@ class MediaCodecBridge {
     // Once the callback has been set on MediaCodec, these variables must only
     // be accessed from synchronized(this) blocks since MediaCodecCallback may
     // execute on an arbitrary thread.
-    private boolean mUseAsyncApi;
+    private final boolean mUseAsyncApi;
     private Queue<GetOutputFormatResult> mPendingFormat;
     private GetOutputFormatResult mCurrentFormat;
     private boolean mPendingError;
@@ -209,7 +209,7 @@ class MediaCodecBridge {
     @MainDex
     @TargetApi(Build.VERSION_CODES.M)
     class MediaCodecCallback extends MediaCodec.Callback {
-        private MediaCodecBridge mMediaCodecBridge;
+        private final MediaCodecBridge mMediaCodecBridge;
         MediaCodecCallback(MediaCodecBridge bridge) {
             mMediaCodecBridge = bridge;
         }
@@ -236,7 +236,7 @@ class MediaCodecBridge {
         public void onOutputFormatChanged(MediaCodec codec, MediaFormat format) {
             mMediaCodecBridge.onOutputFormatChanged(format);
         }
-    };
+    }
 
     MediaCodecBridge(MediaCodec mediaCodec, BitrateAdjuster bitrateAdjuster, boolean useAsyncApi) {
         assert mediaCodec != null;
@@ -373,7 +373,7 @@ class MediaCodecBridge {
                     if (mPendingError) return false;
 
                     class CompletePendingStartTask implements Runnable {
-                        private int mThisSequence;
+                        private final int mThisSequence;
                         CompletePendingStartTask(int sequence) {
                             mThisSequence = sequence;
                         }
@@ -382,7 +382,7 @@ class MediaCodecBridge {
                         public void run() {
                             onPendingStartComplete(mThisSequence);
                         }
-                    };
+                    }
 
                     // Ensure any pending indices are ignored until after start
                     // by trampolining through the handler/looper that the

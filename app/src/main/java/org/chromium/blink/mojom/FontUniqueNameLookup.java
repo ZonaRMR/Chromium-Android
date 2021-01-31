@@ -18,7 +18,7 @@ public interface FontUniqueNameLookup extends org.chromium.mojo.bindings.Interfa
 
 
 
-    public interface Proxy extends FontUniqueNameLookup, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FontUniqueNameLookup, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FontUniqueNameLookup, FontUniqueNameLookup.Proxy> MANAGER = FontUniqueNameLookup_Internal.MANAGER;

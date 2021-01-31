@@ -44,7 +44,7 @@ public abstract class OptionalLeaf
     @Override
     public Set<Integer> getItemDismissalGroup(int position) {
         checkIndex(position);
-        return canBeDismissed() ? Collections.singleton(0) : Collections.<Integer>emptySet();
+        return canBeDismissed() ? Collections.singleton(0) : Collections.emptySet();
     }
 
     @Override

@@ -18,7 +18,7 @@ public interface RemoteObjectHost extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends RemoteObjectHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends RemoteObjectHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<RemoteObjectHost, RemoteObjectHost.Proxy> MANAGER = RemoteObjectHost_Internal.MANAGER;

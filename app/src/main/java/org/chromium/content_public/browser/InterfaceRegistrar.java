@@ -20,15 +20,15 @@ import java.util.List;
  */
 public interface InterfaceRegistrar<ParamType> {
     /** Invoked to register interfaces on |registry|, parametrized by |paramValue|. */
-    public void registerInterfaces(InterfaceRegistry registry, ParamType paramValue);
+    void registerInterfaces(InterfaceRegistry registry, ParamType paramValue);
 
     /** A registry of InterfaceRegistrars. */
-    public static class Registry<ParamType> {
+    class Registry<ParamType> {
         private static Registry<Context> sContextRegistry;
         private static Registry<WebContents> sWebContentsRegistry;
         private static Registry<RenderFrameHost> sRenderFrameHostRegistry;
 
-        private List<InterfaceRegistrar<ParamType>> mRegistrars =
+        private final List<InterfaceRegistrar<ParamType>> mRegistrars =
                 new ArrayList<InterfaceRegistrar<ParamType>>();
 
         public static void applyContextRegistrars(InterfaceRegistry interfaceRegistry) {

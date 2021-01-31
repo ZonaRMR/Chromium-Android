@@ -41,10 +41,8 @@ public class SyncPreferenceUtils {
                 return true;
             }
 
-            if (profileSyncService.isSyncActive()
-                    && profileSyncService.isPassphraseRequiredForDecryption()) {
-                return true;
-            }
+            return profileSyncService.isSyncActive()
+                    && profileSyncService.isPassphraseRequiredForDecryption();
         }
 
         return false;

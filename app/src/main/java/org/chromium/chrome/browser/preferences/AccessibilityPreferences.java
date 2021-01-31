@@ -34,7 +34,7 @@ public class AccessibilityPreferences extends PreferenceFragment
     private SeekBarLinkedCheckBoxPreference mForceEnableZoomPref;
     private ChromeBaseCheckBoxPreference mAccessibilityTabSwitcherPref;
 
-    private FontSizePrefsObserver mFontSizePrefsObserver = new FontSizePrefsObserver() {
+    private final FontSizePrefsObserver mFontSizePrefsObserver = new FontSizePrefsObserver() {
         @Override
         public void onFontScaleFactorChanged(float fontScaleFactor, float userFontScaleFactor) {
             updateTextScaleSummary(userFontScaleFactor);

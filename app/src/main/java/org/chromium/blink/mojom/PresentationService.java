@@ -18,7 +18,7 @@ public interface PresentationService extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends PresentationService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PresentationService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PresentationService, PresentationService.Proxy> MANAGER = PresentationService_Internal.MANAGER;

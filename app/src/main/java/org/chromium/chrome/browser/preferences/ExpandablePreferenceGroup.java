@@ -66,7 +66,7 @@ public class ExpandablePreferenceGroup extends PreferenceGroup {
             mDrawable = createDrawable(getContext());
         }
         CheckableImageView imageView =
-                (CheckableImageView) view.findViewById(R.id.checkable_image_view);
+                view.findViewById(R.id.checkable_image_view);
         imageView.setImageDrawable(mDrawable);
         imageView.setChecked(mExpanded);
 

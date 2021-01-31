@@ -20,8 +20,8 @@ import android.widget.LinearLayout;
  * The adapter used to populate ColorPickerSimple.
  */
 public class ColorSuggestionListAdapter extends BaseAdapter implements View.OnClickListener {
-    private Context mContext;
-    private ColorSuggestion[] mSuggestions;
+    private final Context mContext;
+    private final ColorSuggestion[] mSuggestions;
     private OnColorSuggestionClickListener mListener;
 
     /**

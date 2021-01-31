@@ -43,7 +43,7 @@ public class TabularContextMenuUi implements ContextMenuUi, AdapterView.OnItemCl
     private Callback<Integer> mCallback;
     private int mMenuItemHeight;
     private ImageView mHeaderImageView;
-    private Callback<Boolean> mOnShareItemClicked;
+    private final Callback<Boolean> mOnShareItemClicked;
     private View mPagerView;
     private float mTopContentOffsetPx;
 
@@ -88,7 +88,7 @@ public class TabularContextMenuUi implements ContextMenuUi, AdapterView.OnItemCl
         View view = LayoutInflater.from(activity).inflate(R.layout.tabular_context_menu, null);
 
         mPagerView = initPagerView(activity, params, itemGroups,
-                (TabularContextMenuViewPager) view.findViewById(R.id.custom_pager));
+                view.findViewById(R.id.custom_pager));
 
         final ContextMenuDialog dialog = new ContextMenuDialog(activity, R.style.DialogWhenLarge,
                 touchPointXPx, touchPointYPx, mTopContentOffsetPx, mPagerView);
@@ -121,7 +121,7 @@ public class TabularContextMenuUi implements ContextMenuUi, AdapterView.OnItemCl
         }
 
         viewPager.setAdapter(new TabularContextMenuPagerAdapter(viewGroups));
-        TabLayout tabLayout = (TabLayout) viewPager.findViewById(R.id.tab_layout);
+        TabLayout tabLayout = viewPager.findViewById(R.id.tab_layout);
         if (itemGroups.size() <= 1) {
             tabLayout.setVisibility(View.GONE);
         } else {
@@ -150,7 +150,7 @@ public class TabularContextMenuUi implements ContextMenuUi, AdapterView.OnItemCl
             List<ContextMenuItem> items, boolean isImage) {
         ViewGroup baseLayout = (ViewGroup) LayoutInflater.from(activity).inflate(
                 R.layout.tabular_context_menu_page, null);
-        ListView listView = (ListView) baseLayout.findViewById(R.id.selectable_items);
+        ListView listView = baseLayout.findViewById(R.id.selectable_items);
 
         displayHeaderIfVisibleItems(params, baseLayout);
         if (isImage) {
@@ -183,7 +183,7 @@ public class TabularContextMenuUi implements ContextMenuUi, AdapterView.OnItemCl
     private void displayHeaderIfVisibleItems(ContextMenuParams params, ViewGroup baseLayout) {
         String headerText = ChromeContextMenuPopulator.createHeaderText(params);
         final TextView headerTextView =
-                (TextView) baseLayout.findViewById(R.id.context_header_text);
+                baseLayout.findViewById(R.id.context_header_text);
         if (TextUtils.isEmpty(headerText)) {
             MarginLayoutParams marginParams =
                     (MarginLayoutParams) baseLayout.findViewById(R.id.context_header_image)
@@ -211,8 +211,8 @@ public class TabularContextMenuUi implements ContextMenuUi, AdapterView.OnItemCl
 
     private void displayImageHeader(
             ViewGroup baseLayout, ContextMenuParams params, Resources resources) {
-        mHeaderImageView = (ImageView) baseLayout.findViewById(R.id.context_header_image);
-        TextView headerTextView = (TextView) baseLayout.findViewById(R.id.context_header_text);
+        mHeaderImageView = baseLayout.findViewById(R.id.context_header_image);
+        TextView headerTextView = baseLayout.findViewById(R.id.context_header_text);
         // We'd prefer the header text is the title text instead of the link text for images.
         String headerText = params.getTitleText();
         if (!TextUtils.isEmpty(headerText)) {

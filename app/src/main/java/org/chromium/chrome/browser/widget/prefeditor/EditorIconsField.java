@@ -39,7 +39,7 @@ class EditorIconsField {
         ((TextView) mLayout.findViewById(R.id.label)).setText(fieldModel.getLabel());
 
         ExpandableGridView iconsContainer =
-                (ExpandableGridView) mLayout.findViewById(R.id.icons_container);
+                mLayout.findViewById(R.id.icons_container);
         iconsContainer.setAdapter(new IconListAdapter(context, fieldModel.getIconResourceIds(),
                 fieldModel.getIconDescriptionsForAccessibility()));
     }
@@ -53,10 +53,10 @@ class EditorIconsField {
      * An instance of a {@link BaseAdapter} that provides a list of card icon views.
      */
     private static class IconListAdapter extends BaseAdapter {
-        private Context mContext;
-        private List<Integer> mIconResourceIds;
-        private List<Integer> mIconDescriptionIds;
-        private int mIconSize;
+        private final Context mContext;
+        private final List<Integer> mIconResourceIds;
+        private final List<Integer> mIconDescriptionIds;
+        private final int mIconSize;
 
         public IconListAdapter(
                 Context context, List<Integer> iconResourceIds, List<Integer> iconDescriptionIds) {

@@ -91,14 +91,14 @@ public class SplashLayout {
         ViewGroup layout =
                 (ViewGroup) LayoutInflater.from(appContext).inflate(layoutId, parentView, true);
 
-        TextView appNameView = (TextView) layout.findViewById(R.id.webapp_splash_screen_name);
+        TextView appNameView = layout.findViewById(R.id.webapp_splash_screen_name);
         appNameView.setText(text);
         if (useLightTextColor) {
             appNameView.setTextColor(getColorCompatibility(
                     appContext.getResources(), R.color.webapp_splash_title_light));
         }
 
-        ImageView splashIconView = (ImageView) layout.findViewById(R.id.webapp_splash_screen_icon);
+        ImageView splashIconView = layout.findViewById(R.id.webapp_splash_screen_icon);
         if (splashIconView == null) return;
 
         // Adaptive icons should only be present on Android O.

@@ -17,7 +17,7 @@ class ChildBackgroundTabShowObserver extends EmptyTabObserver {
     /**
      * The ID of the parent tab of the background tabs.
      */
-    private int mParentTabId;
+    private final int mParentTabId;
 
     /**
      * List of tabs opened from {@link #mParentId} sorted according to their

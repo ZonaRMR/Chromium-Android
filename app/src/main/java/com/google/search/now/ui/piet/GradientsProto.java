@@ -46,7 +46,7 @@ public final class GradientsProto {
      */
     com.google.search.now.ui.piet.GradientsProto.LinearGradient getLinearGradient();
 
-    public com.google.search.now.ui.piet.GradientsProto.Fill.FillTypeCase getFillTypeCase();
+    com.google.search.now.ui.piet.GradientsProto.Fill.FillTypeCase getFillTypeCase();
   }
   /**
    * <pre>
@@ -71,7 +71,7 @@ public final class GradientsProto {
       LINEAR_GRADIENT(2),
       FILLTYPE_NOT_SET(0);
       private final int value;
-      private FillTypeCase(int value) {
+      FillTypeCase(int value) {
         this.value = value;
       }
       /**
@@ -93,9 +93,9 @@ public final class GradientsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public FillTypeCase
+      public FillTypeCase
     getFillTypeCase() {
       return FillTypeCase.forNumber(
           fillTypeCase_);
@@ -240,7 +240,7 @@ public final class GradientsProto {
                         throws java.io.IOException {
       if (fillTypeCase_ == 1) {
         output.writeFixed32(
-            1, (int)((java.lang.Integer) fillType_));
+            1, (Integer) fillType_);
       }
       if (fillTypeCase_ == 2) {
         output.writeMessage(2, (com.google.search.now.ui.piet.GradientsProto.LinearGradient) fillType_);
@@ -256,7 +256,7 @@ public final class GradientsProto {
       if (fillTypeCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
           .computeFixed32Size(
-              1, (int)((java.lang.Integer) fillType_));
+              1, (Integer) fillType_);
       }
       if (fillTypeCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream

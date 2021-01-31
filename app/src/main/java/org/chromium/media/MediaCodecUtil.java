@@ -135,9 +135,7 @@ class MediaCodecUtil {
         // This is structured identically to libstagefright/OMXCodec.cpp .
         if (name.startsWith("OMX.google.")) return true;
 
-        if (name.startsWith("OMX.")) return false;
-
-        return true;
+        return !name.startsWith("OMX.");
     }
 
     /**
@@ -412,10 +410,8 @@ class MediaCodecUtil {
             if (Build.HARDWARE.startsWith("mt")) return false;
 
             // http://crbug.com/600454
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT
-                    && Build.MODEL.startsWith("Lenovo A6000")) {
-                return false;
-            }
+            return Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT
+                    || !Build.MODEL.startsWith("Lenovo A6000");
         } else if (mime.equals("video/x-vnd.on2.vp9")) {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) return false;
 
@@ -427,17 +423,12 @@ class MediaCodecUtil {
             }
 
             // Nexus Player VP9 decoder performs poorly at >= 1080p resolution.
-            if (Build.MODEL.equals("Nexus Player")) {
-                return false;
-            }
-        } else if (mime.equals("audio/opus")
-                && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            return false;
-        }
+            return !Build.MODEL.equals("Nexus Player");
+        } else return !mime.equals("audio/opus")
+                || Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
         // *************************************************************
         // *** DO NOT ADD ANY NEW CODECS WITHOUT UPDATING MIME_UTIL. ***
         // *************************************************************
-        return true;
     }
 
     /**
@@ -495,7 +486,7 @@ class MediaCodecUtil {
     }
 
     // List of supported HW encoders.
-    private static enum HWEncoderProperties {
+    private enum HWEncoderProperties {
         QcomVp8(MimeTypes.VIDEO_VP8, "OMX.qcom.", Build.VERSION_CODES.KITKAT,
                 BitrateAdjuster.NO_ADJUSTMENT),
         QcomH264(MimeTypes.VIDEO_H264, "OMX.qcom.", Build.VERSION_CODES.KITKAT,
@@ -512,7 +503,7 @@ class MediaCodecUtil {
         private final int mMinSDK;
         private final BitrateAdjuster mBitrateAdjuster;
 
-        private HWEncoderProperties(
+        HWEncoderProperties(
                 String mime, String prefix, int minSDK, BitrateAdjuster bitrateAdjuster) {
             this.mMime = mime;
             this.mPrefix = prefix;
@@ -591,11 +582,7 @@ class MediaCodecUtil {
             }
         }
 
-        if (findHWEncoder(mime) == null) {
-            return false;
-        }
-
-        return true;
+        return findHWEncoder(mime) != null;
     }
 
     /**

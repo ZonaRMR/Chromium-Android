@@ -31,10 +31,10 @@ public final class Geoposition extends org.chromium.mojo.bindings.Struct {
 
         public static final int TIMEOUT = (int) (3L);
 
-        public static final int LAST = (int) (Geoposition.ErrorCode.TIMEOUT);
+        public static final int LAST = ErrorCode.TIMEOUT;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (3);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 3;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -73,14 +73,14 @@ public final class Geoposition extends org.chromium.mojo.bindings.Struct {
 
     private Geoposition(int version) {
         super(STRUCT_SIZE, version);
-        this.latitude = (double) GeopositionConstants.BAD_LATITUDE_LONGITUDE;
-        this.longitude = (double) GeopositionConstants.BAD_LATITUDE_LONGITUDE;
-        this.altitude = (double) GeopositionConstants.BAD_ALTITUDE;
-        this.accuracy = (double) GeopositionConstants.BAD_ACCURACY;
-        this.altitudeAccuracy = (double) GeopositionConstants.BAD_ACCURACY;
-        this.heading = (double) GeopositionConstants.BAD_HEADING;
-        this.speed = (double) GeopositionConstants.BAD_SPEED;
-        this.errorCode = (int) Geoposition.ErrorCode.NONE;
+        this.latitude = GeopositionConstants.BAD_LATITUDE_LONGITUDE;
+        this.longitude = GeopositionConstants.BAD_LATITUDE_LONGITUDE;
+        this.altitude = GeopositionConstants.BAD_ALTITUDE;
+        this.accuracy = GeopositionConstants.BAD_ACCURACY;
+        this.altitudeAccuracy = GeopositionConstants.BAD_ACCURACY;
+        this.heading = GeopositionConstants.BAD_HEADING;
+        this.speed = GeopositionConstants.BAD_SPEED;
+        this.errorCode = ErrorCode.NONE;
     }
 
     public Geoposition() {

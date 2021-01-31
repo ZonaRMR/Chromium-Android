@@ -18,7 +18,7 @@ public interface WatchTimeRecorder extends org.chromium.mojo.bindings.Interface 
 
 
 
-    public interface Proxy extends WatchTimeRecorder, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends WatchTimeRecorder, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<WatchTimeRecorder, WatchTimeRecorder.Proxy> MANAGER = WatchTimeRecorder_Internal.MANAGER;

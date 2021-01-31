@@ -102,7 +102,7 @@ public class ConnectionInfoPopup implements OnClickListener, ModalDialogProperti
             String label) {
         View section = addSection(enumeratedIconId, headline, description);
         assert mCertificateLayout == null;
-        mCertificateLayout = (ViewGroup) section.findViewById(R.id.connection_info_text_layout);
+        mCertificateLayout = section.findViewById(R.id.connection_info_text_layout);
         if (label != null && !label.isEmpty()) {
             setCertificateViewer(label);
         }
@@ -116,21 +116,21 @@ public class ConnectionInfoPopup implements OnClickListener, ModalDialogProperti
     private void addDescriptionSection(int enumeratedIconId, String headline, String description) {
         View section = addSection(enumeratedIconId, headline, description);
         assert mDescriptionLayout == null;
-        mDescriptionLayout = (ViewGroup) section.findViewById(R.id.connection_info_text_layout);
+        mDescriptionLayout = section.findViewById(R.id.connection_info_text_layout);
     }
 
     private View addSection(int enumeratedIconId, String headline, String description) {
         View section = LayoutInflater.from(mContext).inflate(R.layout.connection_info,
                 null);
-        ImageView i = (ImageView) section.findViewById(R.id.connection_info_icon);
+        ImageView i = section.findViewById(R.id.connection_info_icon);
         int drawableId = ResourceId.mapToDrawableId(enumeratedIconId);
         i.setImageResource(drawableId);
 
-        TextView h = (TextView) section.findViewById(R.id.connection_info_headline);
+        TextView h = section.findViewById(R.id.connection_info_headline);
         h.setText(headline);
         if (TextUtils.isEmpty(headline)) h.setVisibility(View.GONE);
 
-        TextView d = (TextView) section.findViewById(R.id.connection_info_description);
+        TextView d = section.findViewById(R.id.connection_info_description);
         d.setText(description);
         d.setTextSize(TypedValue.COMPLEX_UNIT_PX, mDescriptionTextSizePx);
         if (TextUtils.isEmpty(description)) d.setVisibility(View.GONE);

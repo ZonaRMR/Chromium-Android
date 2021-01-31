@@ -30,10 +30,10 @@ public final class OverlayTransform {
 
     public static final int OVERLAY_TRANSFORM_ROTATE_270 = OVERLAY_TRANSFORM_ROTATE_180 + 1;
 
-    public static final int OVERLAY_TRANSFORM_LAST = (int) (OverlayTransform.OVERLAY_TRANSFORM_ROTATE_270);
+    public static final int OVERLAY_TRANSFORM_LAST = OverlayTransform.OVERLAY_TRANSFORM_ROTATE_270;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (6);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 6;
 
     private static final boolean IS_EXTENSIBLE = false;
 

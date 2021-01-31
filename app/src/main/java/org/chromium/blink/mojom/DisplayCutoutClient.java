@@ -18,7 +18,7 @@ public interface DisplayCutoutClient extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends DisplayCutoutClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends DisplayCutoutClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<DisplayCutoutClient, DisplayCutoutClient.Proxy> MANAGER = DisplayCutoutClient_Internal.MANAGER;

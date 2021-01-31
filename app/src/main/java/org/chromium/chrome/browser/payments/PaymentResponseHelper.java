@@ -29,8 +29,8 @@ public class PaymentResponseHelper implements NormalizedAddressRequestDelegate {
     }
 
     private AutofillAddress mSelectedShippingAddress;
-    private PaymentResponse mPaymentResponse;
-    private PaymentResponseRequesterDelegate mDelegate;
+    private final PaymentResponse mPaymentResponse;
+    private final PaymentResponseRequesterDelegate mDelegate;
     private boolean mIsWaitingForShippingNormalization;
     private boolean mIsWaitingForPaymentsDetails = true;
 

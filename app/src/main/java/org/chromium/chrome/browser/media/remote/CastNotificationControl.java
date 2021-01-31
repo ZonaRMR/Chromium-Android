@@ -43,10 +43,10 @@ public class CastNotificationControl implements MediaRouteController.UiListener,
     private Bitmap mPosterBitmap;
     protected MediaRouteController mMediaRouteController;
     private MediaNotificationInfo.Builder mNotificationBuilder;
-    private Context mContext;
+    private final Context mContext;
     private @PlayerState int mState;
     private String mTitle = "";
-    private AudioManager mAudioManager;
+    private final AudioManager mAudioManager;
 
     /**
      * Contains the origin of the tab containing the video when it's cast. The origin is formatted

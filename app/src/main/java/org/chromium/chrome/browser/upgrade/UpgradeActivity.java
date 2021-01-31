@@ -107,7 +107,7 @@ public class UpgradeActivity extends AppCompatActivity {
 
         // Retrieve the Intent that caused the user to end up on the upgrade pathway.
         if (activityIntent != null) {
-            intentToFire = (Intent) IntentUtils.safeGetParcelableExtra(
+            intentToFire = IntentUtils.safeGetParcelableExtra(
                     activityIntent, EXTRA_INTENT_TO_REFIRE);
         }
 

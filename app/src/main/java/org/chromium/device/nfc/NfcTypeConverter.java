@@ -16,6 +16,7 @@ import org.chromium.device.mojom.NfcRecord;
 import org.chromium.device.mojom.NfcRecordType;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -67,7 +68,7 @@ public final class NfcTypeConverter {
             if ((ndefRecords[i].getTnf() == NdefRecord.TNF_EXTERNAL_TYPE)
                     && (Arrays.equals(ndefRecords[i].getType(),
                                ApiCompatibilityUtils.getBytesUtf8(WEBNFC_URN)))) {
-                nfcMessage.url = new String(ndefRecords[i].getPayload(), "UTF-8");
+                nfcMessage.url = new String(ndefRecords[i].getPayload(), StandardCharsets.UTF_8);
                 continue;
             }
 
@@ -133,7 +134,7 @@ public final class NfcTypeConverter {
                 return createEmptyRecord();
             case NdefRecord.TNF_MIME_MEDIA:
                 return createMIMERecord(
-                        new String(ndefRecord.getType(), "UTF-8"), ndefRecord.getPayload());
+                        new String(ndefRecord.getType(), StandardCharsets.UTF_8), ndefRecord.getPayload());
             case NdefRecord.TNF_ABSOLUTE_URI:
                 return createURLRecord(ndefRecord.toUri());
             case NdefRecord.TNF_WELL_KNOWN:

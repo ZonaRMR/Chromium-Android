@@ -8,13 +8,13 @@ package com.google.protos.ipc.invalidation;
 public interface NanoAndroidChannel {
 
   // enum MajorVersion
-  public static final int INITIAL = 0;
-  public static final int BATCH = 1;
-  public static final int DEFAULT = INITIAL;
-  public static final int MIN_SUPPORTED = INITIAL;
-  public static final int MAX_SUPPORTED = BATCH;
+  int INITIAL = 0;
+  int BATCH = 1;
+  int DEFAULT = INITIAL;
+  int MIN_SUPPORTED = INITIAL;
+  int MAX_SUPPORTED = BATCH;
 
-  public static final class AndroidEndpointId extends
+  final class AndroidEndpointId extends
       com.google.protobuf.nano.ExtendableMessageNano<AndroidEndpointId> {
 
     private static volatile AndroidEndpointId[] _emptyArray;
@@ -164,7 +164,7 @@ public interface NanoAndroidChannel {
     }
   }
 
-  public static final class AddressedAndroidMessage extends
+  final class AddressedAndroidMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<AddressedAndroidMessage> {
 
     private static volatile AddressedAndroidMessage[] _emptyArray;
@@ -266,7 +266,7 @@ public interface NanoAndroidChannel {
     }
   }
 
-  public static final class AddressedAndroidMessageBatch extends
+  final class AddressedAndroidMessageBatch extends
       com.google.protobuf.nano.ExtendableMessageNano<AddressedAndroidMessageBatch> {
 
     private static volatile AddressedAndroidMessageBatch[] _emptyArray;

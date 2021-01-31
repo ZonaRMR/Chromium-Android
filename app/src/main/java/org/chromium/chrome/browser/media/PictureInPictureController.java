@@ -75,7 +75,7 @@ public class PictureInPictureController {
     private static final float MAX_ASPECT_RATIO = 2.39f;
 
     /** Callbacks to cleanup after leaving PiP. */
-    private List<Callback<ChromeActivity>> mOnLeavePipCallbacks = new LinkedList<>();
+    private final List<Callback<ChromeActivity>> mOnLeavePipCallbacks = new LinkedList<>();
 
     /**
      * Convenience method to get the {@link WebContents} from the active Tab of a

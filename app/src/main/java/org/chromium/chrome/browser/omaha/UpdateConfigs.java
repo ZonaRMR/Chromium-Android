@@ -68,11 +68,7 @@ class UpdateConfigs {
      * state.
      */
     public static boolean getAlwaysShowMenuBadge() {
-        if (CommandLine.getInstance().hasSwitch(ChromeSwitches.FORCE_SHOW_UPDATE_MENU_BADGE)) {
-            return true;
-        }
-
-        return false;
+        return CommandLine.getInstance().hasSwitch(ChromeSwitches.FORCE_SHOW_UPDATE_MENU_BADGE);
     }
 
     /** @return A test {@link UpdateState} to use or {@code null} if no test state was specified. */

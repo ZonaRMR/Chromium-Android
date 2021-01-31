@@ -26,7 +26,7 @@ public class SeekBarLinkedCheckBoxPreference extends CheckBoxPreference {
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        mCheckable = (Checkable) view.findViewById(android.R.id.checkbox);
+        mCheckable = view.findViewById(android.R.id.checkbox);
         mCheckable.setChecked(isChecked());
     }
 

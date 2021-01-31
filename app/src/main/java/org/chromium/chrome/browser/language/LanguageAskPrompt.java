@@ -62,10 +62,10 @@ public class LanguageAskPrompt implements ModalDialogProperties.Controller {
 
     private class LanguageAskPromptRowViewHolder
             extends ViewHolder implements View.OnClickListener {
-        private TextView mLanguageNameTextView;
-        private TextView mNativeNameTextView;
-        private CheckBox mCheckbox;
-        private ImageView mDeviceLanguageIcon;
+        private final TextView mLanguageNameTextView;
+        private final TextView mNativeNameTextView;
+        private final CheckBox mCheckbox;
+        private final ImageView mDeviceLanguageIcon;
         private String mCode;
         private HashSet<String> mLanguagesUpdate;
 
@@ -73,11 +73,11 @@ public class LanguageAskPrompt implements ModalDialogProperties.Controller {
             super(view);
             view.setOnClickListener(this);
             mLanguageNameTextView =
-                    ((TextView) itemView.findViewById(R.id.ui_language_representation));
+                    itemView.findViewById(R.id.ui_language_representation);
             mNativeNameTextView =
-                    ((TextView) itemView.findViewById(R.id.native_language_representation));
-            mCheckbox = ((CheckBox) itemView.findViewById(R.id.language_ask_checkbox));
-            mDeviceLanguageIcon = ((ImageView) itemView.findViewById(R.id.device_language_icon));
+                    itemView.findViewById(R.id.native_language_representation);
+            mCheckbox = itemView.findViewById(R.id.language_ask_checkbox);
+            mDeviceLanguageIcon = itemView.findViewById(R.id.device_language_icon);
             mCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton button, boolean isChecked) {
@@ -118,9 +118,9 @@ public class LanguageAskPrompt implements ModalDialogProperties.Controller {
     }
 
     private class LanguageItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-        private List<LanguageItem> mTopLanguages;
-        private List<LanguageItem> mBottomLanguages;
-        private HashSet<String> mLanguagesUpdate;
+        private final List<LanguageItem> mTopLanguages;
+        private final List<LanguageItem> mBottomLanguages;
+        private final HashSet<String> mLanguagesUpdate;
 
         private static final int TYPE_LANGUAGE_ITEM = 0;
         private static final int TYPE_SEPARATOR = 1;
@@ -208,9 +208,9 @@ public class LanguageAskPrompt implements ModalDialogProperties.Controller {
     }
 
     private class ListScrollListener extends RecyclerView.OnScrollListener {
-        private RecyclerView mList;
-        private ImageView mTopShadow;
-        private ImageView mBottomShadow;
+        private final RecyclerView mList;
+        private final ImageView mTopShadow;
+        private final ImageView mBottomShadow;
 
         public ListScrollListener(RecyclerView list, ImageView topShadow, ImageView bottomShadow) {
             mList = list;

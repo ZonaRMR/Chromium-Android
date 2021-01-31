@@ -18,7 +18,7 @@ public interface ProgressClient extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ProgressClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ProgressClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ProgressClient, ProgressClient.Proxy> MANAGER = ProgressClient_Internal.MANAGER;

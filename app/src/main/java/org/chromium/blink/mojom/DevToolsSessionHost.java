@@ -18,7 +18,7 @@ public interface DevToolsSessionHost extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends DevToolsSessionHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends DevToolsSessionHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<DevToolsSessionHost, DevToolsSessionHost.Proxy> MANAGER = DevToolsSessionHost_Internal.MANAGER;

@@ -107,13 +107,13 @@ public class SelectionPopupControllerImpl extends ActionModeCallbackHelper
                 SelectionPopupControllerImpl::new;
     }
 
-    private Context mContext;
+    private final Context mContext;
     private WindowAndroid mWindowAndroid;
-    private WebContentsImpl mWebContents;
+    private final WebContentsImpl mWebContents;
     private ActionMode.Callback mCallback;
     private long mNativeSelectionPopupController;
 
-    private SelectionClient.ResultCallback mResultCallback;
+    private final SelectionClient.ResultCallback mResultCallback;
 
     // Used to customize PastePopupMenu
     private ActionMode.Callback mNonSelectionCallback;
@@ -123,7 +123,7 @@ public class SelectionPopupControllerImpl extends ActionModeCallbackHelper
 
     // Self-repeating task that repeatedly hides the ActionMode. This is
     // required because ActionMode only exposes a temporary hide routine.
-    private Runnable mRepeatingHideRunnable;
+    private final Runnable mRepeatingHideRunnable;
 
     private View mView;
     private ActionMode mActionMode;
@@ -175,7 +175,7 @@ public class SelectionPopupControllerImpl extends ActionModeCallbackHelper
      */
     private SelectionInsertionHandleObserver mHandleObserver;
 
-    private AdditionalMenuItemProvider mAdditionalMenuItemProvider;
+    private final AdditionalMenuItemProvider mAdditionalMenuItemProvider;
 
     /**
      * An interface for getting {@link View} for readback.
@@ -1524,7 +1524,7 @@ public class SelectionPopupControllerImpl extends ActionModeCallbackHelper
             // Rely on this method to clear |mHidden| and unhide the action mode.
             showActionModeOrClearOnFailure();
         }
-    };
+    }
 
     @Override
     public void destroySelectActionMode() {

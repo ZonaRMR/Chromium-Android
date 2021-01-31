@@ -20,7 +20,7 @@ public final class TabGestureStateListener extends TabWebContentsUserData {
             TabGestureStateListener.class;
 
     private GestureStateListener mGestureListener;
-    private Supplier<FullscreenManager> mFullscreenManager;
+    private final Supplier<FullscreenManager> mFullscreenManager;
 
     /**
      * Creates TabGestureStateListener and lets the WebContentsUserData of the Tab manage it.
@@ -71,7 +71,7 @@ public final class TabGestureStateListener extends TabWebContentsUserData {
             }
 
             private boolean isScrollInProgress() {
-                return manager != null ? manager.isScrollInProgress() : false;
+                return manager != null && manager.isScrollInProgress();
             }
         };
         manager.addListener(mGestureListener);

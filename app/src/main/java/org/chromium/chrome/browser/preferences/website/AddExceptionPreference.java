@@ -33,20 +33,20 @@ import org.chromium.ui.KeyboardVisibilityDelegate;
  */
 public class AddExceptionPreference extends Preference implements OnPreferenceClickListener {
     // The callback to notify when the user adds a site.
-    private SiteAddedCallback mSiteAddedCallback;
+    private final SiteAddedCallback mSiteAddedCallback;
 
     // The accent color to use for the icon and title view.
-    private int mPrefAccentColor;
+    private final int mPrefAccentColor;
 
     // The custom message to show in the dialog.
-    private String mDialogMessage;
+    private final String mDialogMessage;
 
     /**
      * An interface to implement to get a callback when a site needs to be added.
      * @param hostname The hostname to add.
      */
     public interface SiteAddedCallback {
-        public void onAddSite(String hostname);
+        void onAddSite(String hostname);
     }
 
     /**
@@ -78,7 +78,7 @@ public class AddExceptionPreference extends Preference implements OnPreferenceCl
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        TextView titleView = (TextView) view.findViewById(android.R.id.title);
+        TextView titleView = view.findViewById(android.R.id.title);
         titleView.setAllCaps(true);
         titleView.setTextColor(mPrefAccentColor);
     }
@@ -96,7 +96,7 @@ public class AddExceptionPreference extends Preference implements OnPreferenceCl
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.add_site_dialog, null);
-        final EditText input = (EditText) view.findViewById(R.id.site);
+        final EditText input = view.findViewById(R.id.site);
 
         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
             @Override

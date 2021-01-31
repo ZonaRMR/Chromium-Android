@@ -220,7 +220,7 @@ public final class ImagesProto {
 
       private final int value;
 
-      private ScaleType(int value) {
+      ScaleType(int value) {
         this.value = value;
       }
 

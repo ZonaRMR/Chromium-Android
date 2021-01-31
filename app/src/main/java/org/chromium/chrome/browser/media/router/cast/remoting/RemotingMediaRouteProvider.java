@@ -140,7 +140,7 @@ public class RemotingMediaRouteProvider extends BaseMediaRouteProvider {
                 "Failure to start RemotingCastSession", mPendingNativeRequestId);
 
         clearPendingRoute();
-    };
+    }
 
     @Override
     @Nullable

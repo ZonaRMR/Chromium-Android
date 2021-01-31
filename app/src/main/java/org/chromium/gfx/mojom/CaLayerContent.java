@@ -19,7 +19,8 @@ public final class CaLayerContent extends org.chromium.mojo.bindings.Union {
     public static final class Tag {
         public static final int CaContextId = 0;
         public static final int IoSurfaceMachPort = 1;
-    };
+    }
+
     private int mCaContextId;
     private org.chromium.mojo.system.UntypedHandle mIoSurfaceMachPort;
 

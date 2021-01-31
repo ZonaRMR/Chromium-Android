@@ -72,7 +72,7 @@ public final class ActionTypeProto {
 
     private final int value;
 
-    private ActionType(int value) {
+    ActionType(int value) {
       this.value = value;
     }
 

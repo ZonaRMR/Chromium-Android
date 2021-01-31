@@ -53,8 +53,8 @@ public class GSAServiceClient {
     private final IncomingHandler mHandler;
     private final GSAServiceConnection mConnection;
     private final GSAHelper mGsaHelper;
-    private Context mContext;
-    private Callback<Bundle> mOnMessageReceived;
+    private final Context mContext;
+    private final Callback<Bundle> mOnMessageReceived;
 
     /** Messenger for communicating with service. */
     private Messenger mService;

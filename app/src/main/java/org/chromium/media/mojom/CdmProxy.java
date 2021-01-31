@@ -18,7 +18,7 @@ public interface CdmProxy extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public static final class Status {
+    final class Status {
 
 
 
@@ -40,7 +40,7 @@ public interface CdmProxy extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class Protocol {
+    final class Protocol {
 
 
 
@@ -62,7 +62,7 @@ public interface CdmProxy extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class Function {
+    final class Function {
 
 
 
@@ -84,7 +84,7 @@ public interface CdmProxy extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class KeyType {
+    final class KeyType {
 
 
 
@@ -106,7 +106,7 @@ public interface CdmProxy extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public interface Proxy extends CdmProxy, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CdmProxy, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CdmProxy, CdmProxy.Proxy> MANAGER = CdmProxy_Internal.MANAGER;

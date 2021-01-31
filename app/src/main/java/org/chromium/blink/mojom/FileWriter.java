@@ -18,7 +18,7 @@ public interface FileWriter extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends FileWriter, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FileWriter, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FileWriter, FileWriter.Proxy> MANAGER = FileWriter_Internal.MANAGER;

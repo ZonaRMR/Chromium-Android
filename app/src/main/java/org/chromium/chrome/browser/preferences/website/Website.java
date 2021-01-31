@@ -33,11 +33,11 @@ public class Website implements Serializable {
     /**
      * Indexed by ContentSettingException.Type.
      */
-    private ContentSettingException mContentSettingException[];
+    private final ContentSettingException[] mContentSettingException;
     /**
      * Indexed by PermissionInfo.Type.
      */
-    private PermissionInfo[] mPermissionInfo;
+    private final PermissionInfo[] mPermissionInfo;
 
     private LocalStorageInfo mLocalStorageInfo;
     private final List<StorageInfo> mStorageInfo = new ArrayList<StorageInfo>();
@@ -222,7 +222,7 @@ public class Website implements Serializable {
     /**
      * An interface to implement to get a callback when storage info has been cleared.
      */
-    public interface StoredDataClearedCallback { public void onStoredDataCleared(); }
+    public interface StoredDataClearedCallback { void onStoredDataCleared(); }
 
     public long getTotalUsage() {
         long usage = 0;

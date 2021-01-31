@@ -7,7 +7,7 @@ package com.google.protos.ipc.invalidation.nano;
 @SuppressWarnings("hiding")
 public interface NanoClientProtocol {
 
-  public static final class Version extends
+  final class Version extends
       com.google.protobuf.nano.ExtendableMessageNano<Version> {
 
     private static volatile Version[] _emptyArray;
@@ -109,7 +109,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ProtocolVersion extends
+  final class ProtocolVersion extends
       com.google.protobuf.nano.ExtendableMessageNano<ProtocolVersion> {
 
     private static volatile ProtocolVersion[] _emptyArray;
@@ -199,7 +199,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ClientVersion extends
+  final class ClientVersion extends
       com.google.protobuf.nano.ExtendableMessageNano<ClientVersion> {
 
     private static volatile ClientVersion[] _emptyArray;
@@ -334,7 +334,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class StatusP extends
+  final class StatusP extends
       com.google.protobuf.nano.ExtendableMessageNano<StatusP> {
 
     // enum Code
@@ -453,7 +453,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ObjectIdP extends
+  final class ObjectIdP extends
       com.google.protobuf.nano.ExtendableMessageNano<ObjectIdP> {
 
     private static volatile ObjectIdP[] _emptyArray;
@@ -555,7 +555,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ApplicationClientIdP extends
+  final class ApplicationClientIdP extends
       com.google.protobuf.nano.ExtendableMessageNano<ApplicationClientIdP> {
 
     private static volatile ApplicationClientIdP[] _emptyArray;
@@ -657,7 +657,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class InvalidationP extends
+  final class InvalidationP extends
       com.google.protobuf.nano.ExtendableMessageNano<InvalidationP> {
 
     private static volatile InvalidationP[] _emptyArray;
@@ -807,7 +807,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class RegistrationP extends
+  final class RegistrationP extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationP> {
 
     // enum OpType
@@ -927,7 +927,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class RegistrationSummary extends
+  final class RegistrationSummary extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationSummary> {
 
     private static volatile RegistrationSummary[] _emptyArray;
@@ -1029,7 +1029,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ClientHeader extends
+  final class ClientHeader extends
       com.google.protobuf.nano.ExtendableMessageNano<ClientHeader> {
 
     private static volatile ClientHeader[] _emptyArray;
@@ -1212,7 +1212,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ClientToServerMessage extends
+  final class ClientToServerMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<ClientToServerMessage> {
 
     private static volatile ClientToServerMessage[] _emptyArray;
@@ -1392,7 +1392,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class InitializeMessage extends
+  final class InitializeMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<InitializeMessage> {
 
     // enum DigestSerializationType
@@ -1542,7 +1542,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class RegistrationMessage extends
+  final class RegistrationMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationMessage> {
 
     private static volatile RegistrationMessage[] _emptyArray;
@@ -1655,7 +1655,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class RegistrationSyncMessage extends
+  final class RegistrationSyncMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationSyncMessage> {
 
     private static volatile RegistrationSyncMessage[] _emptyArray;
@@ -1768,7 +1768,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class RegistrationSubtree extends
+  final class RegistrationSubtree extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationSubtree> {
 
     private static volatile RegistrationSubtree[] _emptyArray;
@@ -1881,7 +1881,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class InfoMessage extends
+  final class InfoMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<InfoMessage> {
 
     private static volatile InfoMessage[] _emptyArray;
@@ -2086,7 +2086,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class PropertyRecord extends
+  final class PropertyRecord extends
       com.google.protobuf.nano.ExtendableMessageNano<PropertyRecord> {
 
     private static volatile PropertyRecord[] _emptyArray;
@@ -2188,7 +2188,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ServerHeader extends
+  final class ServerHeader extends
       com.google.protobuf.nano.ExtendableMessageNano<ServerHeader> {
 
     private static volatile ServerHeader[] _emptyArray;
@@ -2341,7 +2341,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ServerToClientMessage extends
+  final class ServerToClientMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<ServerToClientMessage> {
 
     private static volatile ServerToClientMessage[] _emptyArray;
@@ -2557,7 +2557,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class TokenControlMessage extends
+  final class TokenControlMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<TokenControlMessage> {
 
     private static volatile TokenControlMessage[] _emptyArray;
@@ -2644,7 +2644,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class RegistrationStatus extends
+  final class RegistrationStatus extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationStatus> {
 
     private static volatile RegistrationStatus[] _emptyArray;
@@ -2752,7 +2752,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class RegistrationStatusMessage extends
+  final class RegistrationStatusMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationStatusMessage> {
 
     private static volatile RegistrationStatusMessage[] _emptyArray;
@@ -2865,7 +2865,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class RegistrationSyncRequestMessage extends
+  final class RegistrationSyncRequestMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationSyncRequestMessage> {
 
     private static volatile RegistrationSyncRequestMessage[] _emptyArray;
@@ -2925,7 +2925,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class InvalidationMessage extends
+  final class InvalidationMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<InvalidationMessage> {
 
     private static volatile InvalidationMessage[] _emptyArray;
@@ -3038,7 +3038,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class InfoRequestMessage extends
+  final class InfoRequestMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<InfoRequestMessage> {
 
     // enum InfoType
@@ -3206,7 +3206,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class RateLimitP extends
+  final class RateLimitP extends
       com.google.protobuf.nano.ExtendableMessageNano<RateLimitP> {
 
     private static volatile RateLimitP[] _emptyArray;
@@ -3308,7 +3308,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ProtocolHandlerConfigP extends
+  final class ProtocolHandlerConfigP extends
       com.google.protobuf.nano.ExtendableMessageNano<ProtocolHandlerConfigP> {
 
     private static volatile ProtocolHandlerConfigP[] _emptyArray;
@@ -3436,7 +3436,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ClientConfigP extends
+  final class ClientConfigP extends
       com.google.protobuf.nano.ExtendableMessageNano<ClientConfigP> {
 
     private static volatile ClientConfigP[] _emptyArray;
@@ -3709,7 +3709,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ConfigChangeMessage extends
+  final class ConfigChangeMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<ConfigChangeMessage> {
 
     private static volatile ConfigChangeMessage[] _emptyArray;
@@ -3796,7 +3796,7 @@ public interface NanoClientProtocol {
     }
   }
 
-  public static final class ErrorMessage extends
+  final class ErrorMessage extends
       com.google.protobuf.nano.ExtendableMessageNano<ErrorMessage> {
 
     // enum Code

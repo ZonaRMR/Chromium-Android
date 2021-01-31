@@ -150,7 +150,7 @@ public class ChildProcessRanking implements Iterable<ChildProcessConnection> {
 
     // Not the most theoretically efficient data structure, but is good enough
     // for sizes in production and more memory efficient than linked data structures.
-    private final ConnectionWithRank mRankings[];
+    private final ConnectionWithRank[] mRankings;
     private int mSize;
 
     public ChildProcessRanking(int maxSize) {

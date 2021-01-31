@@ -97,7 +97,7 @@ public  final class SetFormFieldValueProto extends
     com.google.protobuf.ByteString
         getKeyboardInputBytes();
 
-    public org.chromium.chrome.browser.autofill_assistant.proto.SetFormFieldValueProto.KeyPress.KeypressCase getKeypressCase();
+    org.chromium.chrome.browser.autofill_assistant.proto.SetFormFieldValueProto.KeyPress.KeypressCase getKeypressCase();
   }
   /**
    * Protobuf type {@code autofill_assistant.SetFormFieldValueProto.KeyPress}
@@ -119,7 +119,7 @@ public  final class SetFormFieldValueProto extends
       KEYBOARD_INPUT(3),
       KEYPRESS_NOT_SET(0);
       private final int value;
-      private KeypressCase(int value) {
+      KeypressCase(int value) {
         this.value = value;
       }
       /**
@@ -142,7 +142,7 @@ public  final class SetFormFieldValueProto extends
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
     public KeypressCase
     getKeypressCase() {
@@ -391,7 +391,7 @@ public  final class SetFormFieldValueProto extends
       }
       if (keypressCase_ == 2) {
         output.writeInt32(
-            2, (int)((java.lang.Integer) keypress_));
+            2, (Integer) keypress_);
       }
       if (keypressCase_ == 3) {
         output.writeString(3, getKeyboardInput());
@@ -411,7 +411,7 @@ public  final class SetFormFieldValueProto extends
       if (keypressCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(
-              2, (int)((java.lang.Integer) keypress_));
+              2, (Integer) keypress_);
       }
       if (keypressCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream

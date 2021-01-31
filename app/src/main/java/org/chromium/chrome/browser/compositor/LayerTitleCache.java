@@ -44,7 +44,7 @@ public class LayerTitleCache implements TitleCache {
     private ResourceManager mResourceManager;
 
     private FaviconHelper mFaviconHelper;
-    private DefaultFaviconHelper mDefaultFaviconHelper;
+    private final DefaultFaviconHelper mDefaultFaviconHelper;
 
     /** Responsible for building titles on light themes or standard tabs. */
     protected TitleBitmapFactory mStandardTitleBitmapFactory;

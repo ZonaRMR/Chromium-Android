@@ -28,13 +28,13 @@ import java.util.concurrent.TimeUnit;
 public class FeedOfflineBridge
         implements FeedOfflineIndicator, KnownContentApi.KnownContentListener {
     private long mNativeBridge;
-    private KnownContentApi mKnownContentApi;
+    private final KnownContentApi mKnownContentApi;
 
     /**
      * Hold onto listeners in Java. It is difficult to offload this completely to native, because we
      * need to remove with object reference equality in removeOfflineStatusListener().
      */
-    private Set<OfflineStatusListener> mListeners = new HashSet<>();
+    private final Set<OfflineStatusListener> mListeners = new HashSet<>();
 
     /**
      * Creates a FeedOfflineBridge for accessing native offlining logic.

@@ -18,7 +18,7 @@ public interface SpeechRecognitionSessionClient extends org.chromium.mojo.bindin
 
 
 
-    public interface Proxy extends SpeechRecognitionSessionClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends SpeechRecognitionSessionClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<SpeechRecognitionSessionClient, SpeechRecognitionSessionClient.Proxy> MANAGER = SpeechRecognitionSessionClient_Internal.MANAGER;

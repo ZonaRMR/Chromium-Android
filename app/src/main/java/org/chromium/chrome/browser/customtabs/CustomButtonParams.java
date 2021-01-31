@@ -42,11 +42,11 @@ public class CustomButtonParams {
     private static final String TAG = "CustomTabs";
 
     private final PendingIntent mPendingIntent;
-    private int mId;
+    private final int mId;
     private Bitmap mIcon;
     private String mDescription;
-    private boolean mShouldTint;
-    private boolean mIsOnToolbar;
+    private final boolean mShouldTint;
+    private final boolean mIsOnToolbar;
 
     @VisibleForTesting
     static final String SHOW_ON_TOOLBAR = "android.support.customtabs.customaction.SHOW_ON_TOOLBAR";
@@ -243,7 +243,6 @@ public class CustomButtonParams {
     static Bitmap parseBitmapFromBundle(Bundle bundle) {
         if (bundle == null) return null;
         Bitmap bitmap = IntentUtils.safeGetParcelable(bundle, CustomTabsIntent.KEY_ICON);
-        if (bitmap == null) return null;
         return bitmap;
     }
 
@@ -278,7 +277,6 @@ public class CustomButtonParams {
         int height = context.getResources().getDimensionPixelSize(R.dimen.toolbar_icon_height);
         if (bitmap.getHeight() < height) return false;
         int scaledWidth = bitmap.getWidth() / bitmap.getHeight() * height;
-        if (scaledWidth > 2 * height) return false;
-        return true;
+        return scaledWidth <= 2 * height;
     }
 }

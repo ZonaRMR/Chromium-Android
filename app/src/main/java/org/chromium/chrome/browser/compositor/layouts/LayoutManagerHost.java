@@ -20,7 +20,7 @@ public interface LayoutManagerHost {
      * If set to true, the time it takes for ContentView to become ready will be
      * logged to the screen.
      */
-    static final boolean LOG_CHROME_VIEW_SHOW_TIME = false;
+    boolean LOG_CHROME_VIEW_SHOW_TIME = false;
 
     /**
      * Requests a refresh of the visuals.

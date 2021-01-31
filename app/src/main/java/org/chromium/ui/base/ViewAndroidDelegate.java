@@ -36,14 +36,14 @@ public class ViewAndroidDelegate {
     protected ViewGroup mContainerView;
 
     // Temporary storage for use as a parameter of getLocationOnScreen().
-    private int[] mTemporaryContainerLocation = new int[2];
+    private final int[] mTemporaryContainerLocation = new int[2];
 
     /**
      * Notifies the observer when container view is updated.
      */
     public interface ContainerViewObserver { void onUpdateContainerView(ViewGroup view); }
 
-    private ObserverList<ContainerViewObserver> mContainerViewObservers = new ObserverList<>();
+    private final ObserverList<ContainerViewObserver> mContainerViewObservers = new ObserverList<>();
 
     /**
      * Create and return a basic implementation of {@link ViewAndroidDelegate}.
@@ -427,7 +427,7 @@ public class ViewAndroidDelegate {
     @CalledByNative
     private boolean hasFocus() {
         ViewGroup containerView = getContainerView();
-        return containerView == null ? false : ViewUtils.hasFocus(containerView);
+        return containerView != null && ViewUtils.hasFocus(containerView);
     }
 
     @CalledByNative

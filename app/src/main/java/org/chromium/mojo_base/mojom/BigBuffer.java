@@ -20,7 +20,8 @@ public final class BigBuffer extends org.chromium.mojo.bindings.Union {
         public static final int Bytes = 0;
         public static final int SharedMemory = 1;
         public static final int InvalidBuffer = 2;
-    };
+    }
+
     private byte[] mBytes;
     private BigBufferSharedMemoryRegion mSharedMemory;
     private boolean mInvalidBuffer;

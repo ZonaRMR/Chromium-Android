@@ -16,8 +16,8 @@ import org.chromium.ui.widget.UiWidgetFactory;
  * The factory that creates VR compatible UI widgets.
  */
 public class VrUiWidgetFactory extends UiWidgetFactory {
-    private VrShell mVrShell;
-    private ModalDialogManager mModalDialogManager;
+    private final VrShell mVrShell;
+    private final ModalDialogManager mModalDialogManager;
 
     public VrUiWidgetFactory(VrShell vrShell, ModalDialogManager modalDialogManager) {
         mVrShell = vrShell;

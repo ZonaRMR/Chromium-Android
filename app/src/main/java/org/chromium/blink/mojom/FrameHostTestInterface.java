@@ -18,7 +18,7 @@ public interface FrameHostTestInterface extends org.chromium.mojo.bindings.Inter
 
 
 
-    public interface Proxy extends FrameHostTestInterface, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FrameHostTestInterface, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FrameHostTestInterface, FrameHostTestInterface.Proxy> MANAGER = FrameHostTestInterface_Internal.MANAGER;

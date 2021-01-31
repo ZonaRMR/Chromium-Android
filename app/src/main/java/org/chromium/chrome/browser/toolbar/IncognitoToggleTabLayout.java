@@ -25,16 +25,16 @@ import org.chromium.ui.widget.ChromeImageView;
  * TabLayout shown in the Horizontal Tab Switcher.
  */
 public class IncognitoToggleTabLayout extends TabLayout implements TabCountObserver {
-    private TabLayout.Tab mStandardButton;
-    private TabLayout.Tab mIncognitoButton;
-    private ImageView mStandardButtonIcon;
-    private ImageView mIncognitoButtonIcon;
-    private TabSwitcherDrawable mTabSwitcherDrawable;
+    private final TabLayout.Tab mStandardButton;
+    private final TabLayout.Tab mIncognitoButton;
+    private final ImageView mStandardButtonIcon;
+    private final ImageView mIncognitoButtonIcon;
+    private final TabSwitcherDrawable mTabSwitcherDrawable;
 
-    private ColorStateList mTabIconDarkColor;
-    private ColorStateList mTabIconLightColor;
-    private ColorStateList mTabIconSelectedDarkColor;
-    private ColorStateList mTabIconSelectedLightColor;
+    private final ColorStateList mTabIconDarkColor;
+    private final ColorStateList mTabIconLightColor;
+    private final ColorStateList mTabIconSelectedDarkColor;
+    private final ColorStateList mTabIconSelectedLightColor;
 
     private TabModelSelector mTabModelSelector;
     private TabCountProvider mTabCountProvider;

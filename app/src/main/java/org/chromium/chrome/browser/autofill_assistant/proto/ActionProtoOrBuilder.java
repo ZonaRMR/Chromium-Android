@@ -226,5 +226,5 @@ public interface ActionProtoOrBuilder extends
    */
   boolean getCleanContextualUi();
 
-  public org.chromium.chrome.browser.autofill_assistant.proto.ActionProto.ActionInfoCase getActionInfoCase();
+  org.chromium.chrome.browser.autofill_assistant.proto.ActionProto.ActionInfoCase getActionInfoCase();
 }

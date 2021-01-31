@@ -84,7 +84,7 @@ public class ContextualSearchQuickActionControl extends ViewResourceInflater {
         FALLBACK_CAPTION_MAP = Collections.unmodifiableMap(captions);
     }
 
-    private Context mContext;
+    private final Context mContext;
     private String mQuickActionUri;
     private int mQuickActionCategory;
     private int mToolbarBackgroundColor;

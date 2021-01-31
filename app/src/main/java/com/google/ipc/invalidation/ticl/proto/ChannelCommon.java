@@ -30,9 +30,9 @@ import java.util.List;
 
 public interface ChannelCommon {
 
-  public static final class ChannelMessageEncoding extends ProtoWrapper {
+  final class ChannelMessageEncoding extends ProtoWrapper {
     public interface MessageEncoding {
-      public static final int PROTOBUF_BINARY_FORMAT = 1;
+      int PROTOBUF_BINARY_FORMAT = 1;
     }
 
     public static ChannelMessageEncoding create() {
@@ -88,11 +88,11 @@ public interface ChannelCommon {
     }
   }
 
-  public static final class NetworkEndpointId extends ProtoWrapper {
+  final class NetworkEndpointId extends ProtoWrapper {
     public interface NetworkAddress {
-      public static final int TEST = 1;
-      public static final int ANDROID = 113;
-      public static final int LCS = 114;
+      int TEST = 1;
+      int ANDROID = 113;
+      int LCS = 114;
     }
 
     public static NetworkEndpointId create(Integer networkAddress,

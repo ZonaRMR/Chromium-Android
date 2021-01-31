@@ -20,7 +20,7 @@ public interface SelectionClient {
     /**
      * The result of the text analysis.
      */
-    public static class Result {
+    class Result {
         /**
          * The number of characters that the left boundary of the original
          * selection should be moved. Negative number means moving left.
@@ -75,7 +75,7 @@ public interface SelectionClient {
     /**
      * The interface that returns the result of the selected text analysis.
      */
-    public interface ResultCallback {
+    interface ResultCallback {
         /**
          * The result is delivered with this method.
          */
@@ -155,7 +155,7 @@ public interface SelectionClient {
     // clang-format on
 
     /** Creates a {@link SelectionClient} instance. */
-    public static SelectionClient createSmartSelectionClient(WebContents webContents) {
+    static SelectionClient createSmartSelectionClient(WebContents webContents) {
         SelectionClient.ResultCallback callback =
                 SelectionPopupController.fromWebContents(webContents).getResultCallback();
         return SmartSelectionClient.create(callback, webContents);

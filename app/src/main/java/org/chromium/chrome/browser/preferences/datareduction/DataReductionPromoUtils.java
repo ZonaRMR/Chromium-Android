@@ -67,8 +67,7 @@ public class DataReductionPromoUtils {
             return false;
         }
         if (DataReductionProxySettings.getInstance().isDataReductionProxyManaged()) return false;
-        if (DataReductionProxySettings.getInstance().isDataReductionProxyEnabled()) return false;
-        return true;
+        return !DataReductionProxySettings.getInstance().isDataReductionProxyEnabled();
     }
 
     /**

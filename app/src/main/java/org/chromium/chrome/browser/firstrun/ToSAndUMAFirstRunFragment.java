@@ -63,9 +63,9 @@ public class ToSAndUMAFirstRunFragment extends Fragment implements FirstRunFragm
         mTitle = view.findViewById(R.id.title);
         mProgressSpinner = view.findViewById(R.id.progress_spinner);
         mProgressSpinner.setVisibility(View.GONE);
-        mAcceptButton = (Button) view.findViewById(R.id.terms_accept);
-        mSendReportCheckBox = (CheckBox) view.findViewById(R.id.send_report_checkbox);
-        mTosAndPrivacy = (TextView) view.findViewById(R.id.tos_and_privacy);
+        mAcceptButton = view.findViewById(R.id.terms_accept);
+        mSendReportCheckBox = view.findViewById(R.id.send_report_checkbox);
+        mTosAndPrivacy = view.findViewById(R.id.tos_and_privacy);
 
         mAcceptButton.setOnClickListener(new OnClickListener() {
             @Override

@@ -19,7 +19,7 @@ public interface ChromiumBaseInputConnection extends InputConnection {
     /**
      * A factory class to create or reuse ChromiumBaseInputConnection.
      */
-    public interface Factory {
+    interface Factory {
         ChromiumBaseInputConnection initializeAndGet(View view, ImeAdapterImpl imeAdapter,
                 int inputType, int inputFlags, int inputMode, int selectionStart, int selectionEnd,
                 EditorInfo outAttrs);

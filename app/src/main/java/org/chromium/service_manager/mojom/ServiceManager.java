@@ -18,7 +18,7 @@ public interface ServiceManager extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ServiceManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ServiceManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ServiceManager, ServiceManager.Proxy> MANAGER = ServiceManager_Internal.MANAGER;

@@ -60,7 +60,7 @@ public class OverviewListLayout extends Layout implements AccessibilityTabModelA
         if (container == null || mTabModelWrapper.getParent() != null) return;
 
         ViewGroup overviewList =
-                (ViewGroup) container.findViewById(R.id.overview_list_layout_holder);
+                container.findViewById(R.id.overview_list_layout_holder);
         overviewList.setVisibility(View.VISIBLE);
         overviewList.addView(mTabModelWrapper);
     }

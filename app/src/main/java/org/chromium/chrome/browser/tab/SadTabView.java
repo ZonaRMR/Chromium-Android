@@ -20,8 +20,8 @@ public class SadTabView extends ScrollView {
 
     // Dimension (dp) at which reload button is dynamically sized and content centers
     private static final int MAX_BUTTON_WIDTH_DP = 620;
-    private int mThresholdPx;
-    private float mDensity;
+    private final int mThresholdPx;
+    private final float mDensity;
 
     public SadTabView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -36,7 +36,7 @@ public class SadTabView extends ScrollView {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
 
-        final ButtonCompat mButton = (ButtonCompat) findViewById(R.id.sad_tab_button);
+        final ButtonCompat mButton = findViewById(R.id.sad_tab_button);
 
         final LinearLayout.LayoutParams mButtonParams =
                 (LinearLayout.LayoutParams) mButton.getLayoutParams();

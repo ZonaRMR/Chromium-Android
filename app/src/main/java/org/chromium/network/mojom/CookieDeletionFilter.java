@@ -30,7 +30,7 @@ public final class CookieDeletionFilter extends org.chromium.mojo.bindings.Struc
 
     private CookieDeletionFilter(int version) {
         super(STRUCT_SIZE, version);
-        this.sessionControl = (int) CookieDeletionSessionControl.IGNORE_CONTROL;
+        this.sessionControl = CookieDeletionSessionControl.IGNORE_CONTROL;
     }
 
     public CookieDeletionFilter() {

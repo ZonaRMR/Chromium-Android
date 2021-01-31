@@ -20,7 +20,7 @@ import java.util.List;
  * list displayed in the order received.
  */
 public class PlatformContextMenuUi implements ContextMenuUi {
-    private ContextMenu mMenu;
+    private final ContextMenu mMenu;
 
     public PlatformContextMenuUi(ContextMenu menu) {
         mMenu = menu;

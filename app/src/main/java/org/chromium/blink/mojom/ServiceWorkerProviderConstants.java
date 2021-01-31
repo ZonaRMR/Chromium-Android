@@ -17,7 +17,7 @@ public final class ServiceWorkerProviderConstants {
 
 
     
-    public static final String NAVIGATION_SERVICE_WORKER_SPEC = (String) "navigation:service_worker";
+    public static final String NAVIGATION_SERVICE_WORKER_SPEC = "navigation:service_worker";
 
 
 

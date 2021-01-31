@@ -17,7 +17,7 @@ public final class ServiceWorkerRegistrationConstants {
 
 
     
-    public static final long INVALID_SERVICE_WORKER_REGISTRATION_ID = (long) -1L;
+    public static final long INVALID_SERVICE_WORKER_REGISTRATION_ID = -1L;
 
 
 

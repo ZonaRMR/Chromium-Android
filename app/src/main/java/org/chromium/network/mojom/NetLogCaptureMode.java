@@ -22,8 +22,8 @@ public final class NetLogCaptureMode {
 
     public static final int INCLUDE_SOCKET_BYTES = INCLUDE_COOKIES_AND_CREDENTIALS + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (2);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 2;
 
     private static final boolean IS_EXTENSIBLE = false;
 

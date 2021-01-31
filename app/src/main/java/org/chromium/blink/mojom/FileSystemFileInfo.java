@@ -25,7 +25,7 @@ public final class FileSystemFileInfo extends org.chromium.mojo.bindings.Struct 
 
     private FileSystemFileInfo(int version) {
         super(STRUCT_SIZE, version);
-        this.length = (long) 0L;
+        this.length = 0L;
     }
 
     public FileSystemFileInfo() {

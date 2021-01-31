@@ -41,7 +41,7 @@ public class AutofillLogger {
      * changing the items that are logged without breaking the embedder.
      */
     public interface Logger {
-        public void didFillField(LogEntry logItem);
+        void didFillField(LogEntry logItem);
     }
 
     private static Logger sLogger;

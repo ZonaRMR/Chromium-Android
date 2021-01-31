@@ -32,7 +32,7 @@ public class ReaderModeInfoBar extends InfoBar {
     /**
      * Navigate to Reader Mode when the icon or the message text is clicked.
      */
-    private View.OnClickListener mNavigateListener = new View.OnClickListener() {
+    private final View.OnClickListener mNavigateListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             if (getReaderModeManager() == null || mIsHiding) return;

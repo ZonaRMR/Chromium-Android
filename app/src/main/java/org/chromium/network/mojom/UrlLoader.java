@@ -18,12 +18,12 @@ public interface UrlLoader extends org.chromium.mojo.bindings.Interface {
 
 
     
-    public static final int CLIENT_DISCONNECT_REASON = (int) 1L;
+    int CLIENT_DISCONNECT_REASON = (int) 1L;
 
 
 
 
-    public interface Proxy extends UrlLoader, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends UrlLoader, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<UrlLoader, UrlLoader.Proxy> MANAGER = UrlLoader_Internal.MANAGER;

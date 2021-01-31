@@ -168,7 +168,7 @@ public class ToolbarButtonInProductHelpController implements Destroyable {
             @StringRes int accessibilityStringId, View anchorView,
             @Nullable AppMenuHandler appMenuHandler, Profile profile, ChromeActivity activity) {
         final Tracker tracker = TrackerFactory.getTrackerForProfile(profile);
-        tracker.addOnInitializedCallback((Callback<Boolean>) success
+        tracker.addOnInitializedCallback(success
                 -> maybeShowIPH(tracker, featureName, highlightMenuItemId, stringId,
                         accessibilityStringId, anchorView, appMenuHandler, activity));
     }

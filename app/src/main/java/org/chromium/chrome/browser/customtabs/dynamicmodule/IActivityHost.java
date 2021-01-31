@@ -7,7 +7,7 @@ package org.chromium.chrome.browser.customtabs.dynamicmodule;
 public interface IActivityHost extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityHost
+abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityHost
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityHost";
 /** Construct the stub at attach it to the interface. */
@@ -149,7 +149,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.chrome.browser.customtabs.dynamicmodule.IActivityHost
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -407,32 +407,32 @@ static final int TRANSACTION_postMessage = (android.os.IBinder.FIRST_CALL_TRANSA
 static final int TRANSACTION_setTopBarMinHeight = (android.os.IBinder.FIRST_CALL_TRANSACTION + 9);
 }
 /** Returns the Context of the Chrome activity. */
-public org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper getActivityContext() throws android.os.RemoteException;
+org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper getActivityContext() throws android.os.RemoteException;
 /**
    * Sets the given view as the bottom bar.
    *
    * Compared to the overlay view, the bottom bar is automatically hidden when
    * the user scrolls down on the web content.
    */
-public void setBottomBarView(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper bottomBarView) throws android.os.RemoteException;
+void setBottomBarView(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper bottomBarView) throws android.os.RemoteException;
 /*
    * Sets the overlay view.
    *
    * This view is always on top of the web content.
    */
-public void setOverlayView(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper overlayView) throws android.os.RemoteException;
+void setOverlayView(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper overlayView) throws android.os.RemoteException;
 /**
    * Sets the height of the bottom bar.
    *
    * Chrome uses this to calculate the bottom padding of the web content.
    */
-public void setBottomBarHeight(int heightInPx) throws android.os.RemoteException;
+void setBottomBarHeight(int heightInPx) throws android.os.RemoteException;
 /**
    * Loads a URI in the existing CCT activity.
    *
    * Introduced in API version 3.
    */
-public void loadUri(android.net.Uri uri) throws android.os.RemoteException;
+void loadUri(android.net.Uri uri) throws android.os.RemoteException;
 /**
    * Sets the top bar view in CCT. This will not attempt to hide or remove
    * the CCT header. It should only be called once in the lifecycle of an
@@ -440,7 +440,7 @@ public void loadUri(android.net.Uri uri) throws android.os.RemoteException;
 
    * Introduced in API version 5.
    */
-public void setTopBarView(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper topBarView) throws android.os.RemoteException;
+void setTopBarView(org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper topBarView) throws android.os.RemoteException;
 /**
    * Sets the height of the top bar for module-managed URLs only. This is needed
    * for CCT to calculate the web content area. It is not applicable to
@@ -452,7 +452,7 @@ public void setTopBarView(org.chromium.chrome.browser.customtabs.dynamicmodule.I
    *
    * Introduced in API version 7.
    */
-public void setTopBarHeight(int heightInPx) throws android.os.RemoteException;
+void setTopBarHeight(int heightInPx) throws android.os.RemoteException;
 /**
    * Sends a request to create a two-way postMessage channel between the web
    * page in the host activity and the dynamic module.
@@ -464,8 +464,8 @@ public void setTopBarHeight(int heightInPx) throws android.os.RemoteException;
    *
    * Introduced in API version 9.
    */
-public boolean requestPostMessageChannel(android.net.Uri postMessageOrigin) throws android.os.RemoteException;
-public int postMessage(java.lang.String message) throws android.os.RemoteException;
+boolean requestPostMessageChannel(android.net.Uri postMessageOrigin) throws android.os.RemoteException;
+int postMessage(java.lang.String message) throws android.os.RemoteException;
 /**
    * Sets the min height of the top bar for module-managed URLs only. This is
    * needed for sticky top bar elements. It is not applicable to
@@ -477,5 +477,5 @@ public int postMessage(java.lang.String message) throws android.os.RemoteExcepti
    *
    * Introduced in API version 8.
    */
-public void setTopBarMinHeight(int heightInPx) throws android.os.RemoteException;
+void setTopBarMinHeight(int heightInPx) throws android.os.RemoteException;
 }

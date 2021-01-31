@@ -405,10 +405,7 @@ public class DynamicModuleCoordinator implements NativeInitObserver, Destroyable
         if (!UrlConstants.HTTPS_SCHEME.equals(scheme)) {
             return false;
         }
-        if (!UrlUtilities.nativeIsGoogleDomainUrl(url, sAllowNonStandardPortNumber)) {
-            return false;
-        }
-        return true;
+        return UrlUtilities.nativeIsGoogleDomainUrl(url, sAllowNonStandardPortNumber);
     }
 
     public void setTopBarHeight(int height) {

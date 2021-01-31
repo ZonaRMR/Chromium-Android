@@ -22,6 +22,6 @@ public class OffTheRecordOfflineItemFilter extends OfflineItemFilter {
     // OfflineItemFilter implementation.
     @Override
     protected boolean isFilteredOut(OfflineItem item) {
-        return mIncludeOffTheRecordItems ? false : item.isOffTheRecord;
+        return !mIncludeOffTheRecordItems && item.isOffTheRecord;
     }
 }

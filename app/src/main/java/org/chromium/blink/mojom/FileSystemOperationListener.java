@@ -18,7 +18,7 @@ public interface FileSystemOperationListener extends org.chromium.mojo.bindings.
 
 
 
-    public interface Proxy extends FileSystemOperationListener, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FileSystemOperationListener, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FileSystemOperationListener, FileSystemOperationListener.Proxy> MANAGER = FileSystemOperationListener_Internal.MANAGER;

@@ -40,8 +40,8 @@ public final class VideoCaptureApi {
 
     public static final int UNKNOWN = VIRTUAL_DEVICE + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (11);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 11;
 
     private static final boolean IS_EXTENSIBLE = false;
 

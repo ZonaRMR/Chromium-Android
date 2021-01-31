@@ -29,11 +29,11 @@ public final class UrlLoaderFactoryParams extends org.chromium.mojo.bindings.Str
 
     private UrlLoaderFactoryParams(int version) {
         super(STRUCT_SIZE, version);
-        this.processId = (int) NetworkContextConstants.INVALID_PROCESS_ID;
-        this.isCorbEnabled = (boolean) true;
+        this.processId = NetworkContextConstants.INVALID_PROCESS_ID;
+        this.isCorbEnabled = true;
         this.corbDetachableResourceType = (int) -1L;
         this.corbExcludedResourceType = (int) -1L;
-        this.disableWebSecurity = (boolean) false;
+        this.disableWebSecurity = false;
     }
 
     public UrlLoaderFactoryParams() {

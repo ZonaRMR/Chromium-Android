@@ -154,7 +154,7 @@ public final class FeatureProto {
 
       private final int value;
 
-      private RenderableUnit(int value) {
+      RenderableUnit(int value) {
         this.value = value;
       }
 

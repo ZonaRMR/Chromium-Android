@@ -308,10 +308,10 @@ public final class InfoBarControlLayout extends ViewGroup {
                         .inflate(R.layout.infobar_control_icon_with_description, this, false);
         addView(layout, new ControlLayoutParams());
 
-        ImageView iconView = (ImageView) layout.findViewById(R.id.control_icon);
+        ImageView iconView = layout.findViewById(R.id.control_icon);
         iconView.setImageResource(iconResourceId);
 
-        TextView titleView = (TextView) layout.findViewById(R.id.control_message);
+        TextView titleView = layout.findViewById(R.id.control_message);
         titleView.setText(titleMessage);
         titleView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                 getContext().getResources().getDimension(R.dimen.infobar_text_size));
@@ -359,21 +359,21 @@ public final class InfoBarControlLayout extends ViewGroup {
                 R.layout.infobar_control_icon_with_description, this, false);
         addView(layout, new ControlLayoutParams());
 
-        ImageView iconView = (ImageView) layout.findViewById(R.id.control_icon);
+        ImageView iconView = layout.findViewById(R.id.control_icon);
         iconView.setImageResource(iconResourceId);
         if (iconColorId != 0) {
             iconView.setColorFilter(ApiCompatibilityUtils.getColor(getResources(), iconColorId));
         }
 
         // The primary message text is always displayed.
-        TextView primaryView = (TextView) layout.findViewById(R.id.control_message);
+        TextView primaryView = layout.findViewById(R.id.control_message);
         primaryView.setText(primaryMessage);
         primaryView.setTextSize(
                 TypedValue.COMPLEX_UNIT_PX, getContext().getResources().getDimension(resourceId));
 
         // The secondary message text is optional.
         TextView secondaryView =
-                (TextView) layout.findViewById(R.id.control_secondary_message);
+                layout.findViewById(R.id.control_secondary_message);
         if (secondaryMessage == null) {
             layout.removeView(secondaryView);
         } else {
@@ -405,7 +405,7 @@ public final class InfoBarControlLayout extends ViewGroup {
                 R.layout.infobar_control_toggle, this, false);
         addView(switchLayout, new ControlLayoutParams());
 
-        ImageView iconView = (ImageView) switchLayout.findViewById(R.id.control_icon);
+        ImageView iconView = switchLayout.findViewById(R.id.control_icon);
         if (iconResourceId == 0) {
             switchLayout.removeView(iconView);
         } else {
@@ -416,11 +416,11 @@ public final class InfoBarControlLayout extends ViewGroup {
             }
         }
 
-        TextView messageView = (TextView) switchLayout.findViewById(R.id.control_message);
+        TextView messageView = switchLayout.findViewById(R.id.control_message);
         messageView.setText(toggleMessage);
 
         SwitchCompat switchView =
-                (SwitchCompat) switchLayout.findViewById(R.id.control_toggle_switch);
+                switchLayout.findViewById(R.id.control_toggle_switch);
         switchView.setId(toggleId);
         switchView.setChecked(isChecked);
 
@@ -482,7 +482,7 @@ public final class InfoBarControlLayout extends ViewGroup {
                 R.layout.infobar_control_rating, this, false);
         addView(ratingLayout, new ControlLayoutParams());
 
-        RatingBar ratingView = (RatingBar) ratingLayout.findViewById(R.id.control_rating);
+        RatingBar ratingView = ratingLayout.findViewById(R.id.control_rating);
         ratingView.setRating(rating);
         return ratingView;
     }

@@ -51,7 +51,8 @@ class KeyboardAccessoryProperties {
             int TAB_SWITCHER = 2;
             int COUNT = 3;
         }
-        private @Type int mType;
+        private @Type
+        final int mType;
         private final @Nullable Action mAction;
 
         /**

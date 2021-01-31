@@ -18,7 +18,7 @@ public interface BackgroundFetchRegistrationObserver extends org.chromium.mojo.b
 
 
 
-    public interface Proxy extends BackgroundFetchRegistrationObserver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BackgroundFetchRegistrationObserver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BackgroundFetchRegistrationObserver, BackgroundFetchRegistrationObserver.Proxy> MANAGER = BackgroundFetchRegistrationObserver_Internal.MANAGER;

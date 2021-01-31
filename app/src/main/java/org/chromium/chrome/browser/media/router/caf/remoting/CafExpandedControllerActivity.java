@@ -40,7 +40,7 @@ public class CafExpandedControllerActivity
     /**
      * Handle actions from on-screen media controls.
      */
-    private MediaController.Delegate mControllerDelegate = new MediaController.Delegate() {
+    private final MediaController.Delegate mControllerDelegate = new MediaController.Delegate() {
         @Override
         public void play() {
             if (!mSessionController.isConnected()) return;
@@ -119,13 +119,13 @@ public class CafExpandedControllerActivity
         setContentView(R.layout.expanded_cast_controller);
         // mHandler = new Handler();
 
-        ViewGroup rootView = (ViewGroup) findViewById(android.R.id.content);
+        ViewGroup rootView = findViewById(android.R.id.content);
         rootView.setBackgroundColor(Color.BLACK);
 
         // mMediaRouteController.addUiListener(this);
 
         // Create and initialize the media control UI.
-        mMediaController = (MediaController) findViewById(R.id.cast_media_controller);
+        mMediaController = findViewById(R.id.cast_media_controller);
         mMediaController.setDelegate(mControllerDelegate);
 
         View castButtonView = getLayoutInflater().inflate(
@@ -137,7 +137,7 @@ public class CafExpandedControllerActivity
             mMediaRouteButton.setRouteSelector(mSessionController.getSource().buildRouteSelector());
         }
 
-        mTitleView = (TextView) findViewById(R.id.cast_screen_title);
+        mTitleView = findViewById(R.id.cast_screen_title);
 
         mHandler = new Handler();
         mUpdateProgressRunnable = this::updateProgress;

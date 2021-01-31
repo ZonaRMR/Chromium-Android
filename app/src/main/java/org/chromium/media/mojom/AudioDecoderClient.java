@@ -18,7 +18,7 @@ public interface AudioDecoderClient extends org.chromium.mojo.bindings.Interface
 
 
 
-    public interface Proxy extends AudioDecoderClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AudioDecoderClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AudioDecoderClient, AudioDecoderClient.Proxy> MANAGER = AudioDecoderClient_Internal.MANAGER;

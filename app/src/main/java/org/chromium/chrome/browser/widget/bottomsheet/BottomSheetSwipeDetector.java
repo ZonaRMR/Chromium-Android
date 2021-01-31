@@ -38,7 +38,7 @@ public class BottomSheetSwipeDetector extends GestureDetector.SimpleOnGestureLis
     private final SwipeableBottomSheet mSheetDelegate;
 
     /** Track the velocity of the user's scrolls to determine up or down direction. */
-    private VelocityTracker mVelocityTracker;
+    private final VelocityTracker mVelocityTracker;
 
     /** Whether or not the user is scrolling the bottom sheet. */
     private boolean mIsScrolling;

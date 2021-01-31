@@ -29,7 +29,7 @@ import java.util.concurrent.ExecutionException;
 public class OptionalShareTargetsManager {
     private static final String TAG = "share_manager";
 
-    private static Set<Activity> sPendingShareActivities =
+    private static final Set<Activity> sPendingShareActivities =
             Collections.synchronizedSet(new HashSet<Activity>());
     private static ActivityStateListener sStateListener;
     private static AsyncTask<Void> sStateChangeTask;

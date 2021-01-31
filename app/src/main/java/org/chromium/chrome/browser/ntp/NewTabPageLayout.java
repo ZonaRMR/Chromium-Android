@@ -962,7 +962,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
                     && ev.getActionMasked() == MotionEvent.ACTION_DOWN) {
                 if (getBackground() instanceof RippleDrawable) {
-                    ((RippleDrawable) getBackground()).setHotspot(ev.getX(), ev.getY());
+                    getBackground().setHotspot(ev.getX(), ev.getY());
                 }
             }
             return super.onInterceptTouchEvent(ev);

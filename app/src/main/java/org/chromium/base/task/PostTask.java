@@ -22,10 +22,10 @@ public class PostTask {
     private static Set<TaskRunner> sPreNativeTaskRunners =
             Collections.newSetFromMap(new WeakHashMap<TaskRunner, Boolean>());
 
-    private static final TaskExecutor sTaskExecutors[] = getInitialTaskExecutors();
+    private static final TaskExecutor[] sTaskExecutors = getInitialTaskExecutors();
 
     private static TaskExecutor[] getInitialTaskExecutors() {
-        TaskExecutor taskExecutors[] = new TaskExecutor[TaskTraits.MAX_EXTENSION_ID + 1];
+        TaskExecutor[] taskExecutors = new TaskExecutor[TaskTraits.MAX_EXTENSION_ID + 1];
         taskExecutors[0] = new DefaultTaskExecutor();
         return taskExecutors;
     }

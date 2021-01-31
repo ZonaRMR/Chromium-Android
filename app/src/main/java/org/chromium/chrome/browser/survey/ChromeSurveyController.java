@@ -164,8 +164,7 @@ public class ChromeSurveyController implements InfoBarContainer.InfoBarAnimation
     /** @return Whether the user qualifies for the survey. */
     private boolean doesUserQualifyForSurvey() {
         if (!isUMAEnabled() && !sForceUmaEnabledForTesting) return false;
-        if (hasInfoBarBeenDisplayed()) return false;
-        return true;
+        return !hasInfoBarBeenDisplayed();
     }
 
     /**

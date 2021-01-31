@@ -23,8 +23,8 @@ import java.util.ArrayList;
  */
 class DownloadBlockedOfflineContentProvider
         implements OfflineContentProvider, OfflineContentProvider.Observer {
-    private OfflineContentProvider mProvider;
-    private ObserverList<Observer> mObservers;
+    private final OfflineContentProvider mProvider;
+    private final ObserverList<Observer> mObservers;
 
     public DownloadBlockedOfflineContentProvider(OfflineContentProvider provider) {
         mProvider = provider;

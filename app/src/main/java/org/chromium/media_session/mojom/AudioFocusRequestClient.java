@@ -18,7 +18,7 @@ public interface AudioFocusRequestClient extends org.chromium.mojo.bindings.Inte
 
 
 
-    public interface Proxy extends AudioFocusRequestClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AudioFocusRequestClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AudioFocusRequestClient, AudioFocusRequestClient.Proxy> MANAGER = AudioFocusRequestClient_Internal.MANAGER;

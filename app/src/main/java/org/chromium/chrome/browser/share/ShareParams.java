@@ -51,7 +51,7 @@ public class ShareParams {
      * Optional callback to be called when user makes a choice. Will not be called if receiving a
      * response when the user makes a choice is not supported (on older Android versions).
      */
-    private TargetChosenCallback mCallback;
+    private final TargetChosenCallback mCallback;
 
     /** The package name of the app who requests for share. If Null, it is requested by Chrome */
     private final String mSourcePackageName;
@@ -163,8 +163,8 @@ public class ShareParams {
     public static class Builder {
         private boolean mShareDirectly;
         private boolean mSaveLastUsed;
-        private Activity mActivity;
-        private String mTitle;
+        private final Activity mActivity;
+        private final String mTitle;
         private String mText;
         private String mUrl;
         private Uri mOfflineUri;

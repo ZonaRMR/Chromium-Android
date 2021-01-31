@@ -18,7 +18,7 @@ public interface WorkerContentSettingsProxy extends org.chromium.mojo.bindings.I
 
 
 
-    public interface Proxy extends WorkerContentSettingsProxy, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends WorkerContentSettingsProxy, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<WorkerContentSettingsProxy, WorkerContentSettingsProxy.Proxy> MANAGER = WorkerContentSettingsProxy_Internal.MANAGER;

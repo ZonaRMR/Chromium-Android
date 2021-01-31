@@ -20,12 +20,12 @@ import android.view.accessibility.CaptioningManager.CaptionStyle;
  */
 @TargetApi(Build.VERSION_CODES.KITKAT)
 public class CaptioningStyle {
-    private Integer mBackgroundColor;
-    private Integer mEdgeColor;
-    private Integer mEdgeType;
-    private Integer mForegroundColor;
-    private Integer mWindowColor;
-    private Typeface mTypeface;
+    private final Integer mBackgroundColor;
+    private final Integer mEdgeColor;
+    private final Integer mEdgeType;
+    private final Integer mForegroundColor;
+    private final Integer mWindowColor;
+    private final Typeface mTypeface;
 
     /**
      * Construct a Chromium CaptioningStyle object.

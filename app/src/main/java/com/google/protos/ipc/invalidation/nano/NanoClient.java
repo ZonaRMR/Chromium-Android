@@ -7,7 +7,7 @@ package com.google.protos.ipc.invalidation.nano;
 @SuppressWarnings("hiding")
 public interface NanoClient {
 
-  public static final class AckHandleP extends
+  final class AckHandleP extends
       com.google.protobuf.nano.ExtendableMessageNano<AckHandleP> {
 
     private static volatile AckHandleP[] _emptyArray;
@@ -97,7 +97,7 @@ public interface NanoClient {
     }
   }
 
-  public static final class PersistentTiclState extends
+  final class PersistentTiclState extends
       com.google.protobuf.nano.ExtendableMessageNano<PersistentTiclState> {
 
     private static volatile PersistentTiclState[] _emptyArray;
@@ -199,7 +199,7 @@ public interface NanoClient {
     }
   }
 
-  public static final class PersistentStateBlob extends
+  final class PersistentStateBlob extends
       com.google.protobuf.nano.ExtendableMessageNano<PersistentStateBlob> {
 
     private static volatile PersistentStateBlob[] _emptyArray;
@@ -304,7 +304,7 @@ public interface NanoClient {
     }
   }
 
-  public static final class RunStateP extends
+  final class RunStateP extends
       com.google.protobuf.nano.ExtendableMessageNano<RunStateP> {
 
     // enum State
@@ -408,7 +408,7 @@ public interface NanoClient {
     }
   }
 
-  public static final class ExponentialBackoffState extends
+  final class ExponentialBackoffState extends
       com.google.protobuf.nano.ExtendableMessageNano<ExponentialBackoffState> {
 
     private static volatile ExponentialBackoffState[] _emptyArray;

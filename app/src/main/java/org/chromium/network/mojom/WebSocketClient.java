@@ -18,7 +18,7 @@ public interface WebSocketClient extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends WebSocketClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends WebSocketClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<WebSocketClient, WebSocketClient.Proxy> MANAGER = WebSocketClient_Internal.MANAGER;

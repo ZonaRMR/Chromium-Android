@@ -12,7 +12,7 @@ import android.view.View;
  * @param <E> The type of the item associated with the {@link SelectableItemView}.
  */
 public class SelectableItemViewHolder<E> extends ViewHolder {
-    private SelectableItemView<E> mItemView;
+    private final SelectableItemView<E> mItemView;
 
     /**
      * @param itemView The {@link SelectableItemView} to be held by this ViewHolder.

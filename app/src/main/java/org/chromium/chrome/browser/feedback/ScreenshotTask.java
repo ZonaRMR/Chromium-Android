@@ -136,11 +136,10 @@ final class ScreenshotTask implements ScreenshotSource {
         if (!currentTab.isUserInteractable()) return true;
         // If the tab focused and not showing Android widget based content, then use the Compositor
         // based screenshot.
-        if (currentTab.getNativePage() == null && !SadTab.isShowing(currentTab)) return true;
+        return currentTab.getNativePage() == null && !SadTab.isShowing(currentTab);
 
         // Assume the UI is drawn primarily by Android widgets, so do not use the Compositor
         // screenshot.
-        return false;
     }
 
     private static native void nativeGrabWindowSnapshotAsync(

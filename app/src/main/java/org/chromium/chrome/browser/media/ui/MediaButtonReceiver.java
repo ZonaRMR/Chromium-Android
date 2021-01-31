@@ -32,7 +32,7 @@ public abstract class MediaButtonReceiver extends BroadcastReceiver {
 
         Log.i(TAG, "Receive broadcast message, starting foreground service");
 
-        KeyEvent event = (KeyEvent) intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
+        KeyEvent event = intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
         if (event == null) {
             Log.i(TAG, "no event");
         } else {

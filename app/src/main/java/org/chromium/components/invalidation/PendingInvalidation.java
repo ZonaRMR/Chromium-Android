@@ -150,11 +150,10 @@ public class PendingInvalidation {
         }
         if (mVersion != otherInvalidation.mVersion) return false;
         if (mPayload == null) {
-            if (otherInvalidation.mPayload != null) return false;
+            return otherInvalidation.mPayload == null;
         } else {
-            if (!mPayload.equals(otherInvalidation.mPayload)) return false;
+            return mPayload.equals(otherInvalidation.mPayload);
         }
-        return true;
     }
 
     @Override

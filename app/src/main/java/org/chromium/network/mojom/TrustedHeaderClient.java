@@ -18,7 +18,7 @@ public interface TrustedHeaderClient extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends TrustedHeaderClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends TrustedHeaderClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<TrustedHeaderClient, TrustedHeaderClient.Proxy> MANAGER = TrustedHeaderClient_Internal.MANAGER;

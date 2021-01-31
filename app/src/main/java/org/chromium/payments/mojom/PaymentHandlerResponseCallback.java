@@ -18,7 +18,7 @@ public interface PaymentHandlerResponseCallback extends org.chromium.mojo.bindin
 
 
 
-    public interface Proxy extends PaymentHandlerResponseCallback, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PaymentHandlerResponseCallback, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PaymentHandlerResponseCallback, PaymentHandlerResponseCallback.Proxy> MANAGER = PaymentHandlerResponseCallback_Internal.MANAGER;

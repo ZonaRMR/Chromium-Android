@@ -38,7 +38,7 @@ public class DownloadBackgroundTask extends NativeBackgroundTask {
     }
 
     // Keeps track of in progress tasks which haven't invoked their {@link TaskFinishedCallback}s.
-    private Map<Integer, PendingTaskCounter> mPendingTaskCounters = new HashMap<>();
+    private final Map<Integer, PendingTaskCounter> mPendingTaskCounters = new HashMap<>();
 
     @DownloadTaskType
     private int mCurrentTaskType;

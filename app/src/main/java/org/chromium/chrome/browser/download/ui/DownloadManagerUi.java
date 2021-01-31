@@ -169,14 +169,14 @@ public class DownloadManagerUi implements OnMenuItemClickListener, SearchDelegat
     private final RecyclerView mRecyclerView;
 
     private BasicNativePage mNativePage;
-    private Activity mActivity;
-    private ViewGroup mMainView;
-    private DownloadManagerToolbar mToolbar;
-    private SelectableListLayout<DownloadHistoryItemWrapper> mSelectableListLayout;
-    private boolean mIsSeparateActivity;
+    private final Activity mActivity;
+    private final ViewGroup mMainView;
+    private final DownloadManagerToolbar mToolbar;
+    private final SelectableListLayout<DownloadHistoryItemWrapper> mSelectableListLayout;
+    private final boolean mIsSeparateActivity;
 
-    private int mSearchMenuId;
-    private int mInfoMenuId;
+    private final int mSearchMenuId;
+    private final int mInfoMenuId;
 
     /**
      * Constructs a new DownloadManagerUi.
@@ -201,8 +201,7 @@ public class DownloadManagerUi implements OnMenuItemClickListener, SearchDelegat
 
         mMainView = (ViewGroup) LayoutInflater.from(activity).inflate(R.layout.download_main, null);
 
-        mSelectableListLayout = (SelectableListLayout<DownloadHistoryItemWrapper>)
-                mMainView.findViewById(R.id.selectable_list);
+        mSelectableListLayout = mMainView.findViewById(R.id.selectable_list);
 
         mSelectableListLayout.initializeEmptyView(
                 VectorDrawableCompat.create(

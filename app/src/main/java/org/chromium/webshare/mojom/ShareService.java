@@ -18,7 +18,7 @@ public interface ShareService extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ShareService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ShareService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ShareService, ShareService.Proxy> MANAGER = ShareService_Internal.MANAGER;

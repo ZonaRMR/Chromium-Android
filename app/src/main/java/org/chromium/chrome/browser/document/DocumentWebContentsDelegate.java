@@ -24,7 +24,7 @@ public class DocumentWebContentsDelegate extends WebContentsDelegateAndroid {
     /**
      * Native side pointer to the stubbed WebContentsDelegate.
      */
-    private long mNativePtr;
+    private final long mNativePtr;
 
     /**
      * @return The Singleton instance, creating it if necessary.

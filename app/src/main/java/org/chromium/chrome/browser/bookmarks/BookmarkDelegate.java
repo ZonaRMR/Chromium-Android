@@ -23,7 +23,7 @@ interface BookmarkDelegate {
          * Let the tab containing bookmark manager load the url and later handle UI updates.
          * @param url The url to open in tab.
          */
-        public void onBookmarkUIStateChange(String url);
+        void onBookmarkUIStateChange(String url);
     }
 
     /**

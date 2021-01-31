@@ -13,7 +13,7 @@ import android.widget.TextView;
  * This class implements a Toast which is similar to Android Toast in VR.
  */
 public class VrToast extends android.widget.Toast {
-    private VrToastManager mVrToastManager;
+    private final VrToastManager mVrToastManager;
 
     public VrToast(Context context, VrToastManager vrToastManager) {
         super(context);

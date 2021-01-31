@@ -19,7 +19,7 @@ public final class ViewUtils {
     public static boolean hasFocus(View view) {
         // If the container view is not focusable, we consider it always focused from
         // Chromium's point of view.
-        return !isFocusable(view) ? true : view.hasFocus();
+        return !isFocusable(view) || view.hasFocus();
     }
 
     /**

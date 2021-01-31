@@ -18,7 +18,7 @@ public interface MediaSession extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public static final class SuspendType {
+    final class SuspendType {
 
 
         public static final int SYSTEM = 0;
@@ -27,8 +27,8 @@ public interface MediaSession extends org.chromium.mojo.bindings.Interface {
 
         public static final int CONTENT = UI + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = true;
 
@@ -54,7 +54,7 @@ public interface MediaSession extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public interface Proxy extends MediaSession, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaSession, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaSession, MediaSession.Proxy> MANAGER = MediaSession_Internal.MANAGER;

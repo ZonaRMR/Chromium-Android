@@ -19,7 +19,8 @@ public final class PresentationConnectionMessage extends org.chromium.mojo.bindi
     public static final class Tag {
         public static final int Message = 0;
         public static final int Data = 1;
-    };
+    }
+
     private String mMessage;
     private byte[] mData;
 

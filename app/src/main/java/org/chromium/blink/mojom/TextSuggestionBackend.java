@@ -18,7 +18,7 @@ public interface TextSuggestionBackend extends org.chromium.mojo.bindings.Interf
 
 
 
-    public interface Proxy extends TextSuggestionBackend, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends TextSuggestionBackend, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<TextSuggestionBackend, TextSuggestionBackend.Proxy> MANAGER = TextSuggestionBackend_Internal.MANAGER;

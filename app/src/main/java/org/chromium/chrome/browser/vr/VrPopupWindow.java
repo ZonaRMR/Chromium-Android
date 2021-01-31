@@ -18,8 +18,8 @@ import org.chromium.ui.UiUtils;
  */
 public class VrPopupWindow extends PopupWindow {
     private FrameLayout mVrPopupContainer;
-    private VrDialogManager mVrDialogManager;
-    private Context mContext;
+    private final VrDialogManager mVrDialogManager;
+    private final Context mContext;
     private boolean mIsShowing;
     private PopupWindow.OnDismissListener mOnDismissListener;
     private int mWidth;

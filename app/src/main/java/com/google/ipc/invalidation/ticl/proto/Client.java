@@ -30,7 +30,7 @@ import java.util.List;
 
 public interface Client {
 
-  public static final class AckHandleP extends ProtoWrapper {
+  final class AckHandleP extends ProtoWrapper {
     public static AckHandleP create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.InvalidationP invalidation) {
       return new AckHandleP(invalidation);
     }
@@ -94,7 +94,7 @@ public interface Client {
     }
   }
 
-  public static final class PersistentTiclState extends ProtoWrapper {
+  final class PersistentTiclState extends ProtoWrapper {
     public static final class Builder {
       public Bytes clientToken;
       public Long lastMessageSendTimeMs;
@@ -211,7 +211,7 @@ public interface Client {
     }
   }
 
-  public static final class PersistentStateBlob extends ProtoWrapper {
+  final class PersistentStateBlob extends ProtoWrapper {
     public static PersistentStateBlob create(com.google.ipc.invalidation.ticl.proto.Client.PersistentTiclState ticlState,
         Bytes authenticationCode) {
       return new PersistentStateBlob(ticlState, authenticationCode);
@@ -306,11 +306,11 @@ public interface Client {
     }
   }
 
-  public static final class RunStateP extends ProtoWrapper {
+  final class RunStateP extends ProtoWrapper {
     public interface State {
-      public static final int NOT_STARTED = 1;
-      public static final int STARTED = 2;
-      public static final int STOPPED = 3;
+      int NOT_STARTED = 1;
+      int STARTED = 2;
+      int STOPPED = 3;
     }
 
     public static RunStateP create(Integer state) {
@@ -386,7 +386,7 @@ public interface Client {
     }
   }
 
-  public static final class ExponentialBackoffState extends ProtoWrapper {
+  final class ExponentialBackoffState extends ProtoWrapper {
     public static ExponentialBackoffState create(Integer currentMaxDelay,
         Boolean inRetryMode) {
       return new ExponentialBackoffState(currentMaxDelay, inRetryMode);

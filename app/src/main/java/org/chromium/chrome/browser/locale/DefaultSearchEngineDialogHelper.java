@@ -138,7 +138,7 @@ public class DefaultSearchEngineDialogHelper implements OnCheckedChangeListener,
 
         mConfirmedKeyword = mCurrentlySelectedKeyword;
 
-        mDelegate.onUserSeachEngineChoice(mSearchEngineKeywords, mConfirmedKeyword.toString());
+        mDelegate.onUserSeachEngineChoice(mSearchEngineKeywords, mConfirmedKeyword);
         mFinishRunnable.run();
     }
 

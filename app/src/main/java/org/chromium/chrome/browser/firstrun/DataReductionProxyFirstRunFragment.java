@@ -42,9 +42,9 @@ public class DataReductionProxyFirstRunFragment extends Fragment implements Firs
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final SwitchCompat enableDataSaverSwitch = (SwitchCompat) view
+        final SwitchCompat enableDataSaverSwitch = view
                 .findViewById(R.id.enable_data_saver_switch);
-        Button nextButton = (Button) view.findViewById(R.id.next_button);
+        Button nextButton = view.findViewById(R.id.next_button);
 
         enableDataSaverSwitch.setOnClickListener(new OnClickListener() {
             @Override

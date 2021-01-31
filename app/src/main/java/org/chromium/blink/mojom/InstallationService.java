@@ -18,7 +18,7 @@ public interface InstallationService extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends InstallationService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends InstallationService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<InstallationService, InstallationService.Proxy> MANAGER = InstallationService_Internal.MANAGER;

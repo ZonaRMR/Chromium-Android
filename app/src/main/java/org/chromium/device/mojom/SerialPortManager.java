@@ -18,7 +18,7 @@ public interface SerialPortManager extends org.chromium.mojo.bindings.Interface 
 
 
 
-    public interface Proxy extends SerialPortManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends SerialPortManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<SerialPortManager, SerialPortManager.Proxy> MANAGER = SerialPortManager_Internal.MANAGER;

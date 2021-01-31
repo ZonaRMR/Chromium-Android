@@ -25,7 +25,7 @@ public class ErrorContext {
 
   /** A context with numeric data. */
   public static class NumberContext extends ErrorContext {
-    private int number;
+    private final int number;
 
     public NumberContext(int number) {
       this.number = number;

@@ -240,7 +240,7 @@ public final class FormFieldsProto {
 
     private final int value;
 
-    private InputType(int value) {
+    InputType(int value) {
       this.value = value;
     }
 
@@ -395,7 +395,7 @@ public final class FormFieldsProto {
      */
     com.google.search.now.ui.piet.FormFieldsProto.Slider getSlider();
 
-    public com.google.search.now.ui.piet.FormFieldsProto.FormField.FormFieldTypeCase getFormFieldTypeCase();
+    com.google.search.now.ui.piet.FormFieldsProto.FormField.FormFieldTypeCase getFormFieldTypeCase();
   }
   /**
    * <pre>
@@ -426,7 +426,7 @@ public final class FormFieldsProto {
       SLIDER(7),
       FORMFIELDTYPE_NOT_SET(0);
       private final int value;
-      private FormFieldTypeCase(int value) {
+      FormFieldTypeCase(int value) {
         this.value = value;
       }
       /**
@@ -450,9 +450,9 @@ public final class FormFieldsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public FormFieldTypeCase
+      public FormFieldTypeCase
     getFormFieldTypeCase() {
       return FormFieldTypeCase.forNumber(
           formFieldTypeCase_);

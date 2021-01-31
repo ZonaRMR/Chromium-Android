@@ -18,7 +18,7 @@ public interface ControllerServiceWorkerConnector extends org.chromium.mojo.bind
 
 
 
-    public interface Proxy extends ControllerServiceWorkerConnector, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ControllerServiceWorkerConnector, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ControllerServiceWorkerConnector, ControllerServiceWorkerConnector.Proxy> MANAGER = ControllerServiceWorkerConnector_Internal.MANAGER;

@@ -22,7 +22,7 @@ public class SimpleConfirmInfoBarBuilder {
     /**
      * Listens for when users interact with an infobar.
      */
-    public static interface Listener {
+    public interface Listener {
 
         /**
          * Called when the infobar was dismissed.
@@ -92,12 +92,12 @@ public class SimpleConfirmInfoBarBuilder {
 
     @CalledByNative
     private static boolean onInfoBarButtonClicked(Listener listener, boolean isPrimary) {
-        return listener == null ? false : listener.onInfoBarButtonClicked(isPrimary);
+        return listener != null && listener.onInfoBarButtonClicked(isPrimary);
     }
 
     @CalledByNative
     private static boolean onInfoBarLinkClicked(Listener listener) {
-        return listener == null ? false : listener.onInfoBarLinkClicked();
+        return listener != null && listener.onInfoBarLinkClicked();
     }
 
     private static native void nativeCreate(Tab tab, int infobarTypeIdentifier, Bitmap drawable,

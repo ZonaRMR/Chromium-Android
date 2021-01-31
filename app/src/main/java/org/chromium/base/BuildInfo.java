@@ -50,7 +50,7 @@ public class BuildInfo {
     /** Product version as stored in Android resources. */
     public final String resourcesVersion;
 
-    private static class Holder { private static BuildInfo sInstance = new BuildInfo(); }
+    private static class Holder { private static final BuildInfo sInstance = new BuildInfo(); }
 
     @CalledByNative
     private static String[] getAll() {

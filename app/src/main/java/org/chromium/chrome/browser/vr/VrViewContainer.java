@@ -23,7 +23,7 @@ import org.chromium.base.TraceEvent;
  */
 public class VrViewContainer extends FrameLayout {
     private Surface mSurface;
-    private OnPreDrawListener mPredrawListener;
+    private final OnPreDrawListener mPredrawListener;
 
     /**
      * See {@link FrameLayout#FrameLayout(Context)}.

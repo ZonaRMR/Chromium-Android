@@ -22,12 +22,12 @@ import java.util.Locale;
  *  It is also used inside chrome/android/java/src/org/chromium/chrome/browser/photo_picker.
  */
 public class MimeTypeFilter implements FileFilter {
-    private HashSet<String> mExtensions = new HashSet<>();
-    private HashSet<String> mMimeTypes = new HashSet<>();
-    private HashSet<String> mMimeSupertypes = new HashSet<>();
-    private MimeTypeMap mMimeTypeMap;
+    private final HashSet<String> mExtensions = new HashSet<>();
+    private final HashSet<String> mMimeTypes = new HashSet<>();
+    private final HashSet<String> mMimeSupertypes = new HashSet<>();
+    private final MimeTypeMap mMimeTypeMap;
     private boolean mAcceptAllMimeTypes;
-    private boolean mAcceptDirectory;
+    private final boolean mAcceptDirectory;
 
     /**
      * Contructs a MimeTypeFilter object.
@@ -70,10 +70,8 @@ public class MimeTypeFilter implements FileFilter {
         }
 
         if (mimeType != null) {
-            if (mAcceptAllMimeTypes || mMimeTypes.contains(mimeType)
-                    || mMimeSupertypes.contains(getMimeSupertype(mimeType))) {
-                return true;
-            }
+            return mAcceptAllMimeTypes || mMimeTypes.contains(mimeType)
+                    || mMimeSupertypes.contains(getMimeSupertype(mimeType));
         }
         return false;
     }

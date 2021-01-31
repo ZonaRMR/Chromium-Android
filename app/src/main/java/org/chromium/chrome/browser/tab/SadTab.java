@@ -63,7 +63,7 @@ public class SadTab extends EmptyTabObserver implements UserData {
     public static boolean isShowing(Tab tab) {
         if (tab == null || !tab.isInitialized()) return false;
         SadTab sadTab = get(tab);
-        return sadTab != null ? sadTab.isShowing() : false;
+        return sadTab != null && sadTab.isShowing();
     }
 
     @VisibleForTesting
@@ -181,18 +181,18 @@ public class SadTab extends EmptyTabObserver implements UserData {
                 (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View sadTabView = inflater.inflate(R.layout.sad_tab, null);
 
-        TextView titleText = (TextView) sadTabView.findViewById(R.id.sad_tab_title);
+        TextView titleText = sadTabView.findViewById(R.id.sad_tab_title);
         int titleTextId =
                 showSendFeedbackView ? R.string.sad_tab_reload_title : R.string.sad_tab_title;
         titleText.setText(titleTextId);
 
         if (showSendFeedbackView) intializeSuggestionsViews(context, sadTabView, isIncognito);
 
-        TextView messageText = (TextView) sadTabView.findViewById(R.id.sad_tab_message);
+        TextView messageText = sadTabView.findViewById(R.id.sad_tab_message);
         messageText.setText(getHelpMessage(context, suggestionAction, showSendFeedbackView));
         messageText.setMovementMethod(LinkMovementMethod.getInstance());
 
-        Button button = (Button) sadTabView.findViewById(R.id.sad_tab_button);
+        Button button = sadTabView.findViewById(R.id.sad_tab_button);
         int buttonTextId = showSendFeedbackView ? R.string.sad_tab_send_feedback_label
                                                 : R.string.sad_tab_reload_label;
         button.setText(buttonTextId);
@@ -244,11 +244,11 @@ public class SadTab extends EmptyTabObserver implements UserData {
     private static void intializeSuggestionsViews(
             Context context, View sadTabView, boolean isIncognito) {
         TextView suggestionsTitle =
-                (TextView) sadTabView.findViewById(R.id.sad_tab_suggestions_title);
+                sadTabView.findViewById(R.id.sad_tab_suggestions_title);
         suggestionsTitle.setVisibility(View.VISIBLE);
         suggestionsTitle.setText(R.string.sad_tab_reload_try);
 
-        TextView suggestions = (TextView) sadTabView.findViewById(R.id.sad_tab_suggestions);
+        TextView suggestions = sadTabView.findViewById(R.id.sad_tab_suggestions);
         suggestions.setVisibility(View.VISIBLE);
 
         SpannableStringBuilder spannableString = new SpannableStringBuilder();

@@ -21,7 +21,7 @@ public final class SensorInitParams extends org.chromium.mojo.bindings.Struct {
     private static final org.chromium.mojo.bindings.DataHeader DEFAULT_STRUCT_INFO = VERSION_ARRAY[0];
 
     
-    public static final long READ_BUFFER_SIZE_FOR_TESTS = (long) 48L;
+    public static final long READ_BUFFER_SIZE_FOR_TESTS = 48L;
 
     public Sensor sensor;
     public org.chromium.mojo.bindings.InterfaceRequest<SensorClient> clientRequest;

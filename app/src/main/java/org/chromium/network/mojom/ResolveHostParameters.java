@@ -31,8 +31,8 @@ public final class ResolveHostParameters extends org.chromium.mojo.bindings.Stru
 
         public static final int MULTICAST_DNS = DNS + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (3);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 3;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -68,13 +68,13 @@ public final class ResolveHostParameters extends org.chromium.mojo.bindings.Stru
 
     private ResolveHostParameters(int version) {
         super(STRUCT_SIZE, version);
-        this.dnsQueryType = (int) DnsQueryType.UNSPECIFIED;
-        this.initialPriority = (int) RequestPriority.LOWEST;
-        this.source = (int) ResolveHostParameters.Source.ANY;
-        this.allowCachedResponse = (boolean) true;
-        this.includeCanonicalName = (boolean) false;
-        this.loopbackOnly = (boolean) false;
-        this.isSpeculative = (boolean) false;
+        this.dnsQueryType = DnsQueryType.UNSPECIFIED;
+        this.initialPriority = RequestPriority.LOWEST;
+        this.source = Source.ANY;
+        this.allowCachedResponse = true;
+        this.includeCanonicalName = false;
+        this.loopbackOnly = false;
+        this.isSpeculative = false;
     }
 
     public ResolveHostParameters() {

@@ -58,16 +58,16 @@ public class InstalledAppProviderImpl implements InstalledAppProvider {
      *
      * Abstract to allow for testing.
      */
-    public static interface FrameUrlDelegate {
+    public interface FrameUrlDelegate {
         /**
          * Gets the URL of the current frame. Can return null (if the frame has disappeared).
          */
-        public URI getUrl();
+        URI getUrl();
 
         /**
          * Checks if we're in incognito. If the frame has disappeared this returns true.
          */
-        public boolean isIncognito();
+        boolean isIncognito();
     }
 
     public InstalledAppProviderImpl(FrameUrlDelegate frameUrlDelegate, Context context,

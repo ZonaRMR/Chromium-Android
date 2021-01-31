@@ -38,12 +38,12 @@ public class SelectPopup implements HideablePopup, ViewAndroidDelegate.Container
         /**
          * Shows the popup.
          */
-        public void show();
+        void show();
         /**
          * Hides the popup.
          * @param sendsCancelMessage Sends cancel message before hiding if true.
          */
-        public void hide(boolean sendsCancelMessage);
+        void hide(boolean sendsCancelMessage);
     }
 
     private final WebContentsImpl mWebContents;

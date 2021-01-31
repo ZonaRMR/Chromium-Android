@@ -18,7 +18,7 @@ public interface CookieChangeListener extends org.chromium.mojo.bindings.Interfa
 
 
 
-    public interface Proxy extends CookieChangeListener, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CookieChangeListener, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CookieChangeListener, CookieChangeListener.Proxy> MANAGER = CookieChangeListener_Internal.MANAGER;

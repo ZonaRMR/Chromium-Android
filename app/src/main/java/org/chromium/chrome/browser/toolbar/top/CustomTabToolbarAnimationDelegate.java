@@ -40,7 +40,7 @@ class CustomTabToolbarAnimationDelegate {
 
     private TextView mUrlBar;
     private TextView mTitleBar;
-    private int mSecurityButtonWidth;
+    private final int mSecurityButtonWidth;
     // A flag controlling whether the animation has run before.
     private boolean mShouldRunTitleAnimation;
 

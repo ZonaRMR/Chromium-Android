@@ -26,8 +26,8 @@ public final class PresentationErrorType {
 
     public static final int UNKNOWN = PREVIOUS_START_IN_PROGRESS + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (4);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 4;
 
     private static final boolean IS_EXTENSIBLE = false;
 

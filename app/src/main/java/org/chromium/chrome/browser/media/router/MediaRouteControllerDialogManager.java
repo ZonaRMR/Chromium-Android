@@ -91,7 +91,7 @@ public class MediaRouteControllerDialogManager extends BaseMediaRouteDialogManag
             mManager.androidMediaRouter().removeCallback(mCallback);
             mManager.mDialogFragment = null;
         }
-    };
+    }
 
     @Override
     protected DialogFragment openDialogInternal(FragmentManager fm) {

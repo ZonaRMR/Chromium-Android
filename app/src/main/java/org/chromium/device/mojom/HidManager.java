@@ -18,7 +18,7 @@ public interface HidManager extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends HidManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends HidManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<HidManager, HidManager.Proxy> MANAGER = HidManager_Internal.MANAGER;

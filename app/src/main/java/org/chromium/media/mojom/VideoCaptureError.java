@@ -246,8 +246,8 @@ public final class VideoCaptureError {
 
     public static final int CROS_HAL_V3_DEVICE_DELEGATE_FAILED_TO_FLUSH = ANDROID_API2_ERROR_CONFIGURING_CAMERA + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (114);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 114;
 
     private static final boolean IS_EXTENSIBLE = false;
 

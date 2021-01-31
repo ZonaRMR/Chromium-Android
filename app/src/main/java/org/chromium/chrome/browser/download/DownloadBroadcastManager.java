@@ -325,7 +325,7 @@ public class DownloadBroadcastManager extends Service {
      * @param intent Intent from the android DownloadManager.
      */
     private void openDownload(Context context, Intent intent, ContentId contentId) {
-        long ids[] =
+        long[] ids =
                 intent.getLongArrayExtra(DownloadManager.EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS);
         if (ids == null || ids.length == 0) {
             DownloadManagerService.openDownloadsPage(context);

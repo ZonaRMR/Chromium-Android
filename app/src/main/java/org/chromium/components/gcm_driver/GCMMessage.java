@@ -245,10 +245,10 @@ public class GCMMessage {
     }
 
     private interface Reader<T> {
-        public boolean hasKey(T in, String key);
-        public String readString(T in, String key);
+        boolean hasKey(T in, String key);
+        String readString(T in, String key);
         @Nullable
-        public String[] readStringArray(T in, String key);
+        String[] readStringArray(T in, String key);
     }
 
     private static class BundleReader implements Reader<Bundle> {
@@ -297,9 +297,9 @@ public class GCMMessage {
     }
 
     private interface Writer<T> {
-        public T createOutputObject();
-        public void writeString(T out, String key, String value);
-        public void writeStringArray(T out, String key, String[] value);
+        T createOutputObject();
+        void writeString(T out, String key, String value);
+        void writeStringArray(T out, String key, String[] value);
     }
 
     private class BundleWriter implements Writer<Bundle> {

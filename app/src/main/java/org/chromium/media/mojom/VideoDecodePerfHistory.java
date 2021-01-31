@@ -18,7 +18,7 @@ public interface VideoDecodePerfHistory extends org.chromium.mojo.bindings.Inter
 
 
 
-    public interface Proxy extends VideoDecodePerfHistory, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends VideoDecodePerfHistory, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<VideoDecodePerfHistory, VideoDecodePerfHistory.Proxy> MANAGER = VideoDecodePerfHistory_Internal.MANAGER;

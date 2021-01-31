@@ -35,7 +35,7 @@ public class SysUtils {
     private static Boolean sLowEndDevice;
     private static Integer sAmountOfPhysicalMemoryKB;
 
-    private static CachedMetrics.BooleanHistogramSample sLowEndMatches =
+    private static final CachedMetrics.BooleanHistogramSample sLowEndMatches =
             new CachedMetrics.BooleanHistogramSample("Android.SysUtilsLowEndMatches");
 
     private SysUtils() { }

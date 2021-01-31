@@ -29,11 +29,11 @@ public class AssistantDetails {
     private final String mDescription;
     private final String mMid;
     /** Whether user approval is required (i.e., due to changes). */
-    private boolean mUserApprovalRequired;
+    private final boolean mUserApprovalRequired;
     /** Whether the title should be highlighted. */
-    private boolean mHighlightTitle;
+    private final boolean mHighlightTitle;
     /** Whether the date should be highlighted. */
-    private boolean mHighlightDate;
+    private final boolean mHighlightDate;
     /** Whether empty fields should have the animated placeholder background. */
     private final boolean mShowPlaceholdersForEmptyFields;
     /**

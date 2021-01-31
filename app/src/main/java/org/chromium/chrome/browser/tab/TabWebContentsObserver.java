@@ -110,8 +110,8 @@ public class TabWebContentsObserver extends TabWebContentsUserData {
         public void renderProcessGone(boolean processWasOomProtected) {
             Log.i(TAG,
                     "renderProcessGone() for tab id: " + mTab.getId()
-                            + ", oom protected: " + Boolean.toString(processWasOomProtected)
-                            + ", already needs reload: " + Boolean.toString(mTab.needsReload()));
+                            + ", oom protected: " + processWasOomProtected
+                            + ", already needs reload: " + mTab.needsReload());
             // Do nothing for subsequent calls that happen while the tab remains crashed. This
             // can occur when the tab is in the background and it shares the renderer with other
             // tabs. After the renderer crashes, the WebContents of its tabs are still around

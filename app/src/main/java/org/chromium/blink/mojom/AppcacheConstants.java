@@ -17,7 +17,7 @@ public final class AppcacheConstants {
 
 
     
-    public static final long APP_CACHE_NO_HOST_ID = (long) 0L;
+    public static final long APP_CACHE_NO_HOST_ID = 0L;
 
 
 

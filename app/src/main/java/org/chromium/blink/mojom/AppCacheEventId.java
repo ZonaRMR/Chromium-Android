@@ -32,8 +32,8 @@ public final class AppCacheEventId {
 
     public static final int APPCACHE_OBSOLETE_EVENT = APPCACHE_CACHED_EVENT + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (7);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 7;
 
     private static final boolean IS_EXTENSIBLE = false;
 

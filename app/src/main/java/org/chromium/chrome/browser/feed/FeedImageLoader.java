@@ -41,7 +41,7 @@ public class FeedImageLoader implements ImageLoaderApi {
     private static final String OVERLAY_IMAGE_DIRECTION_START = "start";
     private static final String OVERLAY_IMAGE_DIRECTION_END = "end";
 
-    private Context mActivityContext;
+    private final Context mActivityContext;
     private CachedImageFetcher mCachedImageFetcher;
 
     /**

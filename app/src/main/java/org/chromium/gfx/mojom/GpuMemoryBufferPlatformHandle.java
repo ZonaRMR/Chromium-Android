@@ -19,7 +19,8 @@ public final class GpuMemoryBufferPlatformHandle extends org.chromium.mojo.bindi
     public static final class Tag {
         public static final int SharedMemoryHandle = 0;
         public static final int AndroidHardwareBufferHandle = 1;
-    };
+    }
+
     private org.chromium.mojo_base.mojom.UnsafeSharedMemoryRegion mSharedMemoryHandle;
     private AHardwareBufferHandle mAndroidHardwareBufferHandle;
 

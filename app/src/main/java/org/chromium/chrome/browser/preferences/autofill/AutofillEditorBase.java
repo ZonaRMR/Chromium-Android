@@ -69,14 +69,14 @@ public abstract class AutofillEditorBase
 
         // Hide the top shadow on the ScrollView because the toolbar draws one.
         FadingEdgeScrollView scrollView =
-                (FadingEdgeScrollView) baseView.findViewById(R.id.scroll_view);
+                baseView.findViewById(R.id.scroll_view);
         scrollView.setEdgeVisibility(
                 FadingEdgeScrollView.EdgeType.NONE, FadingEdgeScrollView.EdgeType.FADING);
         scrollView.getViewTreeObserver().addOnScrollChangedListener(
                 PreferenceUtils.getShowShadowOnScrollListener(
                         scrollView, baseView.findViewById(R.id.shadow)));
         // Inflate the editor and buttons into the "content" LinearLayout.
-        LinearLayout contentLayout = (LinearLayout) scrollView.findViewById(R.id.content);
+        LinearLayout contentLayout = scrollView.findViewById(R.id.content);
         inflater.inflate(getLayoutId(), contentLayout, true);
         inflater.inflate(R.layout.autofill_editor_base_buttons, contentLayout, true);
 
@@ -125,7 +125,7 @@ public abstract class AutofillEditorBase
 
     /** Initializes the buttons within the layout. */
     protected void initializeButtons(View layout) {
-        Button button = (Button) layout.findViewById(R.id.button_secondary);
+        Button button = layout.findViewById(R.id.button_secondary);
         button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -133,7 +133,7 @@ public abstract class AutofillEditorBase
                 }
             });
 
-        button = (Button) layout.findViewById(R.id.button_primary);
+        button = layout.findViewById(R.id.button_primary);
         button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -167,12 +167,9 @@ public class ChildProcessLauncher {
                 setupConnection();
                 return true;
             }
-            if (!allocateAndSetupConnection(
-                        serviceCallback, setupConnection, queueIfNoFreeConnection)
-                    && !queueIfNoFreeConnection) {
-                return false;
-            }
-            return true;
+            return allocateAndSetupConnection(
+                    serviceCallback, setupConnection, queueIfNoFreeConnection)
+                    || queueIfNoFreeConnection;
         } finally {
             TraceEvent.end("ChildProcessLauncher.start");
         }

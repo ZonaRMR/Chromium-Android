@@ -38,7 +38,7 @@ public class PickerBitmapView extends SelectableItemView<PickerBitmap> {
     private static final int IMAGE_FADE_IN_DURATION = 200;
 
     // Our context.
-    private Context mContext;
+    private final Context mContext;
 
     // Our parent category.
     private PickerCategoryView mCategoryView;
@@ -88,13 +88,13 @@ public class PickerBitmapView extends SelectableItemView<PickerBitmap> {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mIconView = (ImageView) findViewById(R.id.bitmap_view);
-        mScrim = (ImageView) findViewById(R.id.scrim);
-        mSelectedView = (ImageView) findViewById(R.id.selected);
-        mUnselectedView = (ImageView) findViewById(R.id.unselected);
+        mIconView = findViewById(R.id.bitmap_view);
+        mScrim = findViewById(R.id.scrim);
+        mSelectedView = findViewById(R.id.selected);
+        mUnselectedView = findViewById(R.id.unselected);
         mSpecialTile = findViewById(R.id.special_tile);
-        mSpecialTileIcon = (ImageView) findViewById(R.id.special_tile_icon);
-        mSpecialTileLabel = (TextView) findViewById(R.id.special_tile_label);
+        mSpecialTileIcon = findViewById(R.id.special_tile_icon);
+        mSpecialTileLabel = findViewById(R.id.special_tile_label);
     }
 
     @Override

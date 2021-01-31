@@ -116,7 +116,7 @@ public class AnchoredPopupWindow implements OnTouchListener, RectProvider.Observ
 
     // Pass through for the internal PopupWindow.  This class needs to intercept these for API
     // purposes, but they are still useful to callers.
-    private ObserverList<OnDismissListener> mDismissListeners = new ObserverList<>();
+    private final ObserverList<OnDismissListener> mDismissListeners = new ObserverList<>();
     private OnTouchListener mTouchListener;
     private LayoutObserver mLayoutObserver;
 

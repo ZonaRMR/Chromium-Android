@@ -63,15 +63,15 @@ public class IncognitoNewTabPageViewMD extends IncognitoNewTabPageView {
         populateBulletpoints(R.id.new_tab_incognito_features, R.string.new_tab_otr_not_saved);
         populateBulletpoints(R.id.new_tab_incognito_warning, R.string.new_tab_otr_visible);
 
-        mContainer = (LinearLayout) findViewById(R.id.new_tab_incognito_container);
-        mHeader = (TextView) findViewById(R.id.new_tab_incognito_title);
-        mSubtitle = (TextView) findViewById(R.id.new_tab_incognito_subtitle);
-        mLearnMore = (TextView) findViewById(R.id.learn_more);
+        mContainer = findViewById(R.id.new_tab_incognito_container);
+        mHeader = findViewById(R.id.new_tab_incognito_title);
+        mSubtitle = findViewById(R.id.new_tab_incognito_subtitle);
+        mLearnMore = findViewById(R.id.learn_more);
         mParagraphs =
-                new TextView[] {mSubtitle, (TextView) findViewById(R.id.new_tab_incognito_features),
-                        (TextView) findViewById(R.id.new_tab_incognito_warning), mLearnMore};
+                new TextView[] {mSubtitle, findViewById(R.id.new_tab_incognito_features),
+                        findViewById(R.id.new_tab_incognito_warning), mLearnMore};
         mBulletpointsContainer =
-                (LinearLayout) findViewById(R.id.new_tab_incognito_bulletpoints_container);
+                findViewById(R.id.new_tab_incognito_bulletpoints_container);
 
         adjustView();
     }
@@ -104,7 +104,7 @@ public class IncognitoNewTabPageViewMD extends IncognitoNewTabPageView {
      * Populates |element| with |content|.
      */
     private void populateBulletpoints(@IdRes int element, @StringRes int content) {
-        TextView view = (TextView) findViewById(element);
+        TextView view = findViewById(element);
         String text = mContext.getResources().getString(content);
 
         // TODO(msramek): Unfortunately, our strings are missing the closing "</li>" tag, which
@@ -228,7 +228,7 @@ public class IncognitoNewTabPageViewMD extends IncognitoNewTabPageView {
             sizeDp = mHeightDp <= 480 ? 72 : 120;
         }
 
-        ImageView icon = (ImageView) findViewById(R.id.new_tab_incognito_icon);
+        ImageView icon = findViewById(R.id.new_tab_incognito_icon);
         icon.getLayoutParams().width = dpToPx(mContext, sizeDp);
         icon.getLayoutParams().height = dpToPx(mContext, sizeDp);
     }

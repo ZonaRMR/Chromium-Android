@@ -32,8 +32,8 @@ public final class UrlRequestReferrerPolicy {
 
     public static final int NO_REFERRER = ORIGIN_CLEAR_ON_TRANSITION_FROM_SECURE_TO_INSECURE + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (7);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 7;
 
     private static final boolean IS_EXTENSIBLE = false;
 

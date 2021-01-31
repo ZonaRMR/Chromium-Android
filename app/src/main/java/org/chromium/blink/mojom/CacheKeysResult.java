@@ -19,7 +19,8 @@ public final class CacheKeysResult extends org.chromium.mojo.bindings.Union {
     public static final class Tag {
         public static final int Status = 0;
         public static final int Keys = 1;
-    };
+    }
+
     private int mStatus;
     private FetchApiRequest[] mKeys;
 

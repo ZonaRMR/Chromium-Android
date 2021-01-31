@@ -175,8 +175,8 @@ public class BrowserActionsIntent {
      */
     public static final class Builder {
         private final Intent mIntent = new Intent(BrowserActionsIntent.ACTION_BROWSER_ACTIONS_OPEN);
-        private Context mContext;
-        private Uri mUri;
+        private final Context mContext;
+        private final Uri mUri;
         @BrowserActionsUrlType
         private int mType;
         private ArrayList<Bundle> mMenuItems = null;

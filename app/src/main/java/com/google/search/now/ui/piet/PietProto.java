@@ -230,7 +230,7 @@ public final class PietProto {
     com.google.protobuf.ByteString
         getVedBytes();
 
-    public com.google.search.now.ui.piet.PietProto.Frame.FrameStyleScopeCase getFrameStyleScopeCase();
+    com.google.search.now.ui.piet.PietProto.Frame.FrameStyleScopeCase getFrameStyleScopeCase();
   }
   /**
    * <pre>
@@ -261,7 +261,7 @@ public final class PietProto {
       STYLESHEET(3),
       FRAMESTYLESCOPE_NOT_SET(0);
       private final int value;
-      private FrameStyleScopeCase(int value) {
+      FrameStyleScopeCase(int value) {
         this.value = value;
       }
       /**
@@ -283,9 +283,9 @@ public final class PietProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public FrameStyleScopeCase
+      public FrameStyleScopeCase
     getFrameStyleScopeCase() {
       return FrameStyleScopeCase.forNumber(
           frameStyleScopeCase_);
@@ -3958,7 +3958,7 @@ public final class PietProto {
      */
     int getConditionsCount();
 
-    public com.google.search.now.ui.piet.PietProto.Template.TemplateStylesheetCase getTemplateStylesheetCase();
+    com.google.search.now.ui.piet.PietProto.Template.TemplateStylesheetCase getTemplateStylesheetCase();
   }
   /**
    * <pre>
@@ -3988,7 +3988,7 @@ public final class PietProto {
       STYLESHEET(3),
       TEMPLATESTYLESHEET_NOT_SET(0);
       private final int value;
-      private TemplateStylesheetCase(int value) {
+      TemplateStylesheetCase(int value) {
         this.value = value;
       }
       /**
@@ -4010,9 +4010,9 @@ public final class PietProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public TemplateStylesheetCase
+      public TemplateStylesheetCase
     getTemplateStylesheetCase() {
       return TemplateStylesheetCase.forNumber(
           templateStylesheetCase_);

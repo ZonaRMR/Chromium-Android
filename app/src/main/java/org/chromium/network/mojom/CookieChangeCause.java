@@ -30,8 +30,8 @@ public final class CookieChangeCause {
 
     public static final int EXPIRED_OVERWRITE = EVICTED + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (6);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 6;
 
     private static final boolean IS_EXTENSIBLE = false;
 

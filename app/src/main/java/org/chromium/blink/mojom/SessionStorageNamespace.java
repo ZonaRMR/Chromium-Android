@@ -18,7 +18,7 @@ public interface SessionStorageNamespace extends org.chromium.mojo.bindings.Inte
 
 
 
-    public interface Proxy extends SessionStorageNamespace, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends SessionStorageNamespace, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<SessionStorageNamespace, SessionStorageNamespace.Proxy> MANAGER = SessionStorageNamespace_Internal.MANAGER;

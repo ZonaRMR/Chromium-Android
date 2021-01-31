@@ -95,11 +95,8 @@ public class ShareMenuActionHandler {
         if (webContents.getMainFrame() == null) return false;
         String url = currentTab.getUrl();
         if (TextUtils.isEmpty(url)) return false;
-        if (currentTab.isShowingErrorPage() || currentTab.isShowingInterstitialPage()
-                || SadTab.isShowing(currentTab)) {
-            return false;
-        }
-        return true;
+        return !currentTab.isShowingErrorPage() && !currentTab.isShowingInterstitialPage()
+                && !SadTab.isShowing(currentTab);
     }
 
     @VisibleForTesting

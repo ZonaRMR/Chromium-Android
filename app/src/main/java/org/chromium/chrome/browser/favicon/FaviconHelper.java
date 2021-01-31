@@ -44,7 +44,7 @@ public class FaviconHelper {
          * @param iconUrl Favicon image's icon url.
          */
         @CalledByNative("FaviconImageCallback")
-        public void onFaviconAvailable(Bitmap image, String iconUrl);
+        void onFaviconAvailable(Bitmap image, String iconUrl);
     }
 
     /**
@@ -57,7 +57,7 @@ public class FaviconHelper {
          *         favicon was already there or the download failed.
          */
         @CalledByNative("IconAvailabilityCallback")
-        public void onIconAvailabilityChecked(boolean newlyAvailable);
+        void onIconAvailabilityChecked(boolean newlyAvailable);
     }
 
     /**

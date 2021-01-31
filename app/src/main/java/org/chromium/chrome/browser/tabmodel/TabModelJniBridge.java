@@ -33,7 +33,7 @@ public abstract class TabModelJniBridge implements TabModel {
      * Whether this tab model is part of a tabbed activity.
      * This is consumed by Sync as part of restoring sync data from a previous session.
      */
-    private boolean mIsTabbedActivityForSync;
+    private final boolean mIsTabbedActivityForSync;
 
     public TabModelJniBridge(boolean isIncognito, boolean isTabbedActivity) {
         mIsIncognito = isIncognito;

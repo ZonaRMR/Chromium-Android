@@ -18,7 +18,7 @@ public interface CookieManager extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends CookieManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CookieManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CookieManager, CookieManager.Proxy> MANAGER = CookieManager_Internal.MANAGER;

@@ -27,7 +27,7 @@ public final class AppCacheErrorDetails extends org.chromium.mojo.bindings.Struc
 
     private AppCacheErrorDetails(int version) {
         super(STRUCT_SIZE, version);
-        this.reason = (int) AppCacheErrorReason.APPCACHE_UNKNOWN_ERROR;
+        this.reason = AppCacheErrorReason.APPCACHE_UNKNOWN_ERROR;
     }
 
     public AppCacheErrorDetails() {

@@ -240,7 +240,7 @@ public class OMADownloadHandler extends BroadcastReceiver
          * @return a String representing the download entry.
          */
         String generateSharedPrefsString() {
-            return String.valueOf(mDownloadId) + "," + mInstallNotifyURI;
+            return mDownloadId + "," + mInstallNotifyURI;
         }
     }
 
@@ -469,15 +469,15 @@ public class OMADownloadHandler extends BroadcastReceiver
                 (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v = inflater.inflate(R.layout.confirm_oma_download, null);
 
-        TextView textView = (TextView) v.findViewById(R.id.oma_download_name);
+        TextView textView = v.findViewById(R.id.oma_download_name);
         textView.setText(omaInfo.getValue(OMA_NAME));
-        textView = (TextView) v.findViewById(R.id.oma_download_vendor);
+        textView = v.findViewById(R.id.oma_download_vendor);
         textView.setText(omaInfo.getValue(OMA_VENDOR));
-        textView = (TextView) v.findViewById(R.id.oma_download_size);
+        textView = v.findViewById(R.id.oma_download_size);
         textView.setText(omaInfo.getValue(OMA_SIZE));
-        textView = (TextView) v.findViewById(R.id.oma_download_type);
+        textView = v.findViewById(R.id.oma_download_type);
         textView.setText(getOpennableType(mContext.getPackageManager(), omaInfo));
-        textView = (TextView) v.findViewById(R.id.oma_download_description);
+        textView = v.findViewById(R.id.oma_download_description);
         textView.setText(omaInfo.getValue(OMA_DESCRIPTION));
 
         DialogInterface.OnClickListener clickListener = (dialog, which) -> {
@@ -943,10 +943,7 @@ public class OMADownloadHandler extends BroadcastReceiver
                     dos.close();
                 }
                 int responseCode = urlConnection.getResponseCode();
-                if (responseCode == HttpURLConnection.HTTP_OK || responseCode == -1) {
-                    return true;
-                }
-                return false;
+                return responseCode == HttpURLConnection.HTTP_OK || responseCode == -1;
             } catch (MalformedURLException e) {
                 Log.w(TAG, "Invalid notification URL.", e);
             } catch (IOException e) {

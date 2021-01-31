@@ -18,7 +18,7 @@ public interface ServiceWorkerFetchResponseCallback extends org.chromium.mojo.bi
 
 
 
-    public interface Proxy extends ServiceWorkerFetchResponseCallback, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ServiceWorkerFetchResponseCallback, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ServiceWorkerFetchResponseCallback, ServiceWorkerFetchResponseCallback.Proxy> MANAGER = ServiceWorkerFetchResponseCallback_Internal.MANAGER;

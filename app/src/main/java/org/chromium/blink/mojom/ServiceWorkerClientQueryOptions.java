@@ -24,8 +24,8 @@ public final class ServiceWorkerClientQueryOptions extends org.chromium.mojo.bin
 
     private ServiceWorkerClientQueryOptions(int version) {
         super(STRUCT_SIZE, version);
-        this.includeUncontrolled = (boolean) false;
-        this.clientType = (int) ServiceWorkerClientType.WINDOW;
+        this.includeUncontrolled = false;
+        this.clientType = ServiceWorkerClientType.WINDOW;
     }
 
     public ServiceWorkerClientQueryOptions() {

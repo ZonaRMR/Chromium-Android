@@ -18,8 +18,8 @@ public final class PublicKeyCredentialType {
 
     public static final int PUBLIC_KEY = 0;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (0);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 0;
 
     private static final boolean IS_EXTENSIBLE = false;
 

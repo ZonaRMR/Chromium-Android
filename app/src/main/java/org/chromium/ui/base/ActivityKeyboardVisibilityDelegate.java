@@ -20,7 +20,7 @@ import java.lang.ref.WeakReference;
 public class ActivityKeyboardVisibilityDelegate
         extends KeyboardVisibilityDelegate implements View.OnLayoutChangeListener {
     private boolean mIsKeyboardShowing;
-    private WeakReference<Activity> mActivity;
+    private final WeakReference<Activity> mActivity;
 
     /**
      * Creates a new delegate listening to the given activity. If the activity is destroyed, it will

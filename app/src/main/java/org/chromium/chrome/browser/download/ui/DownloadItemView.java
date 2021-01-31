@@ -66,7 +66,7 @@ public class DownloadItemView extends SelectableItemView<DownloadHistoryItemWrap
 
     private DownloadHistoryItemWrapper mItem;
     private int mIconResId;
-    private int mIconSize;
+    private final int mIconSize;
     private Bitmap mThumbnailBitmap;
 
     // Controls common to completed and in-progress downloads.
@@ -124,19 +124,19 @@ public class DownloadItemView extends SelectableItemView<DownloadHistoryItemWrap
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mProgressView = (MaterialProgressBar) findViewById(R.id.download_progress_view);
+        mProgressView = findViewById(R.id.download_progress_view);
 
-        mLayoutContainer = (LinearLayout) findViewById(R.id.layout_container);
+        mLayoutContainer = findViewById(R.id.layout_container);
         mLayoutCompleted = findViewById(R.id.completed_layout);
         mLayoutInProgress = findViewById(R.id.progress_layout);
 
-        mFilenameCompletedView = (TextView) findViewById(R.id.filename_completed_view);
-        mDescriptionCompletedView = (TextView) findViewById(R.id.description_view);
-        mMoreButton = (ListMenuButton) findViewById(R.id.more);
+        mFilenameCompletedView = findViewById(R.id.filename_completed_view);
+        mDescriptionCompletedView = findViewById(R.id.description_view);
+        mMoreButton = findViewById(R.id.more);
 
-        mFilenameInProgressView = (TextView) findViewById(R.id.filename_progress_view);
-        mDownloadStatusView = (TextView) findViewById(R.id.status_view);
-        mDownloadPercentageView = (TextView) findViewById(R.id.percentage_view);
+        mFilenameInProgressView = findViewById(R.id.filename_progress_view);
+        mDownloadStatusView = findViewById(R.id.status_view);
+        mDownloadPercentageView = findViewById(R.id.percentage_view);
 
         mPauseResumeButton = findViewById(R.id.pause_button);
         mCancelButton = findViewById(R.id.cancel_button);
@@ -309,7 +309,7 @@ public class DownloadItemView extends SelectableItemView<DownloadHistoryItemWrap
     @Override
     public void onSelectionStateChange(List<DownloadHistoryItemWrapper> selectedItems) {
         super.onSelectionStateChange(selectedItems);
-        mMoreButton.setClickable(mItem == null ? false : mItem.isInteractive());
+        mMoreButton.setClickable(mItem != null && mItem.isInteractive());
     }
 
     @Override
@@ -322,7 +322,7 @@ public class DownloadItemView extends SelectableItemView<DownloadHistoryItemWrap
 
     @Override
     public boolean onLongClick(View view) {
-        return mItem != null && mItem.isComplete() ? super.onLongClick(view) : true;
+        return mItem == null || !mItem.isComplete() || super.onLongClick(view);
     }
 
     @Override

@@ -37,7 +37,7 @@ public class CastMessageHandler {
     // Sequence number used when no sequence number is required or was initially passed.
     static final int INVALID_SEQUENCE_NUMBER = -1;
 
-    private static final String MEDIA_MESSAGE_TYPES[] = {
+    private static final String[] MEDIA_MESSAGE_TYPES = {
             "PLAY",
             "LOAD",
             "PAUSE",
@@ -53,7 +53,7 @@ public class CastMessageHandler {
             "QUEUE_REORDER",
     };
 
-    private static final String MEDIA_SUPPORTED_COMMANDS[] = {
+    private static final String[] MEDIA_SUPPORTED_COMMANDS = {
             "pause",
             "seek",
             "stream_volume",
@@ -69,15 +69,15 @@ public class CastMessageHandler {
     // but the client isn't aware of namespacing.
     private static Map<String, String> sMediaOverloadedMessageTypes;
 
-    private SparseArray<RequestRecord> mRequests;
-    private ArrayMap<String, Queue<Integer>> mStopRequests;
-    private Queue<RequestRecord> mVolumeRequests;
+    private final SparseArray<RequestRecord> mRequests;
+    private final ArrayMap<String, Queue<Integer>> mStopRequests;
+    private final Queue<RequestRecord> mVolumeRequests;
 
     // The reference to CastSession, only valid after calling {@link onSessionCreated}, and will be
     // reset to null when calling {@link onApplicationStopped}.
     private CastSession mSession;
     private final CastMediaRouteProvider mRouteProvider;
-    private Handler mHandler;
+    private final Handler mHandler;
 
     /**
      * The record for client requests. {@link CastMessageHandler} uses this class to manage the

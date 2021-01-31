@@ -18,7 +18,7 @@ public interface CdmStorage extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public static final class Status {
+    final class Status {
 
 
         public static final int SUCCESS = 0;
@@ -27,8 +27,8 @@ public interface CdmStorage extends org.chromium.mojo.bindings.Interface {
 
         public static final int FAILURE = IN_USE + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -54,7 +54,7 @@ public interface CdmStorage extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public interface Proxy extends CdmStorage, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CdmStorage, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CdmStorage, CdmStorage.Proxy> MANAGER = CdmStorage_Internal.MANAGER;

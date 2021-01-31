@@ -13,21 +13,21 @@ public interface InfoBarView extends InfoBarContainerLayout.Item {
      * Prepares the InfoBar for display and adds InfoBar-specific controls to the layout.
      * @param layout Layout containing all of the controls.
      */
-    public void createContent(InfoBarLayout layout);
+    void createContent(InfoBarLayout layout);
 
     /**
      * Takes some action related to the link being clicked.
      */
-    public void onLinkClicked();
+    void onLinkClicked();
 
     /**
      * Takes some action related to the close button being clicked.
      */
-    public void onCloseButtonClicked();
+    void onCloseButtonClicked();
 
     /**
      * Performs some action related to either the primary or secondary button being pressed.
      * @param isPrimaryButton True if the primary button was clicked, false otherwise.
      */
-    public void onButtonClicked(boolean isPrimaryButton);
+    void onButtonClicked(boolean isPrimaryButton);
 }

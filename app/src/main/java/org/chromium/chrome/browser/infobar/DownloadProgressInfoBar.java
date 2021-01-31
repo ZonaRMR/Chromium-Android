@@ -117,7 +117,7 @@ public class DownloadProgressInfoBar extends InfoBar {
         layout.appendMessageLinkText(mInfo.link);
 
         TextView messageView =
-                (TextView) layout.getMessageLayout().findViewById(R.id.infobar_message);
+                layout.getMessageLayout().findViewById(R.id.infobar_message);
         messageView.setContentDescription(mInfo.accessibilityMessage);
         ViewCompat.setAccessibilityLiveRegion(messageView, View.ACCESSIBILITY_LIVE_REGION_POLITE);
 

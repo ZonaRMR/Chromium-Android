@@ -207,7 +207,7 @@ public final class ErrorsProto {
 
     private final int value;
 
-    private ErrorLevel(int value) {
+    ErrorLevel(int value) {
       this.value = value;
     }
 
@@ -758,7 +758,7 @@ public final class ErrorsProto {
 
     private final int value;
 
-    private ErrorCode(int value) {
+    ErrorCode(int value) {
       this.value = value;
     }
 

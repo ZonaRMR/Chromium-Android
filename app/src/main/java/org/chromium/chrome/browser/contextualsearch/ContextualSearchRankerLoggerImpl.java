@@ -105,7 +105,7 @@ public class ContextualSearchRankerLoggerImpl implements ContextualSearchInterac
     private Map<Integer, Object> mFeaturesLoggedForTesting;
     private Map<Integer, Object> mOutcomesLoggedForTesting;
 
-    private ContextualSearchInteractionPersister mInteractionPersister;
+    private final ContextualSearchInteractionPersister mInteractionPersister;
 
     private long mEventIdToPersist;
 
@@ -271,7 +271,7 @@ public class ContextualSearchRankerLoggerImpl implements ContextualSearchInterac
         } else if (value instanceof Character) {
             logToNative(feature, Character.getNumericValue((char) value));
         } else {
-            assert false : "Could not log feature to Ranker: " + String.valueOf(feature)
+            assert false : "Could not log feature to Ranker: " + feature
                            + " of class "
                            + value.getClass();
         }

@@ -163,7 +163,7 @@ public class InsetObserverView extends View {
     @TargetApi(Build.VERSION_CODES.O)
     @VisibleForTesting
     protected static class InsetObserverViewApi28 extends InsetObserverViewApi21 {
-        private Rect mCurrentSafeArea = new Rect();
+        private final Rect mCurrentSafeArea = new Rect();
 
         /**
          * Creates an instance of {@link InsetObserverView} for Android versions P and above.

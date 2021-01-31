@@ -18,8 +18,9 @@ import java.util.concurrent.TimeUnit;
  * customtabs package.
  */
 public class WebappCustomTabTimeSpentLogger {
-    private long mStartTime;
-    private @LaunchSourceType int mActivityType;
+    private final long mStartTime;
+    private @LaunchSourceType
+    final int mActivityType;
 
     private WebappCustomTabTimeSpentLogger(@LaunchSourceType int activityType) {
         mActivityType = activityType;

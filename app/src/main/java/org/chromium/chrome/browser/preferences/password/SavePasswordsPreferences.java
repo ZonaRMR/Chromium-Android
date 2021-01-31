@@ -92,7 +92,7 @@ public class SavePasswordsPreferences
     /**
      * For controlling the UX flow of exporting passwords.
      */
-    private ExportFlow mExportFlow = new ExportFlow();
+    private final ExportFlow mExportFlow = new ExportFlow();
 
     public ExportFlow getExportFlowForTesting() {
         return mExportFlow;

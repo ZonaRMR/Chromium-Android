@@ -100,12 +100,8 @@ public class ItemChooserDialog {
             // On Android O and above, Drawable#getConstantState() always returns a different value,
             // so it does not make sense to compare it.
             // TODO(crbug.com/773043): Find a way to compare the icons.
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O && mIcon != null
-                    && !mIcon.getConstantState().equals(icon.getConstantState())) {
-                return false;
-            }
-
-            return true;
+            return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O || mIcon == null
+                    || mIcon.getConstantState().equals(icon.getConstantState());
         }
     }
 
@@ -148,12 +144,12 @@ public class ItemChooserDialog {
      * Item holder for performance boost.
      */
     private static class ViewHolder {
-        private TextView mTextView;
-        private ImageView mImageView;
+        private final TextView mTextView;
+        private final ImageView mImageView;
 
         public ViewHolder(View view) {
-            mImageView = (ImageView) view.findViewById(R.id.icon);
-            mTextView = (TextView) view.findViewById(R.id.description);
+            mImageView = view.findViewById(R.id.icon);
+            mTextView = view.findViewById(R.id.description);
         }
     }
 
@@ -182,13 +178,13 @@ public class ItemChooserDialog {
         private int mSelectedItem = ListView.INVALID_POSITION;
 
         // A set of keys that are marked as disabled in the dialog.
-        private Set<String> mDisabledEntries = new HashSet<String>();
+        private final Set<String> mDisabledEntries = new HashSet<String>();
 
         // Item descriptions are counted in a map.
-        private Map<String, Integer> mItemDescriptionMap = new HashMap<>();
+        private final Map<String, Integer> mItemDescriptionMap = new HashMap<>();
 
         // Map of keys to items so that we can access the items in O(1).
-        private Map<String, ItemChooserRow> mKeyToItemMap = new HashMap<>();
+        private final Map<String, ItemChooserRow> mKeyToItemMap = new HashMap<>();
 
         // True when there is at least one row with an icon.
         private boolean mHasIcon;
@@ -418,24 +414,24 @@ public class ItemChooserDialog {
         }
     }
 
-    private Activity mActivity;
+    private final Activity mActivity;
 
     // The dialog this class encapsulates.
     private Dialog mDialog;
 
     // The callback to notify when the user selected an item.
-    private ItemSelectedCallback mItemSelectedCallback;
+    private final ItemSelectedCallback mItemSelectedCallback;
 
     // Individual UI elements.
-    private TextViewWithClickableSpans mTitle;
-    private TextViewWithClickableSpans mEmptyMessage;
-    private ProgressBar mProgressBar;
-    private ListView mListView;
-    private TextView mStatus;
-    private Button mConfirmButton;
+    private final TextViewWithClickableSpans mTitle;
+    private final TextViewWithClickableSpans mEmptyMessage;
+    private final ProgressBar mProgressBar;
+    private final ListView mListView;
+    private final TextView mStatus;
+    private final Button mConfirmButton;
 
     // The labels to display in the dialog.
-    private ItemChooserLabels mLabels;
+    private final ItemChooserLabels mLabels;
 
     // The adapter containing the items to show in the dialog.
     private ItemAdapter mItemAdapter;
@@ -469,13 +465,13 @@ public class ItemChooserDialog {
         LinearLayout dialogContainer = (LinearLayout) LayoutInflater.from(mActivity).inflate(
                 R.layout.item_chooser_dialog, null);
 
-        mListView = (ListView) dialogContainer.findViewById(R.id.items);
-        mProgressBar = (ProgressBar) dialogContainer.findViewById(R.id.progress);
-        mStatus = (TextView) dialogContainer.findViewById(R.id.status);
-        mTitle = (TextViewWithClickableSpans) dialogContainer.findViewById(
+        mListView = dialogContainer.findViewById(R.id.items);
+        mProgressBar = dialogContainer.findViewById(R.id.progress);
+        mStatus = dialogContainer.findViewById(R.id.status);
+        mTitle = dialogContainer.findViewById(
                 R.id.dialog_title);
         mEmptyMessage =
-                (TextViewWithClickableSpans) dialogContainer.findViewById(R.id.not_found_message);
+                dialogContainer.findViewById(R.id.not_found_message);
 
         mTitle.setText(labels.title);
         mTitle.setMovementMethod(LinkMovementMethod.getInstance());
@@ -483,7 +479,7 @@ public class ItemChooserDialog {
         mEmptyMessage.setMovementMethod(LinkMovementMethod.getInstance());
         mStatus.setMovementMethod(LinkMovementMethod.getInstance());
 
-        mConfirmButton = (Button) dialogContainer.findViewById(R.id.positive);
+        mConfirmButton = dialogContainer.findViewById(R.id.positive);
         mConfirmButton.setText(labels.positiveButton);
         mConfirmButton.setEnabled(false);
         mConfirmButton.setOnClickListener(v -> {

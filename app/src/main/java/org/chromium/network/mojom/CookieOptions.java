@@ -26,9 +26,9 @@ public final class CookieOptions extends org.chromium.mojo.bindings.Struct {
 
     private CookieOptions(int version) {
         super(STRUCT_SIZE, version);
-        this.excludeHttponly = (boolean) true;
-        this.cookieSameSiteFilter = (int) CookieSameSiteFilter.DO_NOT_INCLUDE;
-        this.updateAccessTime = (boolean) true;
+        this.excludeHttponly = true;
+        this.cookieSameSiteFilter = CookieSameSiteFilter.DO_NOT_INCLUDE;
+        this.updateAccessTime = true;
     }
 
     public CookieOptions() {

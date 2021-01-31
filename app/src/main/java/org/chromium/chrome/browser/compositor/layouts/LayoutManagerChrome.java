@@ -218,7 +218,7 @@ public class LayoutManagerChrome extends LayoutManager implements OverviewModeBe
             boolean showToolbar = true;
             if (mEnableAnimations && layoutBeingHidden == mOverviewLayout) {
                 final LayoutTab tab = layoutBeingHidden.getLayoutTab(nextTabId);
-                showToolbar = tab != null ? !tab.showToolbar() : true;
+                showToolbar = tab == null || !tab.showToolbar();
             }
 
             boolean creatingNtp = layoutBeingHidden == mOverviewLayout && mCreatingNtp;

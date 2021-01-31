@@ -75,9 +75,7 @@ public final class SuggestionsConfig {
     }
 
     private static boolean useCondensedTileLayout(boolean isScreenSmall) {
-        if (isScreenSmall) return true;
-
-        return false;
+        return isScreenSmall;
     }
 
     /**

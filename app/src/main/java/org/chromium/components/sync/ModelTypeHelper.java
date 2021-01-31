@@ -29,7 +29,7 @@ public class ModelTypeHelper {
      * Implement this class to override the behavior of
      * {@link ModelTypeHelper#toNotificationType()} for tests.
      */
-    public interface TestDelegate { public String toNotificationType(int modelType); }
+    public interface TestDelegate { String toNotificationType(int modelType); }
 
     private static final String TAG = "ModelTypeHelper";
 

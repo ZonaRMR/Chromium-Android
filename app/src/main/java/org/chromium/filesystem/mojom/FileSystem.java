@@ -18,7 +18,7 @@ public interface FileSystem extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends FileSystem, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FileSystem, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FileSystem, FileSystem.Proxy> MANAGER = FileSystem_Internal.MANAGER;

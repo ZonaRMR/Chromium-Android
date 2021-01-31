@@ -43,7 +43,7 @@ public  final class ActionProto extends
     SET_ATTRIBUTE(37),
     ACTIONINFO_NOT_SET(0);
     private final int value;
-    private ActionInfoCase(int value) {
+    ActionInfoCase(int value) {
       this.value = value;
     }
     /**
@@ -81,7 +81,7 @@ public  final class ActionProto extends
     public int getNumber() {
       return this.value;
     }
-  };
+  }
 
   public ActionInfoCase
   getActionInfoCase() {

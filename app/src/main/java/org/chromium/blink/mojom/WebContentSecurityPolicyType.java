@@ -20,8 +20,8 @@ public final class WebContentSecurityPolicyType {
 
     public static final int WEB_CONTENT_SECURITY_POLICY_TYPE_ENFORCE = WEB_CONTENT_SECURITY_POLICY_TYPE_REPORT + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (1);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 1;
 
     private static final boolean IS_EXTENSIBLE = false;
 

@@ -68,7 +68,7 @@ class UsbMidiDeviceAndroid {
     /**
      * The underlying USB device.
      */
-    private UsbDevice mUsbDevice;
+    private final UsbDevice mUsbDevice;
 
     /**
      * Audio interface subclass code for MIDI.

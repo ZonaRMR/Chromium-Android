@@ -18,7 +18,7 @@ public interface PowerMonitorClient extends org.chromium.mojo.bindings.Interface
 
 
 
-    public interface Proxy extends PowerMonitorClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PowerMonitorClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PowerMonitorClient, PowerMonitorClient.Proxy> MANAGER = PowerMonitorClient_Internal.MANAGER;

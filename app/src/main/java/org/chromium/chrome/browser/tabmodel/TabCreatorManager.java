@@ -23,7 +23,7 @@ public interface TabCreatorManager {
      *
      * TODO(dfalcantara): Hunt down more places where we don't actually need to return a Tab.
      */
-    public abstract class TabCreator {
+    abstract class TabCreator {
         /**
          * @return Whether the TabCreator creates Tabs asynchronously.
          */

@@ -702,7 +702,7 @@ public class LayoutTab implements ChromeAnimation.Animatable {
      */
     public boolean checkCloseHitTest(float x, float y) {
         RectF closeRectangle = getCloseBounds();
-        return closeRectangle != null ? closeRectangle.contains(x, y) : false;
+        return closeRectangle != null && closeRectangle.contains(x, y);
     }
 
     /**

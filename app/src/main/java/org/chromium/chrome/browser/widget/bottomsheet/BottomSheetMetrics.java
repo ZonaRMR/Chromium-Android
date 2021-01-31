@@ -76,7 +76,7 @@ public class BottomSheetMetrics extends EmptyBottomSheetObserver {
     private BottomSheetContent mLastContent;
 
     /** When this class was created. Used as a proxy for when the app was started. */
-    private long mCreationTime;
+    private final long mCreationTime;
 
     /** The last time the sheet was opened. */
     private long mLastOpenTime;

@@ -274,7 +274,7 @@ public class ChromeTabbedActivity
 
     private LocaleManager mLocaleManager;
 
-    private AppIndexingUtil mAppIndexingUtil;
+    private final AppIndexingUtil mAppIndexingUtil;
 
     private Runnable mShowHistoryRunnable;
     private NavigationPopup mNavigationPopup;
@@ -1410,7 +1410,7 @@ public class ChromeTabbedActivity
             if (value != -1) {
                 String[] args = new String[1];
                 args[0] = "--" + ContentSwitches.RENDER_PROCESS_LIMIT
-                        + "=" + Integer.toString(value);
+                        + "=" + value;
                 commandLine.appendSwitchesAndArguments(args);
             }
         }
@@ -1458,8 +1458,8 @@ public class ChromeTabbedActivity
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
                 | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
-        mContentContainer = (ViewGroup) findViewById(android.R.id.content);
-        mControlContainer = (ToolbarControlContainer) findViewById(R.id.control_container);
+        mContentContainer = findViewById(android.R.id.content);
+        mControlContainer = findViewById(R.id.control_container);
 
         mUndoBarPopupController = new UndoBarController(this, mTabModelSelectorImpl,
                 getSnackbarManager());

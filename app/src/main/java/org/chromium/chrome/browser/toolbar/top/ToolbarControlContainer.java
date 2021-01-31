@@ -91,7 +91,7 @@ public class ToolbarControlContainer extends OptimizedFrameLayout implements Con
     public void initWithToolbar(int toolbarLayoutId) {
         try (TraceEvent te = TraceEvent.scoped("ToolbarControlContainer.initWithToolbar")) {
             mToolbarContainer =
-                    (ToolbarViewResourceFrameLayout) findViewById(R.id.toolbar_container);
+                    findViewById(R.id.toolbar_container);
             View viewStub = findViewById(R.id.toolbar_stub);
             if (viewStub instanceof AsyncViewStub) {
                 AsyncViewStub toolbarStub = (AsyncViewStub) viewStub;
@@ -306,10 +306,8 @@ public class ToolbarControlContainer extends OptimizedFrameLayout implements Con
         public boolean shouldRecognizeSwipe(MotionEvent e1, MotionEvent e2) {
             if (isOnTabStrip(e1)) return false;
             if (mToolbar != null && mToolbar.shouldIgnoreSwipeGesture()) return false;
-            if (KeyboardVisibilityDelegate.getInstance().isKeyboardShowing(
-                        getContext(), ToolbarControlContainer.this))
-                return false;
-            return true;
+            return !KeyboardVisibilityDelegate.getInstance().isKeyboardShowing(
+                    getContext(), ToolbarControlContainer.this);
         }
     }
 }

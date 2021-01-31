@@ -18,7 +18,7 @@ public interface KeySystemSupport extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends KeySystemSupport, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends KeySystemSupport, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<KeySystemSupport, KeySystemSupport.Proxy> MANAGER = KeySystemSupport_Internal.MANAGER;

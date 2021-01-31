@@ -233,7 +233,7 @@ public final class RoundedCornersProto {
 
       private final int value;
 
-      private Corners(int value) {
+      Corners(int value) {
         this.value = value;
       }
 

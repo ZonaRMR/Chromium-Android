@@ -12,10 +12,10 @@ interface ContextualSearchTranslateInterface {
     /**
      * @return The accept-languages string.
      */
-    public String getAcceptLanguages();
+    String getAcceptLanguages();
 
     /**
      * @return The Translate Service's target language string, non-empty.
      */
-    public String getTranslateServiceTargetLanguage();
+    String getTranslateServiceTargetLanguage();
 }

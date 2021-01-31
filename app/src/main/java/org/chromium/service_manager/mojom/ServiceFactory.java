@@ -18,7 +18,7 @@ public interface ServiceFactory extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ServiceFactory, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ServiceFactory, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ServiceFactory, ServiceFactory.Proxy> MANAGER = ServiceFactory_Internal.MANAGER;

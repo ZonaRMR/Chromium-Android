@@ -24,7 +24,7 @@ import javax.annotation.concurrent.GuardedBy;
 */
 public class PartnerBookmarksReader {
     private static final String TAG = "PartnerBMReader";
-    private static Set<FaviconUpdateObserver> sFaviconUpdateObservers = new HashSet<>();
+    private static final Set<FaviconUpdateObserver> sFaviconUpdateObservers = new HashSet<>();
     private static final float DESIRED_FAVICON_SIZE_DP = 16.0f;
 
     private static boolean sInitialized;

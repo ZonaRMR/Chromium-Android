@@ -58,8 +58,8 @@ public class WebappRegistry {
         private static WebappRegistry sInstance = new WebappRegistry();
     }
 
-    private HashMap<String, WebappDataStorage> mStorages;
-    private SharedPreferences mPreferences;
+    private final HashMap<String, WebappDataStorage> mStorages;
+    private final SharedPreferences mPreferences;
 
     /**
      * Callback run when a WebappDataStorage object is registered for the first time. The storage
@@ -195,7 +195,7 @@ public class WebappRegistry {
     public static Set<String> getRegisteredWebappIdsForTesting() {
         // Wrap with unmodifiableSet to ensure it's never modified. See crbug.com/568369.
         return Collections.unmodifiableSet(openSharedPreferences().getStringSet(
-                KEY_WEBAPP_SET, Collections.<String>emptySet()));
+                KEY_WEBAPP_SET, Collections.emptySet()));
     }
 
     @VisibleForTesting
@@ -306,7 +306,7 @@ public class WebappRegistry {
 
     private void initStorages(String idToInitialize, boolean replaceExisting) {
         Set<String> webapps =
-                mPreferences.getStringSet(KEY_WEBAPP_SET, Collections.<String>emptySet());
+                mPreferences.getStringSet(KEY_WEBAPP_SET, Collections.emptySet());
         boolean initAll = (idToInitialize == null || idToInitialize.isEmpty());
 
         // Don't overwrite any entry in mStorages unless replaceExisting is set to true.

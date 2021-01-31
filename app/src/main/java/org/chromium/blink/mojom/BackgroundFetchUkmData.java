@@ -23,7 +23,7 @@ public final class BackgroundFetchUkmData extends org.chromium.mojo.bindings.Str
 
     private BackgroundFetchUkmData(int version) {
         super(STRUCT_SIZE, version);
-        this.idealToChosenIconSize = (long) -1L;
+        this.idealToChosenIconSize = -1L;
     }
 
     public BackgroundFetchUkmData() {

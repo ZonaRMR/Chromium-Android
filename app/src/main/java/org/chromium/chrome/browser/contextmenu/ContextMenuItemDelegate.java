@@ -19,7 +19,7 @@ public interface ContextMenuItemDelegate {
     // The type of the data to save to the clipboard.
     @IntDef({ClipboardType.LINK_URL, ClipboardType.LINK_TEXT, ClipboardType.IMAGE_URL})
     @Retention(RetentionPolicy.SOURCE)
-    public @interface ClipboardType {
+    @interface ClipboardType {
         int LINK_URL = 0;
         int LINK_TEXT = 1;
         int IMAGE_URL = 2;
@@ -113,7 +113,7 @@ public interface ContextMenuItemDelegate {
     /**
      * @return whether an activity is available to handle an intent to call a phone number.
      */
-    public boolean supportsCall();
+    boolean supportsCall();
 
     /**
      * Called when the {@code url} should be parsed to call a phone number.
@@ -124,7 +124,7 @@ public interface ContextMenuItemDelegate {
     /**
      * @return whether an activity is available to handle an intent to send an email.
      */
-    public boolean supportsSendEmailMessage();
+    boolean supportsSendEmailMessage();
 
     /**
      * Called when the {@code url} should be parsed to send an email.
@@ -135,7 +135,7 @@ public interface ContextMenuItemDelegate {
     /**
      * @return whether an activity is available to handle an intent to send a text message.
      */
-    public boolean supportsSendTextMessage();
+    boolean supportsSendTextMessage();
 
     /**
      * Called when the {@code url} should be parsed to send a text message.
@@ -147,7 +147,7 @@ public interface ContextMenuItemDelegate {
      * Returns whether or not an activity is available to handle intent to add contacts.
      * @return true if an activity is available to handle intent to add contacts.
      */
-    public boolean supportsAddToContacts();
+    boolean supportsAddToContacts();
 
     /**
      * Called when the {@code url} should be parsed to add to contacts.

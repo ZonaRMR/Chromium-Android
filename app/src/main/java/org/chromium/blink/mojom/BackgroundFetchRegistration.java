@@ -30,8 +30,8 @@ public final class BackgroundFetchRegistration extends org.chromium.mojo.binding
 
     private BackgroundFetchRegistration(int version) {
         super(STRUCT_SIZE, version);
-        this.result = (int) BackgroundFetchResult.UNSET;
-        this.failureReason = (int) BackgroundFetchFailureReason.NONE;
+        this.result = BackgroundFetchResult.UNSET;
+        this.failureReason = BackgroundFetchFailureReason.NONE;
     }
 
     public BackgroundFetchRegistration() {

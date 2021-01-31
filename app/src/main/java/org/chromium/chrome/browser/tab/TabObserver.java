@@ -230,8 +230,8 @@ public interface TabObserver {
      *                              Its lifetime is bound to this function. Do not store it. It can
      *                              be used to modify headers.
      */
-    public void onDidStartNavigation(Tab tab, String url, boolean isInMainFrame,
-            boolean isSameDocument, long navigationHandleProxy);
+    void onDidStartNavigation(Tab tab, String url, boolean isInMainFrame,
+                              boolean isSameDocument, long navigationHandleProxy);
 
     /**
      * Called when a navigation is redirected in the WebContents.
@@ -242,7 +242,7 @@ public interface TabObserver {
      *                              Its lifetime is bound to this function. Do not store it. It can
      *                              be used to modify headers.
      */
-    public void onDidRedirectNavigation(
+    void onDidRedirectNavigation(
             Tab tab, String url, boolean isInMainFrame, long navigationHandleProxy);
 
     /**
@@ -264,42 +264,42 @@ public interface TabObserver {
      * @param errorCode The net error code if an error occurred prior to commit, otherwise net::OK.
      * @param httpStatusCode The HTTP status code of the navigation.
      */
-    public void onDidFinishNavigation(Tab tab, String url, boolean isInMainFrame,
-            boolean isErrorPage, boolean hasCommitted, boolean isSameDocument,
-            boolean isFragmentNavigation, @Nullable Integer pageTransition, int errorCode,
-            int httpStatusCode);
+    void onDidFinishNavigation(Tab tab, String url, boolean isInMainFrame,
+                               boolean isErrorPage, boolean hasCommitted, boolean isSameDocument,
+                               boolean isFragmentNavigation, @Nullable Integer pageTransition, int errorCode,
+                               int httpStatusCode);
 
     /**
      * Called when the page has painted something non-empty.
      * @param tab The notifying {@link Tab}.
      */
-    public void didFirstVisuallyNonEmptyPaint(Tab tab);
+    void didFirstVisuallyNonEmptyPaint(Tab tab);
 
     /**
      * Called when the theme color is changed
      * @param tab   The notifying {@link Tab}.
      * @param color the new color in ARGB format.
      */
-    public void onDidChangeThemeColor(Tab tab, int color);
+    void onDidChangeThemeColor(Tab tab, int color);
 
     /**
      * Called when an interstitial page gets attached to the tab content.
      * @param tab The notifying {@link Tab}.
      */
-    public void onDidAttachInterstitialPage(Tab tab);
+    void onDidAttachInterstitialPage(Tab tab);
 
     /**
      * Called when an interstitial page gets detached from the tab content.
      * @param tab The notifying {@link Tab}.
      */
-    public void onDidDetachInterstitialPage(Tab tab);
+    void onDidDetachInterstitialPage(Tab tab);
 
     /**
      * Called when the background color for the tab has changed.
      * @param tab The notifying {@link Tab}.
      * @param color The current background color.
      */
-    public void onBackgroundColorChanged(Tab tab, int color);
+    void onBackgroundColorChanged(Tab tab, int color);
 
     /**
      * Called when a {@link WebContents} object has been created.
@@ -311,45 +311,45 @@ public interface TabObserver {
      * @param targetUrl              The target url.
      * @param newWebContents         The newly created {@link WebContents}.
      */
-    public void webContentsCreated(Tab tab, WebContents sourceWebContents,
-            long openerRenderProcessId, long openerRenderFrameId, String frameName,
-            String targetUrl, WebContents newWebContents);
+    void webContentsCreated(Tab tab, WebContents sourceWebContents,
+                            long openerRenderProcessId, long openerRenderFrameId, String frameName,
+                            String targetUrl, WebContents newWebContents);
 
     /**
      * Called when the Tab is attached or detached from an {@code Activity}.
      * @param tab The notifying {@link Tab}.
      * @param isAttached Whether the Tab is being attached or detached.
      */
-    public void onActivityAttachmentChanged(Tab tab, boolean isAttached);
+    void onActivityAttachmentChanged(Tab tab, boolean isAttached);
 
     /**
      * A notification when tab changes whether or not it is interactable and is accepting input.
      * @param isInteractable Whether or not the tab is interactable.
      */
-    public void onInteractabilityChanged(boolean isInteractable);
+    void onInteractabilityChanged(boolean isInteractable);
 
     /**
      * Called when renderer changes its state about being responsive to requests.
      * @param tab The notifying {@link Tab}.
      * @param {@code true} if the renderer becomes responsive, otherwise {@code false}.
      */
-    public void onRendererResponsiveStateChanged(Tab tab, boolean isResponsive);
+    void onRendererResponsiveStateChanged(Tab tab, boolean isResponsive);
 
     /**
      * Called when navigation entries of a tab have been deleted.
      * @param tab The notifying {@link Tab}.
      */
-    public void onNavigationEntriesDeleted(Tab tab);
+    void onNavigationEntriesDeleted(Tab tab);
 
     /**
      * Called when the tab's browser controls constraints has been updated.
      * @param tab The notifying {@link Tab}.
      * @param constraints The updated browser controls constraints.
      */
-    public void onBrowserControlsConstraintsUpdated(Tab tab, @BrowserControlsState int constraints);
+    void onBrowserControlsConstraintsUpdated(Tab tab, @BrowserControlsState int constraints);
 
     /**
      * This method is invoked when the WebContents reloads the LoFi images on the page.
      */
-    public void didReloadLoFiImages(Tab tab);
+    void didReloadLoFiImages(Tab tab);
 }

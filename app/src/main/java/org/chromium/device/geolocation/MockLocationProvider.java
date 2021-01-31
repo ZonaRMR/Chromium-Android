@@ -83,4 +83,4 @@ public class MockLocationProvider implements LocationProvider {
         location.setAccuracy(0.5f);
         LocationProviderAdapter.onNewLocationAvailable(location);
     }
-};
+}

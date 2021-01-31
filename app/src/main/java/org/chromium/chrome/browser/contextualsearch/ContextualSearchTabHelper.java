@@ -102,7 +102,7 @@ public class ContextualSearchTabHelper
      * Used to disable contextual search (remove contextual search hooks) when other overlay
      * panel comes into action.
      */
-    private OverlayPanelManagerObserver mPanelObserver = new OverlayPanelManagerObserver() {
+    private final OverlayPanelManagerObserver mPanelObserver = new OverlayPanelManagerObserver() {
         @Override
         public void onOverlayPanelShown() {
             // This leaves the handling of the hooks to the responsibility of the activity tab.

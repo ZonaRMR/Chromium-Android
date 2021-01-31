@@ -33,9 +33,9 @@ public class PrefetchViewHolder extends OfflineItemViewHolder {
 
     private PrefetchViewHolder(View view) {
         super(view);
-        mTitle = (TextView) itemView.findViewById(R.id.title);
-        mCaption = (TextView) itemView.findViewById(R.id.caption);
-        mTimestamp = (TextView) itemView.findViewById(R.id.timestamp);
+        mTitle = itemView.findViewById(R.id.title);
+        mCaption = itemView.findViewById(R.id.caption);
+        mTimestamp = itemView.findViewById(R.id.timestamp);
     }
 
     // ThumbnailAwareViewHolder implementation.

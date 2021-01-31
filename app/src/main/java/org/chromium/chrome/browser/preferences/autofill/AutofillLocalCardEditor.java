@@ -57,16 +57,16 @@ public class AutofillLocalCardEditor extends AutofillCreditCardEditor {
 
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
-        mNameLabel = (CompatibilityTextInputLayout) v.findViewById(R.id.credit_card_name_label);
-        mNameText = (EditText) v.findViewById(R.id.credit_card_name_edit);
-        mNumberLabel = (CompatibilityTextInputLayout) v.findViewById(R.id.credit_card_number_label);
-        mNumberText = (EditText) v.findViewById(R.id.credit_card_number_edit);
+        mNameLabel = v.findViewById(R.id.credit_card_name_label);
+        mNameText = v.findViewById(R.id.credit_card_name_edit);
+        mNumberLabel = v.findViewById(R.id.credit_card_number_label);
+        mNumberText = v.findViewById(R.id.credit_card_number_edit);
 
         // Set text watcher to format credit card number
         mNumberText.addTextChangedListener(new CreditCardNumberFormattingTextWatcher());
 
-        mExpirationMonth = (Spinner) v.findViewById(R.id.autofill_credit_card_editor_month_spinner);
-        mExpirationYear = (Spinner) v.findViewById(R.id.autofill_credit_card_editor_year_spinner);
+        mExpirationMonth = v.findViewById(R.id.autofill_credit_card_editor_month_spinner);
+        mExpirationYear = v.findViewById(R.id.autofill_credit_card_editor_year_spinner);
 
         addSpinnerAdapters();
         addCardDataToEditFields();
@@ -226,6 +226,6 @@ public class AutofillLocalCardEditor extends AutofillCreditCardEditor {
         // Enable save button if credit card number is not empty. We validate the credit card number
         // when user presses the save button.
         boolean enabled = !TextUtils.isEmpty(mNumberText.getText());
-        ((Button) getView().findViewById(R.id.button_primary)).setEnabled(enabled);
+        getView().findViewById(R.id.button_primary).setEnabled(enabled);
     }
 }

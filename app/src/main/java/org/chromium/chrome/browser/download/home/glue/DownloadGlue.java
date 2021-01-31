@@ -179,7 +179,6 @@ public class DownloadGlue implements DownloadObserver {
      */
     private static boolean canShowDownloadItem(DownloadItem item) {
         if (TextUtils.isEmpty(item.getDownloadInfo().getFilePath())) return false;
-        if (TextUtils.isEmpty(item.getDownloadInfo().getFileName())) return false;
-        return true;
+        return !TextUtils.isEmpty(item.getDownloadInfo().getFileName());
     }
 }

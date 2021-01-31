@@ -55,11 +55,11 @@ public class DownloadHistoryAdapter
     private static final String TAG = "DownloadAdapter";
 
     /** Alerted about changes to internal state. */
-    static interface TestObserver {
-        abstract void onDownloadItemCreated(DownloadItem item);
-        abstract void onDownloadItemUpdated(DownloadItem item);
-        abstract void onOfflineItemCreated(OfflineItem item);
-        abstract void onOfflineItemUpdated(OfflineItem item);
+    interface TestObserver {
+        void onDownloadItemCreated(DownloadItem item);
+        void onDownloadItemUpdated(DownloadItem item);
+        void onOfflineItemCreated(OfflineItem item);
+        void onOfflineItemUpdated(OfflineItem item);
     }
 
     private class BackendItemsImpl extends BackendItems {

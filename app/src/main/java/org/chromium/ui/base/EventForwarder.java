@@ -329,7 +329,7 @@ public class EventForwarder {
             return mimeTypes != null && mimeTypes.length > 0 && mIsDragDropEnabled;
         }
 
-        StringBuilder content = new StringBuilder("");
+        StringBuilder content = new StringBuilder();
         if (event.getAction() == DragEvent.ACTION_DROP) {
             // TODO(hush): obtain dragdrop permissions, when dragging files into Chrome/WebView is
             // supported. Not necessary to do so for now, because only text dragging is supported.

@@ -29,7 +29,7 @@ import java.io.File;
  */
 public class DownloadLocationCustomView
         extends ScrollView implements OnCheckedChangeListener, DownloadDirectoryAdapter.Delegate {
-    private DownloadDirectoryAdapter mDirectoryAdapter;
+    private final DownloadDirectoryAdapter mDirectoryAdapter;
 
     private TextView mSubtitleView;
     private AlertDialogEditText mFileName;

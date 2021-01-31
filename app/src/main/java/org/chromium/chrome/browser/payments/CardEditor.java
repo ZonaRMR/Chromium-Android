@@ -162,7 +162,7 @@ public class CardEditor extends EditorBase<AutofillPaymentInstrument>
     private boolean mIsScanning;
     private int mCurrentMonth;
     private int mCurrentYear;
-    private boolean mIsIncognito;
+    private final boolean mIsIncognito;
 
     /**
      * Builds a credit card editor.

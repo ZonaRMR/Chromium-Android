@@ -85,7 +85,7 @@ public class TabPersistentStore extends TabPersister {
     /**
      * Callback interface to use while reading the persisted TabModelSelector info from disk.
      */
-    public static interface OnTabStateReadCallback {
+    public interface OnTabStateReadCallback {
         /**
          * To be called as the details about a persisted Tab are read from the TabModelSelector's
          * persisted data.
@@ -163,7 +163,7 @@ public class TabPersistentStore extends TabPersister {
     private final TabPersistencePolicy mPersistencePolicy;
     private final TabModelSelector mTabModelSelector;
     private final TabCreatorManager mTabCreatorManager;
-    private ObserverList<TabPersistentStoreObserver> mObservers;
+    private final ObserverList<TabPersistentStoreObserver> mObservers;
 
     private final Deque<Tab> mTabsToSave;
     private final Deque<TabRestoreDetails> mTabsToRestore;
@@ -181,11 +181,11 @@ public class TabPersistentStore extends TabPersister {
     private SparseIntArray mNormalTabsRestored;
     private SparseIntArray mIncognitoTabsRestored;
 
-    private SharedPreferences mPreferences;
+    private final SharedPreferences mPreferences;
     private AsyncTask<DataInputStream> mPrefetchTabListTask;
-    private List<Pair<AsyncTask<DataInputStream>, String>> mPrefetchTabListToMergeTasks;
+    private final List<Pair<AsyncTask<DataInputStream>, String>> mPrefetchTabListToMergeTasks;
     // A set of filenames which are tracked to merge.
-    private Set<String> mMergedFileNames;
+    private final Set<String> mMergedFileNames;
     private byte[] mLastSavedMetadata;
 
     // Tracks whether this TabPersistentStore's tabs are being loaded.
@@ -399,7 +399,7 @@ public class TabPersistentStore extends TabPersister {
                     mPersistencePolicy.setMergeInProgress(true);
                     readSavedStateFile(stream,
                             createOnTabStateReadCallback(mTabModelSelector.isIncognitoSelected(),
-                                    mTabsToRestore.size() == 0 ? false : true),
+                                    mTabsToRestore.size() != 0),
                             null, true);
                     logExecutionTime("MergeStateInternalTime", time);
                 }

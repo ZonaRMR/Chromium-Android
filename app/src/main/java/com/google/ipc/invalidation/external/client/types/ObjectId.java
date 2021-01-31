@@ -67,10 +67,7 @@ public final class ObjectId {
     }
 
     final ObjectId other = (ObjectId) object;
-    if ((source != other.source) || !Arrays.equals(name, other.name)) {
-      return false;
-    }
-    return true;
+      return (source == other.source) && Arrays.equals(name, other.name);
   }
 
   @Override

@@ -59,7 +59,7 @@ public class WebApkInfo extends WebappInfo {
         private static final int PARAM_TITLE_INDEX = 1;
         private static final int PARAM_TEXT_INDEX = 2;
         private static final int PARAM_URL_INDEX = 3;
-        private String[] mData;
+        private final String[] mData;
 
         public ShareTarget() {
             this(null, null, null, null);

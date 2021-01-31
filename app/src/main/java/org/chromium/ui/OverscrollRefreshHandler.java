@@ -18,7 +18,7 @@ public interface OverscrollRefreshHandler {
      * @return Whether the handler will consume the overscroll sequence.
      */
     @CalledByNative
-    public boolean start(float xDelta, float yDelta);
+    boolean start(float xDelta, float yDelta);
 
     /**
      * Signals a pull update.
@@ -27,25 +27,25 @@ public interface OverscrollRefreshHandler {
      * @param yDelta The change in vertical pull distance.
      */
     @CalledByNative
-    public void pull(float xDelta, float yDelta);
+    void pull(float xDelta, float yDelta);
 
     /**
      * Signals the release of the pull.
      * @param allowRefresh Whether the release signal should be allowed to trigger a refresh.
      */
     @CalledByNative
-    public void release(boolean allowRefresh);
+    void release(boolean allowRefresh);
 
     /**
      * Reset the active pull state.
      */
     @CalledByNative
-    public void reset();
+    void reset();
 
     /**
      * Toggle whether the effect is active.
      * @param enabled Whether to enable the effect.
      *                If disabled, the effect should deactive itself apropriately.
      */
-    public void setEnabled(boolean enabled);
+    void setEnabled(boolean enabled);
 }

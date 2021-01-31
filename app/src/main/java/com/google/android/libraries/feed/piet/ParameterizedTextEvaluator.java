@@ -83,7 +83,7 @@ public class ParameterizedTextEvaluator {
 
     String displayString = templatedString.getText();
     try {
-      return String.format(displayString, (Object[]) params.toArray(new String[params.size()]));
+      return String.format(displayString, params.toArray(new String[params.size()]));
     } catch (IllegalFormatException e) {
       // Don't crash if we get invalid data - just log the display string and the error.
       Logger.e(TAG, e, "Error formatting display string \"%s\"", displayString);

@@ -18,17 +18,17 @@ public interface StorageArea extends org.chromium.mojo.bindings.Interface {
 
 
     
-    public static final int PER_STORAGE_AREA_QUOTA = (int) 10485760L;
+    int PER_STORAGE_AREA_QUOTA = (int) 10485760L;
 
 
 
     
-    public static final int PER_STORAGE_AREA_OVER_QUOTA_ALLOWANCE = (int) 102400L;
+    int PER_STORAGE_AREA_OVER_QUOTA_ALLOWANCE = (int) 102400L;
 
 
 
 
-    public interface Proxy extends StorageArea, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends StorageArea, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<StorageArea, StorageArea.Proxy> MANAGER = StorageArea_Internal.MANAGER;

@@ -18,7 +18,7 @@ public interface FileSystemCancellableOperation extends org.chromium.mojo.bindin
 
 
 
-    public interface Proxy extends FileSystemCancellableOperation, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FileSystemCancellableOperation, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FileSystemCancellableOperation, FileSystemCancellableOperation.Proxy> MANAGER = FileSystemCancellableOperation_Internal.MANAGER;

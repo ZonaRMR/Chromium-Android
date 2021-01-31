@@ -18,7 +18,7 @@ public interface NetworkChangeManagerClient extends org.chromium.mojo.bindings.I
 
 
 
-    public interface Proxy extends NetworkChangeManagerClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends NetworkChangeManagerClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<NetworkChangeManagerClient, NetworkChangeManagerClient.Proxy> MANAGER = NetworkChangeManagerClient_Internal.MANAGER;

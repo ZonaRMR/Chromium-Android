@@ -58,7 +58,7 @@ public class IPHInfoBarSupport implements OnDismissListener,
      * Delegate responsible for interacting with the in-product help backend and creating any
      * {@link TextBubble}s if necessary.
      */
-    public static interface IPHBubbleDelegate {
+    public interface IPHBubbleDelegate {
         /**
          * Will be called when a valid infobar of type {@code infoBarId} is showing and is attached
          * to the view hierarchy.

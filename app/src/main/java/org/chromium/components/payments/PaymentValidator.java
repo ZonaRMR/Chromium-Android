@@ -31,4 +31,4 @@ public class PaymentValidator {
 
     private static native boolean nativeValidatePaymentDetailsAndroid(ByteBuffer buffer);
     private static native boolean nativeValidatePaymentValidationErrorsAndroid(ByteBuffer buffer);
-};
+}

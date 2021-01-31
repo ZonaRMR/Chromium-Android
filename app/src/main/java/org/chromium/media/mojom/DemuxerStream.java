@@ -18,7 +18,7 @@ public interface DemuxerStream extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public static final class Type {
+    final class Type {
 
 
 
@@ -40,7 +40,7 @@ public interface DemuxerStream extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class Status {
+    final class Status {
 
 
 
@@ -62,7 +62,7 @@ public interface DemuxerStream extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public interface Proxy extends DemuxerStream, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends DemuxerStream, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<DemuxerStream, DemuxerStream.Proxy> MANAGER = DemuxerStream_Internal.MANAGER;

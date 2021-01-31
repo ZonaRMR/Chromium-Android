@@ -27,8 +27,8 @@ public class BackgroundTaskSchedulerPrefs {
      */
     private static class ScheduledTaskPreferenceEntry {
         private static final String ENTRY_SEPARATOR = ":";
-        private String mBackgroundTaskClass;
-        private int mTaskId;
+        private final String mBackgroundTaskClass;
+        private final int mTaskId;
 
         /** Creates a scheduled task shared preference entry from task info. */
         public static ScheduledTaskPreferenceEntry createForTaskInfo(TaskInfo taskInfo) {

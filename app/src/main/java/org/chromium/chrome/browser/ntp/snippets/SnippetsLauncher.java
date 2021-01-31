@@ -40,7 +40,7 @@ public class SnippetsLauncher {
     // If it is non-null then the browser is running.
     private static SnippetsLauncher sInstance;
 
-    private GcmNetworkManager mScheduler;
+    private final GcmNetworkManager mScheduler;
 
     private boolean mGCMEnabled = true;
 

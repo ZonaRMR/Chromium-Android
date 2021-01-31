@@ -9,7 +9,7 @@ package org.chromium.webapk.lib.runtime_library;
 public interface IWebApkApi extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.webapk.lib.runtime_library.IWebApkApi
+abstract class Stub extends android.os.Binder implements org.chromium.webapk.lib.runtime_library.IWebApkApi
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.webapk.lib.runtime_library.IWebApkApi";
 /** Construct the stub at attach it to the interface. */
@@ -115,7 +115,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.webapk.lib.runtime_library.IWebApkApi
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -241,18 +241,18 @@ static final int TRANSACTION_cancelNotification = (android.os.IBinder.FIRST_CALL
 static final int TRANSACTION_notificationPermissionEnabled = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
 static final int TRANSACTION_notifyNotificationWithChannel = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
 }
-public int getSmallIconId() throws android.os.RemoteException;
+int getSmallIconId() throws android.os.RemoteException;
 // Display a notification.
 // DEPRECATED: Use notifyNotificationWithChannel.
 
-public void notifyNotification(java.lang.String platformTag, int platformID, android.app.Notification notification) throws android.os.RemoteException;
+void notifyNotification(java.lang.String platformTag, int platformID, android.app.Notification notification) throws android.os.RemoteException;
 // Cancel a notification.
 
-public void cancelNotification(java.lang.String platformTag, int platformID) throws android.os.RemoteException;
+void cancelNotification(java.lang.String platformTag, int platformID) throws android.os.RemoteException;
 // Get if notification permission is enabled.
 
-public boolean notificationPermissionEnabled() throws android.os.RemoteException;
+boolean notificationPermissionEnabled() throws android.os.RemoteException;
 // Display a notification with a specified channel name.
 
-public void notifyNotificationWithChannel(java.lang.String platformTag, int platformID, android.app.Notification notification, java.lang.String channelName) throws android.os.RemoteException;
+void notifyNotificationWithChannel(java.lang.String platformTag, int platformID, android.app.Notification notification, java.lang.String channelName) throws android.os.RemoteException;
 }

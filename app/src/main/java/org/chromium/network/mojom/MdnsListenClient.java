@@ -18,7 +18,7 @@ public interface MdnsListenClient extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public static final class UpdateType {
+    final class UpdateType {
 
 
         public static final int ADDED = 0;
@@ -27,8 +27,8 @@ public interface MdnsListenClient extends org.chromium.mojo.bindings.Interface {
 
         public static final int REMOVED = CHANGED + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -54,7 +54,7 @@ public interface MdnsListenClient extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public interface Proxy extends MdnsListenClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MdnsListenClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MdnsListenClient, MdnsListenClient.Proxy> MANAGER = MdnsListenClient_Internal.MANAGER;

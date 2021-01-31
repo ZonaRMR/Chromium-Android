@@ -28,7 +28,7 @@ import org.chromium.chrome.R;
  *    ColorStateList is set, only the default color will be used.
  */
 public class ChromeBasePreference extends Preference {
-    private ColorStateList mIconTint;
+    private final ColorStateList mIconTint;
     private ManagedPreferenceDelegate mManagedPrefDelegate;
 
     /**

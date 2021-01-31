@@ -18,7 +18,7 @@ public interface TcpServerSocket extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends TcpServerSocket, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends TcpServerSocket, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<TcpServerSocket, TcpServerSocket.Proxy> MANAGER = TcpServerSocket_Internal.MANAGER;

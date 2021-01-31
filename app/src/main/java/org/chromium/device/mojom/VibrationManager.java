@@ -18,7 +18,7 @@ public interface VibrationManager extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends VibrationManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends VibrationManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<VibrationManager, VibrationManager.Proxy> MANAGER = VibrationManager_Internal.MANAGER;

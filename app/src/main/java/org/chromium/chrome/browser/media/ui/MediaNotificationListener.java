@@ -12,18 +12,18 @@ public interface MediaNotificationListener {
     /**
      * The media action was caused by direct interaction with the notification.
      */
-    public static final int ACTION_SOURCE_MEDIA_NOTIFICATION = 1000;
+    int ACTION_SOURCE_MEDIA_NOTIFICATION = 1000;
 
     /**
      * The media action was received via the MediaSession Android API, e.g. a headset, a watch, etc.
      */
-    public static final int ACTION_SOURCE_MEDIA_SESSION = 1001;
+    int ACTION_SOURCE_MEDIA_SESSION = 1001;
 
     /**
      * The media action was received by unplugging the headset,
      * which broadcasts an ACTION_AUDIO_BECOMING_NOISY intent.
      */
-    public static final int ACTION_SOURCE_HEADSET_UNPLUG = 1002;
+    int ACTION_SOURCE_HEADSET_UNPLUG = 1002;
 
     /**
      * Called when the user wants to resume the playback.

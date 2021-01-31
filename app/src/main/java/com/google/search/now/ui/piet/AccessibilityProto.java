@@ -104,7 +104,7 @@ public final class AccessibilityProto {
 
     private final int value;
 
-    private AccessibilityRole(int value) {
+    AccessibilityRole(int value) {
       this.value = value;
     }
 
@@ -215,9 +215,9 @@ public final class AccessibilityProto {
      */
     com.google.search.now.ui.piet.BindingRefsProto.ParameterizedTextBindingRef getAccessibilityIdBinding();
 
-    public com.google.search.now.ui.piet.AccessibilityProto.Accessibility.DescriptionDataCase getDescriptionDataCase();
+    com.google.search.now.ui.piet.AccessibilityProto.Accessibility.DescriptionDataCase getDescriptionDataCase();
 
-    public com.google.search.now.ui.piet.AccessibilityProto.Accessibility.AccessibilityIdDataCase getAccessibilityIdDataCase();
+    com.google.search.now.ui.piet.AccessibilityProto.Accessibility.AccessibilityIdDataCase getAccessibilityIdDataCase();
   }
   /**
    * <pre>
@@ -243,7 +243,7 @@ public final class AccessibilityProto {
       DESCRIPTION_BINDING(3),
       DESCRIPTIONDATA_NOT_SET(0);
       private final int value;
-      private DescriptionDataCase(int value) {
+      DescriptionDataCase(int value) {
         this.value = value;
       }
       /**
@@ -265,9 +265,9 @@ public final class AccessibilityProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public DescriptionDataCase
+      public DescriptionDataCase
     getDescriptionDataCase() {
       return DescriptionDataCase.forNumber(
           descriptionDataCase_);
@@ -286,7 +286,7 @@ public final class AccessibilityProto {
       ACCESSIBILITY_ID_BINDING(5),
       ACCESSIBILITYIDDATA_NOT_SET(0);
       private final int value;
-      private AccessibilityIdDataCase(int value) {
+      AccessibilityIdDataCase(int value) {
         this.value = value;
       }
       /**
@@ -308,9 +308,9 @@ public final class AccessibilityProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public AccessibilityIdDataCase
+      public AccessibilityIdDataCase
     getAccessibilityIdDataCase() {
       return AccessibilityIdDataCase.forNumber(
           accessibilityIdDataCase_);

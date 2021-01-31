@@ -45,7 +45,7 @@ public class TabModelImpl extends TabModelJniBridge {
     private final TabPersistentStore mTabSaver;
     private final TabModelDelegate mModelDelegate;
     private final ObserverList<TabModelObserver> mObservers;
-    private RecentlyClosedBridge mRecentlyClosedBridge;
+    private final RecentlyClosedBridge mRecentlyClosedBridge;
 
     // Undo State Tracking -------------------------------------------------------------------------
 
@@ -556,7 +556,7 @@ public class TabModelImpl extends TabModelJniBridge {
 
         mTabs.remove(tab);
 
-        boolean nextIsIncognito = nextTab == null ? false : nextTab.isIncognito();
+        boolean nextIsIncognito = nextTab != null && nextTab.isIncognito();
         int nextTabId = nextTab == null ? Tab.INVALID_TAB_ID : nextTab.getId();
         int nextTabIndex = nextTab == null ? INVALID_TAB_INDEX : TabModelUtils.getTabIndexById(
                 mModelDelegate.getModel(nextIsIncognito), nextTabId);

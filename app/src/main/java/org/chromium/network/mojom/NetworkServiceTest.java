@@ -18,7 +18,7 @@ public interface NetworkServiceTest extends org.chromium.mojo.bindings.Interface
 
 
 
-    public static final class ShouldRequireCt {
+    final class ShouldRequireCt {
 
 
         public static final int RESET = (int) (0L);
@@ -27,8 +27,8 @@ public interface NetworkServiceTest extends org.chromium.mojo.bindings.Interface
 
         public static final int DONT_REQUIRE = (int) (2L);
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -54,7 +54,7 @@ public interface NetworkServiceTest extends org.chromium.mojo.bindings.Interface
     }
 
 
-    public interface Proxy extends NetworkServiceTest, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends NetworkServiceTest, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<NetworkServiceTest, NetworkServiceTest.Proxy> MANAGER = NetworkServiceTest_Internal.MANAGER;

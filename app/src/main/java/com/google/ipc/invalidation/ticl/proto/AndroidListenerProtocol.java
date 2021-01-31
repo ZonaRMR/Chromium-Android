@@ -30,7 +30,7 @@ import java.util.List;
 
 public interface AndroidListenerProtocol {
 
-  public static final class AndroidListenerState extends ProtoWrapper {
+  final class AndroidListenerState extends ProtoWrapper {
     public static final class RetryRegistrationState extends ProtoWrapper {
       public static RetryRegistrationState create(com.google.ipc.invalidation.ticl.proto.ClientProtocol.ObjectIdP objectId,
           com.google.ipc.invalidation.ticl.proto.Client.ExponentialBackoffState exponentialBackoffState) {
@@ -361,7 +361,7 @@ public interface AndroidListenerProtocol {
     }
   }
 
-  public static final class RegistrationCommand extends ProtoWrapper {
+  final class RegistrationCommand extends ProtoWrapper {
     public static RegistrationCommand create(Boolean isRegister,
         Collection<com.google.ipc.invalidation.ticl.proto.ClientProtocol.ObjectIdP> objectId,
         Bytes clientId,
@@ -495,7 +495,7 @@ public interface AndroidListenerProtocol {
     }
   }
 
-  public static final class StartCommand extends ProtoWrapper {
+  final class StartCommand extends ProtoWrapper {
     public static StartCommand create(Integer clientType,
         Bytes clientName,
         Boolean allowSuppression) {

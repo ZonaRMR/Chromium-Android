@@ -29,10 +29,10 @@ public final class SerialConnectionOptions extends org.chromium.mojo.bindings.St
     private SerialConnectionOptions(int version) {
         super(STRUCT_SIZE, version);
         this.bitrate = (int) 0L;
-        this.dataBits = (int) SerialDataBits.NONE;
-        this.parityBit = (int) SerialParityBit.NONE;
-        this.stopBits = (int) SerialStopBits.NONE;
-        this.hasCtsFlowControl = (boolean) false;
+        this.dataBits = SerialDataBits.NONE;
+        this.parityBit = SerialParityBit.NONE;
+        this.stopBits = SerialStopBits.NONE;
+        this.hasCtsFlowControl = false;
     }
 
     public SerialConnectionOptions() {

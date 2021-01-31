@@ -154,7 +154,8 @@ public class KeyboardAccessoryData {
     public static final class Action {
         private final String mCaption;
         private final Callback<Action> mActionCallback;
-        private @AccessoryAction int mType;
+        private @AccessoryAction
+        final int mType;
 
         public Action(String caption, @AccessoryAction int type, Callback<Action> actionCallback) {
             mCaption = caption;

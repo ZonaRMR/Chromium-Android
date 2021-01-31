@@ -24,13 +24,13 @@ import java.util.List;
  */
 public class PhotoPickerDialog extends AlertDialog {
     // Our context.
-    private Context mContext;
+    private final Context mContext;
 
     // The category we're showing photos for.
-    private PickerCategoryView mCategoryView;
+    private final PickerCategoryView mCategoryView;
 
     // A wrapper around the listener object, watching to see if an external intent is launched.
-    private PhotoPickerListenerWrapper mListenerWrapper;
+    private final PhotoPickerListenerWrapper mListenerWrapper;
 
     // Whether the wait for an external intent launch is over.
     private boolean mDoneWaitingForExternalIntent;
@@ -56,11 +56,8 @@ public class PhotoPickerDialog extends AlertDialog {
         // PhotoPickerListener:
         @Override
         public void onPhotoPickerUserAction(@PhotoPickerAction int action, String[] photos) {
-            mExternalIntentSelected = false;
-            if (action == PhotoPickerAction.LAUNCH_GALLERY
-                    || action == PhotoPickerAction.LAUNCH_CAMERA) {
-                mExternalIntentSelected = true;
-            }
+            mExternalIntentSelected = action == PhotoPickerAction.LAUNCH_GALLERY
+                    || action == PhotoPickerAction.LAUNCH_CAMERA;
 
             mListener.onPhotoPickerUserAction(action, photos);
         }

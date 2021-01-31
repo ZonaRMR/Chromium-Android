@@ -31,7 +31,7 @@ import java.util.concurrent.RejectedExecutionException;
 /** A View that manages the display of space used by the downloads. */
 public class SpaceDisplay extends RecyclerView.AdapterDataObserver {
     /** Observes changes to the SpaceDisplay. */
-    public static interface Observer {
+    public interface Observer {
         /** Called when the display has had its values updated. */
         void onSpaceDisplayUpdated(SpaceDisplay spaceDisplay);
     }
@@ -54,8 +54,8 @@ public class SpaceDisplay extends RecyclerView.AdapterDataObserver {
          * If true, the task gets the total size of storage.  If false, it fetches how much
          * space is free.
          */
-        private boolean mFetchTotalSize;
-        private Callback<Long> mOnTaskCompleteCallback;
+        private final boolean mFetchTotalSize;
+        private final Callback<Long> mOnTaskCompleteCallback;
 
         StorageSizeTask(boolean fetchTotalSize, Callback<Long> onTaskCompleteCallback) {
             mFetchTotalSize = fetchTotalSize;
@@ -101,17 +101,17 @@ public class SpaceDisplay extends RecyclerView.AdapterDataObserver {
         protected void onPostExecute(Long bytes) {
             mOnTaskCompleteCallback.onResult(bytes);
         }
-    };
+    }
 
     private final ObserverList<Observer> mObservers = new ObserverList<>();
     private AsyncTask<Long> mFreeBytesTask;
 
-    private DownloadHistoryAdapter mHistoryAdapter;
-    private View mView;
-    private View mViewContainer;
-    private TextView mSpaceUsedByDownloadsTextView;
-    private TextView mSpaceFreeAndOtherAppsTextView;
-    private MaterialProgressBar mSpaceBar;
+    private final DownloadHistoryAdapter mHistoryAdapter;
+    private final View mView;
+    private final View mViewContainer;
+    private final TextView mSpaceUsedByDownloadsTextView;
+    private final TextView mSpaceFreeAndOtherAppsTextView;
+    private final MaterialProgressBar mSpaceBar;
     private long mFreeBytes;
     private long mFileSystemBytes;
 
@@ -120,10 +120,10 @@ public class SpaceDisplay extends RecyclerView.AdapterDataObserver {
         mViewContainer = LayoutInflater.from(ContextUtils.getApplicationContext())
                                  .inflate(R.layout.download_manager_ui_space_widget, parent, false);
         mView = mViewContainer.findViewById(R.id.space_widget_content);
-        mSpaceUsedByDownloadsTextView = (TextView) mView.findViewById(R.id.size_downloaded);
+        mSpaceUsedByDownloadsTextView = mView.findViewById(R.id.size_downloaded);
         mSpaceFreeAndOtherAppsTextView =
-                (TextView) mView.findViewById(R.id.size_free_and_other_apps);
-        mSpaceBar = (MaterialProgressBar) mView.findViewById(R.id.space_bar);
+                mView.findViewById(R.id.size_free_and_other_apps);
+        mSpaceBar = mView.findViewById(R.id.space_bar);
         new StorageSizeTask(true, this ::onFileSystemBytesTaskFinished)
                 .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }

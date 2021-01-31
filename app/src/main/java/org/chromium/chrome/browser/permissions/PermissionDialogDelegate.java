@@ -24,22 +24,22 @@ public class PermissionDialogDelegate {
     private PermissionDialogController mDialogController;
 
     /** The tab for which to create the dialog. */
-    private Tab mTab;
+    private final Tab mTab;
 
     /** The icon to display in the dialog. */
-    private int mDrawableId;
+    private final int mDrawableId;
 
     /** Text shown in the dialog. */
-    private String mMessageText;
+    private final String mMessageText;
 
     /** Text shown on the primary button, e.g. "Allow". */
-    private String mPrimaryButtonText;
+    private final String mPrimaryButtonText;
 
     /** Text shown on the secondary button, e.g. "Block". */
-    private String mSecondaryButtonText;
+    private final String mSecondaryButtonText;
 
     /** The {@link ContentSettingsType}s requested in this dialog.  */
-    private int[] mContentSettingsTypes;
+    private final int[] mContentSettingsTypes;
 
     public Tab getTab() {
         return mTab;

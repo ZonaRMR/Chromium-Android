@@ -46,7 +46,7 @@ public class ApplicationStatus {
 
     private static class ActivityInfo {
         private int mStatus = ActivityState.DESTROYED;
-        private ObserverList<ActivityStateListener> mListeners = new ObserverList<>();
+        private final ObserverList<ActivityStateListener> mListeners = new ObserverList<>();
 
         /**
          * @return The current {@link ActivityState} of the activity.
@@ -143,7 +143,7 @@ public class ApplicationStatus {
          * @param activity The {@link Activity} that has a window focus changed event.
          * @param hasFocus Whether or not {@code activity} gained or lost focus.
          */
-        public void onWindowFocusChanged(Activity activity, boolean hasFocus);
+        void onWindowFocusChanged(Activity activity, boolean hasFocus);
     }
 
     private ApplicationStatus() {}

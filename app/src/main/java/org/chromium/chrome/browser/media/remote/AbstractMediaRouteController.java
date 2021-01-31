@@ -99,7 +99,7 @@ public abstract class AbstractMediaRouteController implements MediaRouteControll
         // by the selection dialog. It has to be done that way, since selecting the current route
         // on a new video doesn't call onRouteSelected.
 
-        private Runnable mConnectionFailureNotifier = new Runnable() {
+        private final Runnable mConnectionFailureNotifier = new Runnable() {
                 @Override
             public void run() {
                 release();
@@ -158,7 +158,7 @@ public abstract class AbstractMediaRouteController implements MediaRouteControll
     private final Set<MediaStateListener> mAvailableRouteListeners;
     private final Context mContext;
     private RouteInfo mCurrentRoute;
-    private final DeviceDiscoveryCallback mDeviceDiscoveryCallback;;
+    private final DeviceDiscoveryCallback mDeviceDiscoveryCallback;
     private final DeviceSelectionCallback mDeviceSelectionCallback;
 
     private final Handler mHandler;
@@ -365,7 +365,7 @@ public abstract class AbstractMediaRouteController implements MediaRouteControll
     }
 
     protected void onRouteAddedEvent(MediaRouter router, RouteInfo route) {
-    };
+    }
 
     // TODO(aberent): Merge with onRouteSelected(). Needs two sided patch for downstream
     // implementations
@@ -629,16 +629,16 @@ public abstract class AbstractMediaRouteController implements MediaRouteControll
 
     // This exists for compatibility with old downstream code
     // TODO(aberent) remove
-    protected void prepareAsync(String frameUrl, long startPositionMillis){};
+    protected void prepareAsync(String frameUrl, long startPositionMillis){}
 
     // This exists for compatibility with old downstream code
     // TODO(aberent) remove
-    protected void setDataSource(Uri uri, String cookies){};
+    protected void setDataSource(Uri uri, String cookies){}
 
     protected boolean reconnectAnyExistingRoute() {
         // Temp version to avoid two sided patch while removing
         return false;
-    };
+    }
 
     @Override
     public void checkIfPlayableRemotely(String sourceUrl, String frameUrl, String cookies,

@@ -19,6 +19,7 @@ import com.google.ipc.invalidation.util.LazyString.LazyStringReceiver;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -32,7 +33,7 @@ import java.util.Locale;
 public class Bytes extends InternalBase implements Comparable<Bytes> {
 
   public static final Bytes EMPTY_BYTES = new Bytes(new byte[0]);
-  private static final Charset UTF_8 = Charset.forName("UTF-8");
+  private static final Charset UTF_8 = StandardCharsets.UTF_8;
 
   /**
    * Interface accessing byte elements from {@code T}, which may be (for instance)

@@ -23,8 +23,8 @@ import java.util.HashSet;
 public class MediaSessionImpl extends MediaSession {
     private long mNativeMediaSessionAndroid;
 
-    private ObserverList<MediaSessionObserver> mObservers;
-    private ObserverList.RewindableIterator<MediaSessionObserver> mObserversIterator;
+    private final ObserverList<MediaSessionObserver> mObservers;
+    private final ObserverList.RewindableIterator<MediaSessionObserver> mObserversIterator;
 
     public static MediaSessionImpl fromWebContents(WebContents webContents) {
         return nativeGetMediaSessionFromWebContents(webContents);

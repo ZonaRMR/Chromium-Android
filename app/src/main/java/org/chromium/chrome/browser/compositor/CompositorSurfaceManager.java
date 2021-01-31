@@ -19,11 +19,11 @@ public interface CompositorSurfaceManager {
     /**
      * Delivers Surface lifecycle events to the target of this CompositorSurfaceManager.
      */
-    public interface SurfaceManagerCallbackTarget {
-        public void surfaceRedrawNeededAsync(Runnable drawingFinished);
-        public void surfaceChanged(Surface surface, int format, int width, int height);
-        public void surfaceCreated(Surface surface);
-        public void surfaceDestroyed(Surface surface);
+    interface SurfaceManagerCallbackTarget {
+        void surfaceRedrawNeededAsync(Runnable drawingFinished);
+        void surfaceChanged(Surface surface, int format, int width, int height);
+        void surfaceCreated(Surface surface);
+        void surfaceDestroyed(Surface surface);
     }
 
     /**

@@ -7,7 +7,7 @@ package org.chromium.chrome.browser.customtabs.dynamicmodule;
 public interface IModuleHost extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleHost
+abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleHost
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleHost";
 /** Construct the stub at attach it to the interface. */
@@ -80,7 +80,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.chrome.browser.customtabs.dynamicmodule.IModuleHost
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -170,9 +170,9 @@ static final int TRANSACTION_getHostVersion = (android.os.IBinder.FIRST_CALL_TRA
 static final int TRANSACTION_getMinimumModuleVersion = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
 }
 /** Returns the context of this host. */
-public org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper getHostApplicationContext() throws android.os.RemoteException;
+org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper getHostApplicationContext() throws android.os.RemoteException;
 /** Returns the context of the custom module. */
-public org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper getModuleContext() throws android.os.RemoteException;
-public int getHostVersion() throws android.os.RemoteException;
-public int getMinimumModuleVersion() throws android.os.RemoteException;
+org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper getModuleContext() throws android.os.RemoteException;
+int getHostVersion() throws android.os.RemoteException;
+int getMinimumModuleVersion() throws android.os.RemoteException;
 }

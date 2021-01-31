@@ -18,12 +18,12 @@ public interface WebSocket extends org.chromium.mojo.bindings.Interface {
 
 
     
-    public static final int INSUFFICIENT_RESOURCES = (int) 1L;
+    int INSUFFICIENT_RESOURCES = (int) 1L;
 
 
 
 
-    public interface Proxy extends WebSocket, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends WebSocket, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<WebSocket, WebSocket.Proxy> MANAGER = WebSocket_Internal.MANAGER;

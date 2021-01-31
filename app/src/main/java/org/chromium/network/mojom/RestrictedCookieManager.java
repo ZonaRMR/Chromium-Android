@@ -18,7 +18,7 @@ public interface RestrictedCookieManager extends org.chromium.mojo.bindings.Inte
 
 
 
-    public interface Proxy extends RestrictedCookieManager, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends RestrictedCookieManager, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<RestrictedCookieManager, RestrictedCookieManager.Proxy> MANAGER = RestrictedCookieManager_Internal.MANAGER;

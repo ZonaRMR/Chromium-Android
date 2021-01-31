@@ -75,11 +75,9 @@ class KeyboardHideHelper implements ViewTreeObserver.OnGlobalLayoutListener {
             return;
         }
 
-        if (mWindowDelegate != null) {
-            assert mWindowDelegate.getWindowSoftInputMode()
-                    != WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING
-                       : "SOFT_INPUT_ADJUST_NOTHING prevents detecting window size changes.";
-        }
+        assert mWindowDelegate == null || mWindowDelegate.getWindowSoftInputMode()
+                != WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING
+                   : "SOFT_INPUT_ADJUST_NOTHING prevents detecting window size changes.";
 
         mView.getViewTreeObserver().addOnGlobalLayoutListener(this);
         mIsLayoutListenerAttached = true;

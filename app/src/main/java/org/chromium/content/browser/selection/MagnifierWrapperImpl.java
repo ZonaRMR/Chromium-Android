@@ -14,7 +14,7 @@ import android.widget.Magnifier;
 @SuppressLint("NewApi") // Magnifier requires API level 28.
 public class MagnifierWrapperImpl implements MagnifierWrapper {
     private Magnifier mMagnifier;
-    private SelectionPopupControllerImpl.ReadbackViewCallback mCallback;
+    private final SelectionPopupControllerImpl.ReadbackViewCallback mCallback;
 
     /**
      * Constructor.

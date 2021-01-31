@@ -24,7 +24,7 @@ public  final class ScriptActionRequestProto extends
     NEXT_REQUEST(5),
     REQUEST_NOT_SET(0);
     private final int value;
-    private RequestCase(int value) {
+    RequestCase(int value) {
       this.value = value;
     }
     /**
@@ -46,7 +46,7 @@ public  final class ScriptActionRequestProto extends
     public int getNumber() {
       return this.value;
     }
-  };
+  }
 
   public RequestCase
   getRequestCase() {

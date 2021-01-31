@@ -18,7 +18,7 @@ public interface Directory extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends Directory, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends Directory, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<Directory, Directory.Proxy> MANAGER = Directory_Internal.MANAGER;

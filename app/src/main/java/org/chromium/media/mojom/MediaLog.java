@@ -18,7 +18,7 @@ public interface MediaLog extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends MediaLog, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaLog, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaLog, MediaLog.Proxy> MANAGER = MediaLog_Internal.MANAGER;

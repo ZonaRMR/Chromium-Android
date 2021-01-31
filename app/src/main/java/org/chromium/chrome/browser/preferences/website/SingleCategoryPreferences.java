@@ -178,9 +178,7 @@ public class SingleCategoryPreferences extends PreferenceFragment
             for (@PermissionInfo.Type int j = 0; j < PermissionInfo.Type.NUM_ENTRIES; j++) {
                 if (PermissionInfo.getContentSettingsType(j)
                         == SiteSettingsCategory.contentSettingsType(i)) {
-                    return (j == PermissionInfo.Type.MIDI)
-                            ? false
-                            : ContentSettingValues.BLOCK == website.site().getPermission(j);
+                    return (j != PermissionInfo.Type.MIDI) && ContentSettingValues.BLOCK == website.site().getPermission(j);
                 }
             }
         }
@@ -303,12 +301,12 @@ public class SingleCategoryPreferences extends PreferenceFragment
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         PreferenceUtils.addPreferencesFromResource(this, R.xml.website_preferences);
-        ListView listView = (ListView) getView().findViewById(android.R.id.list);
-        mEmptyView = (TextView) getView().findViewById(android.R.id.empty);
+        ListView listView = getView().findViewById(android.R.id.list);
+        mEmptyView = getView().findViewById(android.R.id.empty);
         listView.setEmptyView(mEmptyView);
         listView.setDivider(null);
 
-        mClearButton = (Button) getView().findViewById(R.id.clear_button);
+        mClearButton = getView().findViewById(R.id.clear_button);
         if (mClearButton != null) mClearButton.setOnClickListener(this);
 
         String title = getArguments().getString(EXTRA_TITLE);

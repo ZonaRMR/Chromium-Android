@@ -18,7 +18,7 @@ public interface ReceivedSnapshotListener extends org.chromium.mojo.bindings.Int
 
 
 
-    public interface Proxy extends ReceivedSnapshotListener, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ReceivedSnapshotListener, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ReceivedSnapshotListener, ReceivedSnapshotListener.Proxy> MANAGER = ReceivedSnapshotListener_Internal.MANAGER;

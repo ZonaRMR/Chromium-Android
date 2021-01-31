@@ -250,7 +250,7 @@ public  final class UseAddressProto extends
 
       private final int value;
 
-      private AddressField(int value) {
+      AddressField(int value) {
         this.value = value;
       }
 

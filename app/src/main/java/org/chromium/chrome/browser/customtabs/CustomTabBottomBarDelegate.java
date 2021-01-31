@@ -49,11 +49,11 @@ public class CustomTabBottomBarDelegate implements FullscreenListener {
     private static final CachedMetrics.ActionEvent REMOTE_VIEWS_UPDATED =
             new CachedMetrics.ActionEvent("CustomTabsRemoteViewsUpdated");
     private static final int SLIDE_ANIMATION_DURATION_MS = 400;
-    private ChromeActivity mActivity;
-    private ChromeFullscreenManager mFullscreenManager;
+    private final ChromeActivity mActivity;
+    private final ChromeFullscreenManager mFullscreenManager;
     private ViewGroup mBottomBarView;
     @Nullable private View mBottomBarContentView;
-    private CustomTabIntentDataProvider mDataProvider;
+    private final CustomTabIntentDataProvider mDataProvider;
     private PendingIntent mClickPendingIntent;
     private int[] mClickableIDs;
     private boolean mShowShadow = true;
@@ -64,7 +64,7 @@ public class CustomTabBottomBarDelegate implements FullscreenListener {
      */
     private int mBottomBarHeightOverride = -1;
 
-    private OnClickListener mBottomBarClickListener = new OnClickListener() {
+    private final OnClickListener mBottomBarClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
             if (mClickPendingIntent == null) return;
@@ -138,7 +138,7 @@ public class CustomTabBottomBarDelegate implements FullscreenListener {
      * @param params The {@link CustomButtonParams} that describes the button to update.
      */
     public void updateBottomBarButtons(CustomButtonParams params) {
-        ImageButton button = (ImageButton) getBottomBarView().findViewById(params.getId());
+        ImageButton button = getBottomBarView().findViewById(params.getId());
         button.setContentDescription(params.getDescription());
         button.setImageDrawable(params.getIcon(mActivity));
     }
@@ -212,7 +212,7 @@ public class CustomTabBottomBarDelegate implements FullscreenListener {
     private ViewGroup getBottomBarView() {
         if (mBottomBarView == null) {
             assert isViewReady() : "The required view stub couldn't be found! (Called too early?)";
-            ViewStub bottomBarStub = ((ViewStub) mActivity.findViewById(R.id.bottombar_stub));
+            ViewStub bottomBarStub = mActivity.findViewById(R.id.bottombar_stub);
             mBottomBarView = (ViewGroup) bottomBarStub.inflate();
         }
         return mBottomBarView;

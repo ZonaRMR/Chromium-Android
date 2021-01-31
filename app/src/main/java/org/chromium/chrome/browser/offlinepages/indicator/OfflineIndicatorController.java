@@ -63,7 +63,7 @@ public class OfflineIndicatorController implements ConnectivityDetector.Observer
     private boolean mHasOfflineIndicatorShownSinceActivityResumed;
     // Set to true if the user has been continuously online for the required duration.
     private boolean mWasOnlineForRequiredDuration;
-    private ConnectivityDetector mConnectivityDetector;
+    private final ConnectivityDetector mConnectivityDetector;
     private ChromeActivity mObservedActivity;
 
     private boolean mIsOnline;
@@ -173,11 +173,7 @@ public class OfflineIndicatorController implements ConnectivityDetector.Observer
         if (tab == null) return false;
         if (tab.isShowingErrorPage()) return false;
         if (OfflinePageUtils.isOfflinePage(tab)) return false;
-        if (TextUtils.equals(tab.getUrl(), ContentUrlConstants.ABOUT_BLANK_DISPLAY_URL)) {
-            return false;
-        }
-
-        return true;
+        return !TextUtils.equals(tab.getUrl(), ContentUrlConstants.ABOUT_BLANK_DISPLAY_URL);
     }
 
     /**

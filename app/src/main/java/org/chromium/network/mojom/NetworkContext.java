@@ -18,15 +18,15 @@ public interface NetworkContext extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public static final class DomainReliabilityClearMode {
+    final class DomainReliabilityClearMode {
 
 
         public static final int CLEAR_CONTEXTS = 0;
 
         public static final int CLEAR_BEACONS = CLEAR_CONTEXTS + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (1);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 1;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -51,7 +51,7 @@ public interface NetworkContext extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public interface Proxy extends NetworkContext, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends NetworkContext, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<NetworkContext, NetworkContext.Proxy> MANAGER = NetworkContext_Internal.MANAGER;

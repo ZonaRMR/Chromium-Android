@@ -168,7 +168,7 @@ public class TrustedWebActivityServiceWrapper {
 
             return new NotifyNotificationArgs(bundle.getString(KEY_PLATFORM_TAG),
                     bundle.getInt(KEY_PLATFORM_ID),
-                    (Notification) bundle.getParcelable(KEY_NOTIFICATION),
+                    bundle.getParcelable(KEY_NOTIFICATION),
                     bundle.getString(KEY_CHANNEL_NAME));
         }
 

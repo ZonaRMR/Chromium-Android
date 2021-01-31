@@ -73,7 +73,7 @@ public class AutoSigninFirstRunDialog
                         .setNegativeButton(mTurnOffButtonText, this);
         View view = LayoutInflater.from(mContext).inflate(
                 R.layout.auto_sign_in_first_run_dialog, null);
-        TextView summaryView = (TextView) view.findViewById(R.id.summary);
+        TextView summaryView = view.findViewById(R.id.summary);
 
         if (mExplanationLinkStart != mExplanationLinkEnd && mExplanationLinkEnd != 0) {
             SpannableString spanableExplanation = new SpannableString(mExplanation);

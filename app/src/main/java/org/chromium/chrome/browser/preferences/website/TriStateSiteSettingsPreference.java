@@ -71,9 +71,9 @@ public class TriStateSiteSettingsPreference
     protected void onBindView(View view) {
         super.onBindView(view);
 
-        mAllowed = (RadioButtonWithDescription) view.findViewById(R.id.allowed);
-        mAsk = (RadioButtonWithDescription) view.findViewById(R.id.ask);
-        mBlocked = (RadioButtonWithDescription) view.findViewById(R.id.blocked);
+        mAllowed = view.findViewById(R.id.allowed);
+        mAsk = view.findViewById(R.id.ask);
+        mBlocked = view.findViewById(R.id.blocked);
 
         mAllowed.setDescriptionText(getContext().getText(mDescriptionIds[0]));
         mAsk.setDescriptionText(getContext().getText(mDescriptionIds[1]));

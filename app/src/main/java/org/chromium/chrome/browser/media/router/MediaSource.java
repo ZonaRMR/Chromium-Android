@@ -16,15 +16,15 @@ public interface MediaSource {
      *
      * @return an initialized route selector or null.
      */
-    public MediaRouteSelector buildRouteSelector();
+    MediaRouteSelector buildRouteSelector();
 
     /**
      * @return the Cast application id corresponding to the source.
      */
-    public String getApplicationId();
+    String getApplicationId();
 
     /**
      * @return the id identifying the media source
      */
-    public String getSourceId();
+    String getSourceId();
 }

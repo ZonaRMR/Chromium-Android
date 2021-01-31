@@ -34,10 +34,10 @@ public final class ReferrerPolicy {
 
     public static final int STRICT_ORIGIN = SAME_ORIGIN + 1;
 
-    public static final int LAST = (int) (ReferrerPolicy.STRICT_ORIGIN);
+    public static final int LAST = ReferrerPolicy.STRICT_ORIGIN;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (8);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 8;
 
     private static final boolean IS_EXTENSIBLE = false;
 

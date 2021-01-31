@@ -79,10 +79,10 @@ public class TranslateOptions {
 
     // language code to translated language name map
     // Conceptually final
-    private Map<String, String> mCodeToRepresentation;
+    private final Map<String, String> mCodeToRepresentation;
 
     // Langage code to its UMA hashcode representation.
-    private Map<String, Integer> mCodeToUMAHashCode;
+    private final Map<String, Integer> mCodeToUMAHashCode;
 
     // Will reflect the state before the object was ever modified
     private final boolean[] mOriginalOptions;

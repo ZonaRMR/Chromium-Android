@@ -171,12 +171,12 @@ public class ChromeAnimation<T> {
      */
     public abstract static class Animation<T> {
         protected T mAnimatedObject;
-        private float mStart;
-        private float mEnd;
+        private final float mStart;
+        private final float mEnd;
 
         private long mCurrentTime;
-        private long mDuration;
-        private long mStartDelay;
+        private final long mDuration;
+        private final long mStartDelay;
         private boolean mDelayStartValue;
         private boolean mHasFinished;
         private Interpolator mInterpolator = CompositorAnimator.DECELERATE_INTERPOLATOR;
@@ -341,21 +341,21 @@ public class ChromeAnimation<T> {
     /**
      * Provides a interface for updating animatible properties.
      */
-    public static interface Animatable {
+    public interface Animatable {
         /**
          * Updates an animatable property.
          *
          * @param prop The property to update
          * @param val The new value
          */
-        public void setProperty(int prop, float val);
+        void setProperty(int prop, float val);
 
         /**
          * Notifies that the animation for a certain property has finished.
          *
          * @param prop The property that has finished animating.
          */
-        public void onPropertyAnimationFinished(int prop);
+        void onPropertyAnimationFinished(int prop);
     }
 
     /**

@@ -65,7 +65,7 @@ public class NetworkStatsHistory implements Parcelable {
     public static final int TAG_NONE = 0;
     public static final int UID_ALL = -1;
 
-    private long bucketDuration;
+    private final long bucketDuration;
     private int bucketCount;
     private long[] bucketStart;
     private long[] activeTime;

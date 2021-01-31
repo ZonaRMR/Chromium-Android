@@ -17,7 +17,7 @@ import org.chromium.base.Promise;
  */
 public class DeferredViewStubInflationProvider<T extends View> implements ViewProvider<T> {
     private final ViewStub mViewStub;
-    private Promise<T> mViewPromise = new Promise<>();
+    private final Promise<T> mViewPromise = new Promise<>();
 
     @SuppressWarnings("unchecked")
     public DeferredViewStubInflationProvider(ViewStub viewStub) {

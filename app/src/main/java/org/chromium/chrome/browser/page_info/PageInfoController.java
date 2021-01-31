@@ -121,30 +121,32 @@ public class PageInfoController
     private String mFullUrl;
 
     // The scheme of the URL of this page.
-    private String mScheme;
+    private final String mScheme;
 
     // Whether or not this page is an internal chrome page (e.g. the
     // chrome://settings page).
     private boolean mIsInternalPage;
 
     // The security level of the page (a valid ConnectionSecurityLevel).
-    private int mSecurityLevel;
+    private final int mSecurityLevel;
 
     // Creation date of an offline copy, if web contents contains an offline page.
     private String mOfflinePageCreationDate;
 
     // The state of the preview of the page (not preview, preview on a [in]secure page).
-    private @PreviewPageState int mPreviewPageState;
+    private @PreviewPageState
+    final int mPreviewPageState;
 
     // The state of offline page in the web contents (not offline page, trusted/untrusted offline
     // page).
-    private @OfflinePageState int mOfflinePageState;
+    private @OfflinePageState
+    final int mOfflinePageState;
 
     // The name of the content publisher, if any.
-    private String mContentPublisher;
+    private final String mContentPublisher;
 
     // Observer for dismissing dialog if web contents get destroyed, navigate etc.
-    private WebContentsObserver mWebContentsObserver;
+    private final WebContentsObserver mWebContentsObserver;
 
     // A task that should be run once the page info popup is animated out and dismissed. Null if no
     // task is pending.

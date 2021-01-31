@@ -193,7 +193,7 @@ public final class ClientInfoProto {
 
       private final int value;
 
-      private PlatformType(int value) {
+      PlatformType(int value) {
         this.value = value;
       }
 
@@ -277,7 +277,7 @@ public final class ClientInfoProto {
 
       private final int value;
 
-      private AppType(int value) {
+      AppType(int value) {
         this.value = value;
       }
 

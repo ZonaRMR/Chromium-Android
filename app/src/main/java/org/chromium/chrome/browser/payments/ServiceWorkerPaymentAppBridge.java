@@ -40,35 +40,35 @@ public class ServiceWorkerPaymentAppBridge implements PaymentAppFactory.PaymentA
     private static boolean sCanMakePaymentForTesting;
 
     /** The interface for checking whether there is an installed SW payment app. */
-    static public interface HasServiceWorkerPaymentAppsCallback {
+    public interface HasServiceWorkerPaymentAppsCallback {
         /**
          * Called to return checking result.
          *
          * @param hasPaymentApps Indicates whehter there is an installed SW payment app.
          */
-        public void onHasServiceWorkerPaymentAppsResponse(boolean hasPaymentApps);
+        void onHasServiceWorkerPaymentAppsResponse(boolean hasPaymentApps);
     }
 
     /** The interface for getting all installed SW payment apps' information. */
-    static public interface GetServiceWorkerPaymentAppsInfoCallback {
+    public interface GetServiceWorkerPaymentAppsInfoCallback {
         /**
          * Called to return installed SW payment apps' information.
          *
          * @param appsInfo Contains all installed SW payment apps' information.
          */
-        public void onGetServiceWorkerPaymentAppsInfo(Map<String, Pair<String, Bitmap>> appsInfo);
+        void onGetServiceWorkerPaymentAppsInfo(Map<String, Pair<String, Bitmap>> appsInfo);
     }
 
     /**
      * The interface for the requester to check whether a SW payment app can make payment.
      */
-    static interface CanMakePaymentCallback {
+    interface CanMakePaymentCallback {
         /**
          * Called by this app to provide an information whether can make payment asynchronously.
          *
          * @param canMakePayment Indicates whether a SW payment app can make payment.
          */
-        public void onCanMakePaymentResponse(boolean canMakePayment);
+        void onCanMakePaymentResponse(boolean canMakePayment);
     }
 
     @Override

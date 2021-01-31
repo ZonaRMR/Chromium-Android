@@ -128,7 +128,7 @@ public class ManageDataLauncherActivity extends AppCompatActivity {
 
         private CustomTabsSession mSession;
 
-        private CustomTabsCallback mCustomTabsCallback = new CustomTabsCallback() {
+        private final CustomTabsCallback mCustomTabsCallback = new CustomTabsCallback() {
             @Override
             public void onRelationshipValidationResult(int relation, Uri requestedOrigin,
                     boolean validated, Bundle extras) {

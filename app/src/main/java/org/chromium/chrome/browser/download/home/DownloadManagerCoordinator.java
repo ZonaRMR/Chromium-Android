@@ -15,7 +15,7 @@ public interface DownloadManagerCoordinator {
      * An obsever to be notified of internal state changes that should be represented as a URL
      * change externally.
      */
-    public interface Observer {
+    interface Observer {
         /** Called when the url representing the internal state of the coordinator has changed. */
         void onUrlChanged(String url);
     }

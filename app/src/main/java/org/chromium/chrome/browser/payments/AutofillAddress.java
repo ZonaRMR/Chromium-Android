@@ -67,7 +67,7 @@ public class AutofillAddress extends EditableOption {
 
     @Nullable private static Pattern sRegionCodePattern;
 
-    private Context mContext;
+    private final Context mContext;
     private AutofillProfile mProfile;
     @Nullable private Pattern mLanguageScriptCodePattern;
     @Nullable private String mShippingLabelWithCountry;
@@ -240,7 +240,7 @@ public class AutofillAddress extends EditableOption {
 
         if (checkType != CompletenessCheckType.IGNORE_PHONE
                 && !PhoneNumberUtils.isGlobalPhoneNumber(
-                           PhoneNumberUtils.stripSeparators(profile.getPhoneNumber().toString()))) {
+                           PhoneNumberUtils.stripSeparators(profile.getPhoneNumber()))) {
             completionStatus = CompletionStatus.INVALID_PHONE_NUMBER;
             invalidFieldsCount++;
         }

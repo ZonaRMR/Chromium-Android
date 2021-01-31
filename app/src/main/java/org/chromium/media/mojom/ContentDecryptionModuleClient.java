@@ -18,7 +18,7 @@ public interface ContentDecryptionModuleClient extends org.chromium.mojo.binding
 
 
 
-    public interface Proxy extends ContentDecryptionModuleClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ContentDecryptionModuleClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ContentDecryptionModuleClient, ContentDecryptionModuleClient.Proxy> MANAGER = ContentDecryptionModuleClient_Internal.MANAGER;

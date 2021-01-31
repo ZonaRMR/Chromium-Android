@@ -29,7 +29,7 @@ public class Toast {
     public static final int LENGTH_SHORT = android.widget.Toast.LENGTH_SHORT;
     public static final int LENGTH_LONG = android.widget.Toast.LENGTH_LONG;
 
-    private android.widget.Toast mToast;
+    private final android.widget.Toast mToast;
     private ViewGroup mSWLayout;
 
     public Toast(Context context) {

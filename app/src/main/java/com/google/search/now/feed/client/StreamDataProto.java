@@ -3,6 +3,8 @@
 
 package com.google.search.now.feed.client;
 
+import com.google.protobuf.ByteString;
+
 public final class StreamDataProto {
   private StreamDataProto() {}
   public static void registerAllExtensions(
@@ -157,7 +159,7 @@ public final class StreamDataProto {
      */
     com.google.search.now.feed.client.StreamDataProto.StreamLegacyPayload getLegacyContent();
 
-    public com.google.search.now.feed.client.StreamDataProto.StreamFeature.FeaturePayloadCase getFeaturePayloadCase();
+    com.google.search.now.feed.client.StreamDataProto.StreamFeature.FeaturePayloadCase getFeaturePayloadCase();
   }
   /**
    * <pre>
@@ -191,7 +193,7 @@ public final class StreamDataProto {
       LEGACY_CONTENT(8),
       FEATUREPAYLOAD_NOT_SET(0);
       private final int value;
-      private FeaturePayloadCase(int value) {
+      FeaturePayloadCase(int value) {
         this.value = value;
       }
       /**
@@ -216,9 +218,9 @@ public final class StreamDataProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public FeaturePayloadCase
+      public FeaturePayloadCase
     getFeaturePayloadCase() {
       return FeaturePayloadCase.forNumber(
           featurePayloadCase_);
@@ -2479,7 +2481,7 @@ public final class StreamDataProto {
      */
     com.google.search.now.wire.feed.PietSharedStateItemProto.PietSharedStateItem getPietSharedStateItem();
 
-    public com.google.search.now.feed.client.StreamDataProto.StreamSharedState.ShareStateCase getShareStateCase();
+    com.google.search.now.feed.client.StreamDataProto.StreamSharedState.ShareStateCase getShareStateCase();
   }
   /**
    * <pre>
@@ -2504,7 +2506,7 @@ public final class StreamDataProto {
       PIET_SHARED_STATE_ITEM(2),
       SHARESTATE_NOT_SET(0);
       private final int value;
-      private ShareStateCase(int value) {
+      ShareStateCase(int value) {
         this.value = value;
       }
       /**
@@ -2525,9 +2527,9 @@ public final class StreamDataProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ShareStateCase
+      public ShareStateCase
     getShareStateCase() {
       return ShareStateCase.forNumber(
           shareStateCase_);
@@ -3203,7 +3205,7 @@ public final class StreamDataProto {
 
       private final int value;
 
-      private Operation(int value) {
+      Operation(int value) {
         this.value = value;
       }
 
@@ -4448,7 +4450,7 @@ public final class StreamDataProto {
      */
     com.google.protobuf.ByteString getSemanticData();
 
-    public com.google.search.now.feed.client.StreamDataProto.StreamPayload.PayloadCase getPayloadCase();
+    com.google.search.now.feed.client.StreamDataProto.StreamPayload.PayloadCase getPayloadCase();
   }
   /**
    * <pre>
@@ -4482,7 +4484,7 @@ public final class StreamDataProto {
       SEMANTIC_DATA(7),
       PAYLOAD_NOT_SET(0);
       private final int value;
-      private PayloadCase(int value) {
+      PayloadCase(int value) {
         this.value = value;
       }
       /**
@@ -4507,9 +4509,9 @@ public final class StreamDataProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public PayloadCase
+      public PayloadCase
     getPayloadCase() {
       return PayloadCase.forNumber(
           payloadCase_);
@@ -4974,7 +4976,7 @@ public final class StreamDataProto {
       }
       if (payloadCase_ == 7) {
         output.writeBytes(
-            7, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) payload_));
+            7, (ByteString) payload_);
       }
       unknownFields.writeTo(output);
     }
@@ -5003,7 +5005,7 @@ public final class StreamDataProto {
       if (payloadCase_ == 7) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(
-              7, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) payload_));
+              7, (ByteString) payload_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSerializedSize = size;

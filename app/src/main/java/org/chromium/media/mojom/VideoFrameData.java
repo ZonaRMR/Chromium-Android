@@ -20,7 +20,8 @@ public final class VideoFrameData extends org.chromium.mojo.bindings.Union {
         public static final int EosData = 0;
         public static final int SharedBufferData = 1;
         public static final int MailboxData = 2;
-    };
+    }
+
     private EosVideoFrameData mEosData;
     private SharedBufferVideoFrameData mSharedBufferData;
     private MailboxVideoFrameData mMailboxData;

@@ -17,7 +17,7 @@ import org.chromium.components.offline_items_collection.OfflineContentProvider;
 public interface BackendProvider {
 
     /** Interacts with the Downloads backend. */
-    public static interface DownloadDelegate {
+    interface DownloadDelegate {
         /** See {@link DownloadManagerService#addDownloadObserver}. */
         void addDownloadObserver(DownloadObserver observer);
 
@@ -48,7 +48,7 @@ public interface BackendProvider {
      * This should eventually get merged into a proper delegate with other UI actions, but currently
      * that is not possible.
      */
-    public static interface UIDelegate {
+    interface UIDelegate {
         /**
          * Requests that {@code item} be deleted.  This might not hit the backend quiet yet if the
          * user can undo the action.

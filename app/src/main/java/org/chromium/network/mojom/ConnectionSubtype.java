@@ -82,10 +82,10 @@ public final class ConnectionSubtype {
 
     public static final int SUBTYPE_WIFI_AD = SUBTYPE_WIFI_AC + 1;
 
-    public static final int SUBTYPE_LAST = (int) (ConnectionSubtype.SUBTYPE_WIFI_AD);
+    public static final int SUBTYPE_LAST = ConnectionSubtype.SUBTYPE_WIFI_AD;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (32);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 32;
 
     private static final boolean IS_EXTENSIBLE = false;
 

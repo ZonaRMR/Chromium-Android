@@ -55,7 +55,7 @@ public class ChosenObjectPreferences
     @SuppressWarnings("unchecked")
     public void onActivityCreated(Bundle savedInstanceState) {
         PreferenceUtils.addPreferencesFromResource(this, R.xml.chosen_object_preferences);
-        ListView listView = (ListView) getView().findViewById(android.R.id.list);
+        ListView listView = getView().findViewById(android.R.id.list);
         listView.setDivider(null);
 
         int contentSettingsType = getArguments().getInt(EXTRA_CATEGORY);

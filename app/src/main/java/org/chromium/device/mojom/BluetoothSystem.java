@@ -18,7 +18,7 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public static final class State {
+    final class State {
 
 
         public static final int UNSUPPORTED = 0;
@@ -31,8 +31,8 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
 
         public static final int POWERED_ON = TRANSITIONING + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (4);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 4;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -60,7 +60,7 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class SetPoweredResult {
+    final class SetPoweredResult {
 
 
         public static final int SUCCESS = 0;
@@ -69,8 +69,8 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
 
         public static final int BLUETOOTH_UNAVAILABLE = FAILED_UNKNOWN_REASON + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -96,7 +96,7 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class ScanState {
+    final class ScanState {
 
 
         public static final int NOT_SCANNING = 0;
@@ -105,8 +105,8 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
 
         public static final int SCANNING = TRANSITIONING + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -132,7 +132,7 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class StartScanResult {
+    final class StartScanResult {
 
 
         public static final int SUCCESS = 0;
@@ -141,8 +141,8 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
 
         public static final int BLUETOOTH_UNAVAILABLE = FAILED_UNKNOWN_REASON + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -168,7 +168,7 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class StopScanResult {
+    final class StopScanResult {
 
 
         public static final int SUCCESS = 0;
@@ -177,8 +177,8 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
 
         public static final int BLUETOOTH_UNAVAILABLE = FAILED_UNKNOWN_REASON + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -204,7 +204,7 @@ public interface BluetoothSystem extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public interface Proxy extends BluetoothSystem, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BluetoothSystem, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BluetoothSystem, BluetoothSystem.Proxy> MANAGER = BluetoothSystem_Internal.MANAGER;

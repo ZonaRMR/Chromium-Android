@@ -17,7 +17,7 @@ public final class InterfaceProviderSpecConstants {
 
 
     
-    public static final String SERVICE_MANAGER_CONNECTOR_SPEC = (String) "service_manager:connector";
+    public static final String SERVICE_MANAGER_CONNECTOR_SPEC = "service_manager:connector";
 
 
 

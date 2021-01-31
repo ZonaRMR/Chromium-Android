@@ -77,7 +77,7 @@ public class AdsBlockedInfoBar extends ConfirmInfoBar implements OnCheckedChange
             View switchView = controlLayout.addSwitch(
                     0, 0, mToggleText, R.id.subresource_filter_infobar_toggle, false);
             SwitchCompat toggle =
-                    (SwitchCompat) switchView.findViewById(R.id.subresource_filter_infobar_toggle);
+                    switchView.findViewById(R.id.subresource_filter_infobar_toggle);
             toggle.setOnCheckedChangeListener(this);
             mButton = layout.getPrimaryButton();
 

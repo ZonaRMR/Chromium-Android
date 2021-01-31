@@ -11,7 +11,7 @@ import android.os.Parcelable;
  * Options to control a fullscreen request.
  */
 public class FullscreenOptions implements Parcelable {
-    private boolean mShowNavigationBar;
+    private final boolean mShowNavigationBar;
 
     /**
      * Constructs FullscreenOptions.

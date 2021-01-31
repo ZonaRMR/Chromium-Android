@@ -100,7 +100,7 @@ public class AndroidPaymentApp
     private InstrumentDetailsCallback mInstrumentDetailsCallback;
     private ServiceConnection mServiceConnection;
     @Nullable
-    private URI mCanDedupedApplicationId;
+    private final URI mCanDedupedApplicationId;
     private boolean mIsReadyToPayQueried;
     private boolean mIsServiceConnected;
 

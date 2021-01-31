@@ -79,7 +79,7 @@ public class CipherFactory {
 
     /** Singleton holder for the class. */
     private static class LazyHolder {
-        private static CipherFactory sInstance = new CipherFactory();
+        private static final CipherFactory sInstance = new CipherFactory();
     }
 
     /**

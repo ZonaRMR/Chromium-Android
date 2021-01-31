@@ -18,7 +18,7 @@ public interface HostResolver extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends HostResolver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends HostResolver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<HostResolver, HostResolver.Proxy> MANAGER = HostResolver_Internal.MANAGER;

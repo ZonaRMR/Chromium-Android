@@ -19,7 +19,7 @@ import android.widget.TextView;
  */
 public class VrDialog extends FrameLayout {
     private static final int DIALOG_WIDTH = 1200;
-    private VrDialogManager mVrDialogManager;
+    private final VrDialogManager mVrDialogManager;
 
     /**
      * Constructor of VrDialog. Sets the DialogManager that will be used to

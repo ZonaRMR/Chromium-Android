@@ -37,7 +37,7 @@ public class BackgroundSyncLauncher {
     // BackgroundSyncLauncherAndroid, if any. If it is non-null then the browser is running.
     private static BackgroundSyncLauncher sInstance;
 
-    private GcmNetworkManager mScheduler;
+    private final GcmNetworkManager mScheduler;
 
     /**
      * Disables the automatic use of the GCMNetworkManager. When disabled, the methods which

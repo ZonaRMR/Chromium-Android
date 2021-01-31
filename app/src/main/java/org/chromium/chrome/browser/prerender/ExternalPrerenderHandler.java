@@ -24,7 +24,7 @@ import org.chromium.content_public.browser.WebContents;
 @JNINamespace("prerender")
 public class ExternalPrerenderHandler {
 
-    private long mNativeExternalPrerenderHandler;
+    private final long mNativeExternalPrerenderHandler;
 
     public ExternalPrerenderHandler() {
         mNativeExternalPrerenderHandler = nativeInit();

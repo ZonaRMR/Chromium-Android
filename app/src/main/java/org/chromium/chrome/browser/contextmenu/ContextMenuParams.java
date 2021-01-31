@@ -122,10 +122,7 @@ public class ContextMenuParams {
      * @return Whether or not the context menu is been shown for a download item.
      */
     public boolean isFile() {
-        if (!TextUtils.isEmpty(mSrcUrl) && mSrcUrl.startsWith(UrlConstants.FILE_URL_PREFIX)) {
-            return true;
-        }
-        return false;
+        return !TextUtils.isEmpty(mSrcUrl) && mSrcUrl.startsWith(UrlConstants.FILE_URL_PREFIX);
     }
 
     /**

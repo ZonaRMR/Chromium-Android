@@ -37,7 +37,7 @@ public class MediaLauncherActivity extends Activity {
         int NUM_ENTRIES = 4;
     }
 
-    private static CachedMetrics.EnumeratedHistogramSample sMediaTypeHistogram =
+    private static final CachedMetrics.EnumeratedHistogramSample sMediaTypeHistogram =
             new CachedMetrics.EnumeratedHistogramSample(
                     "MediaLauncherActivity.MediaType", MediaType.NUM_ENTRIES);
 

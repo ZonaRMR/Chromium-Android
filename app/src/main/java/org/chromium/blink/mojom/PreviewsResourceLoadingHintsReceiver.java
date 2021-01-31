@@ -18,7 +18,7 @@ public interface PreviewsResourceLoadingHintsReceiver extends org.chromium.mojo.
 
 
 
-    public interface Proxy extends PreviewsResourceLoadingHintsReceiver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PreviewsResourceLoadingHintsReceiver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PreviewsResourceLoadingHintsReceiver, PreviewsResourceLoadingHintsReceiver.Proxy> MANAGER = PreviewsResourceLoadingHintsReceiver_Internal.MANAGER;

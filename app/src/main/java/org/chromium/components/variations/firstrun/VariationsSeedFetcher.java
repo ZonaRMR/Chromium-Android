@@ -86,7 +86,7 @@ public class VariationsSeedFetcher {
     @VisibleForTesting
     protected HttpURLConnection getServerConnection(
             VariationsPlatform platform, String restrictMode, String milestone, String channel)
-            throws MalformedURLException, IOException {
+            throws IOException {
         String urlString = getConnectionString(platform, restrictMode, milestone, channel);
         URL url = new URL(urlString);
         return (HttpURLConnection) url.openConnection();

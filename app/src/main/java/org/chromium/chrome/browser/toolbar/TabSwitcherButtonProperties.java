@@ -17,20 +17,20 @@ import org.chromium.ui.modelutil.PropertyModel.WritableObjectPropertyKey;
  */
 public interface TabSwitcherButtonProperties {
     /** The current number of tabs. */
-    public static final WritableIntPropertyKey NUMBER_OF_TABS = new WritableIntPropertyKey();
+    WritableIntPropertyKey NUMBER_OF_TABS = new WritableIntPropertyKey();
 
     /** The click listener for the tab switcher button. */
-    public static final WritableObjectPropertyKey<OnClickListener> ON_CLICK_LISTENER =
+    WritableObjectPropertyKey<OnClickListener> ON_CLICK_LISTENER =
             new WritableObjectPropertyKey<>();
 
     /** The long click listener for the tab switcher button. */
-    public static final WritableObjectPropertyKey<OnLongClickListener> ON_LONG_CLICK_LISTENER =
+    WritableObjectPropertyKey<OnLongClickListener> ON_LONG_CLICK_LISTENER =
             new WritableObjectPropertyKey<>();
 
     /** The button tint. */
-    public static final WritableObjectPropertyKey<ColorStateList> TINT =
+    WritableObjectPropertyKey<ColorStateList> TINT =
             new WritableObjectPropertyKey<>();
 
-    public static final PropertyKey[] ALL_KEYS =
+    PropertyKey[] ALL_KEYS =
             new PropertyKey[] {NUMBER_OF_TABS, ON_CLICK_LISTENER, ON_LONG_CLICK_LISTENER, TINT};
 }

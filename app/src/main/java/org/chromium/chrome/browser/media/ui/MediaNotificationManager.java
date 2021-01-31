@@ -83,7 +83,7 @@ public class MediaNotificationManager {
     private static final int BIG_VIEW_ACTIONS_COUNT = 5;
 
     // Maps the notification ids to their corresponding notification managers.
-    private static SparseArray<MediaNotificationManager> sManagers;
+    private static final SparseArray<MediaNotificationManager> sManagers;
 
     // Overrides N detection. The production code will use |null|, which uses the Android version
     // code. Otherwise, |isRunningAtLeastN()| will return whatever value is set.
@@ -115,13 +115,13 @@ public class MediaNotificationManager {
 
     private final NotificationUmaTracker mNotificationUmaTracker;
 
-    private int mNotificationId;
+    private final int mNotificationId;
 
     // ListenerService running for the notification. Only non-null when showing.
     @VisibleForTesting
     ListenerService mService;
 
-    private SparseArray<MediaButtonInfo> mActionToButtonInfo;
+    private final SparseArray<MediaButtonInfo> mActionToButtonInfo;
 
     @VisibleForTesting
     ChromeNotificationBuilder mNotificationBuilder;
@@ -389,7 +389,7 @@ public class MediaNotificationManager {
             // Before Android L, instead of using the MediaSession callback, the system will fire
             // ACTION_MEDIA_BUTTON intents which stores the information about the key event.
             if (Intent.ACTION_MEDIA_BUTTON.equals(action)) {
-                KeyEvent event = (KeyEvent) intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
+                KeyEvent event = intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
                 if (event == null) return;
                 if (event.getAction() != KeyEvent.ACTION_DOWN) return;
                 switch (event.getKeyCode()) {
@@ -473,7 +473,7 @@ public class MediaNotificationManager {
             return NOTIFICATION_ID;
         }
 
-        private BroadcastReceiver mAudioBecomingNoisyReceiver = new BroadcastReceiver() {
+        private final BroadcastReceiver mAudioBecomingNoisyReceiver = new BroadcastReceiver() {
                 @Override
                 public void onReceive(Context context, Intent intent) {
                     if (!AudioManager.ACTION_AUDIO_BECOMING_NOISY.equals(intent.getAction())) {

@@ -10,7 +10,7 @@ package org.chromium;
 public interface IsReadyToPayServiceCallback extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.IsReadyToPayServiceCallback
+abstract class Stub extends android.os.Binder implements org.chromium.IsReadyToPayServiceCallback
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.IsReadyToPayServiceCallback";
 /** Construct the stub at attach it to the interface. */
@@ -59,7 +59,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.IsReadyToPayServiceCallback
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -99,5 +99,5 @@ static final int TRANSACTION_handleIsReadyToPay = (android.os.IBinder.FIRST_CALL
      *
      * @param isReadyToPay Whether payment app is ready to pay.
      */
-public void handleIsReadyToPay(boolean isReadyToPay) throws android.os.RemoteException;
+void handleIsReadyToPay(boolean isReadyToPay) throws android.os.RemoteException;
 }

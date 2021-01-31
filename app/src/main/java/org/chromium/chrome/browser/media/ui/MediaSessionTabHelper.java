@@ -67,9 +67,9 @@ public class MediaSessionTabHelper implements MediaImageCallback {
     private MediaMetadata mPageMetadata;
     // The currently showing metadata.
     private MediaMetadata mCurrentMetadata;
-    private MediaImageManager mMediaImageManager;
+    private final MediaImageManager mMediaImageManager;
     private Set<Integer> mMediaSessionActions;
-    private Handler mHandler;
+    private final Handler mHandler;
     // The delayed task to hide notification. Hiding notification can be immediate or delayed.
     // Delayed hiding will schedule this delayed task to |mHandler|. The task will be canceled when
     // showing or immediate hiding.
@@ -86,7 +86,7 @@ public class MediaSessionTabHelper implements MediaImageCallback {
         return mMediaSessionObserver;
     }
 
-    private MediaNotificationListener mControlsListener = new MediaNotificationListener() {
+    private final MediaNotificationListener mControlsListener = new MediaNotificationListener() {
         @Override
         public void onPlay(int actionSource) {
             if (isNotificationHiddingOrHidden()) return;

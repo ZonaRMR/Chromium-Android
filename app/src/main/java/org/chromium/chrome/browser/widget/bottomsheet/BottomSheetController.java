@@ -49,10 +49,10 @@ public class BottomSheetController {
     private final SnackbarManager mSnackbarManager;
 
     /** A queue for content that is waiting to be shown in the {@link BottomSheet}. */
-    private PriorityQueue<BottomSheetContent> mContentQueue;
+    private final PriorityQueue<BottomSheetContent> mContentQueue;
 
     /** A set of contents that have requested to be shown, rather than just preloading. */
-    private Set<BottomSheetContent> mFullShowRequestedSet;
+    private final Set<BottomSheetContent> mFullShowRequestedSet;
 
     /** Whether the controller is already processing a hide request for the tab. */
     private boolean mIsProcessingHideRequest;
@@ -64,13 +64,13 @@ public class BottomSheetController {
     private boolean mIsSuppressed;
 
     /** The manager for overlay panels to attach listeners to. */
-    private OverlayPanelManager mOverlayPanelManager;
+    private final OverlayPanelManager mOverlayPanelManager;
 
     /** Whether the bottom sheet should be suppressed when Contextual Search is showing. */
-    private boolean mSuppressSheetForContextualSearch;
+    private final boolean mSuppressSheetForContextualSearch;
 
     /** A means for getting the activity's current tab and observing change events. */
-    private ActivityTabProvider mTabProvider;
+    private final ActivityTabProvider mTabProvider;
 
     /** The last known activity tab, if available. */
     private Tab mLastActivityTab;

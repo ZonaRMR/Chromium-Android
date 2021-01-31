@@ -18,7 +18,7 @@ public interface ProxyConfigPollerClient extends org.chromium.mojo.bindings.Inte
 
 
 
-    public interface Proxy extends ProxyConfigPollerClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ProxyConfigPollerClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ProxyConfigPollerClient, ProxyConfigPollerClient.Proxy> MANAGER = ProxyConfigPollerClient_Internal.MANAGER;

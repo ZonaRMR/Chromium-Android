@@ -166,9 +166,7 @@ public class ScrimView extends View implements View.OnClickListener {
     private void placeScrimInHierarchy(View view, boolean inFrontOf) {
         // Climb the view hierarchy until we reach the target parent.
         while (view.getParent() != mParent) {
-            if (!(view instanceof ViewGroup)) {
-                assert false : "Focused view must be part of the hierarchy!";
-            }
+            assert view instanceof ViewGroup : "Focused view must be part of the hierarchy!";
             view = (View) view.getParent();
         }
         UiUtils.removeViewFromParent(this);

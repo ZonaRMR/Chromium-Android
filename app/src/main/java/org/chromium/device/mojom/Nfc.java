@@ -18,7 +18,7 @@ public interface Nfc extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends Nfc, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends Nfc, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<Nfc, Nfc.Proxy> MANAGER = Nfc_Internal.MANAGER;

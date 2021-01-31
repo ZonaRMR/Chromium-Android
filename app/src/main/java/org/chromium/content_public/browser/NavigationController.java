@@ -58,37 +58,37 @@ public interface NavigationController {
     /**
      * Loads the current navigation if there is a pending lazy load (after tab restore).
      */
-    public void loadIfNecessary();
+    void loadIfNecessary();
 
     /**
      * @return Whether a reload has been requested.
      */
-    public boolean needsReload();
+    boolean needsReload();
 
     /**
      * Requests the current navigation to be loaded upon the next call to loadIfNecessary().
      */
-    public void setNeedsReload();
+    void setNeedsReload();
 
     /**
      * Reload the current page.
      */
-    public void reload(boolean checkForRepost);
+    void reload(boolean checkForRepost);
 
     /**
      * Reload the current page, bypassing the contents of the cache.
      */
-    public void reloadBypassingCache(boolean checkForRepost);
+    void reloadBypassingCache(boolean checkForRepost);
 
     /**
      * Cancel the pending reload.
      */
-    public void cancelPendingReload();
+    void cancelPendingReload();
 
     /**
      * Continue the pending reload.
      */
-    public void continuePendingReload();
+    void continuePendingReload();
 
     /**
      * Load url without fixing up the url string. Consumers of NavigationController are
@@ -96,19 +96,19 @@ public interface NavigationController {
      * scheme has been added if left off during user input).
      * @param params Parameters for this load.
      */
-    public void loadUrl(LoadUrlParams params);
+    void loadUrl(LoadUrlParams params);
 
     /**
      * Clears NavigationController's page history in both backwards and
      * forwards directions.
      */
-    public void clearHistory();
+    void clearHistory();
 
     /**
      * Get a copy of the navigation history of NavigationController.
      * @return navigation history of NavigationController.
      */
-    public NavigationHistory getNavigationHistory();
+    NavigationHistory getNavigationHistory();
 
     /**
     * Get the navigation history of NavigationController from current navigation entry index
@@ -118,25 +118,25 @@ public interface NavigationController {
     * diection.
     * @return navigation history by keeping above constraints.
     */
-    public NavigationHistory getDirectedNavigationHistory(boolean isForward, int itemLimit);
+    NavigationHistory getDirectedNavigationHistory(boolean isForward, int itemLimit);
 
     /**
      * Clears SSL preferences for this NavigationController.
      */
-    public void clearSslPreferences();
+    void clearSslPreferences();
 
     /**
      * Get whether or not we're using a desktop user agent for the currently loaded page.
      * @return true, if use a desktop user agent and false for a mobile one.
      */
-    public boolean getUseDesktopUserAgent();
+    boolean getUseDesktopUserAgent();
 
     /**
      * Set whether or not we're using a desktop user agent for the currently loaded page.
      * @param override If true, use a desktop user agent.  Use a mobile one otherwise.
      * @param reloadOnChange Reload the page if the UA has changed.
      */
-    public void setUseDesktopUserAgent(boolean override, boolean reloadOnChange);
+    void setUseDesktopUserAgent(boolean override, boolean reloadOnChange);
 
     /**
      * Return the NavigationEntry at the given index.
@@ -144,25 +144,25 @@ public interface NavigationController {
      * @return Entry containing info about the navigation, null if the index is out of bounds.
      */
     @VisibleForTesting
-    public NavigationEntry getEntryAtIndex(int index);
+    NavigationEntry getEntryAtIndex(int index);
 
     /**
      * @return The pending {@link NavigationEntry} for this controller or {@code null} if none
      *         exists.
      */
-    public NavigationEntry getPendingEntry();
+    NavigationEntry getPendingEntry();
 
     /**
      * @return The index of the last committed entry.
      */
-    public int getLastCommittedEntryIndex();
+    int getLastCommittedEntryIndex();
 
     /**
      * Removes the entry at the specified |index|.
      * @return false, if the index is the last committed index or the pending entry. Otherwise this
      *         call discards any transient or pending entries.
      */
-    public boolean removeEntryAtIndex(int index);
+    boolean removeEntryAtIndex(int index);
 
     /**
      * Gets extra data on the {@link NavigationEntry} at {@code index}.

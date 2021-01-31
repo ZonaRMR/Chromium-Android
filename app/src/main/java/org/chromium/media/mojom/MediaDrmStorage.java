@@ -18,7 +18,7 @@ public interface MediaDrmStorage extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends MediaDrmStorage, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaDrmStorage, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaDrmStorage, MediaDrmStorage.Proxy> MANAGER = MediaDrmStorage_Internal.MANAGER;

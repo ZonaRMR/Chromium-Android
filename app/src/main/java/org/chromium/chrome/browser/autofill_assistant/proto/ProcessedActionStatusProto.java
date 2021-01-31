@@ -205,7 +205,7 @@ public enum ProcessedActionStatusProto
 
   private final int value;
 
-  private ProcessedActionStatusProto(int value) {
+  ProcessedActionStatusProto(int value) {
     this.value = value;
   }
 

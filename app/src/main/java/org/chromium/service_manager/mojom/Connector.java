@@ -18,7 +18,7 @@ public interface Connector extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends Connector, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends Connector, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<Connector, Connector.Proxy> MANAGER = Connector_Internal.MANAGER;

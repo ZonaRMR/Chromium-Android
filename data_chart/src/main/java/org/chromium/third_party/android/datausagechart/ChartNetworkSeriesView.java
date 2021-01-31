@@ -50,9 +50,9 @@ public class ChartNetworkSeriesView extends View {
 
     private NetworkStatsHistory mStats;
 
-    private Path mPathStroke;
-    private Path mPathFill;
-    private Path mPathEstimate;
+    private final Path mPathStroke;
+    private final Path mPathFill;
+    private final Path mPathEstimate;
 
     private long mStart;
     private long mEnd;

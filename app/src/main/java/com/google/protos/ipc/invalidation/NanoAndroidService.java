@@ -7,7 +7,7 @@ package com.google.protos.ipc.invalidation;
 @SuppressWarnings("hiding")
 public interface NanoAndroidService {
 
-  public static final class ClientDowncall extends
+  final class ClientDowncall extends
       com.google.protobuf.nano.ExtendableMessageNano<ClientDowncall> {
 
     public static final class StartDowncall extends
@@ -545,7 +545,7 @@ public interface NanoAndroidService {
     }
   }
 
-  public static final class InternalDowncall extends
+  final class InternalDowncall extends
       com.google.protobuf.nano.ExtendableMessageNano<InternalDowncall> {
 
     public static final class ServerMessage extends
@@ -1013,7 +1013,7 @@ public interface NanoAndroidService {
     }
   }
 
-  public static final class ListenerUpcall extends
+  final class ListenerUpcall extends
       com.google.protobuf.nano.ExtendableMessageNano<ListenerUpcall> {
 
     public static final class ReadyUpcall extends
@@ -1868,7 +1868,7 @@ public interface NanoAndroidService {
     }
   }
 
-  public static final class AndroidSchedulerEvent extends
+  final class AndroidSchedulerEvent extends
       com.google.protobuf.nano.ExtendableMessageNano<AndroidSchedulerEvent> {
 
     private static volatile AndroidSchedulerEvent[] _emptyArray;
@@ -1988,7 +1988,7 @@ public interface NanoAndroidService {
     }
   }
 
-  public static final class ScheduledTask extends
+  final class ScheduledTask extends
       com.google.protobuf.nano.ExtendableMessageNano<ScheduledTask> {
 
     private static volatile ScheduledTask[] _emptyArray;
@@ -2090,7 +2090,7 @@ public interface NanoAndroidService {
     }
   }
 
-  public static final class AndroidNetworkSendRequest extends
+  final class AndroidNetworkSendRequest extends
       com.google.protobuf.nano.ExtendableMessageNano<AndroidNetworkSendRequest> {
 
     private static volatile AndroidNetworkSendRequest[] _emptyArray;
@@ -2195,7 +2195,7 @@ public interface NanoAndroidService {
     }
   }
 
-  public static final class AndroidTiclState extends
+  final class AndroidTiclState extends
       com.google.protobuf.nano.ExtendableMessageNano<AndroidTiclState> {
 
     public static final class Metadata extends
@@ -2497,7 +2497,7 @@ public interface NanoAndroidService {
     }
   }
 
-  public static final class AndroidTiclStateWithDigest extends
+  final class AndroidTiclStateWithDigest extends
       com.google.protobuf.nano.ExtendableMessageNano<AndroidTiclStateWithDigest> {
 
     private static volatile AndroidTiclStateWithDigest[] _emptyArray;

@@ -27,7 +27,7 @@ public final class CookieManagerParams extends org.chromium.mojo.bindings.Struct
 
     private CookieManagerParams(int version) {
         super(STRUCT_SIZE, version);
-        this.blockThirdPartyCookies = (boolean) false;
+        this.blockThirdPartyCookies = false;
     }
 
     public CookieManagerParams() {

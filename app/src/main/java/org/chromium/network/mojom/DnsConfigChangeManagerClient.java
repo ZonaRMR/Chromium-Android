@@ -18,7 +18,7 @@ public interface DnsConfigChangeManagerClient extends org.chromium.mojo.bindings
 
 
 
-    public interface Proxy extends DnsConfigChangeManagerClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends DnsConfigChangeManagerClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<DnsConfigChangeManagerClient, DnsConfigChangeManagerClient.Proxy> MANAGER = DnsConfigChangeManagerClient_Internal.MANAGER;

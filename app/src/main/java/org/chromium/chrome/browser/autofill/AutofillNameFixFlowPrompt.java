@@ -68,9 +68,9 @@ public class AutofillNameFixFlowPrompt implements TextWatcher, ModalDialogProper
         LayoutInflater inflater = LayoutInflater.from(context);
         mDialogView = inflater.inflate(R.layout.autofill_name_fixflow, null);
 
-        mUserNameInput = (EditText) mDialogView.findViewById(R.id.cc_name_edit);
+        mUserNameInput = mDialogView.findViewById(R.id.cc_name_edit);
         mUserNameInput.setText(inferredName, BufferType.EDITABLE);
-        mNameFixFlowTooltipIcon = (ImageView) mDialogView.findViewById(R.id.cc_name_tooltip_icon);
+        mNameFixFlowTooltipIcon = mDialogView.findViewById(R.id.cc_name_tooltip_icon);
         mNameFixFlowTooltipIcon.setOnClickListener((view) -> onTooltipIconClicked());
 
         mDialogModel = new PropertyModel.Builder(ModalDialogProperties.ALL_KEYS)

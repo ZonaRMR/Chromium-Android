@@ -300,7 +300,7 @@ public class InstantAppsHandler {
         String urlHost = Uri.parse(url).getHost();
         boolean sameHosts =
                 referrer != null && urlHost != null && urlHost.equals(referrer.getHost());
-        return (sameHosts && getInstantAppIntentForUrl(referrer.toString()) == null) || !sameHosts;
+        return !sameHosts || getInstantAppIntentForUrl(referrer.toString()) == null;
     }
 
     /**

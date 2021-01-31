@@ -18,7 +18,7 @@ public interface FindInPageClient extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends FindInPageClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends FindInPageClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<FindInPageClient, FindInPageClient.Proxy> MANAGER = FindInPageClient_Internal.MANAGER;

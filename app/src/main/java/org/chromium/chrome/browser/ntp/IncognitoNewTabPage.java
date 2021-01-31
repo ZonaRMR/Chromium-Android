@@ -93,17 +93,17 @@ public class IncognitoNewTabPage
                 ChromeFeatureList.isEnabled(ChromeFeatureList.INCOGNITO_STRINGS);
         if (useMDIncognitoNTP()) {
             TextView newTabIncognitoHeader =
-                    (TextView) mIncognitoNewTabPageView.findViewById(R.id.new_tab_incognito_title);
+                    mIncognitoNewTabPageView.findViewById(R.id.new_tab_incognito_title);
             newTabIncognitoHeader.setText(useAlternateIncognitoStrings
                             ? R.string.new_tab_private_title
                             : R.string.new_tab_otr_title);
         } else {
             TextView newTabIncognitoHeader =
-                    (TextView) mIncognitoNewTabPageView.findViewById(R.id.ntp_incognito_header);
+                    mIncognitoNewTabPageView.findViewById(R.id.ntp_incognito_header);
             newTabIncognitoHeader.setText(useAlternateIncognitoStrings
                             ? R.string.new_tab_private_header
                             : R.string.new_tab_incognito_header);
-            TextView newTabIncognitoMessage = (TextView) mIncognitoNewTabPageView.findViewById(
+            TextView newTabIncognitoMessage = mIncognitoNewTabPageView.findViewById(
                     R.id.new_tab_incognito_message);
             newTabIncognitoMessage.setText(useAlternateIncognitoStrings
                             ? R.string.new_tab_private_message

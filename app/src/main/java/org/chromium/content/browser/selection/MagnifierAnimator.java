@@ -14,7 +14,7 @@ import android.view.animation.LinearInterpolator;
 public class MagnifierAnimator implements SelectionInsertionHandleObserver {
     private static final long DURATION_MS = 100;
 
-    private MagnifierWrapper mMagnifier;
+    private final MagnifierWrapper mMagnifier;
     private ValueAnimator mAnimator;
 
     private boolean mMagnifierIsShowing;

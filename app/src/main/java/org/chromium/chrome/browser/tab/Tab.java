@@ -225,7 +225,7 @@ public class Tab
      * The size in pixels at which favicons will be drawn. Ideally mFavicon will have this size to
      * avoid scaling artifacts.
      */
-    private int mIdealFaviconSize;
+    private final int mIdealFaviconSize;
 
     /** Whether or not the TabState has changed. */
     private boolean mIsTabStateDirty = true;
@@ -405,7 +405,7 @@ public class Tab
     private BrowserControlsVisibilityDelegate mBrowserControlsVisibilityDelegate;
 
     /** Listens for views related to the tab to be attached or detached. */
-    private OnAttachStateChangeListener mAttachStateChangeListener;
+    private final OnAttachStateChangeListener mAttachStateChangeListener;
 
     /** Whether the tab can currently be interacted with. */
     private boolean mInteractableState;

@@ -64,7 +64,7 @@ public class SwipeRefreshHandler
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
     // The Tab where the swipe occurs.
-    private Tab mTab;
+    private final Tab mTab;
 
     // The container view the SwipeRefreshHandler instance is currently
     // associated with.

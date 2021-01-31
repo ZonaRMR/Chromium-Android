@@ -26,7 +26,7 @@ public class VrInputConnection {
     private static final int CHARS_AROUND_CURSOR = 100;
 
     private final long mNativeVrInputConnection;
-    private ImeAdapter mImeAdapter;
+    private final ImeAdapter mImeAdapter;
     private Handler mImeThreadResponseHandler;
 
     @CalledByNative

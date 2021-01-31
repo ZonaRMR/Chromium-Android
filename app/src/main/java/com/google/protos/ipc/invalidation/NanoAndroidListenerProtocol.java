@@ -7,7 +7,7 @@ package com.google.protos.ipc.invalidation;
 @SuppressWarnings("hiding")
 public interface NanoAndroidListenerProtocol {
 
-  public static final class AndroidListenerState extends
+  final class AndroidListenerState extends
       com.google.protobuf.nano.ExtendableMessageNano<AndroidListenerState> {
 
     public static final class RetryRegistrationState extends
@@ -445,7 +445,7 @@ public interface NanoAndroidListenerProtocol {
     }
   }
 
-  public static final class RegistrationCommand extends
+  final class RegistrationCommand extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationCommand> {
 
     private static volatile RegistrationCommand[] _emptyArray;
@@ -603,7 +603,7 @@ public interface NanoAndroidListenerProtocol {
     }
   }
 
-  public static final class StartCommand extends
+  final class StartCommand extends
       com.google.protobuf.nano.ExtendableMessageNano<StartCommand> {
 
     private static volatile StartCommand[] _emptyArray;

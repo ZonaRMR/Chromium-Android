@@ -10,7 +10,7 @@ package org.chromium.chrome.browser.photo_picker;
 public interface IDecoderServiceCallback extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.photo_picker.IDecoderServiceCallback
+abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.photo_picker.IDecoderServiceCallback
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.chrome.browser.photo_picker.IDecoderServiceCallback";
 /** Construct the stub at attach it to the interface. */
@@ -64,7 +64,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.chrome.browser.photo_picker.IDecoderServiceCallback
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -108,5 +108,5 @@ static final int TRANSACTION_onDecodeImageDone = (android.os.IBinder.FIRST_CALL_
   * @param payload The results of the image decoding request, including the
   *                decoded bitmap.
   */
-public void onDecodeImageDone(android.os.Bundle payload) throws android.os.RemoteException;
+void onDecodeImageDone(android.os.Bundle payload) throws android.os.RemoteException;
 }

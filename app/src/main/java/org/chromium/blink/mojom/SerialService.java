@@ -18,7 +18,7 @@ public interface SerialService extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends SerialService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends SerialService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<SerialService, SerialService.Proxy> MANAGER = SerialService_Internal.MANAGER;

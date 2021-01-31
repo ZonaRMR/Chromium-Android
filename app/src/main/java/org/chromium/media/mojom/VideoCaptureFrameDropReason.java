@@ -48,8 +48,8 @@ public final class VideoCaptureFrameDropReason {
 
     public static final int BUFFER_POOL_BUFFER_ALLOCATION_FAILED = BUFFER_POOL_MAX_BUFFER_COUNT_EXCEEDED + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (15);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 15;
 
     private static final boolean IS_EXTENSIBLE = false;
 

@@ -23,13 +23,13 @@ import javax.inject.Inject;
 public class DynamicModulePageLoadObserver implements PageLoadMetrics.Observer {
     @Nullable
     private ActivityDelegate mActivityDelegate;
-    private ActivityTabProvider mActivityTabProvider;
+    private final ActivityTabProvider mActivityTabProvider;
 
     // SystemClock.uptimeMillis() is used here as it (as of June 2017) uses the same system call
     // as all the native side of Chrome, that is clock_gettime(CLOCK_MONOTONIC). Meaning that
     // the offset relative to navigationStart is to be compared with a
     // SystemClock.uptimeMillis() value.
-    private long mNativeTickOffsetUs;
+    private final long mNativeTickOffsetUs;
     private final List<PageMetric> mPageMetricEvents = new ArrayList<>();
 
     private static class PageMetric {

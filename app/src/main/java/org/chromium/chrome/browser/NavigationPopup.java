@@ -60,7 +60,7 @@ public class NavigationPopup implements AdapterView.OnItemClickListener {
     private final Context mContext;
     private final ListPopupWindow mPopup;
     private final NavigationController mNavigationController;
-    private NavigationHistory mHistory;
+    private final NavigationHistory mHistory;
     private final NavigationAdapter mAdapter;
     private final @Type int mType;
     private final int mFaviconSize;

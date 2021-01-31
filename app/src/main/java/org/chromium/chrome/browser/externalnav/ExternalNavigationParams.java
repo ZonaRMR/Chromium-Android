@@ -163,10 +163,10 @@ public class ExternalNavigationParams {
     /** The builder for {@link ExternalNavigationParams} objects. */
     public static class Builder {
         /** The URL which we are navigating to. */
-        private String mUrl;
+        private final String mUrl;
 
         /** Whether we are currently in an incognito context. */
-        private boolean mIsIncognito;
+        private final boolean mIsIncognito;
 
         /** The referrer URL for the current navigation. */
         private String mReferrerUrl;

@@ -63,14 +63,14 @@ public class TabWebContentsDelegateAndroid extends WebContentsDelegateAndroid {
      * Listener to be notified when a find result is received.
      */
     public interface FindResultListener {
-        public void onFindResult(FindNotificationDetails result);
+        void onFindResult(FindNotificationDetails result);
     }
 
     /**
      * Listener to be notified when the rects corresponding to find matches are received.
      */
     public interface FindMatchRectsListener {
-        public void onFindMatchRects(FindMatchRectsDetails result);
+        void onFindMatchRects(FindMatchRectsDetails result);
     }
 
     /** Used for logging. */
@@ -302,8 +302,7 @@ public class TabWebContentsDelegateAndroid extends WebContentsDelegateAndroid {
 
     @Override
     public boolean isFullscreenForTabOrPending() {
-        return mTab.getFullscreenManager() == null
-                ? false : mTab.getFullscreenManager().getPersistentFullscreenMode();
+        return mTab.getFullscreenManager() != null && mTab.getFullscreenManager().getPersistentFullscreenMode();
     }
 
     @Override

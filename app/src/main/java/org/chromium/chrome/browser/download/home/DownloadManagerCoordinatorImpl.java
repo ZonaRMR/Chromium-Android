@@ -120,8 +120,7 @@ class DownloadManagerCoordinatorImpl
     @Override
     public boolean onBackPressed() {
         if (mListCoordinator.handleBackPressed()) return true;
-        if (mToolbarCoordinator.handleBackPressed()) return true;
-        return false;
+        return mToolbarCoordinator.handleBackPressed();
     }
 
     @Override

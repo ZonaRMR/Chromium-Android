@@ -76,7 +76,7 @@ public class ToolbarCoordinator implements SelectionObserver<ListItem> {
 
     private boolean mShowToolbarShadow;
 
-    private SelectableListToolbar.SearchDelegate mSearchDelegate =
+    private final SelectableListToolbar.SearchDelegate mSearchDelegate =
             new SelectableListToolbar.SearchDelegate() {
                 @Override
                 public void onSearchTextChanged(String query) {

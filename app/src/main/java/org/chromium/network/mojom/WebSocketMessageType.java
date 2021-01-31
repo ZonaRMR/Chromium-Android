@@ -22,10 +22,10 @@ public final class WebSocketMessageType {
 
     public static final int BINARY = TEXT + 1;
 
-    public static final int LAST = (int) (WebSocketMessageType.BINARY);
+    public static final int LAST = WebSocketMessageType.BINARY;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (2);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 2;
 
     private static final boolean IS_EXTENSIBLE = false;
 

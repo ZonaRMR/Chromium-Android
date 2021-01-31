@@ -313,19 +313,19 @@ public class Statistics extends InternalBase implements Marshallable<StatisticsS
       int counterValue = performanceCounter.getValue();
 
       // Call the relevant method in a loop (i.e., depending on the type of the class).
-      if (TypedUtil.<String>equals(className, SENT_MESSAGE_TYPE_NAME)) {
+      if (TypedUtil.equals(className, SENT_MESSAGE_TYPE_NAME)) {
         incrementPerformanceCounterValue(logger, SENT_MESSAGE_TYPE_NAME_TO_VALUE_MAP,
             statistics.sentMessageTypes, fieldName, counterValue);
-      } else if (TypedUtil.<String>equals(className, INCOMING_OPERATION_TYPE_NAME)) {
+      } else if (TypedUtil.equals(className, INCOMING_OPERATION_TYPE_NAME)) {
         incrementPerformanceCounterValue(logger, INCOMING_OPERATION_TYPE_NAME_TO_VALUE_MAP,
             statistics.incomingOperationTypes, fieldName, counterValue);
-      } else if (TypedUtil.<String>equals(className, RECEIVED_MESSAGE_TYPE_NAME)) {
+      } else if (TypedUtil.equals(className, RECEIVED_MESSAGE_TYPE_NAME)) {
         incrementPerformanceCounterValue(logger, RECEIVED_MESSAGE_TYPE_NAME_TO_VALUE_MAP,
             statistics.receivedMessageTypes, fieldName, counterValue);
-      } else if (TypedUtil.<String>equals(className,  LISTENER_EVENT_TYPE_NAME)) {
+      } else if (TypedUtil.equals(className,  LISTENER_EVENT_TYPE_NAME)) {
         incrementPerformanceCounterValue(logger, LISTENER_EVENT_TYPE_NAME_TO_VALUE_MAP,
             statistics.listenerEventTypes, fieldName, counterValue);
-      } else if (TypedUtil.<String>equals(className,  CLIENT_ERROR_TYPE_NAME)) {
+      } else if (TypedUtil.equals(className,  CLIENT_ERROR_TYPE_NAME)) {
         incrementPerformanceCounterValue(logger, CLIENT_ERROR_TYPE_NAME_TO_VALUE_MAP,
             statistics.clientErrorTypes, fieldName, counterValue);
       } else {

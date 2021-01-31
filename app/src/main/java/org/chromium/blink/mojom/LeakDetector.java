@@ -18,7 +18,7 @@ public interface LeakDetector extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends LeakDetector, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends LeakDetector, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<LeakDetector, LeakDetector.Proxy> MANAGER = LeakDetector_Internal.MANAGER;

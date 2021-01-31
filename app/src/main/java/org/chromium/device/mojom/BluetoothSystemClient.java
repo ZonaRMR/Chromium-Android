@@ -18,7 +18,7 @@ public interface BluetoothSystemClient extends org.chromium.mojo.bindings.Interf
 
 
 
-    public interface Proxy extends BluetoothSystemClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BluetoothSystemClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BluetoothSystemClient, BluetoothSystemClient.Proxy> MANAGER = BluetoothSystemClient_Internal.MANAGER;

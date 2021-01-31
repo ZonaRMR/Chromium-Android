@@ -18,7 +18,7 @@ public interface PlatformVerification extends org.chromium.mojo.bindings.Interfa
 
 
 
-    public interface Proxy extends PlatformVerification, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PlatformVerification, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PlatformVerification, PlatformVerification.Proxy> MANAGER = PlatformVerification_Internal.MANAGER;

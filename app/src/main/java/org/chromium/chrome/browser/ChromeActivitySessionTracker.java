@@ -50,9 +50,9 @@ public class ChromeActivitySessionTracker {
     private final PowerBroadcastReceiver mPowerBroadcastReceiver = new PowerBroadcastReceiver();
 
     // Used to trigger variation changes (such as seed fetches) upon application foregrounding.
-    private VariationsSession mVariationsSession;
+    private final VariationsSession mVariationsSession;
 
-    private Application mApplication;
+    private final Application mApplication;
     private boolean mIsInitialized;
     private boolean mIsStarted;
     private boolean mIsFinishedCachingNativeFlags;

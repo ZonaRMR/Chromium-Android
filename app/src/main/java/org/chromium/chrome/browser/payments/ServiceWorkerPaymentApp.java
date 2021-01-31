@@ -54,10 +54,10 @@ public class ServiceWorkerPaymentApp extends PaymentInstrument implements Paymen
      */
     protected static class Capabilities {
         // Stores mojom::BasicCardNetwork.
-        private int[] mSupportedCardNetworks;
+        private final int[] mSupportedCardNetworks;
 
         // Stores mojom::BasicCardType.
-        private int[] mSupportedCardTypes;
+        private final int[] mSupportedCardTypes;
 
         /**
          * Build capabilities for a payment instrument.

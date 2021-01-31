@@ -18,7 +18,7 @@ public interface SensorProvider extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends SensorProvider, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends SensorProvider, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<SensorProvider, SensorProvider.Proxy> MANAGER = SensorProvider_Internal.MANAGER;

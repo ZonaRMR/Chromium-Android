@@ -31,7 +31,7 @@ public class SyncErrorCardPreference extends Preference {
     @Override
     protected View onCreateView(ViewGroup parent) {
         View view = super.onCreateView(parent);
-        TextView title = (TextView) view.findViewById(android.R.id.title);
+        TextView title = view.findViewById(android.R.id.title);
         title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
         title.setTypeface(UiUtils.createRobotoMediumTypeface());
         title.setTextColor(ApiCompatibilityUtils.getColor(

@@ -46,10 +46,10 @@ public final class BufferFormat {
 
     public static final int UYVY_422 = YUV_420_BIPLANAR + 1;
 
-    public static final int LAST = (int) (BufferFormat.UYVY_422);
+    public static final int LAST = BufferFormat.UYVY_422;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (14);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 14;
 
     private static final boolean IS_EXTENSIBLE = false;
 

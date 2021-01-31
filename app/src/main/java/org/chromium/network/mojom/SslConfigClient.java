@@ -18,7 +18,7 @@ public interface SslConfigClient extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends SslConfigClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends SslConfigClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<SslConfigClient, SslConfigClient.Proxy> MANAGER = SslConfigClient_Internal.MANAGER;

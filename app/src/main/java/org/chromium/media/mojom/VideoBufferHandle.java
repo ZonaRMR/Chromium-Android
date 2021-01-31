@@ -21,7 +21,8 @@ public final class VideoBufferHandle extends org.chromium.mojo.bindings.Union {
         public static final int ReadOnlyShmemRegion = 1;
         public static final int SharedMemoryViaRawFileDescriptor = 2;
         public static final int MailboxHandles = 3;
-    };
+    }
+
     private org.chromium.mojo.system.SharedBufferHandle mSharedBufferHandle;
     private org.chromium.mojo_base.mojom.ReadOnlySharedMemoryRegion mReadOnlyShmemRegion;
     private SharedMemoryViaRawFileDescriptor mSharedMemoryViaRawFileDescriptor;

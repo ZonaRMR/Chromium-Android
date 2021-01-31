@@ -29,8 +29,8 @@ public final class DnsConfigOverrides extends org.chromium.mojo.bindings.Struct 
 
         public static final int TRISTATE_FALSE = TRISTATE_TRUE + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -68,12 +68,12 @@ public final class DnsConfigOverrides extends org.chromium.mojo.bindings.Struct 
 
     private DnsConfigOverrides(int version) {
         super(STRUCT_SIZE, version);
-        this.appendToMultiLabelName = (int) DnsConfigOverrides.Tristate.NO_OVERRIDE;
-        this.randomizePorts = (int) DnsConfigOverrides.Tristate.NO_OVERRIDE;
+        this.appendToMultiLabelName = Tristate.NO_OVERRIDE;
+        this.randomizePorts = Tristate.NO_OVERRIDE;
         this.ndots = (byte) -1L;
         this.attempts = (int) -1L;
-        this.rotate = (int) DnsConfigOverrides.Tristate.NO_OVERRIDE;
-        this.useLocalIpv6 = (int) DnsConfigOverrides.Tristate.NO_OVERRIDE;
+        this.rotate = Tristate.NO_OVERRIDE;
+        this.useLocalIpv6 = Tristate.NO_OVERRIDE;
     }
 
     public DnsConfigOverrides() {

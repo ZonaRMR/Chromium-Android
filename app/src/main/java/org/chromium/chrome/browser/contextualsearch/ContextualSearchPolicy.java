@@ -145,11 +145,9 @@ class ContextualSearchPolicy {
             return false;
         }
 
-        return (isPromoAvailable()
-                       || (mContextualSearchPreferenceHelper != null
-                                  && mContextualSearchPreferenceHelper.canThrottle()))
-                ? isBasePageHTTP(mNetworkCommunicator.getBasePageUrl())
-                : true;
+        return (!isPromoAvailable()
+                && (mContextualSearchPreferenceHelper == null
+                || !mContextualSearchPreferenceHelper.canThrottle())) || isBasePageHTTP(mNetworkCommunicator.getBasePageUrl());
     }
 
     /**
@@ -159,7 +157,7 @@ class ContextualSearchPolicy {
     boolean canSendSurroundings() {
         if (mDidOverrideDecidedStateForTesting) return mDecidedStateForTesting;
 
-        return isPromoAvailable() ? isBasePageHTTP(mNetworkCommunicator.getBasePageUrl()) : true;
+        return !isPromoAvailable() || isBasePageHTTP(mNetworkCommunicator.getBasePageUrl());
     }
 
     /**

@@ -87,7 +87,7 @@ class Wrappers {
          * Instantiate this to explain how to create a ThreadUtilsWrapper instance in
          * ThreadUtilsWrapper.getInstance().
          */
-        public interface Factory { public ThreadUtilsWrapper create(); }
+        public interface Factory { ThreadUtilsWrapper create(); }
 
         /**
          * Call this to use a different subclass of ThreadUtilsWrapper throughout the program.

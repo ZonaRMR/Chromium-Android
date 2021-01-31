@@ -31,7 +31,7 @@ public class ActivityWindowAndroid
 
     private int mNextRequestCode;
 
-    private boolean mListenToActivityState;
+    private final boolean mListenToActivityState;
 
     /**
      * Creates an Activity-specific WindowAndroid with associated intent functionality.

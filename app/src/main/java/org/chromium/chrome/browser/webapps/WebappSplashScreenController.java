@@ -46,7 +46,7 @@ public class WebappSplashScreenController extends EmptyTabObserver {
     // No error.
     public static final int ERROR_OK = 0;
 
-    private WebappSplashDelegate mDelegate;
+    private final WebappSplashDelegate mDelegate;
 
     /** Used to schedule splash screen hiding. */
     private CompositorViewHolder mCompositorViewHolder;
@@ -66,7 +66,7 @@ public class WebappSplashScreenController extends EmptyTabObserver {
     /** Time that the splash screen was shown. */
     private long mSplashShownTimestamp;
 
-    private ObserverList<SplashscreenObserver> mObservers;
+    private final ObserverList<SplashscreenObserver> mObservers;
 
     public WebappSplashScreenController() {
         mDelegate = new SameActivityWebappSplashDelegate();

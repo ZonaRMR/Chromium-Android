@@ -70,7 +70,7 @@ public abstract class ActionModeCallbackHelper {
 
         @Override
         public void onDestroyActionMode(ActionMode mode) {}
-    };
+    }
 
     /**
      * @return {@code true} if action mode is started and in proper working state.

@@ -18,6 +18,7 @@ import org.chromium.base.Log;
 import org.chromium.chrome.browser.media.router.MediaSource;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Abstracts parsing the Cast application id and other parameters from the source id.
@@ -61,8 +62,8 @@ public class RemotingMediaSource implements MediaSource {
 
         String mediaUrl;
         try {
-            mediaUrl = new String(Base64.decode(encodedContentUrl, Base64.URL_SAFE), "UTF-8");
-        } catch (IllegalArgumentException | UnsupportedEncodingException e) {
+            mediaUrl = new String(Base64.decode(encodedContentUrl, Base64.URL_SAFE), StandardCharsets.UTF_8);
+        } catch (IllegalArgumentException e) {
             Log.e(TAG, "Couldn't parse the source id.", e);
             return null;
         }

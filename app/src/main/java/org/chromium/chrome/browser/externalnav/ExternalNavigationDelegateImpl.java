@@ -323,12 +323,9 @@ public class ExternalNavigationDelegateImpl implements ExternalNavigationDelegat
         if (isWildCardHost) {
             return false;
         }
-        if (!TextUtils.isEmpty(filterPackageName)
-                && (info.activityInfo == null
-                           || !info.activityInfo.packageName.equals(filterPackageName))) {
-            return false;
-        }
-        return true;
+        return TextUtils.isEmpty(filterPackageName)
+                || (info.activityInfo != null
+                && info.activityInfo.packageName.equals(filterPackageName));
     }
 
     /**

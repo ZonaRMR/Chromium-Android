@@ -158,7 +158,7 @@ public abstract class SuggestionsPopupWindow
         mPopupVerticalMargin = mContext.getResources().getDimensionPixelSize(
                 R.dimen.text_suggestion_popup_vertical_margin);
 
-        mSuggestionListView = (ListView) mContentView.findViewById(R.id.suggestionContainer);
+        mSuggestionListView = mContentView.findViewById(R.id.suggestionContainer);
         // android:divider="@null" in the XML file crashes on Android N and O
         // when running as a WebView (b/38346876).
         mSuggestionListView.setDivider(null);
@@ -172,10 +172,10 @@ public abstract class SuggestionsPopupWindow
 
         mDivider = mContentView.findViewById(R.id.divider);
 
-        mAddToDictionaryButton = (TextView) mContentView.findViewById(R.id.addToDictionaryButton);
+        mAddToDictionaryButton = mContentView.findViewById(R.id.addToDictionaryButton);
         mAddToDictionaryButton.setOnClickListener(this);
 
-        mDeleteButton = (TextView) mContentView.findViewById(R.id.deleteButton);
+        mDeleteButton = mContentView.findViewById(R.id.deleteButton);
         mDeleteButton.setOnClickListener(this);
     }
 
@@ -225,7 +225,7 @@ public abstract class SuggestionsPopupWindow
     }
 
     private class SuggestionAdapter extends BaseAdapter {
-        private LayoutInflater mInflater =
+        private final LayoutInflater mInflater =
                 (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         @Override

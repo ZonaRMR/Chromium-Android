@@ -91,7 +91,7 @@ public class MediaDrmBridge {
     private MediaDrm mMediaDrm;
     private MediaCrypto mMediaCrypto;
     private long mNativeMediaDrmBridge;
-    private UUID mSchemeUUID;
+    private final UUID mSchemeUUID;
     private final boolean mRequiresMediaCrypto;
 
     // A session only for the purpose of creating a MediaCrypto object. Created
@@ -104,7 +104,7 @@ public class MediaDrmBridge {
     private MediaDrmSessionManager mSessionManager;
 
     // The persistent storage to record origin provisioning informations.
-    private MediaDrmStorageBridge mStorage;
+    private final MediaDrmStorageBridge mStorage;
 
     // Whether the current MediaDrmBridge instance is waiting for provisioning response.
     private boolean mProvisioningPending;
@@ -1125,7 +1125,7 @@ public class MediaDrmBridge {
 
         // If |mMediaDrm| is released, there is no need to callback native.
         if (mMediaDrm != null) {
-            success = isResponseReceived ? provideProvisionResponse(response) : false;
+            success = isResponseReceived && provideProvisionResponse(response);
         }
 
         // This may call release() internally. However, sMediaCryptoDeferrer.onProvisionDone() will

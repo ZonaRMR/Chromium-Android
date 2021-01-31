@@ -18,7 +18,7 @@ public interface MediaStreamDeviceObserver extends org.chromium.mojo.bindings.In
 
 
 
-    public interface Proxy extends MediaStreamDeviceObserver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaStreamDeviceObserver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaStreamDeviceObserver, MediaStreamDeviceObserver.Proxy> MANAGER = MediaStreamDeviceObserver_Internal.MANAGER;

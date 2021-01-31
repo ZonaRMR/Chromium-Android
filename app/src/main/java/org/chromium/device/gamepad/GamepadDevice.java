@@ -30,9 +30,9 @@ class GamepadDevice {
     static final int MAX_RAW_BUTTON_VALUES = 256;
 
     // An id for the gamepad.
-    private int mDeviceId;
+    private final int mDeviceId;
     // The index of the gamepad in the Navigator.
-    private int mDeviceIndex;
+    private final int mDeviceIndex;
     // Last time the data for this gamepad was updated.
     private long mTimestamp;
 
@@ -52,13 +52,13 @@ class GamepadDevice {
     private final float[] mRawAxes = new float[MAX_RAW_AXIS_VALUES];
 
     // An identification string for the gamepad.
-    private String mDeviceName;
+    private final String mDeviceName;
 
     // Array of axes ids.
-    private int[] mAxes;
+    private final int[] mAxes;
 
     // Mappings to canonical gamepad
-    private GamepadMappings mMappings;
+    private final GamepadMappings mMappings;
 
     GamepadDevice(int index, InputDevice inputDevice) {
         mDeviceIndex = index;

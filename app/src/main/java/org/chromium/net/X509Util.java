@@ -99,10 +99,10 @@ public class X509Util {
      * X509TrustManagerExtensions to support platforms before the latter was
      * added.
      */
-    private static interface X509TrustManagerImplementation {
-        public List<X509Certificate> checkServerTrusted(X509Certificate[] chain,
-                                                        String authType,
-                                                        String host) throws CertificateException;
+    private interface X509TrustManagerImplementation {
+        List<X509Certificate> checkServerTrusted(X509Certificate[] chain,
+                                                 String authType,
+                                                 String host) throws CertificateException;
     }
 
     private static final class X509TrustManagerIceCreamSandwich implements
@@ -118,7 +118,7 @@ public class X509Util {
                                                         String authType,
                                                         String host) throws CertificateException {
             mTrustManager.checkServerTrusted(chain, authType);
-            return Collections.<X509Certificate>emptyList();
+            return Collections.emptyList();
         }
     }
 
@@ -353,7 +353,7 @@ public class X509Util {
         X509Certificate rootCert = createCertificateFromBytes(rootCertBytes);
         synchronized (sLock) {
             sTestKeyStore.setCertificateEntry(
-                    "root_cert_" + Integer.toString(sTestKeyStore.size()), rootCert);
+                    "root_cert_" + sTestKeyStore.size(), rootCert);
             reloadTestTrustManager();
         }
     }

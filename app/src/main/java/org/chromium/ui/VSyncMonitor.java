@@ -34,10 +34,10 @@ public class VSyncMonitor {
          * @param monitor The VSyncMonitor that triggered the signal.
          * @param vsyncTimeMicros Absolute frame time in microseconds.
          */
-        public void onVSync(VSyncMonitor monitor, long vsyncTimeMicros);
+        void onVSync(VSyncMonitor monitor, long vsyncTimeMicros);
     }
 
-    private Listener mListener;
+    private final Listener mListener;
 
     // Display refresh rate as reported by the system.
     private long mRefreshPeriodNano;

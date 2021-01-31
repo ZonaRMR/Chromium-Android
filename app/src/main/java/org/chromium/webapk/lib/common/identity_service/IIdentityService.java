@@ -7,7 +7,7 @@ package org.chromium.webapk.lib.common.identity_service;
 public interface IIdentityService extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.webapk.lib.common.identity_service.IIdentityService
+abstract class Stub extends android.os.Binder implements org.chromium.webapk.lib.common.identity_service.IIdentityService
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.webapk.lib.common.identity_service.IIdentityService";
 /** Construct the stub at attach it to the interface. */
@@ -56,7 +56,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.webapk.lib.common.identity_service.IIdentityService
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -89,5 +89,5 @@ return _result;
 }
 static final int TRANSACTION_getRuntimeHostBrowserPackageName = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
 }
-public java.lang.String getRuntimeHostBrowserPackageName() throws android.os.RemoteException;
+java.lang.String getRuntimeHostBrowserPackageName() throws android.os.RemoteException;
 }

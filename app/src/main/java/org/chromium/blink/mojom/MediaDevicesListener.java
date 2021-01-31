@@ -18,7 +18,7 @@ public interface MediaDevicesListener extends org.chromium.mojo.bindings.Interfa
 
 
 
-    public interface Proxy extends MediaDevicesListener, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaDevicesListener, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaDevicesListener, MediaDevicesListener.Proxy> MANAGER = MediaDevicesListener_Internal.MANAGER;

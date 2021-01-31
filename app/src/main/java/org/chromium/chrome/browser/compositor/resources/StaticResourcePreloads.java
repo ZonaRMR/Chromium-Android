@@ -15,7 +15,7 @@ import org.chromium.ui.base.DeviceFormFactor;
  */
 public class StaticResourcePreloads {
     /** A list of resources to load synchronously once the compositor is initialized. */
-    private static int[] sSynchronousResources = new int[] {
+    private static final int[] sSynchronousResources = new int[] {
             R.drawable.bg_tabstrip_tab, R.drawable.bg_tabstrip_background_tab,
             R.drawable.btn_tab_close_normal, R.drawable.btn_tab_close_white_normal,
             R.drawable.btn_tab_close_pressed, R.drawable.btn_tabstrip_new_tab_normal,
@@ -24,10 +24,10 @@ public class StaticResourcePreloads {
     };
 
     /** A list of resources to load asynchronously once the compositor is initialized. */
-    private static int[] sAsynchronousResources = new int[] {
+    private static final int[] sAsynchronousResources = new int[] {
         R.drawable.btn_tabstrip_switch_normal, R.drawable.btn_tabstrip_switch_incognito};
 
-    private static int[] sEmptyList = new int[] {};
+    private static final int[] sEmptyList = new int[] {};
 
     public static int[] getSynchronousResources(Context context) {
         return DeviceFormFactor.isNonMultiDisplayContextOnTablet(context) ? sSynchronousResources

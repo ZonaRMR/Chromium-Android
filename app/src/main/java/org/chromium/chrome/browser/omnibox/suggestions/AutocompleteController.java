@@ -45,7 +45,7 @@ public class AutocompleteController {
     /**
      * Listener for receiving OmniboxSuggestions.
      */
-    public static interface OnSuggestionsReceivedListener {
+    public interface OnSuggestionsReceivedListener {
         void onSuggestionsReceived(
                 List<OmniboxSuggestion> suggestions, String inlineAutocompleteText);
     }

@@ -44,7 +44,7 @@ public class SearchEnginePreference extends PreferenceFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mListView = (ListView) getView().findViewById(android.R.id.list);
+        mListView = getView().findViewById(android.R.id.list);
         mListView.setAdapter(mSearchEngineAdapter);
         mListView.setDivider(null);
     }

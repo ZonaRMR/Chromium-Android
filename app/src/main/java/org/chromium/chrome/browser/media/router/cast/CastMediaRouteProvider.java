@@ -351,7 +351,7 @@ public class CastMediaRouteProvider extends BaseMediaRouteProvider {
             return canAutoJoin(source, origin, tabId);
         } else if (presentationId.startsWith(PRESENTATION_ID_SESSION_ID_PREFIX)) {
             String sessionId = presentationId.substring(PRESENTATION_ID_SESSION_ID_PREFIX.length());
-            if (mSession.getSessionId().equals(sessionId)) return true;
+            return mSession.getSessionId().equals(sessionId);
         } else {
             for (MediaRoute route : mRoutes.values()) {
                 if (route.presentationId.equals(presentationId)) return true;

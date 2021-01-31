@@ -22,7 +22,7 @@ import org.chromium.chrome.browser.widget.TintedDrawable;
 
 /** This class represents a bar to display at the top of the payment request UI. */
 public class PaymentRequestHeader extends FrameLayout {
-    private Context mContext;
+    private final Context mContext;
 
     /** Constructor for when the PaymentRequestHeader is inflated from XML. */
     public PaymentRequestHeader(Context context, AttributeSet attrs) {
@@ -49,7 +49,7 @@ public class PaymentRequestHeader extends FrameLayout {
     public void setTitleAndOrigin(String title, String origin, int securityLevel) {
         ((TextView) findViewById(R.id.page_title)).setText(title);
 
-        TextView hostName = (TextView) findViewById(R.id.hostname);
+        TextView hostName = findViewById(R.id.hostname);
         Spannable url = new SpannableStringBuilder(origin);
         OmniboxUrlEmphasizer.emphasizeUrl(url, mContext.getResources(),
                 Profile.getLastUsedProfile(), securityLevel, false /* isInternalPage */,

@@ -18,7 +18,7 @@ public interface WebUsbService extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends WebUsbService, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends WebUsbService, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<WebUsbService, WebUsbService.Proxy> MANAGER = WebUsbService_Internal.MANAGER;

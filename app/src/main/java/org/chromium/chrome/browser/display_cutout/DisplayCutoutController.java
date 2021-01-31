@@ -35,7 +35,7 @@ public class DisplayCutoutController implements InsetObserverView.WindowInsetObs
             DisplayCutoutController.class;
 
     /** The tab that this controller belongs to. */
-    private Tab mTab;
+    private final Tab mTab;
 
     /** The current viewport fit value. */
     private @WebContentsObserver.ViewportFitType int mViewportFit = ViewportFit.AUTO;

@@ -22,8 +22,8 @@ import org.chromium.content_public.browser.WebContents;
  */
 class ContextualSuggestionsSourceImpl
         extends EmptySuggestionsSource implements ContextualSuggestionsSource {
-    private ContextualSuggestionsBridge mBridge;
-    private CachedImageFetcher mCachedImageFetcher;
+    private final ContextualSuggestionsBridge mBridge;
+    private final CachedImageFetcher mCachedImageFetcher;
 
     /**
      * Creates a ContextualSuggestionsSource for getting contextual suggestions for the current

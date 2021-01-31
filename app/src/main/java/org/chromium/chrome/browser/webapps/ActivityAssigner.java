@@ -71,23 +71,23 @@ public class ActivityAssigner {
 
     // Don't ever change the package.  Left for backwards compatibility.
     @VisibleForTesting
-    static final String PREF_PACKAGE[] = {
+    static final String[] PREF_PACKAGE = {
         "com.google.android.apps.chrome.webapps",
         "com.google.android.apps.chrome.webapps.webapk",
         "com.google.android.apps.chrome.cct"
     };
 
-    static final String PREF_NUM_SAVED_ENTRIES[] = {
+    static final String[] PREF_NUM_SAVED_ENTRIES = {
         "ActivityAssigner.numSavedEntries",
         "ActivityAssigner.numSavedEntries.webapk",
         "ActivityAssigner.numSavedEntries.cct"
     };
-    static final String PREF_ACTIVITY_INDEX[] = {
+    static final String[] PREF_ACTIVITY_INDEX = {
         "ActivityAssigner.activityIndex",
         "ActivityAssigner.activityIndex.webapk",
         "ActivityAssigner.activityIndex.cct"
     };
-    static final String PREF_ACTIVITY_ID[] = {
+    static final String[] PREF_ACTIVITY_ID = {
         "ActivityAssigner.webappId",
         "ActivityAssigner.webappId.webapk",
         "ActivityAssigner.cctId"

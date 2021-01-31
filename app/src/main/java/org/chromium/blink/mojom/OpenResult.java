@@ -19,7 +19,8 @@ public final class OpenResult extends org.chromium.mojo.bindings.Union {
     public static final class Tag {
         public static final int Status = 0;
         public static final int Cache = 1;
-    };
+    }
+
     private int mStatus;
     private org.chromium.mojo.bindings.AssociatedInterfaceNotSupported mCache;
 

@@ -18,7 +18,7 @@ public interface ColorChooserFactory extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends ColorChooserFactory, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ColorChooserFactory, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ColorChooserFactory, ColorChooserFactory.Proxy> MANAGER = ColorChooserFactory_Internal.MANAGER;

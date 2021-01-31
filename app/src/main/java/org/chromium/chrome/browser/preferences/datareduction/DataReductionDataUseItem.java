@@ -12,9 +12,9 @@ import org.chromium.chrome.browser.util.FileSizeUtil;
  * Stores the data used and saved by a hostname.
  */
 public class DataReductionDataUseItem {
-    private String mHostname;
-    private long mDataUsed;
-    private long mOriginalSize;
+    private final String mHostname;
+    private final long mDataUsed;
+    private final long mOriginalSize;
 
     /**
      * Constructor for a DataReductionDataUseItem which associates a hostname with its data usage

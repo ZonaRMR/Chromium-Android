@@ -96,8 +96,8 @@ public abstract class SigninFragmentBase
 
     private String mSelectedAccountName;
     private boolean mIsDefaultAccountSelected;
-    private AccountsChangeObserver mAccountsChangedObserver;
-    private ProfileDataCache.Observer mProfileDataCacheObserver;
+    private final AccountsChangeObserver mAccountsChangedObserver;
+    private final ProfileDataCache.Observer mProfileDataCacheObserver;
     private ProfileDataCache mProfileDataCache;
     private List<String> mAccountNames;
     private boolean mResumed;

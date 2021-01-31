@@ -37,7 +37,7 @@ public interface MediaRouteManager {
      * @param wasLaunched whether the presentation on the other end of the route was launched or
      *                    just joined.
      */
-    public void onRouteCreated(
+    void onRouteCreated(
             String mediaRouteId, String mediaSinkId, int requestId, MediaRouteProvider provider,
             boolean wasLaunched);
 
@@ -46,14 +46,14 @@ public interface MediaRouteManager {
      * @param errorText the error message to return to the page.
      * @param requestId the id of the route creation request.
      */
-    public void onRouteRequestError(String errorText, int requestId);
+    void onRouteRequestError(String errorText, int requestId);
 
     /**
      * Called when the route is terminated. This happens when the receiver app has stopped.
      *
      * @param mediaRouteId the id of the created route.
      */
-    public void onRouteTerminated(String mediaRouteId);
+    void onRouteTerminated(String mediaRouteId);
 
     /**
      * Called when the route is closed with an optional error, for example, session launch failure.
@@ -62,12 +62,12 @@ public interface MediaRouteManager {
      * @param mediaRouteId the id of the created route.
      * @param error the error message. {@code null} indicates no error.
      */
-    public void onRouteClosed(String mediaRouteId, @Nullable String error);
+    void onRouteClosed(String mediaRouteId, @Nullable String error);
 
     /**
      * Called when a specified media route receives a message.
      * @param mediaRouteId The identifier of the media route.
      * @param message The message contents.
      */
-    public void onMessage(String mediaRouteId, String message);
+    void onMessage(String mediaRouteId, String message);
 }

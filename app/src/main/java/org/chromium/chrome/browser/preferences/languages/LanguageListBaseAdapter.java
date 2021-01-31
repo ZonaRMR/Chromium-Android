@@ -49,20 +49,20 @@ public class LanguageListBaseAdapter
     }
 
     static class LanguageRowViewHolder extends ViewHolder {
-        private TextView mTitle;
-        private TextView mDescription;
+        private final TextView mTitle;
+        private final TextView mDescription;
 
-        private ImageView mStartIcon;
-        private ListMenuButton mMoreButton;
+        private final ImageView mStartIcon;
+        private final ListMenuButton mMoreButton;
 
         LanguageRowViewHolder(View view) {
             super(view);
 
-            mTitle = (TextView) view.findViewById(R.id.title);
-            mDescription = (TextView) view.findViewById(R.id.description);
+            mTitle = view.findViewById(R.id.title);
+            mDescription = view.findViewById(R.id.description);
 
             mStartIcon = view.findViewById(R.id.icon_view);
-            mMoreButton = (ListMenuButton) view.findViewById(R.id.more);
+            mMoreButton = view.findViewById(R.id.more);
         }
 
         /**
@@ -123,7 +123,7 @@ public class LanguageListBaseAdapter
 
     private boolean mDragEnabled;
     private ItemTouchHelper mItemTouchHelper;
-    private List<LanguageItem> mLanguageList;
+    private final List<LanguageItem> mLanguageList;
 
     protected Context mContext;
 

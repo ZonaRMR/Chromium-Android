@@ -18,7 +18,7 @@ public interface Decryptor extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public static final class Status {
+    final class Status {
 
 
 
@@ -40,7 +40,7 @@ public interface Decryptor extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class StreamType {
+    final class StreamType {
 
 
 
@@ -62,7 +62,7 @@ public interface Decryptor extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public interface Proxy extends Decryptor, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends Decryptor, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<Decryptor, Decryptor.Proxy> MANAGER = Decryptor_Internal.MANAGER;

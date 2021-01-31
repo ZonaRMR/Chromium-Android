@@ -111,7 +111,7 @@ public class PasswordGenerationAdapter extends BaseAdapter {
 
             case EXPLANATION:
                 view = inflater.inflate(R.layout.password_generation_popup_explanation, null);
-                TextView explanation = (TextView) view
+                TextView explanation = view
                         .findViewById(R.id.password_generation_explanation);
                 explanation.setText(mExplanationText);
                 explanation.setLayoutParams(new LayoutParams(mSuggestionMeasuredWidth,

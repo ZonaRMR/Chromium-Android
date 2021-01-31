@@ -18,7 +18,7 @@ public interface BytesProvider extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends BytesProvider, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BytesProvider, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BytesProvider, BytesProvider.Proxy> MANAGER = BytesProvider_Internal.MANAGER;

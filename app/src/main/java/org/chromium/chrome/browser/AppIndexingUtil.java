@@ -104,10 +104,7 @@ public class AppIndexingUtil {
     private boolean wasPageVisitedRecently(String url) {
         if (url == null) return false;
         CacheEntry entry = getPageCache().get(url);
-        if (entry == null || (getElapsedTime() - entry.lastSeenTimeMs > CACHE_VISIT_CUTOFF_MS)) {
-            return false;
-        }
-        return true;
+        return entry != null && (getElapsedTime() - entry.lastSeenTimeMs <= CACHE_VISIT_CUTOFF_MS);
     }
 
     /**
@@ -117,10 +114,7 @@ public class AppIndexingUtil {
     private boolean lastPageVisitContainedEntity(String url) {
         if (url == null) return false;
         CacheEntry entry = getPageCache().get(url);
-        if (entry == null || !entry.containedEntity) {
-            return false;
-        }
-        return true;
+        return entry != null && entry.containedEntity;
     }
 
     private void putCacheEntry(String url, boolean containedEntity) {

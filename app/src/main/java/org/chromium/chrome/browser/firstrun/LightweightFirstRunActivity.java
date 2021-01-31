@@ -86,18 +86,18 @@ public class LightweightFirstRunActivity extends FirstRunActivityBase {
                     new SpanInfo("<LINK2>", "</LINK2>", clickablePrivacySpan));
         }
         TextView tosAndPrivacyTextView =
-                (TextView) findViewById(R.id.lightweight_fre_tos_and_privacy);
+                findViewById(R.id.lightweight_fre_tos_and_privacy);
         tosAndPrivacyTextView.setText(tosAndPrivacyText);
         tosAndPrivacyTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
-        mOkButton = (Button) findViewById(R.id.button_primary);
+        mOkButton = findViewById(R.id.button_primary);
         int okButtonHorizontalPadding =
                 getResources().getDimensionPixelSize(R.dimen.fre_button_padding);
         mOkButton.setPaddingRelative(okButtonHorizontalPadding, mOkButton.getPaddingTop(),
                 okButtonHorizontalPadding, mOkButton.getPaddingBottom());
         mOkButton.setOnClickListener(view -> acceptTermsOfService());
 
-        ((Button) findViewById(R.id.button_secondary))
+        findViewById(R.id.button_secondary)
                 .setOnClickListener(view -> abortFirstRunExperience());
     }
 

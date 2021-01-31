@@ -18,7 +18,7 @@ public interface AnchorElementMetricsHost extends org.chromium.mojo.bindings.Int
 
 
 
-    public interface Proxy extends AnchorElementMetricsHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AnchorElementMetricsHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AnchorElementMetricsHost, AnchorElementMetricsHost.Proxy> MANAGER = AnchorElementMetricsHost_Internal.MANAGER;

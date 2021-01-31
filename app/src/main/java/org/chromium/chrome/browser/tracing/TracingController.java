@@ -84,7 +84,7 @@ public class TracingController {
     // Only set while a trace is in progress to avoid leaking native resources.
     private TracingControllerAndroid mNativeController;
 
-    private ObserverList<Observer> mObservers = new ObserverList<>();
+    private final ObserverList<Observer> mObservers = new ObserverList<>();
     private @State int mState = State.INITIALIZING;
     private Set<String> mKnownCategories;
     private File mTracingTempFile;
@@ -333,7 +333,7 @@ public class TracingController {
     }
 
     private class DeleteTempFileTask extends AsyncTask<Void> {
-        private File mTracingTempFile;
+        private final File mTracingTempFile;
 
         public DeleteTempFileTask(File tracingTempFile) {
             mTracingTempFile = tracingTempFile;

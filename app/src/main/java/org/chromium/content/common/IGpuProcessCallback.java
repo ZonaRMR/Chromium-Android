@@ -6,7 +6,7 @@ package org.chromium.content.common;
 public interface IGpuProcessCallback extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.content.common.IGpuProcessCallback
+abstract class Stub extends android.os.Binder implements org.chromium.content.common.IGpuProcessCallback
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.content.common.IGpuProcessCallback";
 /** Construct the stub at attach it to the interface. */
@@ -83,7 +83,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.content.common.IGpuProcessCallback
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -148,6 +148,6 @@ return _result;
 static final int TRANSACTION_forwardSurfaceForSurfaceRequest = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
 static final int TRANSACTION_getViewSurface = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
 }
-public void forwardSurfaceForSurfaceRequest(org.chromium.base.UnguessableToken requestToken, android.view.Surface surface) throws android.os.RemoteException;
-public org.chromium.content.common.SurfaceWrapper getViewSurface(int surfaceId) throws android.os.RemoteException;
+void forwardSurfaceForSurfaceRequest(org.chromium.base.UnguessableToken requestToken, android.view.Surface surface) throws android.os.RemoteException;
+org.chromium.content.common.SurfaceWrapper getViewSurface(int surfaceId) throws android.os.RemoteException;
 }

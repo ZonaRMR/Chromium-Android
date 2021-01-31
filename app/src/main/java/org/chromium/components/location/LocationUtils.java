@@ -160,7 +160,7 @@ public class LocationUtils {
      * Instantiate this to explain how to create a LocationUtils instance in
      * LocationUtils.getInstance().
      */
-    public interface Factory { public LocationUtils create(); }
+    public interface Factory { LocationUtils create(); }
 
     /**
      * Call this to use a different subclass of LocationUtils throughout the program.

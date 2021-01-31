@@ -19,7 +19,8 @@ public final class FileChooserFileInfo extends org.chromium.mojo.bindings.Union 
     public static final class Tag {
         public static final int NativeFile = 0;
         public static final int FileSystem = 1;
-    };
+    }
+
     private NativeFileInfo mNativeFile;
     private FileSystemFileInfo mFileSystem;
 

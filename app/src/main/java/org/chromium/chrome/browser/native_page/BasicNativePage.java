@@ -25,7 +25,7 @@ public abstract class BasicNativePage extends EmptyTabObserver implements Native
     private final NativePageHost mHost;
     private final int mBackgroundColor;
     private int mTopMargin;
-    private int mBottomMargin;
+    private final int mBottomMargin;
 
     private String mUrl;
 

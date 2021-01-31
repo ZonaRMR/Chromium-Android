@@ -38,8 +38,8 @@ public final class SensorType {
 
     public static final int RELATIVE_ORIENTATION_QUATERNION = RELATIVE_ORIENTATION_EULER_ANGLES + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (10);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 10;
 
     private static final boolean IS_EXTENSIBLE = false;
 

@@ -45,7 +45,7 @@ class BackgroundSyncNetworkObserver implements NetworkChangeNotifierAutoDetect.O
     private static BackgroundSyncNetworkObserver sInstance;
 
     // List of native observers. These are each called when the network state changes.
-    private List<Long> mNativePtrs;
+    private final List<Long> mNativePtrs;
 
     private int mLastBroadcastConnectionType;
     private boolean mHasBroadcastConnectionType;

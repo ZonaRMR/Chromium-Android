@@ -64,8 +64,8 @@ public final class CorsError {
 
     public static final int REDIRECT_CONTAINS_CREDENTIALS = HEADER_DISALLOWED_BY_PREFLIGHT_RESPONSE + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (23);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 23;
 
     private static final boolean IS_EXTENSIBLE = false;
 

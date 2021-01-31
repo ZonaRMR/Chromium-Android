@@ -18,7 +18,7 @@ import java.util.Map;
 public final class DistilledPagePrefs {
 
     private final long mDistilledPagePrefsAndroid;
-    private Map<Observer, DistilledPagePrefsObserverWrapper> mObserverMap;
+    private final Map<Observer, DistilledPagePrefsObserverWrapper> mObserverMap;
 
     /**
      * Observer interface for observing DistilledPagePrefs changes.

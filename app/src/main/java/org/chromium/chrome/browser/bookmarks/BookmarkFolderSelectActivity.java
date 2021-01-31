@@ -60,7 +60,7 @@ public class BookmarkFolderSelectActivity extends SynchronousInitializationActiv
     private FolderListAdapter mBookmarkIdsAdapter;
     private ListView mBookmarkIdsList;
 
-    private BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
+    private final BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
         @Override
         public void bookmarkModelChanged() {
             updateFolderList();
@@ -155,12 +155,12 @@ public class BookmarkFolderSelectActivity extends SynchronousInitializationActiv
         }
 
         setContentView(R.layout.bookmark_folder_select_activity);
-        mBookmarkIdsList = (ListView) findViewById(R.id.bookmark_folder_list);
+        mBookmarkIdsList = findViewById(R.id.bookmark_folder_list);
         mBookmarkIdsList.setOnItemClickListener(this);
         mBookmarkIdsAdapter = new FolderListAdapter(this);
         mBookmarkIdsList.setAdapter(mBookmarkIdsAdapter);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -339,7 +339,7 @@ public class BookmarkFolderSelectActivity extends SynchronousInitializationActiv
                 convertView = LayoutInflater.from(parent.getContext()).inflate(
                         R.layout.bookmark_folder_select_item, parent, false);
             }
-            TextView textView = (TextView) convertView.findViewById(R.id.title);
+            TextView textView = convertView.findViewById(R.id.title);
             textView.setText(entry.mTitle);
             convertView.findViewById(R.id.description).setVisibility(View.GONE);
 

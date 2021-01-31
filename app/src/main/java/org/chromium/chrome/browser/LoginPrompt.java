@@ -37,8 +37,8 @@ public class LoginPrompt implements ChromeHttpAuthHandler.AutofillObserver {
 
     private void createDialog() {
         View v = LayoutInflater.from(mContext).inflate(R.layout.http_auth_dialog, null);
-        mUsernameView = (EditText) v.findViewById(R.id.username);
-        mPasswordView = (EditText) v.findViewById(R.id.password);
+        mUsernameView = v.findViewById(R.id.username);
+        mPasswordView = v.findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener((v1, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 mDialog.getButton(AlertDialog.BUTTON_POSITIVE).performClick();
@@ -47,7 +47,7 @@ public class LoginPrompt implements ChromeHttpAuthHandler.AutofillObserver {
             return false;
         });
 
-        TextView explanationView = (TextView) v.findViewById(R.id.explanation);
+        TextView explanationView = v.findViewById(R.id.explanation);
         explanationView.setText(mAuthHandler.getMessageBody());
 
         mDialog = new AlertDialog.Builder(mContext, R.style.AlertDialogTheme)

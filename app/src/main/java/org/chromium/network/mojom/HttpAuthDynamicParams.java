@@ -28,9 +28,9 @@ public final class HttpAuthDynamicParams extends org.chromium.mojo.bindings.Stru
 
     private HttpAuthDynamicParams(int version) {
         super(STRUCT_SIZE, version);
-        this.negotiateDisableCnameLookup = (boolean) false;
-        this.enableNegotiatePort = (boolean) true;
-        this.ntlmV2Enabled = (boolean) false;
+        this.negotiateDisableCnameLookup = false;
+        this.enableNegotiatePort = true;
+        this.ntlmV2Enabled = false;
     }
 
     public HttpAuthDynamicParams() {

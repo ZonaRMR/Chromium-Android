@@ -128,7 +128,7 @@ public class PietViewHolder extends FeedViewHolder implements SwipeableViewHolde
     frameAdapter.bindModel(
         frame,
         0, // TODO: set the frame width here
-        (ShardingControl) null,
+            null,
         pietSharedStates);
     bound = true;
   }

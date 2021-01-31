@@ -25,8 +25,8 @@ public final class NetworkServiceParams extends org.chromium.mojo.bindings.Struc
 
     private NetworkServiceParams(int version) {
         super(STRUCT_SIZE, version);
-        this.initialConnectionType = (int) ConnectionType.CONNECTION_UNKNOWN;
-        this.initialConnectionSubtype = (int) ConnectionSubtype.SUBTYPE_UNKNOWN;
+        this.initialConnectionType = ConnectionType.CONNECTION_UNKNOWN;
+        this.initialConnectionSubtype = ConnectionSubtype.SUBTYPE_UNKNOWN;
     }
 
     public NetworkServiceParams() {

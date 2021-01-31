@@ -32,4 +32,4 @@ class GpuProcessCallback extends IGpuProcessCallback.Stub {
     private static native void nativeCompleteScopedSurfaceRequest(
             UnguessableToken requestToken, Surface surface);
     private static native Surface nativeGetViewSurface(int surfaceId);
-};
+}

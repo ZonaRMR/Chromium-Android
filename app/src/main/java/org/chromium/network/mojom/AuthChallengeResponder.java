@@ -18,7 +18,7 @@ public interface AuthChallengeResponder extends org.chromium.mojo.bindings.Inter
 
 
 
-    public interface Proxy extends AuthChallengeResponder, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AuthChallengeResponder, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AuthChallengeResponder, AuthChallengeResponder.Proxy> MANAGER = AuthChallengeResponder_Internal.MANAGER;

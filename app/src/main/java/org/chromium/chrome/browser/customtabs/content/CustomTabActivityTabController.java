@@ -105,7 +105,7 @@ public class CustomTabActivityTabController implements InflationObserver, Native
     private CustomTabNavigationEventObserver mTabNavigationEventObserver;
 
     @Nullable
-    private String mSpeculatedUrl;
+    private final String mSpeculatedUrl;
     private boolean mUsingHiddenTab;
 
     // This boolean is used to do a hack in navigation history for hidden tab loads with

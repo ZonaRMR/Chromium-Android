@@ -18,7 +18,7 @@ public interface PauseSubresourceLoadingHandle extends org.chromium.mojo.binding
 
 
 
-    public interface Proxy extends PauseSubresourceLoadingHandle, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PauseSubresourceLoadingHandle, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PauseSubresourceLoadingHandle, PauseSubresourceLoadingHandle.Proxy> MANAGER = PauseSubresourceLoadingHandle_Internal.MANAGER;

@@ -81,13 +81,13 @@ public class WebContentsAccessibilityImpl extends AccessibilityNodeProvider
     private final WebContentsImpl mWebContents;
     protected AccessibilityManager mAccessibilityManager;
     protected final Context mContext;
-    private String mProductVersion;
+    private final String mProductVersion;
     protected long mNativeObj;
     private Rect mAccessibilityFocusRect;
     private boolean mIsHovering;
     private int mLastHoverId = View.NO_ID;
     protected int mCurrentRootId;
-    private int[] mTempLocation = new int[2];
+    private final int[] mTempLocation = new int[2];
     protected ViewGroup mView;
     private boolean mUserHasTouchExplored;
     private boolean mPendingScrollToMakeNodeVisible;
@@ -100,7 +100,7 @@ public class WebContentsAccessibilityImpl extends AccessibilityNodeProvider
     protected int mSelectionNodeId;
     private Runnable mSendWindowContentChangedRunnable;
     private View mAutofillPopupView;
-    private CaptioningController mCaptioningController;
+    private final CaptioningController mCaptioningController;
 
     // Whether native accessibility is allowed.
     private boolean mNativeAccessibilityAllowed;
@@ -180,7 +180,7 @@ public class WebContentsAccessibilityImpl extends AccessibilityNodeProvider
     }
 
     private boolean isEnabled() {
-        return isNativeInitialized() ? nativeIsEnabled(mNativeObj) : false;
+        return isNativeInitialized() && nativeIsEnabled(mNativeObj);
     }
 
     @VisibleForTesting
@@ -1029,11 +1029,7 @@ public class WebContentsAccessibilityImpl extends AccessibilityNodeProvider
                 | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_WORD
                 | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_LINE);
 
-        if (mAccessibilityFocusId == virtualViewId) {
-            node.setAccessibilityFocused(true);
-        } else {
-            node.setAccessibilityFocused(false);
-        }
+        node.setAccessibilityFocused(mAccessibilityFocusId == virtualViewId);
     }
 
     // For anything lower than API level 21 (Lollipop), calls AccessibilityNodeInfo.addAction(int)

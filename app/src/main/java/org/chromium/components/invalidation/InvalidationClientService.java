@@ -86,7 +86,7 @@ public class InvalidationClientService extends AndroidListener {
      */
     @Nullable private static byte[] sClientId;
 
-    private static AtomicReference<Class<? extends InvalidationClientService>> sServiceClass =
+    private static final AtomicReference<Class<? extends InvalidationClientService>> sServiceClass =
             new AtomicReference<>();
 
     private static Class<? extends InvalidationClientService>

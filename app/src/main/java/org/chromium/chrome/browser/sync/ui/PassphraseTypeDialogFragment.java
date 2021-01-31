@@ -158,7 +158,7 @@ public class PassphraseTypeDialogFragment extends DialogFragment implements
         View v = inflater.inflate(R.layout.sync_passphrase_types, null);
 
         // Configure the passphrase type list
-        ListView list = (ListView) v.findViewById(R.id.passphrase_types);
+        ListView list = v.findViewById(R.id.passphrase_types);
 
         PassphraseType currentType = getCurrentTypeFromArguments();
 

@@ -18,7 +18,7 @@ public interface AudioInputStreamObserver extends org.chromium.mojo.bindings.Int
 
 
 
-    public static final class DisconnectReason {
+    final class DisconnectReason {
 
 
         public static final int DEFAULT = (int) (0L);
@@ -31,8 +31,8 @@ public interface AudioInputStreamObserver extends org.chromium.mojo.bindings.Int
 
         public static final int DOCUMENT_DESTROYED = (int) (4L);
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (4);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 4;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -60,7 +60,7 @@ public interface AudioInputStreamObserver extends org.chromium.mojo.bindings.Int
     }
 
 
-    public interface Proxy extends AudioInputStreamObserver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AudioInputStreamObserver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AudioInputStreamObserver, AudioInputStreamObserver.Proxy> MANAGER = AudioInputStreamObserver_Internal.MANAGER;

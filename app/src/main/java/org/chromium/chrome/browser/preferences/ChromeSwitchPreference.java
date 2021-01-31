@@ -26,7 +26,7 @@ public class ChromeSwitchPreference extends SwitchPreference {
 
     private ManagedPreferenceDelegate mManagedPrefDelegate;
 
-    private boolean mDontUseSummaryAsTitle;
+    private final boolean mDontUseSummaryAsTitle;
     private boolean mDrawDivider;
 
     /**
@@ -81,7 +81,7 @@ public class ChromeSwitchPreference extends SwitchPreference {
             view.setPadding(left, top, right, bottom);
         }
 
-        SwitchCompat switchView = (SwitchCompat) view.findViewById(R.id.switch_widget);
+        SwitchCompat switchView = view.findViewById(R.id.switch_widget);
         // On BLU Life Play devices SwitchPreference.setWidgetLayoutResource() does nothing. As a
         // result, the user will see a non-material Switch and switchView will be null, hence the
         // null check below. http://crbug.com/451447
@@ -89,10 +89,10 @@ public class ChromeSwitchPreference extends SwitchPreference {
             switchView.setChecked(isChecked());
         }
 
-        TextView title = (TextView) view.findViewById(android.R.id.title);
+        TextView title = view.findViewById(android.R.id.title);
         title.setSingleLine(false);
         if (!mDontUseSummaryAsTitle && TextUtils.isEmpty(getTitle())) {
-            TextView summary = (TextView) view.findViewById(android.R.id.summary);
+            TextView summary = view.findViewById(android.R.id.summary);
             title.setText(summary.getText());
             title.setVisibility(View.VISIBLE);
             summary.setVisibility(View.GONE);

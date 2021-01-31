@@ -168,10 +168,9 @@ public class ScreenshotMonitor {
         if (screenHeight == imageHeight || screenWidth == imageWidth) return true;
         // Just in case the device gets rotated after the snapshot and before the event, check
         // width against height instead of width.
-        if (screenHeight == imageWidth || screenWidth == imageHeight) return true;
+        return screenHeight == imageWidth || screenWidth == imageHeight;
 
         // Otherwise assume this is not a screenshot.
-        return false;
     }
 
     @VisibleForTesting

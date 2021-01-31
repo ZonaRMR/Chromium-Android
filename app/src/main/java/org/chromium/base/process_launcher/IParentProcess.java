@@ -6,7 +6,7 @@ package org.chromium.base.process_launcher;
 public interface IParentProcess extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.base.process_launcher.IParentProcess
+abstract class Stub extends android.os.Binder implements org.chromium.base.process_launcher.IParentProcess
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.base.process_launcher.IParentProcess";
 /** Construct the stub at attach it to the interface. */
@@ -62,7 +62,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.base.process_launcher.IParentProcess
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -114,9 +114,9 @@ static final int TRANSACTION_reportCleanExit = (android.os.IBinder.FIRST_CALL_TR
 // Sends the child pid to the parent process. This will be called before any
 // third-party code is loaded, and will be a no-op after the first call.
 
-public void sendPid(int pid) throws android.os.RemoteException;
+void sendPid(int pid) throws android.os.RemoteException;
 // Tells the parent proces the child exited cleanly. Not oneway to ensure
 // the browser receives the message before child exits.
 
-public void reportCleanExit() throws android.os.RemoteException;
+void reportCleanExit() throws android.os.RemoteException;
 }

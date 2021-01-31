@@ -240,7 +240,7 @@ public class OfflinePageBridge {
     }
 
     private static class RequestsRemovedCallback {
-        private Callback<List<RequestRemovedResult>> mCallback;
+        private final Callback<List<RequestRemovedResult>> mCallback;
 
         public RequestsRemovedCallback(Callback<List<RequestRemovedResult>> callback) {
             mCallback = callback;
@@ -263,8 +263,8 @@ public class OfflinePageBridge {
      * Contains a result for a remove page request.
      */
     public static class RequestRemovedResult {
-        private long mRequestId;
-        private int mUpdateRequestResult;
+        private final long mRequestId;
+        private final int mUpdateRequestResult;
 
         public RequestRemovedResult(long requestId, int requestResult) {
             mRequestId = requestId;

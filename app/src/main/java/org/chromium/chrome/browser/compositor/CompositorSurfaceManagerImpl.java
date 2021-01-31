@@ -109,7 +109,7 @@ class CompositorSurfaceManagerImpl implements SurfaceHolder.Callback2, Composito
     private SurfaceState mRequestedByClient;
 
     // Client that we notify about surface change events.
-    private SurfaceManagerCallbackTarget mClient;
+    private final SurfaceManagerCallbackTarget mClient;
 
     // View to which we'll attach the SurfaceView.
     private final ViewGroup mParentView;

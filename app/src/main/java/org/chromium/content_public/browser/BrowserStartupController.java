@@ -22,7 +22,7 @@ public interface BrowserStartupController {
     /**
      * This provides the interface to the callbacks for successful or failed startup
      */
-    public interface StartupCallback {
+    interface StartupCallback {
         void onSuccess();
         void onFailure();
     }
@@ -35,7 +35,7 @@ public interface BrowserStartupController {
      *                           LibraryProcessType.PROCESS_WEBVIEW.
      * @return BrowserStartupController instance.
      */
-    public static BrowserStartupController get(int libraryProcessType) {
+    static BrowserStartupController get(int libraryProcessType) {
         return BrowserStartupControllerImpl.get(libraryProcessType);
     }
 

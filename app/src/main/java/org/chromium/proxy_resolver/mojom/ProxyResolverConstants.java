@@ -17,7 +17,7 @@ public final class ProxyResolverConstants {
 
 
     
-    public static final String PROXY_RESOLVER_SERVICE_NAME = (String) "proxy_resolver";
+    public static final String PROXY_RESOLVER_SERVICE_NAME = "proxy_resolver";
 
 
 

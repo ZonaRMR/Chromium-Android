@@ -35,11 +35,7 @@ public class AssistantDetailsCoordinator {
         model.addObserver((source, propertyKey) -> {
             if (AssistantDetailsModel.DETAILS == propertyKey) {
                 AssistantDetails details = model.get(AssistantDetailsModel.DETAILS);
-                if (details != null) {
-                    setVisible(true);
-                } else {
-                    setVisible(false);
-                }
+                setVisible(details != null);
             }
         });
     }

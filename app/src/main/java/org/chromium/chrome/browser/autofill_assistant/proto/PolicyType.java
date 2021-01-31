@@ -62,7 +62,7 @@ public enum PolicyType
 
   private final int value;
 
-  private PolicyType(int value) {
+  PolicyType(int value) {
     this.value = value;
   }
 

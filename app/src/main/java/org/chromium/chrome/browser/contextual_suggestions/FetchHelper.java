@@ -143,12 +143,12 @@ class FetchHelper {
     private final TabModelSelector mTabModelSelector;
     private final Map<Integer, TabFetchReadinessState> mObservedTabs = new HashMap<>();
 
-    private TabModelSelectorTabModelObserver mTabModelObserver;
-    private TabObserver mTabObserver;
+    private final TabModelSelectorTabModelObserver mTabModelObserver;
+    private final TabObserver mTabObserver;
     private boolean mFetchRequestedForCurrentTab;
 
-    private boolean mRequireCurrentPageFromSRP;
-    private boolean mRequireNavChainFromSRP;
+    private final boolean mRequireCurrentPageFromSRP;
+    private final boolean mRequireNavChainFromSRP;
 
     @Nullable
     private Tab mCurrentTab;
@@ -493,11 +493,8 @@ class FetchHelper {
         if (webContents.getMainFrame() == null) return false;
         String url = currentTab.getUrl();
         if (TextUtils.isEmpty(url)) return false;
-        if (currentTab.isShowingErrorPage() || currentTab.isShowingInterstitialPage()
-                || SadTab.isShowing(currentTab)) {
-            return false;
-        }
-        return true;
+        return !currentTab.isShowingErrorPage() && !currentTab.isShowingInterstitialPage()
+                && !SadTab.isShowing(currentTab);
     }
 
     static String getUrlToFetchFor(String visibleUrl, String canonicalUrl) {

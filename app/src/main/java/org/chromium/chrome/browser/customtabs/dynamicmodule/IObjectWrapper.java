@@ -12,7 +12,7 @@ package org.chromium.chrome.browser.customtabs.dynamicmodule;
 public interface IObjectWrapper extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper
+abstract class Stub extends android.os.Binder implements org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper
 {
 private static final java.lang.String DESCRIPTOR = "org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper";
 /** Construct the stub at attach it to the interface. */
@@ -53,7 +53,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements org.chromium.chrome.browser.customtabs.dynamicmodule.IObjectWrapper
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;

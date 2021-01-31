@@ -18,7 +18,7 @@ public interface AudioFocusManagerDebug extends org.chromium.mojo.bindings.Inter
 
 
 
-    public interface Proxy extends AudioFocusManagerDebug, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AudioFocusManagerDebug, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AudioFocusManagerDebug, AudioFocusManagerDebug.Proxy> MANAGER = AudioFocusManagerDebug_Internal.MANAGER;

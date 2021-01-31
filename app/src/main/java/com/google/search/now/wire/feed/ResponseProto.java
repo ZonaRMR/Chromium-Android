@@ -102,7 +102,7 @@ public final class ResponseProto {
 
       private final int value;
 
-      private ResponseVersion(int value) {
+      ResponseVersion(int value) {
         this.value = value;
       }
 

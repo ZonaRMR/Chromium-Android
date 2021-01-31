@@ -31,7 +31,7 @@ public class UiThreadTaskTraits extends TaskTraits {
     }
 
     private static byte[] getDefaultExtesionData() {
-        byte extensionData[] = new byte[TaskTraits.EXTENSION_STORAGE_SIZE];
+        byte[] extensionData = new byte[TaskTraits.EXTENSION_STORAGE_SIZE];
 
         // Note we don't specify the UI thread directly here because it's ID 0 and the array is
         // initialized to zero.

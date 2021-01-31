@@ -270,8 +270,7 @@ public class ExternalNavigationHandler {
         // below).
         boolean linkNotFromIntent = isLink && !isFromIntent;
 
-        boolean isOnEffectiveIntentRedirect = params.getRedirectHandler() == null ? false
-                : params.getRedirectHandler().isOnEffectiveIntentRedirectChain();
+        boolean isOnEffectiveIntentRedirect = params.getRedirectHandler() != null && params.getRedirectHandler().isOnEffectiveIntentRedirectChain();
 
         // http://crbug.com/170925: We need to show the intent picker when we receive an intent from
         // another app that 30x redirects to a YouTube/Google Maps/Play Store/Google+ URL etc.

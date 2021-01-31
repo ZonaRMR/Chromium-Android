@@ -96,8 +96,8 @@ public class SideSlideLayout extends ViewGroup {
     // True while side gesture is in progress.
     private boolean mIsBeingDragged;
 
-    private CircleImageView mCircleView;
-    private ArrowDrawable mArrow;
+    private final CircleImageView mCircleView;
+    private final ArrowDrawable mArrow;
 
     // Start position for animation moving the UI back to original offset.
     private int mFrom;

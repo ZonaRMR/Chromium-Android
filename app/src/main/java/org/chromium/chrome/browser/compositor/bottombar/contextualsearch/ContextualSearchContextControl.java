@@ -61,7 +61,7 @@ public class ContextualSearchContextControl extends OverlayPanelInflater {
         super.onFinishInflate();
 
         View view = getView();
-        mSelectedText = (TextView) view.findViewById(R.id.selected_text);
-        mEndText = (TextView) view.findViewById(R.id.surrounding_text_end);
+        mSelectedText = view.findViewById(R.id.selected_text);
+        mEndText = view.findViewById(R.id.surrounding_text_end);
     }
 }

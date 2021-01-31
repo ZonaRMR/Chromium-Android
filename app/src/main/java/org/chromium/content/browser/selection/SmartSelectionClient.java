@@ -44,9 +44,9 @@ public class SmartSelectionClient implements SelectionClient {
     private static final int NUM_EXTRA_CHARS = 240;
 
     private long mNativeSmartSelectionClient;
-    private SmartSelectionProvider mProvider;
-    private ResultCallback mCallback;
-    private SmartSelectionMetricsLogger mSmartSelectionMetricLogger;
+    private final SmartSelectionProvider mProvider;
+    private final ResultCallback mCallback;
+    private final SmartSelectionMetricsLogger mSmartSelectionMetricLogger;
 
     /**
      * Creates the SmartSelectionClient. Returns null in case SmartSelectionProvider does not exist

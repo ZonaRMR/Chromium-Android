@@ -191,9 +191,7 @@ public class PietHostBindingProvider extends HostBindingProvider {
       BindingValue result =
           getBindingForOfflineExtension(
               hostBindingData.getExtension(OfflineExtension.offlineExtension));
-      if (result != null) {
         return result;
-      }
     }
 
     return null;

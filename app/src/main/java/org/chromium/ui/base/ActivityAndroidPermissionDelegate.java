@@ -25,10 +25,10 @@ import java.lang.ref.WeakReference;
  * AndroidPermissionDelegate implementation for Activity.
  */
 public class ActivityAndroidPermissionDelegate implements AndroidPermissionDelegate {
-    private WeakReference<Activity> mActivity;
+    private final WeakReference<Activity> mActivity;
 
-    private Handler mHandler;
-    private SparseArray<PermissionCallback> mOutstandingPermissionRequests;
+    private final Handler mHandler;
+    private final SparseArray<PermissionCallback> mOutstandingPermissionRequests;
     private int mNextRequestCode;
 
     // Constants used for permission request code bounding.

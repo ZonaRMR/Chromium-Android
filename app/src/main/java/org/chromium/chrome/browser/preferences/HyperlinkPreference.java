@@ -48,7 +48,7 @@ public class HyperlinkPreference extends Preference {
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        TextView titleView = (TextView) view.findViewById(android.R.id.title);
+        TextView titleView = view.findViewById(android.R.id.title);
         titleView.setSingleLine(false);
 
         if (mImitateWebLink) {

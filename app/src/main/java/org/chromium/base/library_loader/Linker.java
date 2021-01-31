@@ -305,7 +305,7 @@ public class Linker {
          * @param inBrowserProcess true iff this is the browser process.
          * @return true if all checks pass.
          */
-        public boolean runChecks(int memoryDeviceConfig, boolean inBrowserProcess);
+        boolean runChecks(int memoryDeviceConfig, boolean inBrowserProcess);
     }
 
     /**

@@ -50,7 +50,7 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        mScrollView = (NewTabPageScrollView) findViewById(R.id.ntp_scrollview);
+        mScrollView = findViewById(R.id.ntp_scrollview);
         mScrollView.setBackgroundColor(
                 ApiCompatibilityUtils.getColor(getResources(), R.color.ntp_bg_incognito));
         setContentDescription(getResources().getText(

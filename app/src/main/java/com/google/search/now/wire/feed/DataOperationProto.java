@@ -80,7 +80,7 @@ public final class DataOperationProto {
      */
     com.google.search.now.ui.piet.PietProto.PietSharedState getPietSharedState();
 
-    public com.google.search.now.wire.feed.DataOperationProto.DataOperation.PayloadCase getPayloadCase();
+    com.google.search.now.wire.feed.DataOperationProto.DataOperation.PayloadCase getPayloadCase();
   }
   /**
    * <pre>
@@ -197,7 +197,7 @@ public final class DataOperationProto {
 
       private final int value;
 
-      private Operation(int value) {
+      Operation(int value) {
         this.value = value;
       }
 
@@ -213,7 +213,7 @@ public final class DataOperationProto {
       PIET_SHARED_STATE(4),
       PAYLOAD_NOT_SET(0);
       private final int value;
-      private PayloadCase(int value) {
+      PayloadCase(int value) {
         this.value = value;
       }
       /**
@@ -235,9 +235,9 @@ public final class DataOperationProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public PayloadCase
+      public PayloadCase
     getPayloadCase() {
       return PayloadCase.forNumber(
           payloadCase_);

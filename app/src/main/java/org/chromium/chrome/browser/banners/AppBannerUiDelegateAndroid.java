@@ -28,7 +28,7 @@ public class AppBannerUiDelegateAndroid implements AddToHomescreenDialog.Delegat
     /** Pointer to the native AppBannerUiDelegateAndroid. */
     private long mNativePointer;
 
-    private Tab mTab;
+    private final Tab mTab;
 
     private AddToHomescreenDialog mDialog;
 

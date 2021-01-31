@@ -18,7 +18,7 @@ public interface RendererClient extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends RendererClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends RendererClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<RendererClient, RendererClient.Proxy> MANAGER = RendererClient_Internal.MANAGER;

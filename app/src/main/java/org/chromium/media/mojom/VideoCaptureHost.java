@@ -18,7 +18,7 @@ public interface VideoCaptureHost extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends VideoCaptureHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends VideoCaptureHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<VideoCaptureHost, VideoCaptureHost.Proxy> MANAGER = VideoCaptureHost_Internal.MANAGER;

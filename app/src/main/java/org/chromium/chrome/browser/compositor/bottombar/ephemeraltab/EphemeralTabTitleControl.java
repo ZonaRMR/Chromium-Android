@@ -50,6 +50,6 @@ public class EphemeralTabTitleControl extends OverlayPanelTextViewInflater {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mBarText = (TextView) getView().findViewById(R.id.ephemeral_tab_text);
+        mBarText = getView().findViewById(R.id.ephemeral_tab_text);
     }
 }

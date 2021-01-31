@@ -88,4 +88,4 @@ public class UnguessableToken implements Parcelable {
 
         return token;
     }
-};
+}

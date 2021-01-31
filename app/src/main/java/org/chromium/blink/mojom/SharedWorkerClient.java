@@ -18,7 +18,7 @@ public interface SharedWorkerClient extends org.chromium.mojo.bindings.Interface
 
 
 
-    public interface Proxy extends SharedWorkerClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends SharedWorkerClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<SharedWorkerClient, SharedWorkerClient.Proxy> MANAGER = SharedWorkerClient_Internal.MANAGER;

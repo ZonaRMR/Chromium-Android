@@ -18,7 +18,7 @@ public interface VideoEncodeAccelerator extends org.chromium.mojo.bindings.Inter
 
 
 
-    public static final class Error {
+    final class Error {
 
 
         public static final int ILLEGAL_STATE = 0;
@@ -27,8 +27,8 @@ public interface VideoEncodeAccelerator extends org.chromium.mojo.bindings.Inter
 
         public static final int PLATFORM_FAILURE = INVALID_ARGUMENT + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -54,7 +54,7 @@ public interface VideoEncodeAccelerator extends org.chromium.mojo.bindings.Inter
     }
 
 
-    public interface Proxy extends VideoEncodeAccelerator, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends VideoEncodeAccelerator, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<VideoEncodeAccelerator, VideoEncodeAccelerator.Proxy> MANAGER = VideoEncodeAccelerator_Internal.MANAGER;

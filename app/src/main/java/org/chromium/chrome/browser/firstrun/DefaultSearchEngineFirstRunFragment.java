@@ -45,9 +45,9 @@ public class DefaultSearchEngineFirstRunFragment extends Fragment implements Fir
             LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(
                 R.layout.default_search_engine_first_run_fragment, container, false);
-        mEngineLayout = (RadioButtonLayout) rootView.findViewById(
+        mEngineLayout = rootView.findViewById(
                 R.id.default_search_engine_dialog_options);
-        mButton = (Button) rootView.findViewById(R.id.button_primary);
+        mButton = rootView.findViewById(R.id.button_primary);
         mButton.setEnabled(false);
 
         assert TemplateUrlService.getInstance().isLoaded();

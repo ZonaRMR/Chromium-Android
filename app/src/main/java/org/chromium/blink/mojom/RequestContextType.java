@@ -84,8 +84,8 @@ public final class RequestContextType {
 
     public static final int XSLT = XML_HTTP_REQUEST + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (33);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 33;
 
     private static final boolean IS_EXTENSIBLE = false;
 

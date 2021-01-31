@@ -22,10 +22,10 @@ import java.util.List;
 public class UsageStatsService {
     private static UsageStatsService sInstance;
 
-    private EventTracker mEventTracker;
-    private SuspensionTracker mSuspensionTracker;
-    private TokenTracker mTokenTracker;
-    private UsageStatsBridge mBridge;
+    private final EventTracker mEventTracker;
+    private final SuspensionTracker mSuspensionTracker;
+    private final TokenTracker mTokenTracker;
+    private final UsageStatsBridge mBridge;
     private boolean mOptInState;
 
     /** Get the global instance of UsageStatsService */

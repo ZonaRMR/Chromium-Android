@@ -34,11 +34,11 @@ public class TranslateMenuHelper implements AdapterView.OnItemClickListener {
     private final TranslateMenuListener mMenuListener;
     private final TranslateOptions mOptions;
 
-    private ContextThemeWrapper mContextWrapper;
+    private final ContextThemeWrapper mContextWrapper;
     private TranslateMenuAdapter mAdapter;
-    private View mAnchorView;
+    private final View mAnchorView;
     private ListPopupWindow mPopup;
-    private boolean mIsIncognito;
+    private final boolean mIsIncognito;
 
     /**
      * Interface for receiving the click event of menu item.
@@ -295,7 +295,7 @@ public class TranslateMenuHelper implements AdapterView.OnItemClickListener {
                         checkboxIcon.setVisibility(View.INVISIBLE);
                     }
 
-                    View divider = (View) menuItemView.findViewById(R.id.menu_item_divider);
+                    View divider = menuItemView.findViewById(R.id.menu_item_divider);
                     if (getItem(position).mWithDivider) {
                         divider.setVisibility(View.VISIBLE);
                     }

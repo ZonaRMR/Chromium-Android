@@ -17,7 +17,7 @@ import org.chromium.ui.ContactsPickerListener;
  */
 public class ContactsPickerDialog extends AlertDialog {
     // The category we're showing contacts for.
-    private PickerCategoryView mCategoryView;
+    private final PickerCategoryView mCategoryView;
 
     /**
      * The ContactsPickerDialog constructor.

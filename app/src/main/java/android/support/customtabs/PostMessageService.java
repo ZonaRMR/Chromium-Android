@@ -26,7 +26,7 @@ import android.os.RemoteException;
  * A service to receive postMessage related communication from a Custom Tabs provider.
  */
 public class PostMessageService extends Service {
-    private IPostMessageService.Stub mBinder = new IPostMessageService.Stub() {
+    private final IPostMessageService.Stub mBinder = new IPostMessageService.Stub() {
 
         @Override
         public void onMessageChannelReady(

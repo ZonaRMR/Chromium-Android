@@ -17,7 +17,7 @@ public final class ConstantsConstants {
 
 
     
-    public static final String SERVICE_NAME = (String) "device";
+    public static final String SERVICE_NAME = "device";
 
 
 

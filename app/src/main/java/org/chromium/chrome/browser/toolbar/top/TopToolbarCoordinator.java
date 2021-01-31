@@ -47,7 +47,7 @@ public class TopToolbarCoordinator implements Toolbar {
      */
     private @Nullable TabSwitcherModeTTCoordinatorPhone mTabSwitcherModeCoordinatorPhone;
 
-    private HomepageManager.HomepageStateListener mHomepageStateListener =
+    private final HomepageManager.HomepageStateListener mHomepageStateListener =
             new HomepageManager.HomepageStateListener() {
                 @Override
                 public void onHomepageStateUpdated() {
@@ -543,7 +543,7 @@ public class TopToolbarCoordinator implements Toolbar {
 
     @Override
     public boolean isShowingAppMenuUpdateBadge() {
-        return mToolbarLayout == null ? false : mToolbarLayout.isShowingAppMenuUpdateBadge();
+        return mToolbarLayout != null && mToolbarLayout.isShowingAppMenuUpdateBadge();
     }
 
     @Override

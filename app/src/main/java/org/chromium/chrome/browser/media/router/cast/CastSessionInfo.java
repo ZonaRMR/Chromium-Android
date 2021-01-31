@@ -98,7 +98,7 @@ public class CastSessionInfo {
         public static class Builder {
             private String mLabel = "";
             private String mFriendlyName = "";
-            private List<String> mCapabilities = new ArrayList<String>();
+            private final List<String> mCapabilities = new ArrayList<String>();
             private VolumeInfo mVolume;
             private int mIsActiveInput;
             private String mDisplayStatus = "";
@@ -224,8 +224,8 @@ public class CastSessionInfo {
         private String mSessionId = "";
         private String mStatusText = "";
         private ReceiverInfo mReceiver;
-        private List<String> mNamespaces = new ArrayList<String>();
-        private List<String> mMedia = new ArrayList<String>();
+        private final List<String> mNamespaces = new ArrayList<String>();
+        private final List<String> mMedia = new ArrayList<String>();
         private String mStatus = "";
         private String mTransportId = "";
         private String mAppId = "";

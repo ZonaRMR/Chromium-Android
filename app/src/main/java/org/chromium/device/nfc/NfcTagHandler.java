@@ -47,10 +47,10 @@ public class NfcTagHandler {
      * This interface provides generic methods.
      */
     private interface TagTechnologyHandler {
-        public void write(NdefMessage message)
-                throws IOException, TagLostException, FormatException, IllegalStateException;
-        public NdefMessage read()
-                throws IOException, TagLostException, FormatException, IllegalStateException;
+        void write(NdefMessage message)
+                throws IOException, FormatException, IllegalStateException;
+        NdefMessage read()
+                throws IOException, FormatException, IllegalStateException;
     }
 
     /**
@@ -66,13 +66,13 @@ public class NfcTagHandler {
 
         @Override
         public void write(NdefMessage message)
-                throws IOException, TagLostException, FormatException, IllegalStateException {
+                throws IOException, FormatException, IllegalStateException {
             mNdef.writeNdefMessage(message);
         }
 
         @Override
         public NdefMessage read()
-                throws IOException, TagLostException, FormatException, IllegalStateException {
+                throws IOException, FormatException, IllegalStateException {
             return mNdef.getNdefMessage();
         }
     }
@@ -90,7 +90,7 @@ public class NfcTagHandler {
 
         @Override
         public void write(NdefMessage message)
-                throws IOException, TagLostException, FormatException, IllegalStateException {
+                throws IOException, FormatException, IllegalStateException {
             mNdefFormattable.format(message);
         }
 
@@ -108,7 +108,7 @@ public class NfcTagHandler {
     /**
      * Connects to NFC tag.
      */
-    public void connect() throws IOException, TagLostException {
+    public void connect() throws IOException {
         if (!mTech.isConnected()) {
             mTech.connect();
             mWasConnected = true;
@@ -133,12 +133,12 @@ public class NfcTagHandler {
      * Writes NdefMessage to NFC tag.
      */
     public void write(NdefMessage message)
-            throws IOException, TagLostException, FormatException, IllegalStateException {
+            throws IOException, FormatException, IllegalStateException {
         mTechHandler.write(message);
     }
 
     public NdefMessage read()
-            throws IOException, TagLostException, FormatException, IllegalStateException {
+            throws IOException, FormatException, IllegalStateException {
         return mTechHandler.read();
     }
 

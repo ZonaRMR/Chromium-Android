@@ -35,9 +35,9 @@ public final class FetchApiResponse extends org.chromium.mojo.bindings.Struct {
     private FetchApiResponse(int version) {
         super(STRUCT_SIZE, version);
         this.statusCode = (int) 0L;
-        this.responseType = (int) org.chromium.network.mojom.FetchResponseType.OPAQUE;
-        this.responseSource = (int) org.chromium.network.mojom.FetchResponseSource.UNSPECIFIED;
-        this.error = (int) ServiceWorkerResponseError.UNKNOWN;
+        this.responseType = org.chromium.network.mojom.FetchResponseType.OPAQUE;
+        this.responseSource = org.chromium.network.mojom.FetchResponseSource.UNSPECIFIED;
+        this.error = ServiceWorkerResponseError.UNKNOWN;
     }
 
     public FetchApiResponse() {

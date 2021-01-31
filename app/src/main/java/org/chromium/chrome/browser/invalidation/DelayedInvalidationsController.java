@@ -95,7 +95,7 @@ public class DelayedInvalidationsController {
         String oldAccount = prefs.getString(DELAYED_ACCOUNT_NAME, null);
         // Make sure to construct a new set so it can be modified safely. See crbug.com/568369.
         Set<String> invals = new HashSet<String>(
-                prefs.getStringSet(DELAYED_INVALIDATIONS, Collections.<String>emptySet()));
+                prefs.getStringSet(DELAYED_INVALIDATIONS, Collections.emptySet()));
         assert invals.isEmpty() || oldAccount != null;
         boolean invalidateAllTypes = false;
         // We invalidate all types if:

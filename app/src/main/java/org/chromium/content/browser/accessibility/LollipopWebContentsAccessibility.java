@@ -30,7 +30,7 @@ import java.util.Locale;
 @JNINamespace("content")
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class LollipopWebContentsAccessibility extends KitKatWebContentsAccessibility {
-    private static SparseArray<AccessibilityAction> sAccessibilityActionMap =
+    private static final SparseArray<AccessibilityAction> sAccessibilityActionMap =
             new SparseArray<AccessibilityAction>();
     private String mSystemLanguageTag;
     private BroadcastReceiver mBroadcastReceiver;

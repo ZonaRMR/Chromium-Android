@@ -58,8 +58,8 @@ public class NumberRollView extends FrameLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mUpNumber = (TextView) findViewById(R.id.up);
-        mDownNumber = (TextView) findViewById(R.id.down);
+        mUpNumber = findViewById(R.id.up);
+        mDownNumber = findViewById(R.id.down);
 
         assert mUpNumber != null;
         assert mDownNumber != null;

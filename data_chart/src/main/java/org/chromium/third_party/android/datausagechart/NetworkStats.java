@@ -703,7 +703,7 @@ public class NetworkStats implements Parcelable {
         }
     };
     public interface NonMonotonicObserver<C> {
-        public void foundNonMonotonic(
+        void foundNonMonotonic(
                 NetworkStats left, int leftIndex, NetworkStats right, int rightIndex, C cookie);
     }
 }

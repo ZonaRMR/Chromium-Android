@@ -12,7 +12,7 @@ import android.content.Intent;
  * Provides {@link PendingIntent} and the flags used to build the PendingIntent.
  */
 public class PendingIntentProvider {
-    private PendingIntent mPendingIntent;
+    private final PendingIntent mPendingIntent;
     private final int mFlags;
 
     /**

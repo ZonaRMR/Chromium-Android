@@ -609,7 +609,7 @@ public  final class ClientContextProto extends
     CHROME(1),
     CLIENT_NOT_SET(0);
     private final int value;
-    private ClientCase(int value) {
+    ClientCase(int value) {
       this.value = value;
     }
     /**
@@ -630,7 +630,7 @@ public  final class ClientContextProto extends
     public int getNumber() {
       return this.value;
     }
-  };
+  }
 
   public ClientCase
   getClientCase() {

@@ -18,7 +18,7 @@ public interface DedicatedWorkerFactory extends org.chromium.mojo.bindings.Inter
 
 
 
-    public interface Proxy extends DedicatedWorkerFactory, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends DedicatedWorkerFactory, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<DedicatedWorkerFactory, DedicatedWorkerFactory.Proxy> MANAGER = DedicatedWorkerFactory_Internal.MANAGER;

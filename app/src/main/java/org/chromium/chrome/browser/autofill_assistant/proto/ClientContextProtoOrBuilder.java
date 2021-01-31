@@ -80,5 +80,5 @@ public interface ClientContextProtoOrBuilder extends
   com.google.protobuf.ByteString
       getCountryBytes();
 
-  public org.chromium.chrome.browser.autofill_assistant.proto.ClientContextProto.ClientCase getClientCase();
+  org.chromium.chrome.browser.autofill_assistant.proto.ClientContextProto.ClientCase getClientCase();
 }

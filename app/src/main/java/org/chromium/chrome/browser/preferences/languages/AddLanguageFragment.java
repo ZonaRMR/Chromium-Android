@@ -108,7 +108,7 @@ public class AddLanguageFragment extends Fragment {
         mSearch = "";
         final Activity activity = getActivity();
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.language_list);
+        mRecyclerView = view.findViewById(R.id.language_list);
         LinearLayoutManager layoutMangager = new LinearLayoutManager(activity);
         mRecyclerView.setLayoutManager(layoutMangager);
         mRecyclerView.addItemDecoration(

@@ -183,9 +183,7 @@ public class PreferencesLauncher {
             return false;
         }
 
-        if (profileSyncService.isUsingSecondaryPassphrase()) return false;
-
-        return true;
+        return !profileSyncService.isUsingSecondaryPassphrase();
     }
 
     private static boolean tryShowingTheGooglePasswordManager(Activity activity) {

@@ -27,7 +27,7 @@ public final class ControllerServiceWorkerInfo extends org.chromium.mojo.binding
 
     private ControllerServiceWorkerInfo(int version) {
         super(STRUCT_SIZE, version);
-        this.mode = (int) ControllerServiceWorkerMode.NO_CONTROLLER;
+        this.mode = ControllerServiceWorkerMode.NO_CONTROLLER;
     }
 
     public ControllerServiceWorkerInfo() {

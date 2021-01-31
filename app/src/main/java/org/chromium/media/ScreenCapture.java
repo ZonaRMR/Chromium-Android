@@ -50,8 +50,8 @@ public class ScreenCapture extends Fragment {
     // Native callback context variable.
     private final long mNativeScreenCaptureMachineAndroid;
 
-    private static enum CaptureState { ATTACHED, ALLOWED, STARTED, STOPPING, STOPPED }
-    private static enum DeviceOrientation { PORTRAIT, LANDSCAPE }
+    private enum CaptureState { ATTACHED, ALLOWED, STARTED, STOPPING, STOPPED }
+    private enum DeviceOrientation { PORTRAIT, LANDSCAPE }
     private final Object mCaptureStateLock = new Object();
     private CaptureState mCaptureState = CaptureState.STOPPED;
 

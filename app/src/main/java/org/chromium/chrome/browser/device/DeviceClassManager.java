@@ -20,12 +20,12 @@ public class DeviceClassManager {
     private static DeviceClassManager sInstance;
 
     // Set of features that can be enabled/disabled
-    private boolean mEnableSnapshots;
-    private boolean mEnableLayerDecorationCache;
+    private final boolean mEnableSnapshots;
+    private final boolean mEnableLayerDecorationCache;
     private boolean mEnableAccessibilityLayout;
     private boolean mEnableAnimations;
-    private boolean mEnablePrerendering;
-    private boolean mEnableToolbarSwipe;
+    private final boolean mEnablePrerendering;
+    private final boolean mEnableToolbarSwipe;
 
     private final boolean mEnableFullscreen;
 

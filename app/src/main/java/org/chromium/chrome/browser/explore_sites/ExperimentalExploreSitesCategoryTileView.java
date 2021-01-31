@@ -27,7 +27,7 @@ public class ExperimentalExploreSitesCategoryTileView extends LinearLayout {
     /** The data represented by this tile. */
     private ExploreSitesCategoryTile mCategoryData;
 
-    private Resources mResources;
+    private final Resources mResources;
     private RoundedIconGenerator mIconGenerator;
 
     private TextView mTitleView;

@@ -18,7 +18,7 @@ public interface PluginRegistry extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends PluginRegistry, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PluginRegistry, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PluginRegistry, PluginRegistry.Proxy> MANAGER = PluginRegistry_Internal.MANAGER;

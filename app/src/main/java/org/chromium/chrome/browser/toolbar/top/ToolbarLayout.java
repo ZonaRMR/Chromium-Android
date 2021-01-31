@@ -334,7 +334,7 @@ public abstract class ToolbarLayout extends FrameLayout {
      * Add the toolbar's progress bar to the view hierarchy.
      */
     void addProgressBarToHierarchy() {
-        ViewGroup controlContainer = (ViewGroup) getRootView().findViewById(R.id.control_container);
+        ViewGroup controlContainer = getRootView().findViewById(R.id.control_container);
         int progressBarPosition =
                 UiUtils.insertAfter(controlContainer, mProgressBar, (View) getParent());
         assert progressBarPosition >= 0;
@@ -719,7 +719,7 @@ public abstract class ToolbarLayout extends FrameLayout {
      */
     boolean back() {
         if (getLocationBar() != null) getLocationBar().setUrlBarFocus(false);
-        return mToolbarTabController != null ? mToolbarTabController.back() : false;
+        return mToolbarTabController != null && mToolbarTabController.back();
     }
 
     /**
@@ -728,7 +728,7 @@ public abstract class ToolbarLayout extends FrameLayout {
      */
     boolean forward() {
         if (getLocationBar() != null) getLocationBar().setUrlBarFocus(false);
-        return mToolbarTabController != null ? mToolbarTabController.forward() : false;
+        return mToolbarTabController != null && mToolbarTabController.forward();
     }
 
     /**

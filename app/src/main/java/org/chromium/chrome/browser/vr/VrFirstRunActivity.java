@@ -67,7 +67,7 @@ public class VrFirstRunActivity extends Activity {
 
     private void showFre() {
         // Start the actual 2D FRE if the user successfully exited VR.
-        Intent freIntent = (Intent) IntentUtils.safeGetParcelableExtra(
+        Intent freIntent = IntentUtils.safeGetParcelableExtra(
                 getIntent(), VrIntentDelegateImpl.VR_FRE_INTENT_EXTRA);
         IntentUtils.safeStartActivity(this, freIntent);
         finish();

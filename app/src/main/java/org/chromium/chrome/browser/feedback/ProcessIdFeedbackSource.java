@@ -54,7 +54,7 @@ public class ProcessIdFeedbackSource implements AsyncFeedbackSource {
             StringBuilder spids = new StringBuilder();
             for (long pid : pids) {
                 if (spids.length() > 0) spids.append(", ");
-                spids.append(String.valueOf(pid));
+                spids.append(pid);
             }
             mProcessMap.put(processTypeToFeedbackKey(entry.getKey()), spids.toString());
         }

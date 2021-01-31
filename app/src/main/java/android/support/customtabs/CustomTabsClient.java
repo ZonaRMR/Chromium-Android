@@ -251,7 +251,7 @@ public class CustomTabsClient {
 
     private ICustomTabsCallback.Stub createCallbackWrapper(final CustomTabsCallback callback) {
         return new ICustomTabsCallback.Stub() {
-            private Handler mHandler = new Handler(Looper.getMainLooper());
+            private final Handler mHandler = new Handler(Looper.getMainLooper());
 
             @Override
             public void onNavigationEvent(final int navigationEvent, final Bundle extras) {

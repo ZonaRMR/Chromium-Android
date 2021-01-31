@@ -137,7 +137,7 @@ public class PaymentRequestUI implements DialogInterface.OnDismissListener, View
 
     private Animator mSheetAnimator;
     private FocusAnimator mSectionAnimator;
-    private int mAnimatorTranslation;
+    private final int mAnimatorTranslation;
 
     /**
      * Builds the UI for PaymentRequest.
@@ -298,12 +298,12 @@ public class PaymentRequestUI implements DialogInterface.OnDismissListener, View
         mIsShowingSpinner = true;
 
         // Indicate that we're preparing the dialog for display.
-        TextView messageView = (TextView) mRequestView.findViewById(R.id.message);
+        TextView messageView = mRequestView.findViewById(R.id.message);
         messageView.setText(R.string.payments_loading_message);
 
         // Set up the buttons.
-        mBottomBar = (ViewGroup) mRequestView.findViewById(R.id.bottom_bar);
-        mPayButton = (Button) mBottomBar.findViewById(R.id.button_primary);
+        mBottomBar = mRequestView.findViewById(R.id.bottom_bar);
+        mPayButton = mBottomBar.findViewById(R.id.button_primary);
         mPayButton.setOnClickListener(this);
 
         // Set terms & conditions text.
@@ -321,9 +321,9 @@ public class PaymentRequestUI implements DialogInterface.OnDismissListener, View
 
         // Create all the possible sections.
         mSectionSeparators = new ArrayList<>();
-        mPaymentContainer = (FadingEdgeScrollView) mRequestView.findViewById(R.id.option_container);
+        mPaymentContainer = mRequestView.findViewById(R.id.option_container);
         mPaymentContainerLayout =
-                (LinearLayout) mRequestView.findViewById(R.id.payment_container_layout);
+                mRequestView.findViewById(R.id.payment_container_layout);
         mOrderSummarySection = new LineItemBreakdownSection(context,
                 context.getString(R.string.payments_order_summary_label), this,
                 context.getString(R.string.payments_updated_label));
@@ -377,7 +377,7 @@ public class PaymentRequestUI implements DialogInterface.OnDismissListener, View
                 new LinearLayout.LayoutParams(
                         LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 
-        PaymentRequestSection sections[] =
+        PaymentRequestSection[] sections =
                 new PaymentRequestSection[] {mOrderSummarySection, mShippingAddressSection,
                         mShippingOptionSection, mContactDetailsSection, mPaymentMethodSection};
         for (int i = 0; i < sections.length; i++) {

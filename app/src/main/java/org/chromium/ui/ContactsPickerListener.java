@@ -17,7 +17,7 @@ public interface ContactsPickerListener {
     /**
      * A container class for exhcanging contact details.
      */
-    public class Contact {
+    class Contact {
         public final List<String> names;
         public final List<String> emails;
         public final List<String> tel;
@@ -36,7 +36,7 @@ public interface ContactsPickerListener {
     @IntDef({ContactsPickerAction.CANCEL, ContactsPickerAction.CONTACTS_SELECTED,
             ContactsPickerAction.SELECT_ALL, ContactsPickerAction.UNDO_SELECT_ALL})
     @Retention(RetentionPolicy.SOURCE)
-    public @interface ContactsPickerAction {
+    @interface ContactsPickerAction {
         int CANCEL = 0;
         int CONTACTS_SELECTED = 1;
         int SELECT_ALL = 2;

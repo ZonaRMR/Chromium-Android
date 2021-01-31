@@ -22,7 +22,7 @@ public class EditableOption implements Completable {
     protected String mPromoMessage;
     private String mId;
     private Drawable mIcon;
-    private String[] mLabels = {null, null, null};
+    private final String[] mLabels = {null, null, null};
     private boolean mIsValid = true;
 
     /** See {@link #EditableOption(String, String, String, String, int)}. */

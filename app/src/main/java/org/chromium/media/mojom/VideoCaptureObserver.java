@@ -18,7 +18,7 @@ public interface VideoCaptureObserver extends org.chromium.mojo.bindings.Interfa
 
 
 
-    public interface Proxy extends VideoCaptureObserver, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends VideoCaptureObserver, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<VideoCaptureObserver, VideoCaptureObserver.Proxy> MANAGER = VideoCaptureObserver_Internal.MANAGER;

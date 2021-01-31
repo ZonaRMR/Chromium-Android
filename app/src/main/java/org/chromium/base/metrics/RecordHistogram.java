@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 @MainDex
 public class RecordHistogram {
     private static Throwable sDisabledBy;
-    private static Map<String, Long> sCache =
+    private static final Map<String, Long> sCache =
             Collections.synchronizedMap(new HashMap<String, Long>());
 
     /**

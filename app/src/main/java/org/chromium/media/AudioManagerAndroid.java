@@ -175,7 +175,7 @@ class AudioManagerAndroid {
     private final Object mLock = new Object();
 
     // Contains a list of currently available audio devices.
-    private boolean[] mAudioDevices = new boolean[DEVICE_COUNT];
+    private final boolean[] mAudioDevices = new boolean[DEVICE_COUNT];
 
     private final ContentResolver mContentResolver;
     private ContentObserver mSettingsObserver;
@@ -373,7 +373,7 @@ class AudioManagerAndroid {
         int intDeviceId = deviceId.isEmpty() ? DEVICE_DEFAULT : Integer.parseInt(deviceId);
 
         if (intDeviceId == DEVICE_DEFAULT) {
-            boolean devices[] = null;
+            boolean[] devices = null;
             synchronized (mLock) {
                 devices = mAudioDevices.clone();
                 mRequestedAudioDevice = DEVICE_DEFAULT;
@@ -415,7 +415,7 @@ class AudioManagerAndroid {
             return null;
         }
 
-        boolean devices[] = null;
+        boolean[] devices = null;
         synchronized (mLock) {
             devices = mAudioDevices.clone();
         }
@@ -1000,7 +1000,7 @@ class AudioManagerAndroid {
      * the default device is selected.
      */
     private void updateDeviceActivation() {
-        boolean devices[] = null;
+        boolean[] devices = null;
         int requested = DEVICE_INVALID;
         synchronized (mLock) {
             requested = mRequestedAudioDevice;

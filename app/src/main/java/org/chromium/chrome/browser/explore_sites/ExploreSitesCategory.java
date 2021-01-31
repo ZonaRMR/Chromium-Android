@@ -70,17 +70,18 @@ public class ExploreSitesCategory {
         return new ExploreSitesCategory(PLACEHOLDER_ID, categoryType, title, 0, 0);
     }
 
-    private int mCategoryId;
+    private final int mCategoryId;
 
-    private @CategoryType int mCategoryType;
-    private String mCategoryTitle;
+    private @CategoryType
+    final int mCategoryType;
+    private final String mCategoryTitle;
 
     // Populated only in NTP.
     private Drawable mDrawable;
-    private int mNtpShownCount;
-    private int mInteractionCount;
+    private final int mNtpShownCount;
+    private final int mInteractionCount;
     // Populated only for ESP.
-    private List<ExploreSitesSite> mSites;
+    private final List<ExploreSitesSite> mSites;
     private int mNumBlacklisted;
 
     /**

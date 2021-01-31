@@ -30,7 +30,7 @@ import org.chromium.shape_detection.mojom.TextDetectionResult;
 public class TextDetectionImpl implements TextDetection {
     private static final String TAG = "TextDetectionImpl";
 
-    private TextRecognizer mTextRecognizer;
+    private final TextRecognizer mTextRecognizer;
 
     public TextDetectionImpl() {
         mTextRecognizer = new TextRecognizer.Builder(ContextUtils.getApplicationContext()).build();

@@ -390,10 +390,10 @@ abstract class OverlayPanelBase {
     // --------------------------------------------------------------------------------------------
     // Panel Bar states
     // --------------------------------------------------------------------------------------------
-    private float mBarMarginSide;
+    private final float mBarMarginSide;
     private float mBarHeight;
     private boolean mIsBarBorderVisible;
-    private float mBarBorderHeight;
+    private final float mBarBorderHeight;
 
     private boolean mBarShadowVisible;
     private float mBarShadowOpacity;
@@ -515,7 +515,7 @@ abstract class OverlayPanelBase {
 
     private float mProgressBarOpacity;
     private boolean mIsProgressBarVisible;
-    private float mProgressBarHeight;
+    private final float mProgressBarHeight;
     private int mProgressBarCompletion;
 
     /**

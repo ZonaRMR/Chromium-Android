@@ -30,7 +30,7 @@ public final class ServiceWorkerRegistrationObjectInfo extends org.chromium.mojo
 
     private ServiceWorkerRegistrationObjectInfo(int version) {
         super(STRUCT_SIZE, version);
-        this.registrationId = (long) ServiceWorkerRegistrationConstants.INVALID_SERVICE_WORKER_REGISTRATION_ID;
+        this.registrationId = ServiceWorkerRegistrationConstants.INVALID_SERVICE_WORKER_REGISTRATION_ID;
     }
 
     public ServiceWorkerRegistrationObjectInfo() {

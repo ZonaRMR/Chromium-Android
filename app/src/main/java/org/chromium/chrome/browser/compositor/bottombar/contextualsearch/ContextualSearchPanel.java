@@ -61,7 +61,7 @@ public class ContextualSearchPanel extends OverlayPanel {
     private boolean mHasContentBeenTouched;
 
     /** The compositor layer used for drawing the panel. */
-    private ContextualSearchSceneLayer mSceneLayer;
+    private final ContextualSearchSceneLayer mSceneLayer;
 
     /**
      * Whether to use the Generic Sheet UX.

@@ -16,7 +16,7 @@ import org.chromium.service_manager.mojom.ServiceFilter;
  * This class exposes the ability to bind interfaces from other services in the system.
  */
 public class Connector implements ConnectionErrorHandler {
-    private org.chromium.service_manager.mojom.Connector.Proxy mConnector;
+    private final org.chromium.service_manager.mojom.Connector.Proxy mConnector;
 
     private static class ConnectorBindInterfaceResponseImpl
             implements org.chromium.service_manager.mojom.Connector.BindInterfaceResponse {

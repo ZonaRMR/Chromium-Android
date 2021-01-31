@@ -222,7 +222,7 @@ public class HttpNegotiateAuthenticator {
         requestData.authTokenType = HttpNegotiateConstants.SPNEGO_TOKEN_TYPE_BASE + principal;
         requestData.accountManager = AccountManager.get(applicationContext);
         requestData.nativeResultObject = nativeResultObject;
-        String features[] = {HttpNegotiateConstants.SPNEGO_FEATURE};
+        String[] features = {HttpNegotiateConstants.SPNEGO_FEATURE};
 
         requestData.options = new Bundle();
         if (authToken != null) {

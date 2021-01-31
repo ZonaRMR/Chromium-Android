@@ -18,7 +18,7 @@ public interface ServiceWorkerStreamCallback extends org.chromium.mojo.bindings.
 
 
 
-    public interface Proxy extends ServiceWorkerStreamCallback, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ServiceWorkerStreamCallback, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ServiceWorkerStreamCallback, ServiceWorkerStreamCallback.Proxy> MANAGER = ServiceWorkerStreamCallback_Internal.MANAGER;

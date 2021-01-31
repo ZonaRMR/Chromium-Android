@@ -27,11 +27,11 @@ public final class FindOptions extends org.chromium.mojo.bindings.Struct {
 
     private FindOptions(int version) {
         super(STRUCT_SIZE, version);
-        this.forward = (boolean) true;
-        this.matchCase = (boolean) false;
-        this.findNext = (boolean) false;
-        this.force = (boolean) false;
-        this.runSynchronouslyForTesting = (boolean) false;
+        this.forward = true;
+        this.matchCase = false;
+        this.findNext = false;
+        this.force = false;
+        this.runSynchronouslyForTesting = false;
     }
 
     public FindOptions() {

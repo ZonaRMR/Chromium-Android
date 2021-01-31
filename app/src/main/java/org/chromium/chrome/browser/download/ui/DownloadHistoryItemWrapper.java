@@ -389,14 +389,10 @@ public abstract class DownloadHistoryItemWrapper extends TimedItem {
             }
 
             int state = mItem.getDownloadInfo().state();
-            if ((state == DownloadState.INTERRUPTED && !mItem.getDownloadInfo().isResumable())
-                    || state == DownloadState.CANCELLED) {
-                // Mocks don't include showing cancelled/unresumable downloads.  Might need to if
-                // undeletable files become a big issue.
-                return false;
-            }
-
-            return true;
+            // Mocks don't include showing cancelled/unresumable downloads.  Might need to if
+            // undeletable files become a big issue.
+            return (state != DownloadState.INTERRUPTED || mItem.getDownloadInfo().isResumable())
+                    && state != DownloadState.CANCELLED;
         }
 
         /** @return whether the given DownloadItem is visibly different from the current one. */
@@ -408,9 +404,7 @@ public abstract class DownloadHistoryItemWrapper extends TimedItem {
             if (oldInfo.getBytesReceived() != newInfo.getBytesReceived()) return true;
             if (oldInfo.state() != newInfo.state()) return true;
             if (oldInfo.isPaused() != newInfo.isPaused()) return true;
-            if (!TextUtils.equals(oldInfo.getFilePath(), newInfo.getFilePath())) return true;
-
-            return false;
+            return !TextUtils.equals(oldInfo.getFilePath(), newInfo.getFilePath());
         }
     }
 

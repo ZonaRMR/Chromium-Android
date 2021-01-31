@@ -18,7 +18,7 @@ public interface NavigationInitiator extends org.chromium.mojo.bindings.Interfac
 
 
 
-    public interface Proxy extends NavigationInitiator, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends NavigationInitiator, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<NavigationInitiator, NavigationInitiator.Proxy> MANAGER = NavigationInitiator_Internal.MANAGER;

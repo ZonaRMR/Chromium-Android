@@ -35,7 +35,7 @@ public class BookmarkActionBar extends SelectableListToolbar<BookmarkId>
     private BookmarkItem mCurrentFolder;
     private BookmarkDelegate mDelegate;
 
-    private BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
+    private final BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
         @Override
         public void bookmarkModelChanged() {
             onSelectionStateChange(mDelegate.getSelectionDelegate().getSelectedItemsAsList());

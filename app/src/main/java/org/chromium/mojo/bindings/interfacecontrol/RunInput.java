@@ -19,7 +19,8 @@ public final class RunInput extends org.chromium.mojo.bindings.Union {
     public static final class Tag {
         public static final int QueryVersion = 0;
         public static final int FlushForTesting = 1;
-    };
+    }
+
     private QueryVersion mQueryVersion;
     private FlushForTesting mFlushForTesting;
 

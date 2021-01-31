@@ -65,7 +65,7 @@ public class SameActivityWebappSplashDelegate implements WebappSplashDelegate {
             // Cannot call removeOnDrawListener within OnDraw, so do on next tick.
             mView.post(() -> mView.getViewTreeObserver().removeOnDrawListener(this));
         }
-    };
+    }
 
     @Override
     public void showSplash(ViewGroup parentView, WebappInfo webappInfo) {

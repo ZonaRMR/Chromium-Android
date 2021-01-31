@@ -106,8 +106,8 @@ public final class CursorType {
 
     public static final int CUSTOM = GRABBING + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (44);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 44;
 
     private static final boolean IS_EXTENSIBLE = false;
 

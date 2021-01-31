@@ -96,7 +96,7 @@ public class ToolbarTablet extends ToolbarLayout
     @Override
     public void onFinishInflate() {
         super.onFinishInflate();
-        mLocationBar = (LocationBarTablet) findViewById(R.id.location_bar);
+        mLocationBar = findViewById(R.id.location_bar);
 
         mHomeButton = findViewById(R.id.home_button);
         mBackButton = findViewById(R.id.back_button);

@@ -123,7 +123,7 @@ public final class ElementsProto {
 
     private final int value;
 
-    private Visibility(int value) {
+    Visibility(int value) {
       this.value = value;
     }
 
@@ -226,7 +226,7 @@ public final class ElementsProto {
 
     private final int value;
 
-    private OverflowBehavior(int value) {
+    OverflowBehavior(int value) {
       this.value = value;
     }
 
@@ -403,7 +403,7 @@ public final class ElementsProto {
      */
     com.google.search.now.ui.piet.BindingRefsProto.TemplateBindingRef getTemplateBinding();
 
-    public com.google.search.now.ui.piet.ElementsProto.Content.ContentTypeCase getContentTypeCase();
+    com.google.search.now.ui.piet.ElementsProto.Content.ContentTypeCase getContentTypeCase();
   }
   /**
    * <pre>
@@ -431,7 +431,7 @@ public final class ElementsProto {
       TEMPLATE_BINDING(4),
       CONTENTTYPE_NOT_SET(0);
       private final int value;
-      private ContentTypeCase(int value) {
+      ContentTypeCase(int value) {
         this.value = value;
       }
       /**
@@ -455,9 +455,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ContentTypeCase
+      public ContentTypeCase
     getContentTypeCase() {
       return ContentTypeCase.forNumber(
           contentTypeCase_);
@@ -2979,11 +2979,11 @@ public final class ElementsProto {
      */
     com.google.search.now.ui.piet.ElementsProto.VisibilityState getVisibilityState();
 
-    public com.google.search.now.ui.piet.ElementsProto.Element.ElementsCase getElementsCase();
+    com.google.search.now.ui.piet.ElementsProto.Element.ElementsCase getElementsCase();
 
-    public com.google.search.now.ui.piet.ElementsProto.Element.ActionsDataCase getActionsDataCase();
+    com.google.search.now.ui.piet.ElementsProto.Element.ActionsDataCase getActionsDataCase();
 
-    public com.google.search.now.ui.piet.ElementsProto.Element.VedValueCase getVedValueCase();
+    com.google.search.now.ui.piet.ElementsProto.Element.VedValueCase getVedValueCase();
   }
   /**
    * <pre>
@@ -3021,7 +3021,7 @@ public final class ElementsProto {
       MODULE_ELEMENT(21),
       ELEMENTS_NOT_SET(0);
       private final int value;
-      private ElementsCase(int value) {
+      ElementsCase(int value) {
         this.value = value;
       }
       /**
@@ -3049,9 +3049,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ElementsCase
+      public ElementsCase
     getElementsCase() {
       return ElementsCase.forNumber(
           elementsCase_);
@@ -3070,7 +3070,7 @@ public final class ElementsProto {
       ACTIONS_BINDING(15),
       ACTIONSDATA_NOT_SET(0);
       private final int value;
-      private ActionsDataCase(int value) {
+      ActionsDataCase(int value) {
         this.value = value;
       }
       /**
@@ -3092,9 +3092,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ActionsDataCase
+      public ActionsDataCase
     getActionsDataCase() {
       return ActionsDataCase.forNumber(
           actionsDataCase_);
@@ -3113,7 +3113,7 @@ public final class ElementsProto {
       VED_BINDING(10),
       VEDVALUE_NOT_SET(0);
       private final int value;
-      private VedValueCase(int value) {
+      VedValueCase(int value) {
         this.value = value;
       }
       /**
@@ -3135,9 +3135,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public VedValueCase
+      public VedValueCase
     getVedValueCase() {
       return VedValueCase.forNumber(
           vedValueCase_);
@@ -7422,7 +7422,7 @@ public final class ElementsProto {
      */
     @java.lang.Deprecated com.google.search.now.ui.piet.StylesProto.StyleIdsStack getStyleReferences();
 
-    public com.google.search.now.ui.piet.ElementsProto.ImageElement.ContentCase getContentCase();
+    com.google.search.now.ui.piet.ElementsProto.ImageElement.ContentCase getContentCase();
   }
   /**
    * <pre>
@@ -7447,7 +7447,7 @@ public final class ElementsProto {
       IMAGE_BINDING(2),
       CONTENT_NOT_SET(0);
       private final int value;
-      private ContentCase(int value) {
+      ContentCase(int value) {
         this.value = value;
       }
       /**
@@ -7469,9 +7469,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ContentCase
+      public ContentCase
     getContentCase() {
       return ContentCase.forNumber(
           contentCase_);
@@ -8975,7 +8975,7 @@ public final class ElementsProto {
      */
     @java.lang.Deprecated com.google.search.now.ui.piet.StylesProto.StyleIdsStack getStyleReferences();
 
-    public com.google.search.now.ui.piet.ElementsProto.TextElement.ContentCase getContentCase();
+    com.google.search.now.ui.piet.ElementsProto.TextElement.ContentCase getContentCase();
   }
   /**
    * <pre>
@@ -9002,7 +9002,7 @@ public final class ElementsProto {
       PARAMETERIZED_TEXT_BINDING(2),
       CONTENT_NOT_SET(0);
       private final int value;
-      private ContentCase(int value) {
+      ContentCase(int value) {
         this.value = value;
       }
       /**
@@ -9026,9 +9026,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ContentCase
+      public ContentCase
     getContentCase() {
       return ContentCase.forNumber(
           contentCase_);
@@ -11118,7 +11118,7 @@ public final class ElementsProto {
      */
     com.google.search.now.ui.piet.BindingRefsProto.GridCellWidthBindingRef getWidthBinding();
 
-    public com.google.search.now.ui.piet.ElementsProto.GridCell.CellWidthCase getCellWidthCase();
+    com.google.search.now.ui.piet.ElementsProto.GridCell.CellWidthCase getCellWidthCase();
   }
   /**
    * <pre>
@@ -11150,7 +11150,7 @@ public final class ElementsProto {
       WIDTH_BINDING(5),
       CELLWIDTH_NOT_SET(0);
       private final int value;
-      private CellWidthCase(int value) {
+      CellWidthCase(int value) {
         this.value = value;
       }
       /**
@@ -11172,9 +11172,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public CellWidthCase
+      public CellWidthCase
     getCellWidthCase() {
       return CellWidthCase.forNumber(
           cellWidthCase_);
@@ -12048,7 +12048,7 @@ public final class ElementsProto {
      */
     boolean getIsCollapsible();
 
-    public com.google.search.now.ui.piet.ElementsProto.GridCellWidth.WidthSpecCase getWidthSpecCase();
+    com.google.search.now.ui.piet.ElementsProto.GridCellWidth.WidthSpecCase getWidthSpecCase();
   }
   /**
    * <pre>
@@ -12152,7 +12152,7 @@ public final class ElementsProto {
 
       private final int value;
 
-      private ContentWidth(int value) {
+      ContentWidth(int value) {
         this.value = value;
       }
 
@@ -12169,7 +12169,7 @@ public final class ElementsProto {
       CONTENT_WIDTH(3),
       WIDTHSPEC_NOT_SET(0);
       private final int value;
-      private WidthSpecCase(int value) {
+      WidthSpecCase(int value) {
         this.value = value;
       }
       /**
@@ -12192,9 +12192,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public WidthSpecCase
+      public WidthSpecCase
     getWidthSpecCase() {
       return WidthSpecCase.forNumber(
           widthSpecCase_);
@@ -12441,11 +12441,11 @@ public final class ElementsProto {
                         throws java.io.IOException {
       if (widthSpecCase_ == 1) {
         output.writeInt32(
-            1, (int)((java.lang.Integer) widthSpec_));
+            1, (Integer) widthSpec_);
       }
       if (widthSpecCase_ == 2) {
         output.writeInt32(
-            2, (int)((java.lang.Integer) widthSpec_));
+            2, (Integer) widthSpec_);
       }
       if (widthSpecCase_ == 3) {
         output.writeEnum(3, ((java.lang.Integer) widthSpec_));
@@ -12464,12 +12464,12 @@ public final class ElementsProto {
       if (widthSpecCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(
-              1, (int)((java.lang.Integer) widthSpec_));
+              1, (Integer) widthSpec_);
       }
       if (widthSpecCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(
-              2, (int)((java.lang.Integer) widthSpec_));
+              2, (Integer) widthSpec_);
       }
       if (widthSpecCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
@@ -14442,7 +14442,7 @@ public final class ElementsProto {
      */
     @java.lang.Deprecated com.google.search.now.ui.piet.StylesProto.StyleIdsStack getStyleReferences();
 
-    public com.google.search.now.ui.piet.ElementsProto.CustomElement.ContentCase getContentCase();
+    com.google.search.now.ui.piet.ElementsProto.CustomElement.ContentCase getContentCase();
   }
   /**
    * <pre>
@@ -14472,7 +14472,7 @@ public final class ElementsProto {
       CUSTOM_BINDING(2),
       CONTENT_NOT_SET(0);
       private final int value;
-      private ContentCase(int value) {
+      ContentCase(int value) {
         this.value = value;
       }
       /**
@@ -14494,9 +14494,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ContentCase
+      public ContentCase
     getContentCase() {
       return ContentCase.forNumber(
           contentCase_);
@@ -15585,7 +15585,7 @@ public final class ElementsProto {
      */
     com.google.search.now.ui.piet.BindingRefsProto.ModuleBindingRef getModuleBinding();
 
-    public com.google.search.now.ui.piet.ElementsProto.ModuleElement.ContentCase getContentCase();
+    com.google.search.now.ui.piet.ElementsProto.ModuleElement.ContentCase getContentCase();
   }
   /**
    * <pre>
@@ -15617,7 +15617,7 @@ public final class ElementsProto {
       MODULE_BINDING(2),
       CONTENT_NOT_SET(0);
       private final int value;
-      private ContentCase(int value) {
+      ContentCase(int value) {
         this.value = value;
       }
       /**
@@ -15639,9 +15639,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ContentCase
+      public ContentCase
     getContentCase() {
       return ContentCase.forNumber(
           contentCase_);
@@ -18473,7 +18473,7 @@ public final class ElementsProto {
      */
     com.google.search.now.ui.piet.ElementsProto.HostBindingData getHostBindingData();
 
-    public com.google.search.now.ui.piet.ElementsProto.BindingValue.ValuesCase getValuesCase();
+    com.google.search.now.ui.piet.ElementsProto.BindingValue.ValuesCase getValuesCase();
   }
   /**
    * <pre>
@@ -18511,7 +18511,7 @@ public final class ElementsProto {
       VED(7),
       VALUES_NOT_SET(0);
       private final int value;
-      private ValuesCase(int value) {
+      ValuesCase(int value) {
         this.value = value;
       }
       /**
@@ -18543,9 +18543,9 @@ public final class ElementsProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ValuesCase
+      public ValuesCase
     getValuesCase() {
       return ValuesCase.forNumber(
           valuesCase_);

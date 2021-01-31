@@ -86,7 +86,7 @@ public class TrustedWebActivityServiceConnectionManager {
      */
     private class Connection implements ServiceConnection {
         private TrustedWebActivityServiceWrapper mService;
-        private List<WrappedCallback> mCallbacks = new LinkedList<>();
+        private final List<WrappedCallback> mCallbacks = new LinkedList<>();
         private final Uri mScope;
 
         public Connection(Uri scope) {
@@ -126,9 +126,9 @@ public class TrustedWebActivityServiceConnectionManager {
 
     private final Context mContext;
     /** Map from ServiceWorker scope to Connection. */
-    private Map<Uri, Connection> mConnections = new HashMap<>();
+    private final Map<Uri, Connection> mConnections = new HashMap<>();
 
-    private static AtomicReference<SharedPreferences> sSharedPreferences = new AtomicReference<>();
+    private static final AtomicReference<SharedPreferences> sSharedPreferences = new AtomicReference<>();
 
     /**
      * Gets the verified packages for the given origin. |origin| may be null, in which case this
@@ -159,7 +159,7 @@ public class TrustedWebActivityServiceConnectionManager {
 
             return origin == null ? null :
                     new HashSet<>(sSharedPreferences.get().getStringSet(origin,
-                            Collections.<String>emptySet()));
+                            Collections.emptySet()));
         } finally {
             StrictMode.setThreadPolicy(policy);
         }

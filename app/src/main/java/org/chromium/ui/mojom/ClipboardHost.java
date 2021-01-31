@@ -18,7 +18,7 @@ public interface ClipboardHost extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ClipboardHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ClipboardHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ClipboardHost, ClipboardHost.Proxy> MANAGER = ClipboardHost_Internal.MANAGER;

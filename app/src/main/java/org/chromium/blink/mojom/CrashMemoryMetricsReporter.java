@@ -18,7 +18,7 @@ public interface CrashMemoryMetricsReporter extends org.chromium.mojo.bindings.I
 
 
 
-    public interface Proxy extends CrashMemoryMetricsReporter, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CrashMemoryMetricsReporter, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CrashMemoryMetricsReporter, CrashMemoryMetricsReporter.Proxy> MANAGER = CrashMemoryMetricsReporter_Internal.MANAGER;

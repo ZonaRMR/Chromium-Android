@@ -55,16 +55,16 @@ public class PickerCategoryView extends RelativeLayout
     private PhotoPickerDialog mDialog;
 
     // The view containing the RecyclerView and the toolbar, etc.
-    private SelectableListLayout<PickerBitmap> mSelectableListLayout;
+    private final SelectableListLayout<PickerBitmap> mSelectableListLayout;
 
     // Our activity.
-    private ChromeActivity mActivity;
+    private final ChromeActivity mActivity;
 
     // The list of images on disk, sorted by last-modified first.
     private List<PickerBitmap> mPickerBitmaps;
 
     // True if multi-selection is allowed in the picker.
-    private boolean mMultiSelectionAllowed;
+    private final boolean mMultiSelectionAllowed;
 
     // The callback to notify the listener of decisions reached in the picker.
     private PhotoPickerListener mListener;
@@ -73,19 +73,19 @@ public class PickerCategoryView extends RelativeLayout
     private DecoderServiceHost mDecoderServiceHost;
 
     // The RecyclerView showing the images.
-    private RecyclerView mRecyclerView;
+    private final RecyclerView mRecyclerView;
 
     // The {@link PickerAdapter} for the RecyclerView.
-    private PickerAdapter mPickerAdapter;
+    private final PickerAdapter mPickerAdapter;
 
     // The layout manager for the RecyclerView.
-    private GridLayoutManager mLayoutManager;
+    private final GridLayoutManager mLayoutManager;
 
     // The decoration to use for the RecyclerView.
     private GridSpacingItemDecoration mSpacingDecoration;
 
     // The {@link SelectionDelegate} keeping track of which images are selected.
-    private SelectionDelegate<PickerBitmap> mSelectionDelegate;
+    private final SelectionDelegate<PickerBitmap> mSelectionDelegate;
 
     // A low-resolution cache for images, lazily created. Helpful for cache misses from the
     // high-resolution cache to avoid showing gray squares (we show pixelated versions instead until
@@ -96,10 +96,10 @@ public class PickerCategoryView extends RelativeLayout
     private DiscardableReference<LruCache<String, Bitmap>> mHighResBitmaps;
 
     // The size of the low-res cache.
-    private int mCacheSizeLarge;
+    private final int mCacheSizeLarge;
 
     // The size of the high-res cache.
-    private int mCacheSizeSmall;
+    private final int mCacheSizeSmall;
 
     /**
      * The number of columns to show. Note: mColumns and mPadding (see below) should both be even
@@ -147,7 +147,7 @@ public class PickerCategoryView extends RelativeLayout
 
         View root = LayoutInflater.from(context).inflate(R.layout.photo_picker_dialog, this);
         mSelectableListLayout =
-                (SelectableListLayout<PickerBitmap>) root.findViewById(R.id.selectable_list);
+                root.findViewById(R.id.selectable_list);
 
         mPickerAdapter = new PickerAdapter(this);
         mRecyclerView = mSelectableListLayout.initializeRecyclerView(mPickerAdapter);
@@ -157,7 +157,7 @@ public class PickerCategoryView extends RelativeLayout
                 R.layout.photo_picker_toolbar, mSelectionDelegate, titleId, null, 0, 0, null, false,
                 false);
         toolbar.setNavigationOnClickListener(this);
-        Button doneButton = (Button) toolbar.findViewById(R.id.done);
+        Button doneButton = toolbar.findViewById(R.id.done);
         doneButton.setOnClickListener(this);
 
         calculateGridMetrics();
@@ -391,10 +391,10 @@ public class PickerCategoryView extends RelativeLayout
      */
     private class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
         // The number of spans to account for.
-        private int mSpanCount;
+        private final int mSpanCount;
 
         // The amount of spacing to use.
-        private int mSpacing;
+        private final int mSpacing;
 
         public GridSpacingItemDecoration(int spanCount, int spacing) {
             mSpanCount = spanCount;

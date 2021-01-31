@@ -46,8 +46,8 @@ public final class ServiceWorkerResponseError {
 
     public static final int RESPONSE_BODY_BROKEN = (int) (17L);
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (17);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 17;
 
     private static final boolean IS_EXTENSIBLE = false;
 

@@ -20,8 +20,8 @@ public final class CanMakePaymentQueryResult {
 
     public static final int CANNOT_MAKE_PAYMENT = CAN_MAKE_PAYMENT + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (1);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 1;
 
     private static final boolean IS_EXTENSIBLE = false;
 

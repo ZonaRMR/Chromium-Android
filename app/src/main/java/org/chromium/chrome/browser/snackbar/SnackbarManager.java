@@ -67,13 +67,13 @@ public class SnackbarManager implements OnClickListener, InfoBarContainer.InfoBa
     private static int sSnackbarDurationMs = DEFAULT_SNACKBAR_DURATION_MS;
     private static int sAccessibilitySnackbarDurationMs = ACCESSIBILITY_MODE_SNACKBAR_DURATION_MS;
 
-    private Activity mActivity;
+    private final Activity mActivity;
     private SnackbarView mView;
     private final Handler mUIThreadHandler;
-    private SnackbarCollection mSnackbars = new SnackbarCollection();
+    private final SnackbarCollection mSnackbars = new SnackbarCollection();
     private boolean mActivityInForeground;
     private boolean mIsDisabledForTesting;
-    private ViewGroup mSnackbarParentView;
+    private final ViewGroup mSnackbarParentView;
     private final Runnable mHideRunnable = new Runnable() {
         @Override
         public void run() {

@@ -92,7 +92,7 @@ public class SpinnerPreference extends Preference {
 
         mView = super.onCreateView(parent);
         ((TextView) mView.findViewById(R.id.title)).setText(getTitle());
-        mSpinner = (Spinner) mView.findViewById(R.id.spinner);
+        mSpinner = mView.findViewById(R.id.spinner);
         mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(

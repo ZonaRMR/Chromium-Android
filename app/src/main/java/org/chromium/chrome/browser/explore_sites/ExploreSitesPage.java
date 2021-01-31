@@ -130,7 +130,7 @@ public class ExploreSitesPage extends BasicNativePage {
         CategoryCardAdapter adapterDelegate = new CategoryCardAdapter(
                 mModel, mLayoutManager, iconGenerator, mContextMenuManager, navDelegate, mProfile);
 
-        mRecyclerView = (RecyclerView) mView.findViewById(R.id.explore_sites_category_recycler);
+        mRecyclerView = mView.findViewById(R.id.explore_sites_category_recycler);
         RecyclerViewAdapter<CategoryCardViewHolderFactory.CategoryCardViewHolder, Void> adapter =
                 new RecyclerViewAdapter<>(adapterDelegate, new CategoryCardViewHolderFactory());
 

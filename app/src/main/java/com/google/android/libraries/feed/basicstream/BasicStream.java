@@ -79,7 +79,6 @@ import com.google.android.libraries.feed.sharedstream.publicapi.menumeasurer.Men
 import com.google.android.libraries.feed.sharedstream.scroll.StreamScrollMonitor;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-import org.chromium.chrome.R;
 
 import java.util.List;
 
@@ -116,9 +115,9 @@ public class BasicStream implements Stream, ModelProviderObserver, OnLayoutChang
 
   private RecyclerView recyclerView;
   private ContextMenuManager contextMenuManager;
-  private Context context;
+  private final Context context;
   private List<Header> headers;
-  private StreamConfiguration streamConfiguration;
+  private final StreamConfiguration streamConfiguration;
   private StreamRecyclerViewAdapter adapter;
   private StreamScrollMonitor streamScrollMonitor;
   private ScrollRestorer scrollRestorer;
@@ -408,11 +407,7 @@ public class BasicStream implements Stream, ModelProviderObserver, OnLayoutChang
       return false;
     }
 
-    if (position < firstItemPosition || position > lastItemPosition) {
-      return false;
-    }
-
-    return true;
+    return position >= firstItemPosition && position <= lastItemPosition;
   }
 
   @Override
@@ -480,7 +475,6 @@ public class BasicStream implements Stream, ModelProviderObserver, OnLayoutChang
             configuration);
     adapter.setHeaders(headers);
     recyclerView = new RecyclerView(context);
-    recyclerView.setId(R.id.feed_stream_recycler_view);
     recyclerView.setLayoutManager(createRecyclerViewLayoutManager(context));
     contextMenuManager = createContextMenuManager(recyclerView, new MenuMeasurer(context));
     new ItemTouchHelper(new StreamItemTouchCallbacks()).attachToRecyclerView(recyclerView);

@@ -40,7 +40,7 @@ import java.util.Collection;
 public interface TestableInvalidationClient extends InvalidationClient {
 
   /** The state of the registration manager exposed for testing. */
-  public class RegistrationManagerState extends InternalBase {
+  class RegistrationManagerState extends InternalBase {
 
     /** The registration summary of all objects registered by the client (known at the client). */
     private final RegistrationSummary clientSummary;

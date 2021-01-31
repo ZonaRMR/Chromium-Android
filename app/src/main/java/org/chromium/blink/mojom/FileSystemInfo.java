@@ -25,7 +25,7 @@ public final class FileSystemInfo extends org.chromium.mojo.bindings.Struct {
 
     private FileSystemInfo(int version) {
         super(STRUCT_SIZE, version);
-        this.mountType = (int) FileSystemType.TEMPORARY;
+        this.mountType = FileSystemType.TEMPORARY;
     }
 
     public FileSystemInfo() {

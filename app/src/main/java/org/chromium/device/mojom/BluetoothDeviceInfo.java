@@ -29,8 +29,8 @@ public final class BluetoothDeviceInfo extends org.chromium.mojo.bindings.Struct
 
         public static final int CONNECTED = CONNECTING + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (2);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 2;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -86,8 +86,8 @@ public final class BluetoothDeviceInfo extends org.chromium.mojo.bindings.Struct
 
         public static final int KEYBOARD_MOUSE_COMBO = TABLET + 1;
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (13);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 13;
 
         private static final boolean IS_EXTENSIBLE = false;
 

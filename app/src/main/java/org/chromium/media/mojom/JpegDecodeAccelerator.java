@@ -18,7 +18,7 @@ public interface JpegDecodeAccelerator extends org.chromium.mojo.bindings.Interf
 
 
 
-    public interface Proxy extends JpegDecodeAccelerator, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends JpegDecodeAccelerator, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<JpegDecodeAccelerator, JpegDecodeAccelerator.Proxy> MANAGER = JpegDecodeAccelerator_Internal.MANAGER;

@@ -66,7 +66,7 @@ public class BrowserServiceFileProvider extends FileProvider {
 
     // A Set tracks the urls whose images are in serialization.
     @GuardedBy("sLatchMapLock")
-    private static Set<Uri> sFilesInSerialization = new HashSet<>();
+    private static final Set<Uri> sFilesInSerialization = new HashSet<>();
 
     /**
      * Map the uri with the {@link CountDownLatch} for waiting the image finish serialization.
@@ -74,9 +74,9 @@ public class BrowserServiceFileProvider extends FileProvider {
     /* access the image.
      */
     @GuardedBy("sLatchMapLock")
-    private static Map<Uri, CountDownLatch> sUriLatchMap = new HashMap<>();
-    private static Object sLatchMapLock = new Object();
-    private static Object sFileCleanupLock = new Object();
+    private static final Map<Uri, CountDownLatch> sUriLatchMap = new HashMap<>();
+    private static final Object sLatchMapLock = new Object();
+    private static final Object sFileCleanupLock = new Object();
 
     private static class FileCleanupTask extends AsyncTask<Void, Void, Void> {
         private final WeakReference<Context> mContextRef;
@@ -219,7 +219,7 @@ public class BrowserServiceFileProvider extends FileProvider {
      */
     @UiThread
     public static Uri generateUri(Context context, Bitmap bitmap, String name, int version) {
-        String filename = name + "_" + Integer.toString(version);
+        String filename = name + "_" + version;
         Uri uri = generateUri(context, filename);
         boolean shouldSaveImage;
         synchronized (sLatchMapLock) {

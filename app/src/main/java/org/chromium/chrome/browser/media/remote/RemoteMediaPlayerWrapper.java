@@ -44,11 +44,11 @@ public class RemoteMediaPlayerWrapper implements RemoteMediaPlayer.OnMetadataUpd
     private final String mMediaUrl;
 
     private GoogleApiClient mApiClient;
-    private RemoteMediaPlayer mMediaPlayer;
-    private MediaNotificationInfo.Builder mNotificationBuilder;
+    private final RemoteMediaPlayer mMediaPlayer;
+    private final MediaNotificationInfo.Builder mNotificationBuilder;
     private MediaStatusObserver mMediaStatusObserver;
 
-    private Random mRequestIdGenerator = new Random();
+    private final Random mRequestIdGenerator = new Random();
     private long mMediaSessionId;
     private boolean mPendingSeek;
     private long mPendingSeekTime;

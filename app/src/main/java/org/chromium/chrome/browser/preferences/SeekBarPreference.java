@@ -26,7 +26,9 @@ import org.chromium.chrome.R;
  */
 public class SeekBarPreference extends Preference implements OnSeekBarChangeListener {
 
-    private float mMin, mMax, mStep;
+    private final float mMin;
+    private final float mMax;
+    private final float mStep;
     private float mValue;
     private boolean mTrackingTouch;
     CharSequence mSummary;
@@ -61,12 +63,12 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        SeekBar seekBar = (SeekBar) view.findViewById(R.id.seekbar);
+        SeekBar seekBar = view.findViewById(R.id.seekbar);
         seekBar.setOnSeekBarChangeListener(this);
         seekBar.setMax(prefValueToSeekBarProgress(mMax));
         seekBar.setProgress(prefValueToSeekBarProgress(mValue));
         seekBar.setEnabled(isEnabled());
-        mSummaryView = (TextView) view.findViewById(R.id.seekbar_amount);
+        mSummaryView = view.findViewById(R.id.seekbar_amount);
         mSummaryView.setText(mSummary);
     }
 

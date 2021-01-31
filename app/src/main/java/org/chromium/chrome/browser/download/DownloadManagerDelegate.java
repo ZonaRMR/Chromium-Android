@@ -155,7 +155,7 @@ public class DownloadManagerDelegate {
          * @param result Query result from android DownloadManager.
          * @param showNotifications Whether to show status notifications.
          */
-        public void onQueryCompleted(DownloadQueryResult result, boolean showNotifications);
+        void onQueryCompleted(DownloadQueryResult result, boolean showNotifications);
     }
 
     /**
@@ -309,7 +309,7 @@ public class DownloadManagerDelegate {
          * @param downloadId The download id obtained from android DownloadManager as a result of
          * this enqueue operation.
          */
-        public void onDownloadEnqueued(
+        void onDownloadEnqueued(
                 boolean result, int failureReason, DownloadItem downloadItem, long downloadId);
     }
 

@@ -18,15 +18,15 @@ public interface OutputProtection extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public static final class ProtectionType {
+    final class ProtectionType {
 
 
         public static final int NONE = (int) (0L);
 
         public static final int HDCP = (int) (1L);
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (1);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 1;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -51,7 +51,7 @@ public interface OutputProtection extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public static final class LinkType {
+    final class LinkType {
 
 
         public static final int NONE = (int) (0L);
@@ -70,8 +70,8 @@ public interface OutputProtection extends org.chromium.mojo.bindings.Interface {
 
         public static final int NETWORK = (int) (64L);
 
-        public static final int MIN_VALUE = (int) (0);
-        public static final int MAX_VALUE = (int) (64);
+        public static final int MIN_VALUE = 0;
+        public static final int MAX_VALUE = 64;
 
         private static final boolean IS_EXTENSIBLE = false;
 
@@ -102,7 +102,7 @@ public interface OutputProtection extends org.chromium.mojo.bindings.Interface {
     }
 
 
-    public interface Proxy extends OutputProtection, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends OutputProtection, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<OutputProtection, OutputProtection.Proxy> MANAGER = OutputProtection_Internal.MANAGER;

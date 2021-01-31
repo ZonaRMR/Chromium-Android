@@ -7,7 +7,7 @@ package com.google.protos.ipc.invalidation;
 @SuppressWarnings("hiding")
 public interface NanoJavaClient {
 
-  public static final class BatcherState extends
+  final class BatcherState extends
       com.google.protobuf.nano.ExtendableMessageNano<BatcherState> {
 
     private static volatile BatcherState[] _emptyArray;
@@ -279,7 +279,7 @@ public interface NanoJavaClient {
     }
   }
 
-  public static final class ProtocolHandlerState extends
+  final class ProtocolHandlerState extends
       com.google.protobuf.nano.ExtendableMessageNano<ProtocolHandlerState> {
 
     private static volatile ProtocolHandlerState[] _emptyArray;
@@ -414,7 +414,7 @@ public interface NanoJavaClient {
     }
   }
 
-  public static final class RegistrationManagerStateP extends
+  final class RegistrationManagerStateP extends
       com.google.protobuf.nano.ExtendableMessageNano<RegistrationManagerStateP> {
 
     private static volatile RegistrationManagerStateP[] _emptyArray;
@@ -586,7 +586,7 @@ public interface NanoJavaClient {
     }
   }
 
-  public static final class RecurringTaskState extends
+  final class RecurringTaskState extends
       com.google.protobuf.nano.ExtendableMessageNano<RecurringTaskState> {
 
     private static volatile RecurringTaskState[] _emptyArray;
@@ -721,7 +721,7 @@ public interface NanoJavaClient {
     }
   }
 
-  public static final class StatisticsState extends
+  final class StatisticsState extends
       com.google.protobuf.nano.ExtendableMessageNano<StatisticsState> {
 
     private static volatile StatisticsState[] _emptyArray;
@@ -834,7 +834,7 @@ public interface NanoJavaClient {
     }
   }
 
-  public static final class InvalidationClientState extends
+  final class InvalidationClientState extends
       com.google.protobuf.nano.ExtendableMessageNano<InvalidationClientState> {
 
     private static volatile InvalidationClientState[] _emptyArray;

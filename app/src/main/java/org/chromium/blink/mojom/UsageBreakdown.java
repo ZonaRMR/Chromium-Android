@@ -29,13 +29,13 @@ public final class UsageBreakdown extends org.chromium.mojo.bindings.Struct {
 
     private UsageBreakdown(int version) {
         super(STRUCT_SIZE, version);
-        this.fileSystem = (long) 0L;
-        this.webSql = (long) 0L;
-        this.appcache = (long) 0L;
-        this.indexedDatabase = (long) 0L;
-        this.serviceWorkerCache = (long) 0L;
-        this.serviceWorker = (long) 0L;
-        this.backgroundFetch = (long) 0L;
+        this.fileSystem = 0L;
+        this.webSql = 0L;
+        this.appcache = 0L;
+        this.indexedDatabase = 0L;
+        this.serviceWorkerCache = 0L;
+        this.serviceWorker = 0L;
+        this.backgroundFetch = 0L;
     }
 
     public UsageBreakdown() {

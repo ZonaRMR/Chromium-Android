@@ -43,7 +43,7 @@ class BatteryStatusManager {
     private final boolean mIgnoreBatteryPresentState;
 
     // Only used in L (API level 21) and higher.
-    private AndroidBatteryManagerWrapper mAndroidBatteryManager;
+    private final AndroidBatteryManagerWrapper mAndroidBatteryManager;
 
     private boolean mEnabled;
 
@@ -119,9 +119,7 @@ class BatteryStatusManager {
             return;
         }
 
-        boolean present = mIgnoreBatteryPresentState
-                ? true
-                : intent.getBooleanExtra(BatteryManager.EXTRA_PRESENT, false);
+        boolean present = mIgnoreBatteryPresentState || intent.getBooleanExtra(BatteryManager.EXTRA_PRESENT, false);
         int pluggedStatus = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
 
         if (!present || pluggedStatus == -1) {

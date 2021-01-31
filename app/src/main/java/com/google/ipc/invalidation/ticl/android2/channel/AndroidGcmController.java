@@ -50,9 +50,9 @@ public class AndroidGcmController {
 
   private static AndroidGcmController androidGcmController;
 
-  private GcmNetworkManager gcmNetworkManager;
+  private final GcmNetworkManager gcmNetworkManager;
 
-  private Context context;
+  private final Context context;
 
   /**
    * A getter method for AndroidGcmController singleton which also initializes it if it wasn't

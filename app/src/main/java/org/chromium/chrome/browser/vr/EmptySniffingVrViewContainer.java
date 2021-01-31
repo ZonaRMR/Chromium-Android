@@ -20,14 +20,14 @@ import android.widget.FrameLayout;
 public class EmptySniffingVrViewContainer extends VrViewContainer {
     private NoopCanvas mNoopCanvas;
     private Boolean mEmpty;
-    private EmptyListener mListener;
+    private final EmptyListener mListener;
 
     /**
      * Informs the listener when the VrViewContainer is and is not empty.
      */
-    public static interface EmptyListener {
-        public void onVrViewEmpty();
-        public void onVrViewNonEmpty();
+    public interface EmptyListener {
+        void onVrViewEmpty();
+        void onVrViewNonEmpty();
     }
 
     /**

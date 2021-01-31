@@ -18,7 +18,7 @@ public interface ServiceWorkerRegistrationObjectHost extends org.chromium.mojo.b
 
 
 
-    public interface Proxy extends ServiceWorkerRegistrationObjectHost, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ServiceWorkerRegistrationObjectHost, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ServiceWorkerRegistrationObjectHost, ServiceWorkerRegistrationObjectHost.Proxy> MANAGER = ServiceWorkerRegistrationObjectHost_Internal.MANAGER;

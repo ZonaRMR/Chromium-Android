@@ -41,8 +41,8 @@ public abstract class WebRestrictionsContentProvider extends ContentProvider {
      */
     public static class WebRestrictionsResult {
         private final boolean mShouldProceed;
-        private final int mErrorInts[];
-        private final String mErrorStrings[];
+        private final int[] mErrorInts;
+        private final String[] mErrorStrings;
 
         public WebRestrictionsResult(
                 boolean shouldProceed, final int[] errorInts, final String[] errorStrings) {
@@ -122,10 +122,10 @@ public abstract class WebRestrictionsContentProvider extends ContentProvider {
 
             @Override
             public String[] getColumnNames() {
-                String errorNames[] = getErrorColumnNames();
+                String[] errorNames = getErrorColumnNames();
                 // The cursor in the client gets the column count from the number of column names
                 // so it is important to limit this array to the actual number of columns.
-                String names[] = new String[getColumnCount()];
+                String[] names = new String[getColumnCount()];
                 names[0] = "Should Proceed";
                 for (int i = 0; i < getColumnCount() - 1; i++) {
                     names[i + 1] = errorNames[i];

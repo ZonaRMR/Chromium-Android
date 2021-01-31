@@ -68,9 +68,9 @@ class BrowserActionsFallbackMenuAdapter extends BaseAdapter {
                     R.layout.browser_actions_context_menu_row, null);
             viewHolder = new ViewHolderItem();
             viewHolder.mIcon =
-                    (ImageView) convertView.findViewById(R.id.browser_actions_menu_item_icon);
+                    convertView.findViewById(R.id.browser_actions_menu_item_icon);
             viewHolder.mText =
-                    (TextView) convertView.findViewById(R.id.browser_actions_menu_item_text);
+                    convertView.findViewById(R.id.browser_actions_menu_item_text);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolderItem) convertView.getTag();

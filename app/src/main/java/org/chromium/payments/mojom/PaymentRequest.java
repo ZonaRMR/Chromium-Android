@@ -18,7 +18,7 @@ public interface PaymentRequest extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends PaymentRequest, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PaymentRequest, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PaymentRequest, PaymentRequest.Proxy> MANAGER = PaymentRequest_Internal.MANAGER;

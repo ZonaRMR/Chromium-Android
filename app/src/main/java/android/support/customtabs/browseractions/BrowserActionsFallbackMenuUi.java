@@ -143,9 +143,9 @@ class BrowserActionsFallbackMenuUi implements AdapterView.OnItemClickListener {
 
     private BrowserActionsFallbackMenuView initMenuView(View view) {
         BrowserActionsFallbackMenuView menuView =
-                (BrowserActionsFallbackMenuView) view.findViewById(R.id.browser_actions_menu_view);
+                view.findViewById(R.id.browser_actions_menu_view);
 
-        final TextView urlTextView = (TextView) view.findViewById(R.id.browser_actions_header_text);
+        final TextView urlTextView = view.findViewById(R.id.browser_actions_header_text);
         urlTextView.setText(mUri.toString());
         urlTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,7 +160,7 @@ class BrowserActionsFallbackMenuUi implements AdapterView.OnItemClickListener {
             }
         });
 
-        ListView menuListView = (ListView) view.findViewById(R.id.browser_actions_menu_items);
+        ListView menuListView = view.findViewById(R.id.browser_actions_menu_items);
         BrowserActionsFallbackMenuAdapter adapter =
                 new BrowserActionsFallbackMenuAdapter(mMenuItems, mContext);
         menuListView.setAdapter(adapter);

@@ -24,8 +24,8 @@ public final class ProxyResolvingSocketOptions extends org.chromium.mojo.binding
 
     private ProxyResolvingSocketOptions(int version) {
         super(STRUCT_SIZE, version);
-        this.useTls = (boolean) false;
-        this.fakeTlsHandshake = (boolean) false;
+        this.useTls = false;
+        this.fakeTlsHandshake = false;
     }
 
     public ProxyResolvingSocketOptions() {

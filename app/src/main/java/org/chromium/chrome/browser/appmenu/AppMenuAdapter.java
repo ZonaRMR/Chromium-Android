@@ -170,8 +170,8 @@ class AppMenuAdapter extends BaseAdapter {
                         || !(convertView.getTag() instanceof StandardMenuItemViewHolder)) {
                     holder = new StandardMenuItemViewHolder();
                     convertView = mInflater.inflate(R.layout.menu_item, parent, false);
-                    holder.text = (TextView) convertView.findViewById(R.id.menu_item_text);
-                    holder.image = (AppMenuItemIcon) convertView.findViewById(R.id.menu_item_icon);
+                    holder.text = convertView.findViewById(R.id.menu_item_text);
+                    holder.image = convertView.findViewById(R.id.menu_item_icon);
                     convertView.setTag(holder);
                     convertView.setTag(R.id.menu_item_enter_anim_id,
                             buildStandardItemEnterAnimator(convertView, position));
@@ -189,9 +189,9 @@ class AppMenuAdapter extends BaseAdapter {
                         || !(convertView.getTag() instanceof CustomMenuItemViewHolder)) {
                     holder = new CustomMenuItemViewHolder();
                     convertView = mInflater.inflate(R.layout.update_menu_item, parent, false);
-                    holder.text = (TextView) convertView.findViewById(R.id.menu_item_text);
-                    holder.image = (AppMenuItemIcon) convertView.findViewById(R.id.menu_item_icon);
-                    holder.summary = (TextView) convertView.findViewById(R.id.menu_item_summary);
+                    holder.text = convertView.findViewById(R.id.menu_item_text);
+                    holder.image = convertView.findViewById(R.id.menu_item_icon);
+                    holder.summary = convertView.findViewById(R.id.menu_item_summary);
                     convertView.setTag(holder);
                     convertView.setTag(R.id.menu_item_enter_anim_id,
                             buildStandardItemEnterAnimator(convertView, position));
@@ -239,8 +239,8 @@ class AppMenuAdapter extends BaseAdapter {
                     convertView = mInflater.inflate(R.layout.title_button_menu_item, parent, false);
 
                     holder = new TitleButtonMenuItemViewHolder();
-                    holder.title = (TextView) convertView.findViewById(R.id.title);
-                    holder.checkbox = (AppMenuItemIcon) convertView.findViewById(R.id.checkbox);
+                    holder.title = convertView.findViewById(R.id.title);
+                    holder.checkbox = convertView.findViewById(R.id.checkbox);
                     holder.button = (ChromeImageButton) convertView.findViewById(R.id.button);
                     holder.button.setTag(
                             R.id.menu_item_original_background, holder.button.getBackground());

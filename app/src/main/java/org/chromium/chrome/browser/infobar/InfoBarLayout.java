@@ -86,8 +86,8 @@ public final class InfoBarLayout extends ViewGroup implements View.OnClickListen
     private final InfoBarControlLayout mMessageLayout;
     private final List<InfoBarControlLayout> mControlLayouts;
 
-    private TextView mMessageTextView;
-    private ImageView mIconView;
+    private final TextView mMessageTextView;
+    private final ImageView mIconView;
     private DualControlLayout mButtonRowLayout;
 
     private CharSequence mMessageMainText;

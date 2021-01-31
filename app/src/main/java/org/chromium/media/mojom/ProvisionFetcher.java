@@ -18,7 +18,7 @@ public interface ProvisionFetcher extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends ProvisionFetcher, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends ProvisionFetcher, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<ProvisionFetcher, ProvisionFetcher.Proxy> MANAGER = ProvisionFetcher_Internal.MANAGER;

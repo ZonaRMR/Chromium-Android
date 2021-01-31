@@ -46,7 +46,7 @@ public class SmartSelectionMetricsLogger implements SelectionMetricsLogger {
     private Context mContext;
     private Object mTracker;
 
-    private SelectionEventProxy mSelectionEventProxy;
+    private final SelectionEventProxy mSelectionEventProxy;
     private SelectionIndicesConverter mConverter;
 
     // ActionType, from SmartSelectionEventTracker.SelectionEvent class.
@@ -86,7 +86,7 @@ public class SmartSelectionMetricsLogger implements SelectionMetricsLogger {
      * purpose.
      */
     // TODO(ctzsm): Replace Object with corresponding APIs after Robolectric updated.
-    public static interface SelectionEventProxy {
+    public interface SelectionEventProxy {
         /**
          * Creates a SelectionEvent for selection started event.
          * @param start Start word index.

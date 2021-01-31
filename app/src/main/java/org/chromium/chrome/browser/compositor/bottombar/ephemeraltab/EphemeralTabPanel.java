@@ -36,7 +36,7 @@ import org.chromium.ui.resources.ResourceManager;
  */
 public class EphemeralTabPanel extends OverlayPanel {
     /** The compositor layer used for drawing the panel. */
-    private EphemeralTabSceneLayer mSceneLayer;
+    private final EphemeralTabSceneLayer mSceneLayer;
 
     /** Remembers whether the panel was opened beyond the peeking state. */
     private boolean mWasPanelOpened;
@@ -75,8 +75,7 @@ public class EphemeralTabPanel extends OverlayPanel {
                     // Events go to base panel in peeked mode to scroll base page.
                     return super.onInterceptTouchEventInternal(e, isKeyboardShowing);
                 }
-                if (panel.isShowing() && panel.isMaximized()) return true;
-                return false;
+                return panel.isShowing() && panel.isMaximized();
             }
         };
     }

@@ -193,7 +193,7 @@ public enum PseudoType
 
   private final int value;
 
-  private PseudoType(int value) {
+  PseudoType(int value) {
     this.value = value;
   }
 

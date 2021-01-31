@@ -18,7 +18,7 @@ public interface UsbDevice extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends UsbDevice, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends UsbDevice, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<UsbDevice, UsbDevice.Proxy> MANAGER = UsbDevice_Internal.MANAGER;

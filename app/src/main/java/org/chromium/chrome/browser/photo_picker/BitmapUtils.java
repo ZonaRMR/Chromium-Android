@@ -199,8 +199,8 @@ class BitmapUtils {
      * @return The resulting scaled bitmap.
      */
     public static Bitmap scale(Bitmap bitmap, float scaleMaxSize, boolean filter) {
-        float ratio = Math.min((float) scaleMaxSize / bitmap.getWidth(),
-                (float) scaleMaxSize / bitmap.getHeight());
+        float ratio = Math.min(scaleMaxSize / bitmap.getWidth(),
+                scaleMaxSize / bitmap.getHeight());
         int height = Math.round(ratio * bitmap.getHeight());
         int width = Math.round(ratio * bitmap.getWidth());
 

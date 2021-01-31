@@ -85,7 +85,7 @@ public class VideoCaptureCamera2 extends VideoCapture {
             changeCameraStateAndNotify(CameraState.STOPPED);
             nativeOnError(mNativeVideoCaptureDeviceAndroid,
                     AndroidVideoCaptureError.ANDROID_API_2_CAMERA_DEVICE_ERROR_RECEIVED,
-                    "Camera device error " + Integer.toString(error));
+                    "Camera device error " + error);
         }
 
         @Override
@@ -101,7 +101,7 @@ public class VideoCaptureCamera2 extends VideoCapture {
 
             mWaitForDeviceClosedConditionVariable.open();
         }
-    };
+    }
 
     // Inner class to extend a Capture Session state change listener.
     private class CrPreviewSessionListener extends CameraCaptureSession.StateCallback {
@@ -171,7 +171,7 @@ public class VideoCaptureCamera2 extends VideoCapture {
             // started after that.
             mPreviewSession = null;
         }
-    };
+    }
 
     // Internal class implementing an ImageReader listener for Preview frames. Gets pinged when a
     // new frame is been captured and downloads it to memory-backed buffers.
@@ -218,7 +218,7 @@ public class VideoCaptureCamera2 extends VideoCapture {
                 Log.e(TAG, "acquireLatestImage():", ex);
             }
         }
-    };
+    }
 
     // Inner class to extend a Photo Session state change listener.
     // Error paths must signal notifyTakePhotoError().
@@ -270,7 +270,7 @@ public class VideoCaptureCamera2 extends VideoCapture {
         public void onClosed(CameraCaptureSession session) {
             mImageReader.close();
         }
-    };
+    }
 
     // Internal class implementing an ImageReader listener for encoded Photos.
     // Gets pinged when a new Image is been captured.
@@ -321,7 +321,7 @@ public class VideoCaptureCamera2 extends VideoCapture {
             createPreviewObjectsAndStartPreviewOrFailWith(
                     AndroidVideoCaptureError.ANDROID_API_2_ERROR_RESTARTING_PREVIEW);
         }
-    };
+    }
 
     private class StopCaptureTask implements Runnable {
         @Override
@@ -920,9 +920,9 @@ public class VideoCaptureCamera2 extends VideoCapture {
         COLOR_TEMPERATURES_MAP.append(5000, CameraMetadata.CONTROL_AWB_MODE_DAYLIGHT);
         COLOR_TEMPERATURES_MAP.append(6000, CameraMetadata.CONTROL_AWB_MODE_CLOUDY_DAYLIGHT);
         COLOR_TEMPERATURES_MAP.append(7000, CameraMetadata.CONTROL_AWB_MODE_SHADE);
-    };
+    }
 
-    private static enum CameraState { OPENING, CONFIGURING, STARTED, STOPPED }
+    private enum CameraState { OPENING, CONFIGURING, STARTED, STOPPED }
 
     private final Object mCameraStateLock = new Object();
 
@@ -936,8 +936,8 @@ public class VideoCaptureCamera2 extends VideoCapture {
     // asynchronous callbacks to. The native thread that calls the constructor
     // and public API cannot be used for this, because it does not have a
     // Looper.
-    private Handler mCameraThreadHandler;
-    private ConditionVariable mWaitForDeviceClosedConditionVariable = new ConditionVariable();
+    private final Handler mCameraThreadHandler;
+    private final ConditionVariable mWaitForDeviceClosedConditionVariable = new ConditionVariable();
 
     private Range<Integer> mAeFpsRange;
     private CameraState mCameraState = CameraState.STOPPED;

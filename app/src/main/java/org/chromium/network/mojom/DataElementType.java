@@ -30,8 +30,8 @@ public final class DataElementType {
 
     public static final int BYTES = FILE + 1;
 
-    public static final int MIN_VALUE = (int) (-1);
-    public static final int MAX_VALUE = (int) (5);
+    public static final int MIN_VALUE = -1;
+    public static final int MAX_VALUE = 5;
 
     private static final boolean IS_EXTENSIBLE = false;
 

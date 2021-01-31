@@ -18,7 +18,7 @@ public interface MediaMetricsProvider extends org.chromium.mojo.bindings.Interfa
 
 
 
-    public interface Proxy extends MediaMetricsProvider, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends MediaMetricsProvider, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<MediaMetricsProvider, MediaMetricsProvider.Proxy> MANAGER = MediaMetricsProvider_Internal.MANAGER;

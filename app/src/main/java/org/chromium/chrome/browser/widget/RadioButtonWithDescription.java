@@ -29,11 +29,11 @@ public class RadioButtonWithDescription extends RelativeLayout implements OnClic
     /**
      * Interface to listen to radio button changes.
      */
-    public interface OnCheckedChangeListener { abstract void onCheckedChanged(); }
+    public interface OnCheckedChangeListener { void onCheckedChanged(); }
 
-    private RadioButton mRadioButton;
-    private TextView mTitle;
-    private TextView mDescription;
+    private final RadioButton mRadioButton;
+    private final TextView mTitle;
+    private final TextView mDescription;
     private OnCheckedChangeListener mOnCheckedChangeListener;
 
     private List<RadioButtonWithDescription> mGroup;
@@ -48,9 +48,9 @@ public class RadioButtonWithDescription extends RelativeLayout implements OnClic
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.radio_button_with_description, this, true);
 
-        mRadioButton = (RadioButton) findViewById(R.id.radio_button);
-        mTitle = (TextView) findViewById(R.id.title);
-        mDescription = (TextView) findViewById(R.id.description);
+        mRadioButton = findViewById(R.id.radio_button);
+        mTitle = findViewById(R.id.title);
+        mDescription = findViewById(R.id.description);
 
         if (attrs != null) applyAttributes(attrs);
 

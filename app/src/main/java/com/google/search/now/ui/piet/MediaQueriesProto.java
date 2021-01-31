@@ -99,7 +99,7 @@ public final class MediaQueriesProto {
 
     private final int value;
 
-    private ComparisonCondition(int value) {
+    ComparisonCondition(int value) {
       this.value = value;
     }
 
@@ -161,7 +161,7 @@ public final class MediaQueriesProto {
      */
     com.google.search.now.ui.piet.MediaQueriesProto.DarkLightCondition getDarkLight();
 
-    public com.google.search.now.ui.piet.MediaQueriesProto.MediaQueryCondition.ConditionCase getConditionCase();
+    com.google.search.now.ui.piet.MediaQueriesProto.MediaQueryCondition.ConditionCase getConditionCase();
   }
   /**
    * <pre>
@@ -196,7 +196,7 @@ public final class MediaQueriesProto {
       DARK_LIGHT(3),
       CONDITION_NOT_SET(0);
       private final int value;
-      private ConditionCase(int value) {
+      ConditionCase(int value) {
         this.value = value;
       }
       /**
@@ -219,9 +219,9 @@ public final class MediaQueriesProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public ConditionCase
+      public ConditionCase
     getConditionCase() {
       return ConditionCase.forNumber(
           conditionCase_);
@@ -1587,7 +1587,7 @@ public final class MediaQueriesProto {
 
       private final int value;
 
-      private Orientation(int value) {
+      Orientation(int value) {
         this.value = value;
       }
 
@@ -1994,7 +1994,7 @@ public final class MediaQueriesProto {
 
       private final int value;
 
-      private DarkLightMode(int value) {
+      DarkLightMode(int value) {
         this.value = value;
       }
 

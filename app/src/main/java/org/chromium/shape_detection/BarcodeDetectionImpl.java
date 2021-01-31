@@ -27,7 +27,7 @@ import org.chromium.shape_detection.mojom.BarcodeDetectorOptions;
 public class BarcodeDetectionImpl implements BarcodeDetection {
     private static final String TAG = "BarcodeDetectionImpl";
 
-    private BarcodeDetector mBarcodeDetector;
+    private final BarcodeDetector mBarcodeDetector;
 
     public BarcodeDetectionImpl(BarcodeDetectorOptions options) {
         // TODO(mcasas): extract the barcode formats to hunt for out of

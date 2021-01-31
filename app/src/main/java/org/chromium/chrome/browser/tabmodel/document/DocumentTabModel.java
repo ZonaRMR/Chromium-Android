@@ -14,7 +14,7 @@ import org.chromium.chrome.browser.tabmodel.TabModel;
  */
 public interface DocumentTabModel extends TabModel {
     /** Stores information about a DocumentActivity. */
-    public static final class Entry {
+    final class Entry {
         public final int tabId;
         public boolean canGoBack;
         public String initialUrl;

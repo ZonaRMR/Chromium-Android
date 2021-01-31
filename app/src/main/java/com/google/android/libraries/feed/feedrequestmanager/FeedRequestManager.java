@@ -68,6 +68,7 @@ import com.google.search.now.wire.feed.VersionProto.Version.Architecture;
 import com.google.search.now.wire.feed.VersionProto.Version.BuildType;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -95,7 +96,7 @@ public final class FeedRequestManager implements RequestManager {
   private final ActionReader actionReader;
   private final Context context;
   private final MainThreadRunner mainThreadRunner;
-  private ApplicationInfo applicationInfo;
+  private final ApplicationInfo applicationInfo;
 
   /*@Nullable*/
   private Supplier<Consumer<Result<List<StreamDataOperation>>>>
@@ -220,12 +221,8 @@ public final class FeedRequestManager implements RequestManager {
               input.getResponseCode());
           if (input.getResponseCode() != 200) {
             String errorBody = null;
-            try {
-              errorBody = new String(input.getResponseBody(), "UTF-8");
-            } catch (UnsupportedEncodingException e) {
-              Logger.e(TAG, "Error handling http error logging", e);
-            }
-            Logger.e(TAG, "errorCode: %d", input.getResponseCode());
+              errorBody = new String(input.getResponseBody(), StandardCharsets.UTF_8);
+              Logger.e(TAG, "errorCode: %d", input.getResponseCode());
             Logger.e(TAG, "errorResponse: %s", errorBody);
             if (!requestBuilder.hasPageToken()) {
               scheduler.onRequestError(input.getResponseCode());
@@ -296,9 +293,9 @@ public final class FeedRequestManager implements RequestManager {
 
     private ByteString token;
     private List<DismissActionWithSemanticProperties> dismissActionsWithSemanticProperties;
-    private Locale locale;
-    private ApplicationInfo applicationInfo;
-    private Configuration configuration;
+    private final Locale locale;
+    private final ApplicationInfo applicationInfo;
+    private final Configuration configuration;
 
     RequestBuilder(Locale locale, ApplicationInfo applicationInfo, Configuration configuration) {
       this.locale = locale;

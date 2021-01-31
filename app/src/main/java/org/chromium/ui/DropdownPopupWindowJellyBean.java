@@ -37,10 +37,10 @@ class DropdownPopupWindowJellyBean implements DropdownPopupWindowInterface {
     private final Context mContext;
     private boolean mRtl;
     private int mInitialSelection = -1;
-    private OnLayoutChangeListener mLayoutChangeListener;
+    private final OnLayoutChangeListener mLayoutChangeListener;
     private PopupWindow.OnDismissListener mOnDismissListener;
     private CharSequence mDescription;
-    private ListPopupWindow mListPopupWindow;
+    private final ListPopupWindow mListPopupWindow;
     private View mFooterView;
     ListAdapter mAdapter;
 
@@ -172,8 +172,8 @@ class DropdownPopupWindowJellyBean implements DropdownPopupWindowInterface {
         // See http://crbug.com/400601
         try {
             Method setForceIgnoreOutsideTouch = ListPopupWindow.class.getMethod(
-                    "setForceIgnoreOutsideTouch", new Class[] {boolean.class});
-            setForceIgnoreOutsideTouch.invoke(mListPopupWindow, new Object[] {true});
+                    "setForceIgnoreOutsideTouch", boolean.class);
+            setForceIgnoreOutsideTouch.invoke(mListPopupWindow, true);
         } catch (Exception e) {
             Log.e(TAG, "ListPopupWindow.setForceIgnoreOutsideTouch not found", e);
         }
@@ -207,7 +207,7 @@ class DropdownPopupWindowJellyBean implements DropdownPopupWindowInterface {
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             mFooterView = LayoutInflater.from(mContext).inflate(
                     R.layout.dropdown_footer_wrapper_jellybean, null);
-            FrameLayout container = (FrameLayout) mFooterView.findViewById(R.id.dropdown_footer);
+            FrameLayout container = mFooterView.findViewById(R.id.dropdown_footer);
             container.addView(footerView);
         } else {
             mFooterView = null;

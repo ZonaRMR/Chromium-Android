@@ -18,7 +18,7 @@ public interface ContextMenuPopulator {
     /**
      *  Called when this ContextMenuPopulator is about to be destroyed.
      */
-    public void onDestroy();
+    void onDestroy();
 
     /**
      * Should be used to populate {@code menu} with the correct context menu items.
@@ -31,7 +31,7 @@ public interface ContextMenuPopulator {
      *         group will likely say "IMAGE". If the link pressed is contains multiple items (like
      *         an image link) the list will have both an image list and a link list.
      */
-    public List<Pair<Integer, List<ContextMenuItem>>> buildContextMenu(
+    List<Pair<Integer, List<ContextMenuItem>>> buildContextMenu(
             ContextMenu menu, Context context, ContextMenuParams params);
 
     /**
@@ -41,5 +41,5 @@ public interface ContextMenuPopulator {
      * @param itemId The id of the selected menu item.
      * @return       Whether or not the selection was handled.
      */
-    public boolean onItemSelected(ContextMenuHelper helper, ContextMenuParams params, int itemId);
+    boolean onItemSelected(ContextMenuHelper helper, ContextMenuParams params, int itemId);
 }

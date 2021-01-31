@@ -16,9 +16,7 @@ public class ChromeInvalidationClientService extends InvalidationClientService {
     @Override
     public void onCreate() {
         ProcessInitializationHandler.getInstance().initializePreNative();
-        boolean isFCMInvalidationsEnabled = ChromeFeatureList.isInitialized()
-                ? ChromeFeatureList.isEnabled(ChromeFeatureList.FCM_INVALIDATIONS)
-                : false;
+        boolean isFCMInvalidationsEnabled = ChromeFeatureList.isInitialized() && ChromeFeatureList.isEnabled(ChromeFeatureList.FCM_INVALIDATIONS);
         super.setShouldCreateService(!isFCMInvalidationsEnabled);
         super.onCreate();
     }

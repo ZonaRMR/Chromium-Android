@@ -120,7 +120,7 @@ public class AccountChooserDialog
 
                 Credential credential = getItem(position);
 
-                ImageView avatarView = (ImageView) convertView.findViewById(R.id.profile_image);
+                ImageView avatarView = convertView.findViewById(R.id.profile_image);
                 Drawable avatar = credential.getAvatar();
                 if (avatar == null) {
                     avatar = AppCompatResources.getDrawable(
@@ -128,9 +128,9 @@ public class AccountChooserDialog
                 }
                 avatarView.setImageDrawable(avatar);
 
-                TextView mainNameView = (TextView) convertView.findViewById(R.id.main_name);
+                TextView mainNameView = convertView.findViewById(R.id.main_name);
                 TextView secondaryNameView =
-                        (TextView) convertView.findViewById(R.id.secondary_name);
+                        convertView.findViewById(R.id.secondary_name);
                 if (credential.getFederation().isEmpty()) {
                     // Not federated credentials case
                     if (credential.getDisplayName().isEmpty()) {
@@ -148,7 +148,7 @@ public class AccountChooserDialog
                 }
 
                 ImageButton pslInfoButton =
-                        (ImageButton) convertView.findViewById(R.id.psl_info_btn);
+                        convertView.findViewById(R.id.psl_info_btn);
                 final String originUrl = credential.getOriginUrl();
 
                 if (!originUrl.isEmpty()) {
@@ -170,9 +170,9 @@ public class AccountChooserDialog
     private void show() {
         View titleView =
                 LayoutInflater.from(mContext).inflate(R.layout.account_chooser_dialog_title, null);
-        TextView origin = (TextView) titleView.findViewById(R.id.origin);
+        TextView origin = titleView.findViewById(R.id.origin);
         origin.setText(mOrigin);
-        TextView titleMessageText = (TextView) titleView.findViewById(R.id.title);
+        TextView titleMessageText = titleView.findViewById(R.id.title);
         if (mTitleLinkStart != 0 && mTitleLinkEnd != 0) {
             SpannableString spanableTitle = new SpannableString(mTitle);
             spanableTitle.setSpan(new ClickableSpan() {
@@ -277,7 +277,7 @@ public class AccountChooserDialog
             // Profile image is in the visible range.
             View credentialView = view.getChildAt(index - view.getFirstVisiblePosition());
             if (credentialView == null) return;
-            ImageView avatarView = (ImageView) credentialView.findViewById(R.id.profile_image);
+            ImageView avatarView = credentialView.findViewById(R.id.profile_image);
             avatarView.setImageDrawable(avatar);
         }
     }

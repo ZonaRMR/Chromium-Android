@@ -48,8 +48,8 @@ public final class MediaStreamRequestResult {
 
     public static final int SYSTEM_PERMISSION_DENIED = KILL_SWITCH_ON + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (15);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 15;
 
     private static final boolean IS_EXTENSIBLE = false;
 

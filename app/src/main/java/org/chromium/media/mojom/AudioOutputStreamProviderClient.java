@@ -18,7 +18,7 @@ public interface AudioOutputStreamProviderClient extends org.chromium.mojo.bindi
 
 
 
-    public interface Proxy extends AudioOutputStreamProviderClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends AudioOutputStreamProviderClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<AudioOutputStreamProviderClient, AudioOutputStreamProviderClient.Proxy> MANAGER = AudioOutputStreamProviderClient_Internal.MANAGER;

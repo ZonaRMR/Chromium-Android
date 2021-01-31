@@ -18,7 +18,7 @@ public interface PublicIpAddressGeolocationProvider extends org.chromium.mojo.bi
 
 
 
-    public interface Proxy extends PublicIpAddressGeolocationProvider, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends PublicIpAddressGeolocationProvider, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<PublicIpAddressGeolocationProvider, PublicIpAddressGeolocationProvider.Proxy> MANAGER = PublicIpAddressGeolocationProvider_Internal.MANAGER;

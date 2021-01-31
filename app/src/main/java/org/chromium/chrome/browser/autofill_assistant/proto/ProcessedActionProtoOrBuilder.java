@@ -73,5 +73,5 @@ public interface ProcessedActionProtoOrBuilder extends
    */
   org.chromium.chrome.browser.autofill_assistant.proto.PaymentDetails getPaymentDetails();
 
-  public org.chromium.chrome.browser.autofill_assistant.proto.ProcessedActionProto.ResultDataCase getResultDataCase();
+  org.chromium.chrome.browser.autofill_assistant.proto.ProcessedActionProto.ResultDataCase getResultDataCase();
 }

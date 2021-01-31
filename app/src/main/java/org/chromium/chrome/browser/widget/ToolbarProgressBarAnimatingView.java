@@ -74,10 +74,10 @@ public class ToolbarProgressBarAnimatingView extends ImageView {
     private boolean mIsCanceled;
 
     /** If the layout is RTL. */
-    private boolean mIsRtl;
+    private final boolean mIsRtl;
 
     /** The update listener for the animation. */
-    private ProgressBarUpdateListener mListener;
+    private final ProgressBarUpdateListener mListener;
 
     /** The last fraction of the animation that was drawn. */
     private float mLastAnimatedFraction;
@@ -86,7 +86,7 @@ public class ToolbarProgressBarAnimatingView extends ImageView {
     private ValueAnimator mLastUpdatedAnimation;
 
     /** The ratio of px to dp. */
-    private float mDpToPx;
+    private final float mDpToPx;
 
     /**
      * An animation update listener that moves an ImageView across the progress bar.

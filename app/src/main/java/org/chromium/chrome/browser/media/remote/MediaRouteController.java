@@ -22,7 +22,7 @@ public interface MediaRouteController {
     /**
      * Listener for events that are relevant to the state of the media and the media controls
      */
-    public interface MediaStateListener {
+    interface MediaStateListener {
         /**
          * Called when the first route becomes available, or the last route
          * is removed.
@@ -120,7 +120,7 @@ public interface MediaRouteController {
     /**
      * Listener for events that are relevant to the Browser UI.
      */
-    public interface UiListener {
+    interface UiListener {
 
         /**
          * Called when a new route is selected
@@ -178,7 +178,7 @@ public interface MediaRouteController {
      * Interface for returning the result of checking whether the media element is playable
      * remotely.
      */
-    static interface MediaValidationCallback {
+    interface MediaValidationCallback {
         /**
          * Function to deliver the result
          * @param isPlayable true if the media element is playable, false if not

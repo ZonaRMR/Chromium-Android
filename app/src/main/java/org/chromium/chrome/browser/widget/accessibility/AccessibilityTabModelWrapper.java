@@ -46,7 +46,7 @@ public class AccessibilityTabModelWrapper extends LinearLayout {
     private ColorStateList mTabIconSelectedLightColor;
 
     private TabModelSelector mTabModelSelector;
-    private TabModelSelectorObserver mTabModelSelectorObserver =
+    private final TabModelSelectorObserver mTabModelSelectorObserver =
             new EmptyTabModelSelectorObserver() {
         @Override
         public void onChange() {
@@ -142,7 +142,7 @@ public class AccessibilityTabModelWrapper extends LinearLayout {
             public void onTabReselected(TabLayout.Tab tab) {}
         });
 
-        mAccessibilityView = (AccessibilityTabModelListView) findViewById(R.id.list_view);
+        mAccessibilityView = findViewById(R.id.list_view);
 
         AccessibilityTabModelAdapter adapter = getAdapter();
 

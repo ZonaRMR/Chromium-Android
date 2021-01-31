@@ -18,7 +18,7 @@ public interface VideoDecodeStatsRecorder extends org.chromium.mojo.bindings.Int
 
 
 
-    public interface Proxy extends VideoDecodeStatsRecorder, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends VideoDecodeStatsRecorder, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<VideoDecodeStatsRecorder, VideoDecodeStatsRecorder.Proxy> MANAGER = VideoDecodeStatsRecorder_Internal.MANAGER;

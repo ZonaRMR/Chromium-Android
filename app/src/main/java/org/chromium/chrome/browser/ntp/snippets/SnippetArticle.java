@@ -79,7 +79,8 @@ public class SnippetArticle
     private DiscardableReference<Drawable> mPublisherFavicon;
 
     /** The thumbnail dominant color. */
-    private @ColorInt Integer mThumbnailDominantColor;
+    private @ColorInt
+    final Integer mThumbnailDominantColor;
 
     /** Whether the linked article represents an asset download. */
     private boolean mIsAssetDownload;

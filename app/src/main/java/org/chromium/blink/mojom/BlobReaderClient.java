@@ -18,7 +18,7 @@ public interface BlobReaderClient extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends BlobReaderClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BlobReaderClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BlobReaderClient, BlobReaderClient.Proxy> MANAGER = BlobReaderClient_Internal.MANAGER;

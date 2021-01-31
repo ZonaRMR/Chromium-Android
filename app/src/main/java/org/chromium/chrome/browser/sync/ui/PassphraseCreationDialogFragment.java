@@ -40,8 +40,8 @@ public class PassphraseCreationDialogFragment extends DialogFragment {
         super.onCreateDialog(savedInstanceState);
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.sync_custom_passphrase, null);
-        mEnterPassphrase = (EditText) view.findViewById(R.id.passphrase);
-        mConfirmPassphrase = (EditText) view.findViewById(R.id.confirm_passphrase);
+        mEnterPassphrase = view.findViewById(R.id.passphrase);
+        mConfirmPassphrase = view.findViewById(R.id.confirm_passphrase);
 
         mConfirmPassphrase.setOnEditorActionListener(new OnEditorActionListener() {
             @Override
@@ -54,7 +54,7 @@ public class PassphraseCreationDialogFragment extends DialogFragment {
         });
 
         TextView instructionsView =
-                (TextView) view.findViewById(R.id.custom_passphrase_instructions);
+                view.findViewById(R.id.custom_passphrase_instructions);
         instructionsView.setMovementMethod(LinkMovementMethod.getInstance());
         instructionsView.setText(getInstructionsText());
 

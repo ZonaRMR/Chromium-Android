@@ -25,7 +25,8 @@ public final class Value extends org.chromium.mojo.bindings.Union {
         public static final int BinaryValue = 5;
         public static final int DictionaryValue = 6;
         public static final int ListValue = 7;
-    };
+    }
+
     private byte mNullValue;
     private boolean mBoolValue;
     private int mIntValue;

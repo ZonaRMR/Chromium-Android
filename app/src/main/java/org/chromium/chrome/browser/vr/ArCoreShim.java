@@ -24,7 +24,7 @@ public interface ArCoreShim {
      * For detailed description, please see:
      * https://developers.google.com/ar/reference/java/arcore/reference/com/google/ar/core/ArCoreApk.InstallStatus
      */
-    public enum InstallStatus { INSTALLED, INSTALL_REQUESTED }
+    enum InstallStatus { INSTALLED, INSTALL_REQUESTED }
 
     /**
      * Equivalent of ArCoreApk.Availability enum.
@@ -37,7 +37,7 @@ public interface ArCoreShim {
             Availability.UNKNOWN_ERROR, Availability.UNKNOWN_TIMED_OUT,
             Availability.UNSUPPORTED_DEVICE_NOT_CAPABLE})
     @Retention(RetentionPolicy.SOURCE)
-    public @interface Availability {
+    @interface Availability {
         int SUPPORTED_APK_TOO_OLD = 0;
         int SUPPORTED_INSTALLED = 1;
         int SUPPORTED_NOT_INSTALLED = 2;
@@ -50,19 +50,19 @@ public interface ArCoreShim {
     /**
      * Equivalent of ArCoreApk.checkAvailability.
      */
-    public @Availability int checkAvailability(Context applicationContext);
+    @Availability int checkAvailability(Context applicationContext);
 
     /**
      * Equivalent of ArCoreApk.requestInstall.
      */
-    public InstallStatus requestInstall(Activity activity, boolean userRequestedInstall)
+    InstallStatus requestInstall(Activity activity, boolean userRequestedInstall)
             throws UnavailableDeviceNotCompatibleException,
                    UnavailableUserDeclinedInstallationException;
 
     /**
      * Thrown by requestInstall() when device is not compatible with ARCore.
      */
-    public class UnavailableDeviceNotCompatibleException extends Exception {
+    class UnavailableDeviceNotCompatibleException extends Exception {
         public UnavailableDeviceNotCompatibleException(Exception cause) {
             super(cause);
         }
@@ -71,7 +71,7 @@ public interface ArCoreShim {
     /**
      * Thrown by requestInstall() when user declined to install ARCore.
      */
-    public class UnavailableUserDeclinedInstallationException extends Exception {
+    class UnavailableUserDeclinedInstallationException extends Exception {
         UnavailableUserDeclinedInstallationException(Exception cause) {
             super(cause);
         }

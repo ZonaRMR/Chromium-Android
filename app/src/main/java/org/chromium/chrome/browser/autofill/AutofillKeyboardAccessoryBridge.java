@@ -37,7 +37,7 @@ public class AutofillKeyboardAccessoryBridge
     private long mNativeAutofillKeyboardAccessory;
     private ManualFillingCoordinator mManualFillingCoordinator;
     private Context mContext;
-    private KeyboardAccessoryData.Provider<KeyboardAccessoryData.Action[]> mChipProvider =
+    private final KeyboardAccessoryData.Provider<KeyboardAccessoryData.Action[]> mChipProvider =
             new KeyboardAccessoryData.PropertyProvider<>(AccessoryAction.AUTOFILL_SUGGESTION);
 
     private AutofillKeyboardAccessoryBridge() {

@@ -103,9 +103,9 @@ public class WebappActivity extends SingleTabActivity {
 
     private WebappInfo mWebappInfo;
 
-    private WebappSplashScreenController mSplashController;
+    private final WebappSplashScreenController mSplashController;
 
-    private WebappDisclosureSnackbarController mDisclosureSnackbarController;
+    private final WebappDisclosureSnackbarController mDisclosureSnackbarController;
 
     private boolean mIsInitialized;
     private Integer mBrandColor;
@@ -298,8 +298,8 @@ public class WebappActivity extends SingleTabActivity {
     public void finishNativeInitialization() {
         LayoutManager layoutDriver = new LayoutManager(getCompositorViewHolder());
         initializeCompositorContent(layoutDriver, findViewById(R.id.url_bar),
-                (ViewGroup) findViewById(android.R.id.content),
-                (ToolbarControlContainer) findViewById(R.id.control_container));
+                findViewById(android.R.id.content),
+                findViewById(R.id.control_container));
         getToolbarManager().initializeWithNative(getTabModelSelector(),
                 getFullscreenManager().getBrowserVisibilityDelegate(), getFindToolbarManager(),
                 null, layoutDriver, null, null, null, view -> onToolbarCloseButtonClicked());
@@ -557,7 +557,7 @@ public class WebappActivity extends SingleTabActivity {
             if (mWebappInfo.displayMode() == WebDisplayMode.FULLSCREEN) {
                 enterImmersiveMode();
             }
-            ViewGroup contentView = (ViewGroup) findViewById(android.R.id.content);
+            ViewGroup contentView = findViewById(android.R.id.content);
             mSplashController.showSplashScreen(contentView, mWebappInfo);
         }
     }

@@ -26,10 +26,10 @@ public final class BatteryStatus extends org.chromium.mojo.bindings.Struct {
 
     private BatteryStatus(int version) {
         super(STRUCT_SIZE, version);
-        this.charging = (boolean) true;
-        this.chargingTime = (double) 0.0;
-        this.dischargingTime = (double) java.lang.Double.POSITIVE_INFINITY;
-        this.level = (double) 1.0;
+        this.charging = true;
+        this.chargingTime = 0.0;
+        this.dischargingTime = Double.POSITIVE_INFINITY;
+        this.level = 1.0;
     }
 
     public BatteryStatus() {

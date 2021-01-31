@@ -27,14 +27,14 @@ public class PickerBitmap implements Comparable<PickerBitmap> {
     }
 
     // The file path to the bitmap to show.
-    private String mFilePath;
+    private final String mFilePath;
 
     // When the bitmap was last modified on disk.
-    private long mLastModified;
+    private final long mLastModified;
 
     // The type of tile involved.
     @TileTypes
-    private int mType;
+    private final int mType;
 
     /**
      * The PickerBitmap constructor.
@@ -63,7 +63,7 @@ public class PickerBitmap implements Comparable<PickerBitmap> {
     public String getFilenameWithoutExtension() {
         int index = mFilePath.lastIndexOf("/");
         if (index == -1) return mFilePath;
-        return mFilePath.substring(index + 1, mFilePath.length());
+        return mFilePath.substring(index + 1);
     }
 
     /**

@@ -208,7 +208,7 @@ public final class VersionProto {
 
       private final int value;
 
-      private Architecture(int value) {
+      Architecture(int value) {
         this.value = value;
       }
 
@@ -305,7 +305,7 @@ public final class VersionProto {
 
       private final int value;
 
-      private BuildType(int value) {
+      BuildType(int value) {
         this.value = value;
       }
 

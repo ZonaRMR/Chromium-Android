@@ -166,7 +166,7 @@ public class NonOverlappingStack extends Stack {
         mScroller.setFrictionMultiplier(FRICTION_MULTIPLIER);
         // This is what computeSpacing() returns when there are >= 2 tabs
         final int snapDistance =
-                (int) Math.round(getScrollDimensionSize() * SCALE_FRACTION_MULTIPLE_TABS
+                Math.round(getScrollDimensionSize() * SCALE_FRACTION_MULTIPLE_TABS
                         + EXTRA_SPACE_BETWEEN_TABS_DP);
         // Really we're scrolling in the x direction, but the scroller is always wired up to the y
         // direction for both portrait and landscape mode.
@@ -278,11 +278,7 @@ public class NonOverlappingStack extends Stack {
         int centeredTab = getCenteredTabIndex();
         for (int i = 0; i < mStackTabs.length; i++) {
             LayoutTab layoutTab = mStackTabs[i].getLayoutTab();
-            if (i < centeredTab - 1 || i > centeredTab + 2) {
-                layoutTab.setVisible(false);
-            } else {
-                layoutTab.setVisible(true);
-            }
+            layoutTab.setVisible(i >= centeredTab - 1 && i <= centeredTab + 2);
         }
     }
 
@@ -321,7 +317,7 @@ public class NonOverlappingStack extends Stack {
 
     @Override
     protected int computeSpacing(int layoutTabCount) {
-        return (int) Math.round(
+        return Math.round(
                 getScrollDimensionSize() * getScaleAmount() + EXTRA_SPACE_BETWEEN_TABS_DP);
     }
 

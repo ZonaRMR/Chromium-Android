@@ -52,7 +52,7 @@ public class BookmarkAddEditFolderActivity extends SynchronousInitializationActi
     private BookmarkId mFolderId;
     private MenuItem mDeleteButton;
 
-    private BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
+    private final BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
         @Override
         public void bookmarkModelChanged() {
             if (mIsAddMode) {
@@ -133,12 +133,12 @@ public class BookmarkAddEditFolderActivity extends SynchronousInitializationActi
         }
         setContentView(R.layout.bookmark_add_edit_folder_activity);
 
-        mParentTextView = (TextView) findViewById(R.id.parent_folder);
-        mFolderTitle = (EmptyAlertEditText) findViewById(R.id.folder_title);
+        mParentTextView = findViewById(R.id.parent_folder);
+        mFolderTitle = findViewById(R.id.folder_title);
 
         mParentTextView.setOnClickListener(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

@@ -13,9 +13,9 @@ import java.util.Map;
  * Class that tracks the mapping between tokens and fully-qualified domain names (FQDNs).
  */
 public class TokenTracker {
-    private Map<String, String> mFqdnToTokenMap;
-    private Map<String, String> mTokenToFqdnMap;
-    private TokenGenerator mTokenGenerator;
+    private final Map<String, String> mFqdnToTokenMap;
+    private final Map<String, String> mTokenToFqdnMap;
+    private final TokenGenerator mTokenGenerator;
 
     public TokenTracker() {
         mTokenToFqdnMap = new HashMap<>();

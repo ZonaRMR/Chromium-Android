@@ -615,7 +615,7 @@ public class EditorFieldModel {
      * @Return Whether the field value length is maximum.
      */
     public boolean isLengthMaximum() {
-        return mValidator == null ? false : mValidator.isLengthMaximum(mValue);
+        return mValidator != null && mValidator.isLengthMaximum(mValue);
     }
 
     /**

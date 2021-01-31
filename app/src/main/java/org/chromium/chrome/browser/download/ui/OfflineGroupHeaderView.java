@@ -55,8 +55,8 @@ public class OfflineGroupHeaderView
         super.onFinishInflate();
 
         mIconImageView = findViewById(R.id.icon_view);
-        mDescriptionTextView = (TextView) findViewById(R.id.description);
-        mExpandImage = (ImageView) findViewById(R.id.expand_icon);
+        mDescriptionTextView = findViewById(R.id.description);
+        mExpandImage = findViewById(R.id.expand_icon);
     }
 
     /**

@@ -12,7 +12,7 @@ import org.chromium.chrome.browser.tab.Tab;
  */
 public interface TabList {
     // Keep this in sync with chrome/browser/ui/android/tab_model/tab_model.cc
-    public static final int INVALID_TAB_INDEX = -1;
+    int INVALID_TAB_INDEX = -1;
 
     /**
      * @return Whether this tab model contains only incognito tabs or only normal tabs.

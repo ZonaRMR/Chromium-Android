@@ -30,12 +30,12 @@ public final class SslConfig extends org.chromium.mojo.bindings.Struct {
 
     private SslConfig(int version) {
         super(STRUCT_SIZE, version);
-        this.revCheckingEnabled = (boolean) false;
-        this.revCheckingRequiredLocalAnchors = (boolean) false;
-        this.sha1LocalAnchorsEnabled = (boolean) false;
-        this.symantecEnforcementDisabled = (boolean) false;
-        this.versionMin = (int) SslVersion.TLS1;
-        this.versionMax = (int) SslVersion.TLS13;
+        this.revCheckingEnabled = false;
+        this.revCheckingRequiredLocalAnchors = false;
+        this.sha1LocalAnchorsEnabled = false;
+        this.symantecEnforcementDisabled = false;
+        this.versionMin = SslVersion.TLS1;
+        this.versionMax = SslVersion.TLS13;
     }
 
     public SslConfig() {

@@ -47,7 +47,7 @@ public final class RadioButtonLayout extends RadioGroup {
      * @param tags          Optional list of tags to attach to the buttons.
      */
     public void addOptions(List<CharSequence> messages, @Nullable List<?> tags) {
-        if (tags != null) assert tags.size() == messages.size();
+        assert tags == null || tags.size() == messages.size();
 
         for (int i = 0; i < messages.size(); i++) {
             RadioButton button = (RadioButton) LayoutInflater.from(getContext())

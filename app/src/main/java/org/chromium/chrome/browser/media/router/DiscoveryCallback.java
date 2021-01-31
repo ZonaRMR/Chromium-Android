@@ -20,8 +20,8 @@ import java.util.Set;
 public class DiscoveryCallback extends MediaRouter.Callback {
     private final DiscoveryDelegate mDiscoveryDelegate;
     private final MediaRouteSelector mRouteSelector;
-    private Set<String> mSourceUrns = new HashSet<String>();
-    private List<MediaSink> mSinks = new ArrayList<MediaSink>();
+    private final Set<String> mSourceUrns = new HashSet<String>();
+    private final List<MediaSink> mSinks = new ArrayList<MediaSink>();
 
     public DiscoveryCallback(String sourceUrn, List<MediaSink> knownSinks,
             DiscoveryDelegate delegate, MediaRouteSelector selector) {

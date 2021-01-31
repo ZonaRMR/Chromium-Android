@@ -55,49 +55,49 @@ public class PickerCategoryView extends RelativeLayout
     private ContactsPickerDialog mDialog;
 
     // The view containing the RecyclerView and the toolbar, etc.
-    private SelectableListLayout<ContactDetails> mSelectableListLayout;
+    private final SelectableListLayout<ContactDetails> mSelectableListLayout;
 
     // Our activity.
-    private ChromeActivity mActivity;
+    private final ChromeActivity mActivity;
 
     // The callback to notify the listener of decisions reached in the picker.
     private ContactsPickerListener mListener;
 
     // The toolbar located at the top of the dialog.
-    private ContactsPickerToolbar mToolbar;
+    private final ContactsPickerToolbar mToolbar;
 
     // The RecyclerView showing the images.
-    private RecyclerView mRecyclerView;
+    private final RecyclerView mRecyclerView;
 
     // The view at the top (showing the explanation and Select All checkbox).
     private TopView mTopView;
 
     // The {@link PickerAdapter} for the RecyclerView.
-    private PickerAdapter mPickerAdapter;
+    private final PickerAdapter mPickerAdapter;
 
     // The layout manager for the RecyclerView.
-    private LinearLayoutManager mLayoutManager;
+    private final LinearLayoutManager mLayoutManager;
 
     // A helper class to draw the icon for each contact.
-    private RoundedIconGenerator mIconGenerator;
+    private final RoundedIconGenerator mIconGenerator;
 
     // The {@link SelectionDelegate} keeping track of which contacts are selected.
-    private SelectionDelegate<ContactDetails> mSelectionDelegate;
+    private final SelectionDelegate<ContactDetails> mSelectionDelegate;
 
     // A cache for contact images, lazily created.
-    private BitmapCache mBitmapCache;
+    private final BitmapCache mBitmapCache;
 
     // The search icon.
-    private ImageView mSearchButton;
+    private final ImageView mSearchButton;
 
     // Keeps track of the set of last selected contacts in the UI.
     Set<ContactDetails> mPreviousSelection;
 
     // The Done text button that confirms the selection choice.
-    private Button mDoneButton;
+    private final Button mDoneButton;
 
     // Whether the picker is in multi-selection mode.
-    private boolean mMultiSelectionAllowed;
+    private final boolean mMultiSelectionAllowed;
 
     // Whether the contacts data returned includes names.
     public final boolean includeNames;
@@ -136,7 +136,7 @@ public class PickerCategoryView extends RelativeLayout
 
         View root = LayoutInflater.from(context).inflate(R.layout.contacts_picker_dialog, this);
         mSelectableListLayout =
-                (SelectableListLayout<ContactDetails>) root.findViewById(R.id.selectable_list);
+                root.findViewById(R.id.selectable_list);
         mSelectableListLayout.initializeEmptyView(
                 VectorDrawableCompat.create(
                         mActivity.getResources(), R.drawable.contacts_big, mActivity.getTheme()),
@@ -153,9 +153,9 @@ public class PickerCategoryView extends RelativeLayout
         mToolbar.setNavigationOnClickListener(this);
         mToolbar.initializeSearchView(this, R.string.contacts_picker_search, 0);
 
-        mSearchButton = (ImageView) mToolbar.findViewById(R.id.search);
+        mSearchButton = mToolbar.findViewById(R.id.search);
         mSearchButton.setOnClickListener(this);
-        mDoneButton = (Button) mToolbar.findViewById(R.id.done);
+        mDoneButton = mToolbar.findViewById(R.id.done);
         mDoneButton.setOnClickListener(this);
 
         mLayoutManager = new LinearLayoutManager(context);

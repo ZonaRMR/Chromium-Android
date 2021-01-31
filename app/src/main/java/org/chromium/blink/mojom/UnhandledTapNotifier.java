@@ -18,7 +18,7 @@ public interface UnhandledTapNotifier extends org.chromium.mojo.bindings.Interfa
 
 
 
-    public interface Proxy extends UnhandledTapNotifier, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends UnhandledTapNotifier, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<UnhandledTapNotifier, UnhandledTapNotifier.Proxy> MANAGER = UnhandledTapNotifier_Internal.MANAGER;

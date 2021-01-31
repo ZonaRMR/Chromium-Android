@@ -26,7 +26,7 @@ public class LocationProviderAdapter {
     private static final String TAG = "cr_LocationProvider";
 
     // Delegate handling the real work in the main thread.
-    private LocationProvider mImpl;
+    private final LocationProvider mImpl;
 
     private LocationProviderAdapter() {
         mImpl = LocationProviderFactory.create();

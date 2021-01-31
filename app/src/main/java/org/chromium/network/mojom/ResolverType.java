@@ -22,8 +22,8 @@ public final class ResolverType {
 
     public static final int RESOLVER_TYPE_IP_LITERAL = RESOLVER_TYPE_SYSTEM + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (2);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 2;
 
     private static final boolean IS_EXTENSIBLE = false;
 

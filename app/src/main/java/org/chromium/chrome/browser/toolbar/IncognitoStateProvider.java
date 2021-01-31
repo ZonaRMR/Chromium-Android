@@ -44,7 +44,7 @@ public class IncognitoStateProvider {
      * @return Whether incognito mode is currently selected.
      */
     public boolean isIncognitoSelected() {
-        return mTabModelSelector != null ? mTabModelSelector.isIncognitoSelected() : false;
+        return mTabModelSelector != null && mTabModelSelector.isIncognitoSelected();
     }
 
     /**

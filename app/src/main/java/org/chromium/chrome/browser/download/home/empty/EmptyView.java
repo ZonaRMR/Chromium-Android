@@ -27,8 +27,8 @@ class EmptyView {
     public EmptyView(Context context) {
         mView = (ViewGroup) LayoutInflater.from(context).inflate(
                 R.layout.downloads_empty_view, null);
-        mEmptyView = (TextView) mView.findViewById(R.id.empty);
-        mLoadingView = (LoadingView) mView.findViewById(R.id.loading);
+        mEmptyView = mView.findViewById(R.id.empty);
+        mLoadingView = mView.findViewById(R.id.loading);
     }
 
     /** The Android {@link View} representing the empty view. */

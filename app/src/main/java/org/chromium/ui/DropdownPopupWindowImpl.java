@@ -34,16 +34,16 @@ class DropdownPopupWindowImpl
     private final View mAnchorView;
     private boolean mRtl;
     private int mInitialSelection = -1;
-    private OnLayoutChangeListener mLayoutChangeListener;
+    private final OnLayoutChangeListener mLayoutChangeListener;
     private CharSequence mDescription;
-    private AnchoredPopupWindow mAnchoredPopupWindow;
+    private final AnchoredPopupWindow mAnchoredPopupWindow;
     ListAdapter mAdapter;
 
     private final LinearLayout mContentView;
     private final ListView mListView;
     private final FrameLayout mFooterView;
-    private Drawable mBackground;
-    private int mHorizontalPadding;
+    private final Drawable mBackground;
+    private final int mHorizontalPadding;
 
     /**
      * Creates an DropdownPopupWindowImpl with specified parameters.
@@ -77,8 +77,8 @@ class DropdownPopupWindowImpl
 
         mContentView =
                 (LinearLayout) LayoutInflater.from(context).inflate(R.layout.dropdown_window, null);
-        mListView = (ListView) mContentView.findViewById(R.id.dropdown_body_list);
-        mFooterView = (FrameLayout) mContentView.findViewById(R.id.dropdown_footer);
+        mListView = mContentView.findViewById(R.id.dropdown_body_list);
+        mFooterView = mContentView.findViewById(R.id.dropdown_footer);
 
         ViewRectProvider rectProvider = new ViewRectProvider(mAnchorView);
         rectProvider.setIncludePadding(true);

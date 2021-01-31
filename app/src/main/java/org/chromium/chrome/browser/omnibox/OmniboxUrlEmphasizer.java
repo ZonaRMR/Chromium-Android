@@ -102,7 +102,7 @@ public class OmniboxUrlEmphasizer {
     @VisibleForTesting
     static class UrlEmphasisColorSpan extends ForegroundColorSpan
             implements UrlEmphasisSpan {
-        private int mEmphasisColor;
+        private final int mEmphasisColor;
 
         /**
          * @param color The color to set the text.
@@ -310,7 +310,7 @@ public class OmniboxUrlEmphasizer {
      */
     public static int getOriginEndIndex(String url, Profile profile) {
         EmphasizeComponentsResponse emphasizeResponse =
-                parseForEmphasizeComponents(profile, url.toString());
+                parseForEmphasizeComponents(profile, url);
         if (!emphasizeResponse.hasScheme()) return url.length();
 
         String scheme = emphasizeResponse.extractScheme(url);

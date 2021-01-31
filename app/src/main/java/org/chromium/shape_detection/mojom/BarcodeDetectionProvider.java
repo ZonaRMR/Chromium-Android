@@ -18,7 +18,7 @@ public interface BarcodeDetectionProvider extends org.chromium.mojo.bindings.Int
 
 
 
-    public interface Proxy extends BarcodeDetectionProvider, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends BarcodeDetectionProvider, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<BarcodeDetectionProvider, BarcodeDetectionProvider.Proxy> MANAGER = BarcodeDetectionProvider_Internal.MANAGER;

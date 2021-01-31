@@ -22,8 +22,8 @@ public final class PowerLineFrequency {
 
     public static final int HZ_60 = HZ_50 + 1;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (2);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 2;
 
     private static final boolean IS_EXTENSIBLE = false;
 

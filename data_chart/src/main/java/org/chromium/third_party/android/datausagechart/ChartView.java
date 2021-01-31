@@ -41,8 +41,8 @@ public class ChartView extends FrameLayout {
     private float mOptimalWidthWeight;
 
     // Used in onLayout(). Reused to avoid allocations during layout.
-    private Rect mContent = new Rect();
-    private Rect mChildRect = new Rect();
+    private final Rect mContent = new Rect();
+    private final Rect mChildRect = new Rect();
 
     public ChartView(Context context) {
         this(context, null, 0);

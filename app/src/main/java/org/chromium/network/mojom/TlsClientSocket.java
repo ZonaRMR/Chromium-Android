@@ -18,7 +18,7 @@ public interface TlsClientSocket extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends TlsClientSocket, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends TlsClientSocket, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<TlsClientSocket, TlsClientSocket.Proxy> MANAGER = TlsClientSocket_Internal.MANAGER;

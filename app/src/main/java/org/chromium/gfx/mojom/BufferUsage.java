@@ -32,10 +32,10 @@ public final class BufferUsage {
 
     public static final int GPU_READ_CPU_READ_WRITE_PERSISTENT = GPU_READ_CPU_READ_WRITE + 1;
 
-    public static final int LAST = (int) (BufferUsage.GPU_READ_CPU_READ_WRITE_PERSISTENT);
+    public static final int LAST = BufferUsage.GPU_READ_CPU_READ_WRITE_PERSISTENT;
 
-    public static final int MIN_VALUE = (int) (0);
-    public static final int MAX_VALUE = (int) (7);
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 7;
 
     private static final boolean IS_EXTENSIBLE = false;
 

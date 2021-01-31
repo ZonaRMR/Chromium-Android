@@ -59,10 +59,10 @@ public class ExportErrorDialogFragment extends DialogFragment {
         final View dialog =
                 getActivity().getLayoutInflater().inflate(R.layout.passwords_error_dialog, null);
         final TextView mainDescription =
-                (TextView) dialog.findViewById(R.id.passwords_error_main_description);
+                dialog.findViewById(R.id.passwords_error_main_description);
         mainDescription.setText(mParams.description);
         final TextView detailedDescription =
-                (TextView) dialog.findViewById(R.id.passwords_error_detailed_description);
+                dialog.findViewById(R.id.passwords_error_detailed_description);
         if (mParams.detailedDescription != null) {
             detailedDescription.setText(mParams.detailedDescription);
         } else {

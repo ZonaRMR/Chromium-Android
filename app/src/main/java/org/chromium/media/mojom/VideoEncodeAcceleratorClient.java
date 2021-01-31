@@ -18,7 +18,7 @@ public interface VideoEncodeAcceleratorClient extends org.chromium.mojo.bindings
 
 
 
-    public interface Proxy extends VideoEncodeAcceleratorClient, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends VideoEncodeAcceleratorClient, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<VideoEncodeAcceleratorClient, VideoEncodeAcceleratorClient.Proxy> MANAGER = VideoEncodeAcceleratorClient_Internal.MANAGER;

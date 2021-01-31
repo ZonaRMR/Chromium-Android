@@ -24,7 +24,7 @@ public final class DnsOverHttpsServer extends org.chromium.mojo.bindings.Struct 
 
     private DnsOverHttpsServer(int version) {
         super(STRUCT_SIZE, version);
-        this.usePost = (boolean) false;
+        this.usePost = false;
     }
 
     public DnsOverHttpsServer() {

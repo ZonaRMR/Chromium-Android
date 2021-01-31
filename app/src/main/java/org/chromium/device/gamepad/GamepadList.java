@@ -33,7 +33,7 @@ public class GamepadList {
     private InputManager mInputManager;
     private int mAttachedToWindowCounter;
     private boolean mIsGamepadAPIActive;
-    private InputDeviceListener mInputDeviceListener;
+    private final InputDeviceListener mInputDeviceListener;
 
     private GamepadList() {
         mInputDeviceListener = new InputDeviceListener() {
@@ -145,10 +145,7 @@ public class GamepadList {
     }
 
     private boolean isDeviceConnected(int index) {
-        if (index < MAX_GAMEPADS && getDevice(index) != null) {
-            return true;
-        }
-        return false;
+        return index < MAX_GAMEPADS && getDevice(index) != null;
     }
 
     private GamepadDevice getDeviceById(int deviceId) {

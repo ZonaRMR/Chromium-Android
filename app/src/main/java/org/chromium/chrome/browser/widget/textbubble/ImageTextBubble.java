@@ -39,7 +39,7 @@ public class ImageTextBubble extends TextBubble {
     protected View createContentView() {
         View view =
                 LayoutInflater.from(mContext).inflate(R.layout.textbubble_text_with_image, null);
-        setText((TextView) view.findViewById(R.id.message));
+        setText(view.findViewById(R.id.message));
         return view;
     }
 }

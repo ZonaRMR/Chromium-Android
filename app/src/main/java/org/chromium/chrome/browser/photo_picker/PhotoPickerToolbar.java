@@ -30,8 +30,8 @@ public class PhotoPickerToolbar extends SelectableListToolbar<PickerBitmap> {
         setNavigationIcon(R.drawable.btn_close);
         setNavigationContentDescription(R.string.close);
 
-        TextView up = (TextView) mNumberRollView.findViewById(R.id.up);
-        TextView down = (TextView) mNumberRollView.findViewById(R.id.down);
+        TextView up = mNumberRollView.findViewById(R.id.up);
+        TextView down = mNumberRollView.findViewById(R.id.down);
         ApiCompatibilityUtils.setTextAppearance(up, R.style.TextAppearance_BlackHeadline);
         ApiCompatibilityUtils.setTextAppearance(down, R.style.TextAppearance_BlackHeadline);
     }
@@ -49,7 +49,7 @@ public class PhotoPickerToolbar extends SelectableListToolbar<PickerBitmap> {
     public void onSelectionStateChange(List<PickerBitmap> selectedItems) {
         super.onSelectionStateChange(selectedItems);
 
-        Button done = (Button) findViewById(R.id.done);
+        Button done = findViewById(R.id.done);
         done.setEnabled(selectedItems.size() > 0);
     }
 }

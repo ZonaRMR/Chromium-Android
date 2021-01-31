@@ -109,7 +109,7 @@ public final class StylesProto {
 
     private final int value;
 
-    private RelativeSize(int value) {
+    RelativeSize(int value) {
       this.value = value;
     }
 
@@ -229,7 +229,7 @@ public final class StylesProto {
 
     private final int value;
 
-    private TextAlignmentHorizontal(int value) {
+    TextAlignmentHorizontal(int value) {
       this.value = value;
     }
 
@@ -349,7 +349,7 @@ public final class StylesProto {
 
     private final int value;
 
-    private TextAlignmentVertical(int value) {
+    TextAlignmentVertical(int value) {
       this.value = value;
     }
 
@@ -461,7 +461,7 @@ public final class StylesProto {
 
     private final int value;
 
-    private GravityHorizontal(int value) {
+    GravityHorizontal(int value) {
       this.value = value;
     }
 
@@ -573,7 +573,7 @@ public final class StylesProto {
 
     private final int value;
 
-    private GravityVertical(int value) {
+    GravityVertical(int value) {
       this.value = value;
     }
 
@@ -1743,9 +1743,9 @@ public final class StylesProto {
      */
     com.google.search.now.ui.piet.StylesProto.GravityVertical getGravityVertical();
 
-    public com.google.search.now.ui.piet.StylesProto.Style.WidthSpecCase getWidthSpecCase();
+    com.google.search.now.ui.piet.StylesProto.Style.WidthSpecCase getWidthSpecCase();
 
-    public com.google.search.now.ui.piet.StylesProto.Style.HeightSpecCase getHeightSpecCase();
+    com.google.search.now.ui.piet.StylesProto.Style.HeightSpecCase getHeightSpecCase();
   }
   /**
    * <pre>
@@ -1777,7 +1777,7 @@ public final class StylesProto {
       RELATIVE_WIDTH(23),
       WIDTHSPEC_NOT_SET(0);
       private final int value;
-      private WidthSpecCase(int value) {
+      WidthSpecCase(int value) {
         this.value = value;
       }
       /**
@@ -1799,9 +1799,9 @@ public final class StylesProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public WidthSpecCase
+      public WidthSpecCase
     getWidthSpecCase() {
       return WidthSpecCase.forNumber(
           widthSpecCase_);
@@ -1820,7 +1820,7 @@ public final class StylesProto {
       RELATIVE_HEIGHT(24),
       HEIGHTSPEC_NOT_SET(0);
       private final int value;
-      private HeightSpecCase(int value) {
+      HeightSpecCase(int value) {
         this.value = value;
       }
       /**
@@ -1842,9 +1842,9 @@ public final class StylesProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public HeightSpecCase
+      public HeightSpecCase
     getHeightSpecCase() {
       return HeightSpecCase.forNumber(
           heightSpecCase_);
@@ -3430,11 +3430,11 @@ public final class StylesProto {
       }
       if (widthSpecCase_ == 8) {
         output.writeUInt32(
-            8, (int)((java.lang.Integer) widthSpec_));
+            8, (Integer) widthSpec_);
       }
       if (heightSpecCase_ == 9) {
         output.writeUInt32(
-            9, (int)((java.lang.Integer) heightSpec_));
+            9, (Integer) heightSpec_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeUInt32(10, minHeight_);
@@ -3518,12 +3518,12 @@ public final class StylesProto {
       if (widthSpecCase_ == 8) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(
-              8, (int)((java.lang.Integer) widthSpec_));
+              8, (Integer) widthSpec_);
       }
       if (heightSpecCase_ == 9) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(
-              9, (int)((java.lang.Integer) heightSpec_));
+              9, (Integer) heightSpec_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
@@ -5601,7 +5601,7 @@ public final class StylesProto {
      */
     com.google.search.now.ui.piet.ImagesProto.Image getPreLoadImage();
 
-    public com.google.search.now.ui.piet.StylesProto.ImageLoadingSettings.PreloadCase getPreloadCase();
+    com.google.search.now.ui.piet.StylesProto.ImageLoadingSettings.PreloadCase getPreloadCase();
   }
   /**
    * <pre>
@@ -5626,7 +5626,7 @@ public final class StylesProto {
       PRE_LOAD_IMAGE(3),
       PRELOAD_NOT_SET(0);
       private final int value;
-      private PreloadCase(int value) {
+      PreloadCase(int value) {
         this.value = value;
       }
       /**
@@ -5648,9 +5648,9 @@ public final class StylesProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public PreloadCase
+      public PreloadCase
     getPreloadCase() {
       return PreloadCase.forNumber(
           preloadCase_);
@@ -7789,7 +7789,7 @@ public final class StylesProto {
 
       private final int value;
 
-      private FontWeight(int value) {
+      FontWeight(int value) {
         this.value = value;
       }
 
@@ -10045,7 +10045,7 @@ public final class StylesProto {
     com.google.protobuf.ByteString
         getCustomTypefaceBytes();
 
-    public com.google.search.now.ui.piet.StylesProto.Typeface.TypefaceSpecifierCase getTypefaceSpecifierCase();
+    com.google.search.now.ui.piet.StylesProto.Typeface.TypefaceSpecifierCase getTypefaceSpecifierCase();
   }
   /**
    * Protobuf type {@code search.now.ui.piet.Typeface}
@@ -10168,7 +10168,7 @@ public final class StylesProto {
 
       private final int value;
 
-      private CommonTypeface(int value) {
+      CommonTypeface(int value) {
         this.value = value;
       }
 
@@ -10184,7 +10184,7 @@ public final class StylesProto {
       CUSTOM_TYPEFACE(2),
       TYPEFACESPECIFIER_NOT_SET(0);
       private final int value;
-      private TypefaceSpecifierCase(int value) {
+      TypefaceSpecifierCase(int value) {
         this.value = value;
       }
       /**
@@ -10206,9 +10206,9 @@ public final class StylesProto {
       public int getNumber() {
         return this.value;
       }
-    };
+    }
 
-    public TypefaceSpecifierCase
+      public TypefaceSpecifierCase
     getTypefaceSpecifierCase() {
       return TypefaceSpecifierCase.forNumber(
           typefaceSpecifierCase_);
@@ -11560,7 +11560,7 @@ public final class StylesProto {
 
       private final int value;
 
-      private Edges(int value) {
+      Edges(int value) {
         this.value = value;
       }
 

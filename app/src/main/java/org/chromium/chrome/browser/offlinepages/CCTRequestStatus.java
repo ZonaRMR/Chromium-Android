@@ -15,8 +15,8 @@ public class CCTRequestStatus {
         mSavedPageId = savedPageId;
     }
 
-    private int mSavePageResult;
-    private String mSavedPageId;
+    private final int mSavePageResult;
+    private final String mSavedPageId;
 
     /**
      * @return An org.chromium.components.offlinepages.BackgroundSavePageResult for this request.

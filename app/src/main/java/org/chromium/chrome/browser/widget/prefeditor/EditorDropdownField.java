@@ -35,9 +35,9 @@ class EditorDropdownField implements EditorFieldView {
     private final TextView mLabel;
     private final Spinner mDropdown;
     private int mSelectedIndex;
-    private ArrayAdapter<CharSequence> mAdapter;
+    private final ArrayAdapter<CharSequence> mAdapter;
     @Nullable
-    private EditorObserverForTest mObserverForTest;
+    private final EditorObserverForTest mObserverForTest;
 
     /**
      * Builds a dropdown view.
@@ -57,7 +57,7 @@ class EditorDropdownField implements EditorFieldView {
         mLayout = LayoutInflater.from(context).inflate(
                 R.layout.payment_request_editor_dropdown, root, false);
 
-        mLabel = (TextView) mLayout.findViewById(R.id.spinner_label);
+        mLabel = mLayout.findViewById(R.id.spinner_label);
         mLabel.setText(mFieldModel.isRequired()
                         ? mFieldModel.getLabel() + EditorDialog.REQUIRED_FIELD_INDICATOR
                         : mFieldModel.getLabel());
@@ -102,7 +102,7 @@ class EditorDropdownField implements EditorFieldView {
         // Invalid value in the mFieldModel
         if (mSelectedIndex < 0) mSelectedIndex = 0;
 
-        mDropdown = (Spinner) mLayout.findViewById(R.id.spinner);
+        mDropdown = mLayout.findViewById(R.id.spinner);
         mDropdown.setTag(this);
         mDropdown.setAdapter(mAdapter);
         mDropdown.setSelection(mSelectedIndex);

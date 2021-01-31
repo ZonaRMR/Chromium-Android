@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * native APIs are available.
  */
 public class SequencedTaskRunnerImpl extends TaskRunnerImpl implements SequencedTaskRunner {
-    private AtomicInteger mPendingTasks = new AtomicInteger();
+    private final AtomicInteger mPendingTasks = new AtomicInteger();
 
     /**
      * @param traits The TaskTraits associated with this SequencedTaskRunnerImpl.

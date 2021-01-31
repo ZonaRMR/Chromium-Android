@@ -52,7 +52,7 @@ public class OverlayPanel extends OverlayPanelAnimation implements ActivityState
     private static final long HIDE_PROGRESS_BAR_DELAY_MS = 1000 / 60 * 4;
 
     /** State of the Overlay Panel. */
-    public static enum PanelState {
+    public enum PanelState {
         // TODO(pedrosimonetti): consider removing the UNDEFINED state
         UNDEFINED,
         CLOSED,
@@ -549,11 +549,7 @@ public class OverlayPanel extends OverlayPanelAnimation implements ActivityState
     protected void onHeightAnimationFinished() {
         super.onHeightAnimationFinished();
 
-        if (getPanelState() == PanelState.PEEKED || getPanelState() == PanelState.CLOSED) {
-            setBasePageTextControlsVisibility(true);
-        } else {
-            setBasePageTextControlsVisibility(false);
-        }
+        setBasePageTextControlsVisibility(getPanelState() == PanelState.PEEKED || getPanelState() == PanelState.CLOSED);
         if (mContent != null) {
             mContent.setPanelTopOffset((int) ((mViewportHeight - getHeight()) / mPxToDp));
         }

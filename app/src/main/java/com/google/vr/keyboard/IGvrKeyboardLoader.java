@@ -10,7 +10,7 @@ package com.google.vr.keyboard;
 public interface IGvrKeyboardLoader extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements com.google.vr.keyboard.IGvrKeyboardLoader
+abstract class Stub extends android.os.Binder implements com.google.vr.keyboard.IGvrKeyboardLoader
 {
 private static final java.lang.String DESCRIPTOR = "com.google.vr.keyboard.IGvrKeyboardLoader";
 /** Construct the stub at attach it to the interface. */
@@ -70,7 +70,7 @@ return super.onTransact(code, data, reply, flags);
 }
 private static class Proxy implements com.google.vr.keyboard.IGvrKeyboardLoader
 {
-private android.os.IBinder mRemote;
+private final android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
@@ -145,11 +145,11 @@ static final int TRANSACTION_closeGvrKeyboard = (android.os.IBinder.FIRST_CALL_T
    * @param the version of the target library.
    * @return the native handle to the library. 0 if the load fails.
    */
-public long loadGvrKeyboard(long version) throws android.os.RemoteException;
+long loadGvrKeyboard(long version) throws android.os.RemoteException;
 /**
    * Closes a library (dlclose).
    *
    * @param nativeLibrary the native handle of the library to be closed.
    */
-public void closeGvrKeyboard(long nativeLibrary) throws android.os.RemoteException;
+void closeGvrKeyboard(long nativeLibrary) throws android.os.RemoteException;
 }

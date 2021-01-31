@@ -515,7 +515,7 @@ public abstract class PaymentRequestSection extends LinearLayout implements View
         private TextView mUpdatedView;
 
         /** The runnable used to fade out the mUpdatedView. */
-        private Runnable mFadeOutRunnable = new Runnable() {
+        private final Runnable mFadeOutRunnable = new Runnable() {
             @Override
             public void run() {
                 Animation out = new AlphaAnimation(mUpdatedView.getAlpha(), 0.0f);
@@ -527,7 +527,7 @@ public abstract class PaymentRequestSection extends LinearLayout implements View
         };
 
         /** The Handler used to post the mFadeOutRunnables. */
-        private Handler mHandler = new Handler();
+        private final Handler mHandler = new Handler();
 
         public LineItemBreakdownSection(
                 Context context, String sectionName, SectionDelegate delegate, String updatedText) {
@@ -1202,7 +1202,7 @@ public abstract class PaymentRequestSection extends LinearLayout implements View
             ViewGroup spinnyLayout = (ViewGroup) LayoutInflater.from(getContext()).inflate(
                     R.layout.payment_request_spinny, null);
 
-            TextView textView = (TextView) spinnyLayout.findViewById(R.id.message);
+            TextView textView = spinnyLayout.findViewById(R.id.message);
             textView.setText(getContext().getString(R.string.payments_checking_option));
 
             return spinnyLayout;

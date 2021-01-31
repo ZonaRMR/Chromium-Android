@@ -18,7 +18,7 @@ public interface CacheStorage extends org.chromium.mojo.bindings.Interface {
 
 
 
-    public interface Proxy extends CacheStorage, org.chromium.mojo.bindings.Interface.Proxy {
+    interface Proxy extends CacheStorage, org.chromium.mojo.bindings.Interface.Proxy {
     }
 
     Manager<CacheStorage, CacheStorage.Proxy> MANAGER = CacheStorage_Internal.MANAGER;
